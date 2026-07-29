@@ -10,7 +10,7 @@
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
-    "vercel-build": "cd client && pnpm install && pnpm run build"
+    "vercel-build": "cd client && pnpm install && pnpm run build && cp -r dist ../dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
