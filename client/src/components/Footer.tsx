@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-logo.png" alt="IOU Logo" className="h-10 w-10 object-contain brightness-200" />
+              <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-logo.png" alt="IOU Logo" className="h-10 w-10 object-contain brightness-200" />
               <div className="leading-tight">
                 <div className="font-display font-semibold text-sm text-white">Internationaal Orkest</div>
                 <div className="font-display font-semibold text-sm tracking-widest uppercase text-[oklch(0.72_0.12_75)]">Utrecht</div>

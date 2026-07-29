@@ -11,7 +11,7 @@ export default function Support() {
       {/* Hero */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-support.jpg" alt="" className="w-full h-full object-cover" />
+          <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-support.jpg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[oklch(0.22_0.05_195)]/85" />
         </div>
         <div className="relative container text-center text-white">

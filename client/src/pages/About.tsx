@@ -33,7 +33,7 @@ export default function About() {
       <section className="relative min-h-[65vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-hero.jpg"
+            src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg"
             alt="Orchestra performing"
             className="w-full h-full object-cover object-center"
           />
@@ -85,7 +85,7 @@ export default function About() {
             </div>
             <div className="fade-up" style={{ transitionDelay: '80ms' }}>
               <img
-                src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-school-concert.jpg"
+                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg"
                 alt="Orchestra with children"
                 className="rounded-xl shadow-lg w-full object-cover aspect-[4/3]"
               />
@@ -100,7 +100,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="order-2 lg:order-1">
               <img
-                src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-conductor.jpg"
+                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-conductor.jpg"
                 alt="Jennifer Diepman, Conductor"
                 className="rounded-xl shadow-lg w-full object-cover aspect-[3/4] max-w-sm mx-auto lg:mx-0"
               />

@@ -51,7 +51,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 no-underline">
               <img
-                src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-logo.png"
+                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-logo.png"
                 alt="IOU Logo"
                 className="h-9 w-9 object-contain"
               />
