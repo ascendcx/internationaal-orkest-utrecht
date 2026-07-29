@@ -15,48 +15,82 @@ export default function YouthEnsembles() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative py-28 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/manus-storage/iou-youth-ensemble_7cbeb415.jpg" alt="Youth ensemble" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>
         <div className="relative container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
             {t('Learn, Play, and Grow Together', 'Leren, Spelen en Samen Groeien')}
           </h1>
-          <p className="text-white/85 text-lg max-w-xl leading-relaxed">
+          <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
               'The Internationale Jeugdensembles Nederland (IJEN) provides free group music lessons, choirs, and orchestras for children and youth. No prior experience required.',
               'De Internationale Jeugdensembles Nederland (IJEN) biedt gratis groepsmuziekles, koren en orkesten voor kinderen en jongeren. Geen voorkennis vereist.'
             )}
           </p>
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
+            <span className="w-2 h-2 rounded-full bg-[oklch(0.72_0.12_75)]" />
+            <span className="text-white text-sm font-medium">{t('100% Free — No fees, ever', '100% Gratis — Nooit kosten')}</span>
+          </div>
         </div>
       </section>
 
       {/* Key Facts */}
-      <section className="py-20 bg-[oklch(0.98_0.008_80)]">
+      <section className="py-20 bg-[oklch(0.98_0.008_80)] overflow-hidden">
         <div className="container">
-          <div className="text-center mb-12">
-            <span className="section-rule mx-auto" />
+          <div className="mb-10">
+            <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)]">
               {t('What You Need to Know', 'Wat U Moet Weten')}
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {[
-              { icon: <Heart size={28} />, title: t('100% Free', '100% Gratis'), desc: t('Thanks to our donors and subsidies, there are no fees for instruction or instrument access. Ever.', 'Dankzij onze donateurs en subsidies zijn er geen kosten voor les of toegang tot instrumenten. Nooit.') },
-              { icon: <Music size={28} />, title: t('All Backgrounds Welcome', 'Alle Achtergronden Welkom'), desc: t('Children and youth of all backgrounds who want to learn an instrument or sing in a choir are welcome.', 'Kinderen en jongeren van alle achtergronden die een instrument willen leren of in een koor willen zingen zijn welkom.') },
-              { icon: <Star size={28} />, title: t('After School', 'Na School'), desc: t('Rehearsals take place after school at local school locations. Specific schedules provided upon registration.', 'Repetities vinden na school plaats op lokale schoollocaties. Specifieke schema\'s worden verstrekt bij inschrijving.') },
-            ].map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 border border-[oklch(0.92_0.01_195)] shadow-sm text-center">
-                <div className="w-14 h-14 rounded-full bg-[oklch(0.95_0.02_195)] flex items-center justify-center text-[oklch(0.38_0.09_195)] mx-auto mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)] mb-2">{item.title}</h3>
-                <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+          {/* Editorial horizontal facts — the "100% Free" fact gets dominant visual weight */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr_1px_1fr] gap-0 items-stretch">
+            {/* Fact 1 — dominant */}
+            <div className="py-10 lg:pr-12">
+              <div className="text-[oklch(0.72_0.12_75)] font-display text-6xl font-bold mb-3 leading-none">€0</div>
+              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
+                {t('Always Free', 'Altijd Gratis')}
+              </h3>
+              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
+                {t(
+                  'Thanks to our donors and subsidies, there are no fees for instruction or instrument access. Ever. Every child participates on equal footing.',
+                  'Dankzij onze donateurs en subsidies zijn er nooit kosten voor les of instrumenten. Elk kind doet mee op gelijke voet.'
+                )}
+              </p>
+            </div>
+            <div className="hidden lg:block bg-[oklch(0.88_0.015_195)]" />
+            {/* Fact 2 */}
+            <div className="py-10 lg:px-12 border-t lg:border-t-0 border-[oklch(0.88_0.015_195)]">
+              <div className="w-8 h-0.5 bg-[oklch(0.38_0.09_195)] mb-6" />
+              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
+                {t('All Backgrounds Welcome', 'Alle Achtergronden Welkom')}
+              </h3>
+              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
+                {t(
+                  'Children and youth of all backgrounds, nationalities, and experience levels are welcome. No audition, no prior knowledge required.',
+                  'Kinderen en jongeren van alle achtergronden, nationaliteiten en ervaringsniveaus zijn welkom. Geen auditie, geen voorkennis vereist.'
+                )}
+              </p>
+            </div>
+            <div className="hidden lg:block bg-[oklch(0.88_0.015_195)]" />
+            {/* Fact 3 */}
+            <div className="py-10 lg:pl-12 border-t lg:border-t-0 border-[oklch(0.88_0.015_195)]">
+              <div className="w-8 h-0.5 bg-[oklch(0.38_0.09_195)] mb-6" />
+              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
+                {t('After School, At Your School', 'Na School, Op Uw School')}
+              </h3>
+              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
+                {t(
+                  'Rehearsals take place after school at local school locations — no travel required. Specific schedules and locations are confirmed upon registration.',
+                  'Repetities vinden na school plaats op lokale schoollocaties — geen reizen nodig. Specifieke schema\'s en locaties worden bevestigd bij inschrijving.'
+                )}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -66,11 +100,27 @@ export default function YouthEnsembles() {
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-            {t('Sign Your Child Up Today', 'Schrijf Uw Kind Vandaag In')}
+            {t('Reserve Your Child\'s Spot', 'Reserveer de Plek van Uw Kind')}
           </h2>
-          <p className="text-[oklch(0.52_0.015_60)] mb-8">
-            {t('Complete the form below and we will be in touch with details about the nearest ensemble program.', 'Vul het onderstaande formulier in en we nemen contact met u op met details over het dichtstbijzijnde ensembleprogramma.')}
+          <p className="text-[oklch(0.52_0.015_60)] mb-3 leading-relaxed">
+            {t(
+              'Fill in the form and we will reach out within 2 business days with everything you need to know — location, schedule, and what to bring on the first day.',
+              'Vul het formulier in en we nemen binnen 2 werkdagen contact op met alles wat u moet weten — locatie, schema en wat u mee moet nemen op de eerste dag.'
+            )}
           </p>
+          {/* Trust signals */}
+          <div className="flex flex-wrap gap-4 mb-8">
+            {[
+              t('No fees, ever', 'Nooit kosten'),
+              t('No audition required', 'Geen auditie vereist'),
+              t('Response within 2 days', 'Reactie binnen 2 dagen'),
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-xs text-[oklch(0.38_0.09_195)] font-medium">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="oklch(0.38 0.09 195)" fillOpacity="0.12"/><path d="M4 7l2 2 4-4" stroke="oklch(0.38 0.09 195)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                {item}
+              </div>
+            ))}
+          </div>
           {submitted ? (
             <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
               <CheckCircle size={40} className="text-[oklch(0.38_0.09_195)] mx-auto mb-4" />
@@ -118,9 +168,12 @@ export default function YouthEnsembles() {
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra and ensemble programs.', 'Ik wil periodieke updates ontvangen over het orkest en de ensembleprogramma\'s.')}</span>
               </label>
               <button type="submit" className="btn-primary w-full justify-center">
-                {t('Register for Ensembles', 'Inschrijven voor Ensembles')}
+                {t('Reserve Your Child\'s Spot', 'Reserveer de Plek van Uw Kind')}
                 <ArrowRight size={16} />
               </button>
+              <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-3">
+                {t('By submitting, you agree to our Privacy Policy. We never share your data.', 'Door in te dienen gaat u akkoord met ons Privacybeleid. We delen uw gegevens nooit.')}
+              </p>
             </form>
           )}
         </div>

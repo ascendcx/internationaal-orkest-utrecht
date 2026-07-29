@@ -24,22 +24,26 @@ export default function SchoolConcerts() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative py-28 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/manus-storage/iou-school-concert_ca783a6e.jpg" alt="School concert" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>
         <div className="relative container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
             {t('Bring a Symphony to Your School', 'Breng een Symfonie naar Uw School')}
           </h1>
-          <p className="text-white/85 text-lg max-w-xl leading-relaxed">
+          <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
               'Subsidized, interactive orchestral concerts tailored to your students. From the first note to the hands-on instrument sessions, we handle the details.',
               'Gesubsidieerde, interactieve orkestconcerten op maat voor uw leerlingen. Van de eerste noot tot de hands-on instrumentensessies, wij regelen de details.'
             )}
           </p>
+          <a href="#booking" className="btn-gold">
+            {t('Request a Concert', 'Concert Aanvragen')}
+          </a>
         </div>
       </section>
 
@@ -69,7 +73,7 @@ export default function SchoolConcerts() {
       </section>
 
       {/* Booking Form */}
-      <section className="py-20 bg-[oklch(0.95_0.02_195)]">
+      <section id="booking" className="py-20 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
@@ -119,9 +123,12 @@ export default function SchoolConcerts() {
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
               </label>
               <button type="submit" className="btn-primary w-full justify-center">
-                {t('Request Concert Information', 'Concertinformatie Aanvragen')}
-                <ArrowRight size={16} />
-              </button>
+              {t('Request Concert Information', 'Concertinformatie Aanvragen')}
+              <ArrowRight size={16} />
+            </button>
+            <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-3">
+              {t('We respond within 2 business days. No commitment required.', 'We reageren binnen 2 werkdagen. Geen verplichting vereist.')}
+            </p>
             </form>
           )}
         </div>

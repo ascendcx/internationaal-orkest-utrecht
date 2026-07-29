@@ -29,13 +29,26 @@ export default function About() {
   return (
     <div className="min-h-screen pt-20">
       {/* Page Hero */}
-      <section className="bg-[oklch(0.95_0.02_195)] py-20 lg:py-28">
-        <div className="container">
+      {/* Page Hero — full-bleed image */}
+      <section className="relative min-h-[65vh] flex items-end pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/manus-storage/iou-hero_b13d29ce.jpg"
+            alt="Orchestra performing"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/85 via-[oklch(0.22_0.05_195)]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/70 via-transparent to-transparent" />
+        </div>
+        <div className="relative container">
           <span className="section-rule" />
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-[oklch(0.22_0.01_60)] mb-4 max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-3">
+            {t('Our Story', 'Ons Verhaal')}
+          </p>
+          <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-tight">
             {t('About the Orchestra', 'Over het Orkest')}
           </h1>
-          <p className="text-lg text-[oklch(0.42_0.01_60)] max-w-xl leading-relaxed">
+          <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
               'Founded by professional and conservatory musicians, the IOU brings live symphonic music to schools and communities across the Netherlands.',
               'Opgericht door professionele en conservatoriummusici brengt het IOU live symfonische muziek naar scholen en gemeenschappen door heel Nederland.'
