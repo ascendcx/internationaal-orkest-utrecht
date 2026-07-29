@@ -18,7 +18,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/manus-storage/iou-hero_b13d29ce.jpg"
+            src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-hero.jpg"
             alt="Orchestra performing for children"
             className="w-full h-full object-cover"
           />
@@ -84,7 +84,7 @@ export default function Home() {
             <div className="fade-up group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[oklch(0.92_0.01_195)]">
               <div className="h-56 overflow-hidden">
                 <img
-                  src="/manus-storage/iou-school-concert_ca783a6e.jpg"
+                  src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-school-concert.jpg"
                   alt="School concert"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -118,7 +118,7 @@ export default function Home() {
             <div className="fade-up group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[oklch(0.92_0.01_195)]" style={{ transitionDelay: '80ms' }}>
               <div className="h-56 overflow-hidden">
                 <img
-                  src="/manus-storage/iou-youth-ensemble_7cbeb415.jpg"
+                  src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-youth-ensemble.jpg"
                   alt="Youth ensemble rehearsal"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -173,7 +173,7 @@ export default function Home() {
       {/* Support CTA */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/manus-storage/iou-support_7aaf6d96.jpg" alt="" className="w-full h-full object-cover" />
+          <img src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-support.jpg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[oklch(0.22_0.05_195)]/85" />
         </div>
         <div className="relative container text-center text-white">

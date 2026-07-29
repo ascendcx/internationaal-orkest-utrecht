@@ -17,7 +17,7 @@ export default function YouthEnsembles() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/manus-storage/iou-youth-ensemble_7cbeb415.jpg" alt="Youth ensemble" className="w-full h-full object-cover" />
+          <img src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-youth-ensemble.jpg" alt="Youth ensemble" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>

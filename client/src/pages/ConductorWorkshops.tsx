@@ -17,7 +17,7 @@ export default function ConductorWorkshops() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/manus-storage/iou-conductor_60492725.jpg" alt="Conductor workshop" className="w-full h-full object-cover object-top" />
+          <img src="https://pub-2d471b7f52394f9fb5dcfa8dae1e815b.r2.dev/images/iou-conductor.jpg" alt="Conductor workshop" className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/60" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>
