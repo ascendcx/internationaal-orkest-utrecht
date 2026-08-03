@@ -30,14 +30,14 @@ export default function Home() {
             <span className="section-rule" />
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               {t(
-                'Inspiring Children Through the Power of Symphonic Music',
-                'Kinderen Inspireren door de Kracht van Symfonische Muziek'
+                'All Children in the Netherlands United Through Music',
+                'Alle Kinderen in Nederland Verenigd door Muziek'
               )}
             </h1>
             <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
               {t(
-                'We bring live orchestral experiences directly to schools and provide free youth ensembles to build community, connection, and a lifelong love of music.',
-                'Wij brengen live orkestervaringen direct naar scholen en bieden gratis jeugdensembles aan om gemeenschap, verbinding en een levenslange liefde voor muziek op te bouwen.'
+                'Our orchestra brings symphonic and vocal music into schools across the Netherlands, inspiring children to express themselves through any type of music — and to continue that journey for free in a youth ensemble.',
+                'Ons orkest brengt symfonische en vocale muziek naar scholen door heel Nederland, om kinderen te inspireren zich uit te drukken door elke vorm van muziek — en die reis gratis voort te zetten in een jeugdensemble.'
               )}
             </p>
             <div className="flex flex-wrap gap-4">
@@ -103,8 +103,8 @@ export default function Home() {
                 </h3>
                 <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                   {t(
-                    'Subsidized, customizable orchestral performances brought directly to your school or venue. We handle the music; you watch your students light up.',
-                    'Gesubsidieerde, aanpasbare orkestoptredens direct naar uw school of locatie gebracht. Wij zorgen voor de muziek; u kijkt hoe uw leerlingen oplichten.'
+                    'Subsidized, customizable instrumental and vocal performances — often in collaboration with vocal ensembles from the area — brought directly to your school or venue. We handle the music; you watch your students light up.',
+                    'Gesubsidieerde, aanpasbare instrumentale en vocale optredens — vaak in samenwerking met vocale ensembles uit de regio — direct naar uw school of locatie gebracht. Wij zorgen voor de muziek; u kijkt hoe uw leerlingen oplichten.'
                   )}
                 </p>
                 <Link href="/school-concerts" className="btn-primary text-sm">
@@ -137,8 +137,8 @@ export default function Home() {
                 </h3>
                 <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                   {t(
-                    'Did your child discover a love for music at our concert? They can join our after-school ensembles to learn an instrument, sing in a choir, and build lasting friendships — completely free.',
-                    'Heeft uw kind een liefde voor muziek ontdekt bij ons concert? Ze kunnen deelnemen aan onze naschoolse ensembles om een instrument te leren, in een koor te zingen en vriendschappen op te bouwen — volledig gratis.'
+                    'Did your child discover a love for music at our concert? Through Nederland in Harmonie, they can join a free after-school ensemble — a choir, symphonic band, marching band, percussion ensemble, or orchestra — and build lasting friendships along the way.',
+                    'Heeft uw kind een liefde voor muziek ontdekt bij ons concert? Via Nederland in Harmonie kan het deelnemen aan een gratis naschools ensemble — een koor, harmonieorkest, fanfare, slagwerkensemble of orkest — en onderweg vriendschappen opbouwen.'
                   )}
                 </p>
                 <Link href="/youth-ensembles" className="btn-primary text-sm">

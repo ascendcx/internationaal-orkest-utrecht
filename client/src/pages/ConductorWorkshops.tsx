@@ -87,14 +87,14 @@ export default function ConductorWorkshops() {
             </div>
             <div>
               <div className="bg-[oklch(0.38_0.09_195)] rounded-xl p-8 text-white mb-6">
-                <h3 className="font-display text-xl font-bold mb-4">{t('2026/2027 Season', 'Seizoen 2026/2027')}</h3>
+                <h3 className="font-display text-xl font-bold mb-4">{t('Season To Be Announced', 'Seizoen Wordt Aangekondigd')}</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-4">
                   {t(
-                    'Dates and locations for the upcoming workshop season are being confirmed. Join the waitlist to be notified as soon as registration opens.',
-                    'Data en locaties voor het aankomende workshopseizoen worden bevestigd. Meld u aan voor de wachtlijst om als eerste te worden geïnformeerd wanneer de inschrijving opent.'
+                    'The season and year for our next round of conductor workshops will be announced here. Each workshop is scheduled around rehearsal preparation for an upcoming concert, so dates follow directly from our concert calendar. Join the waitlist to be notified the moment registration opens.',
+                    'Het seizoen en jaar voor onze volgende reeks dirigeerworkshops wordt hier aangekondigd. Elke workshop wordt gepland rond de repetitievoorbereiding voor een aankomend concert, dus data volgen rechtstreeks uit onze concertkalender. Meld u aan voor de wachtlijst om als eerste te worden geïnformeerd wanneer de inschrijving opent.'
                   )}
                 </p>
-                <div className="text-sm text-[oklch(0.72_0.12_75)] font-medium">{t('Dates: To be announced', 'Data: Wordt aangekondigd')}</div>
+                <div className="text-sm text-[oklch(0.72_0.12_75)] font-medium">{t('Season & dates: To be announced', 'Seizoen & data: Wordt aangekondigd')}</div>
               </div>
               {/* Waitlist Form */}
               {submitted ? (

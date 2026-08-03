@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useState } from 'react';
-import { CheckCircle, ArrowRight, Music, Heart, Star } from 'lucide-react';
+import { CheckCircle, ArrowRight, Music, Heart, Star, ExternalLink } from 'lucide-react';
 
 export default function YouthEnsembles() {
   const { t } = useLanguage();
@@ -28,8 +28,8 @@ export default function YouthEnsembles() {
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'The Internationale Jeugdensembles Nederland (IJEN) provides free group music lessons, choirs, and orchestras for children and youth. No prior experience required.',
-              'De Internationale Jeugdensembles Nederland (IJEN) biedt gratis groepsmuziekles, koren en orkesten voor kinderen en jongeren. Geen voorkennis vereist.'
+              'Nederland in Harmonie (The Netherlands in Harmony) provides free group music lessons — choirs, symphonic bands, marching bands, percussion ensembles, and orchestras — for every child living in the Netherlands. No prior experience required.',
+              'Nederland in Harmonie biedt gratis groepsmuziekles — koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten — voor ieder kind dat in Nederland woont. Geen voorkennis vereist.'
             )}
           </p>
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
@@ -72,8 +72,8 @@ export default function YouthEnsembles() {
               </h3>
               <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
                 {t(
-                  'Children and youth of all backgrounds, nationalities, and experience levels are welcome. No audition, no prior knowledge required.',
-                  'Kinderen en jongeren van alle achtergronden, nationaliteiten en ervaringsniveaus zijn welkom. Geen auditie, geen voorkennis vereist.'
+                  'Integrated Dutch ensembles, welcoming every child living in the Netherlands regardless of background or experience level. No audition, no prior knowledge required.',
+                  'Geïntegreerde Nederlandse ensembles, welkom voor ieder kind dat in Nederland woont, ongeacht achtergrond of ervaringsniveau. Geen auditie, geen voorkennis vereist.'
                 )}
               </p>
             </div>
@@ -92,6 +92,89 @@ export default function YouthEnsembles() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* How Children Join — the three-step package */}
+      <section className="py-20 bg-[oklch(0.98_0.008_80)]">
+        <div className="container">
+          <div className="mb-12">
+            <span className="section-rule" />
+            <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] max-w-lg">
+              {t('How Children Join', 'Hoe Kinderen Meedoen')}
+            </h2>
+          </div>
+          <div className="space-y-0">
+            {[
+              {
+                title: t('The Orchestra Performs', 'Het Orkest Treedt Op'),
+                desc: t(
+                  'Our orchestra — often joined by vocal ensembles from the area — performs an instrumental and vocal concert for students at their school.',
+                  'Ons orkest — vaak samen met vocale ensembles uit de regio — verzorgt een instrumentaal en vocaal concert voor leerlingen op hun school.'
+                ),
+              },
+              {
+                title: t('Students Try It Themselves', 'Leerlingen Proberen Het Zelf'),
+                desc: t(
+                  'Children try out instruments or sing in a group at their own school, guided by our musicians and singers.',
+                  'Kinderen proberen instrumenten uit of zingen in een groep op hun eigen school, begeleid door onze muzikanten en zangers.'
+                ),
+              },
+              {
+                title: t('The Option to Join a Youth Ensemble', 'De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'),
+                desc: t(
+                  'Children have the option to join Nederland in Harmonie — a choir, symphonic band, marching band, percussion ensemble, or orchestra — completely free.',
+                  'Kinderen hebben de mogelijkheid om deel te nemen aan Nederland in Harmonie — een koor, harmonieorkest, fanfare, slagwerkensemble of orkest — volledig gratis.'
+                ),
+              },
+            ].map((step, i) => (
+              <div key={i} className="grid grid-cols-[3rem_1fr] lg:grid-cols-[4rem_1fr_2fr] gap-x-6 gap-y-2 py-8 border-t border-[oklch(0.88_0.015_195)] items-start">
+                <div className="font-display text-3xl font-bold text-[oklch(0.88_0.015_195)] leading-none pt-1">0{i + 1}</div>
+                <div className="lg:col-span-2">
+                  <h3 className="font-display font-semibold text-lg text-[oklch(0.22_0.01_60)] mb-1">{step.title}</h3>
+                  <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-xl">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+            <div className="border-t border-[oklch(0.88_0.015_195)]" />
+          </div>
+          <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
+            {t(
+              'These three steps are always connected at this stage — the youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
+              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden — de mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
+            )}
+          </p>
+        </div>
+      </section>
+
+      {/* Sistema Europe Recognition */}
+      <section className="py-20 bg-[oklch(0.95_0.02_195)]">
+        <div className="container max-w-3xl">
+          <span className="section-rule" />
+          <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
+            {t('Recognized Through Sistema Europe', 'Erkend via Sistema Europe')}
+          </h2>
+          <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+            {t(
+              'Once established, Nederland in Harmonie\'s youth ensembles will be listed on the Sistema Europe network of member programs.',
+              'Zodra Nederland in Harmonie is opgericht, worden de jeugdensembles opgenomen in het Sistema Europe-netwerk van aangesloten programma\'s.'
+            )}
+          </p>
+          <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+            {t(
+              'This membership provides recognition and trusted status among funders and partners, which supports the financial backing that keeps every ensemble free for children.',
+              'Dit lidmaatschap zorgt voor erkenning en een betrouwbare status bij financiers en partners, wat de financiële ondersteuning versterkt waarmee elk ensemble gratis blijft voor kinderen.'
+            )}
+          </p>
+          <a
+            href="https://www.sistemaeurope.org/Network-Members/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-[oklch(0.38_0.09_195)] hover:underline font-medium"
+          >
+            {t('View the Sistema Europe Network Members', 'Bekijk de Sistema Europe Netwerkleden')}
+            <ExternalLink size={14} />
+          </a>
         </div>
       </section>
 

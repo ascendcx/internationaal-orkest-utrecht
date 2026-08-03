@@ -50,8 +50,8 @@ export default function About() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
-              'Founded by professional and conservatory musicians, the IOU brings live symphonic music to schools and communities across the Netherlands.',
-              'Opgericht door professionele en conservatoriummusici brengt het IOU live symfonische muziek naar scholen en gemeenschappen door heel Nederland.'
+              'Founded by professional and conservatory musicians, the IOU brings live symphonic and vocal music to schools and communities across the Netherlands.',
+              'Opgericht door professionele en conservatoriummusici brengt het IOU live symfonische en vocale muziek naar scholen en gemeenschappen door heel Nederland.'
             )}
           </p>
         </div>
@@ -64,12 +64,12 @@ export default function About() {
             <div className="fade-up">
               <span className="section-rule" />
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">
-                {t('Building Social Bonds Through Symphonic Music', 'Sociale Banden Opbouwen door Symfonische Muziek')}
+                {t('Building Social Bonds Through Music', 'Sociale Banden Opbouwen door Muziek')}
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'The International Orchestra of Utrecht was founded on a simple belief: making music together builds better citizens. We plan, collaborate, and perform customized concerts for schools, using those performances as the spark to build free youth ensembles.',
-                  'Het Internationaal Orkest Utrecht is opgericht op een eenvoudige overtuiging: samen muziek maken bouwt betere burgers. Wij plannen, werken samen en voeren op maat gemaakte concerten uit voor scholen, waarbij we die optredens gebruiken als vonk om gratis jeugdensembles op te bouwen.'
+                  'The International Orchestra of Utrecht was founded on a simple belief: making music together builds better citizens. Our orchestra is the vehicle — we plan, collaborate with vocal ensembles from the area, and perform customized instrumental and vocal concerts for schools, using those performances as the spark to build free youth ensembles of every kind, from choirs to symphonic bands.',
+                  'Het Internationaal Orkest Utrecht is opgericht op een eenvoudige overtuiging: samen muziek maken bouwt betere burgers. Ons orkest is daarbij het voertuig — we plannen, werken samen met vocale ensembles uit de regio en voeren op maat gemaakte instrumentale en vocale concerten uit voor scholen, waarbij we die optredens gebruiken als vonk om gratis jeugdensembles van elke soort op te bouwen, van koren tot harmonieorkesten.'
                 )}
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">

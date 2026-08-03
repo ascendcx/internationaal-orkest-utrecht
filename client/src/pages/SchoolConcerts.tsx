@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useState } from 'react';
-import { CheckCircle, Music2, Users, Mic2, ArrowRight } from 'lucide-react';
+import { CheckCircle, Music2, Users, ArrowRight } from 'lucide-react';
 
 export default function SchoolConcerts() {
   const { t } = useLanguage();
@@ -15,10 +15,9 @@ export default function SchoolConcerts() {
   };
 
   const steps = [
-    { icon: <Music2 size={24} />, title: t('Customize Your Concert', 'Pas Uw Concert Aan'), desc: t('We work with you to tailor the performance length, musical selections, and venue — at your school or a local hall.', 'Wij werken met u samen om de uitvoeringsduur, muziekkeuze en locatie af te stemmen — op uw school of in een lokale zaal.') },
-    { icon: <Mic2 size={24} />, title: t('The Performance', 'De Uitvoering'), desc: t('Our professional orchestra delivers an engaging, educational concert that explains the stories and secrets hidden within the music.', 'Ons professionele orkest verzorgt een boeiend, educatief concert dat de verhalen en geheimen in de muziek uitlegt.') },
-    { icon: <Users size={24} />, title: t('Instrument Petting Zoo', 'Instrumenten Uitproberen'), desc: t('After the performance, students are invited to try out the instruments themselves under the guidance of our musicians.', 'Na de uitvoering worden leerlingen uitgenodigd om zelf de instrumenten uit te proberen onder begeleiding van onze muzikanten.') },
-    { icon: <CheckCircle size={24} />, title: t('The Next Step', 'De Volgende Stap'), desc: t('Interested students are given the opportunity to join our free after-school youth ensembles.', 'Geïnteresseerde leerlingen krijgen de mogelijkheid om deel te nemen aan onze gratis naschoolse jeugdensembles.') },
+    { icon: <Music2 size={24} />, title: t('Step 1 — The Orchestra Performs', 'Stap 1 — Het Orkest Treedt Op'), desc: t('Our orchestra — often joined by vocal ensembles from the area — performs a customized instrumental and vocal concert for your students, at your school or a local hall.', 'Ons orkest — vaak samen met vocale ensembles uit de regio — verzorgt een op maat gemaakt instrumentaal en vocaal concert voor uw leerlingen, op uw school of in een lokale zaal.') },
+    { icon: <Users size={24} />, title: t('Step 2 — Students Try It Themselves', 'Stap 2 — Leerlingen Proberen Het Zelf'), desc: t('After the performance, children try out instruments or sing in a group at their own school, guided by our musicians and singers.', 'Na de uitvoering proberen kinderen zelf instrumenten uit of zingen ze in een groep op hun eigen school, begeleid door onze muzikanten en zangers.') },
+    { icon: <CheckCircle size={24} />, title: t('Step 3 — The Option to Join a Youth Ensemble', 'Stap 3 — De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles — choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles — koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
   ];
 
   return (
@@ -37,8 +36,8 @@ export default function SchoolConcerts() {
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'Subsidized, interactive orchestral concerts tailored to your students. From the first note to the hands-on instrument sessions, we handle the details.',
-              'Gesubsidieerde, interactieve orkestconcerten op maat voor uw leerlingen. Van de eerste noot tot de hands-on instrumentensessies, wij regelen de details.'
+              'Subsidized, interactive instrumental and vocal concerts tailored to your students. From the first note to the hands-on instrument and singing sessions, we handle the details.',
+              'Gesubsidieerde, interactieve instrumentale en vocale concerten op maat voor uw leerlingen. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen de details.'
             )}
           </p>
           <a href="#booking" className="btn-gold">
@@ -69,6 +68,12 @@ export default function SchoolConcerts() {
             ))}
             <div className="border-t border-[oklch(0.88_0.015_195)]" />
           </div>
+          <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
+            {t(
+              'These three steps are always connected at this stage — the youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
+              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden — de mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
+            )}
+          </p>
         </div>
       </section>
 

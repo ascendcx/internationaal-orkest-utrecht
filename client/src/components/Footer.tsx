@@ -35,8 +35,8 @@ export default function Footer() {
             </div>
             <p className="text-sm text-white/70 leading-relaxed mb-6">
               {t(
-                'Inspiring children through the power of symphonic music. Free youth ensembles and interactive school concerts across the Netherlands.',
-                'Kinderen inspireren door de kracht van symfonische muziek. Gratis jeugdensembles en interactieve schoolconcerten door heel Nederland.'
+                'All children in the Netherlands united through music. Free youth ensembles and interactive instrumental and vocal school concerts across the Netherlands.',
+                'Alle kinderen in Nederland verenigd door muziek. Gratis jeugdensembles en interactieve instrumentale en vocale schoolconcerten door heel Nederland.'
               )}
             </p>
             <div className="flex gap-3">
