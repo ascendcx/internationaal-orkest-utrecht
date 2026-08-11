@@ -100,7 +100,7 @@ export default function ConductorWorkshops() {
                     'We plannen momenteel ons concertseizoen 2026/2027. Workshopdata, locaties en inschrijvingsdetails worden hier aangekondigd zodra de kalender is vastgesteld. Meld u aan voor de wachtlijst hieronder om als eerste te worden geïnformeerd wanneer de inschrijving opent.'
                   )}
                 </p>
-                <div className="text-sm text-[oklch(0.72_0.12_75)] font-medium">{t('Season & dates: To be announced', 'Seizoen & data: Wordt aangekondigd')}</div>
+                <div className="text-sm text-[oklch(0.72_0.12_75)] font-medium">{t('Dates: To be announced', 'Data: Wordt aangekondigd')}</div>
               </div>
               {/* Waitlist Form */}
               {submitted ? (
