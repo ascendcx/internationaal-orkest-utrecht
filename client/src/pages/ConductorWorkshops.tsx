@@ -28,7 +28,7 @@ export default function ConductorWorkshops() {
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'Led by Artistic Director Jennifer Diepman, our conductor workshops offer rigorous training while directly supporting the International Orchestra of Utrecht.',
+              'Led by Artistic Director Jennifer Diepman, our conductor workshops offer rigorous training while directly supporting Internationaal Orkest Utrecht.',
               'Geleid door Artistiek Directeur Jennifer Diepman bieden onze dirigeerworkshops rigoureuze training terwijl ze het Internationaal Orkest Utrecht direct ondersteunen.'
             )}
           </p>

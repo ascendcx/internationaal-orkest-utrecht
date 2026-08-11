@@ -15,9 +15,9 @@ export default function SchoolConcerts() {
   };
 
   const steps = [
-    { icon: <Music2 size={24} />, title: t('Step 1 — The Orchestra Performs', 'Stap 1 — Het Orkest Treedt Op'), desc: t('Our orchestra — often joined by vocal ensembles from the area — performs a customized instrumental and vocal concert for your students, at your school or a local hall.', 'Ons orkest — vaak samen met vocale ensembles uit de regio — verzorgt een op maat gemaakt instrumentaal en vocaal concert voor uw leerlingen, op uw school of in een lokale zaal.') },
-    { icon: <Users size={24} />, title: t('Step 2 — Students Try It Themselves', 'Stap 2 — Leerlingen Proberen Het Zelf'), desc: t('After the performance, children try out instruments or sing in a group at their own school, guided by our musicians and singers.', 'Na de uitvoering proberen kinderen zelf instrumenten uit of zingen ze in een groep op hun eigen school, begeleid door onze muzikanten en zangers.') },
-    { icon: <CheckCircle size={24} />, title: t('Step 3 — The Option to Join a Youth Ensemble', 'Stap 3 — De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles — choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles — koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
+    { icon: <Music2 size={24} />, title: t('Step 1: The Orchestra Performs', 'Stap 1: Het Orkest Treedt Op'), desc: t('Our orchestra, often joined by vocal ensembles from the area, performs a customized instrumental and vocal concert for your students, at your school or a local hall.', 'Ons orkest, vaak samen met vocale ensembles uit de regio, verzorgt een op maat gemaakt instrumentaal en vocaal concert voor uw leerlingen, op uw school of in een lokale zaal.') },
+    { icon: <Users size={24} />, title: t('Step 2: Students Try It Themselves', 'Stap 2: Leerlingen Proberen Het Zelf'), desc: t('After the performance, children try out instruments or sing in a group at their own school, guided by our musicians and singers.', 'Na de uitvoering proberen kinderen zelf instrumenten uit of zingen ze in een groep op hun eigen school, begeleid door onze muzikanten en zangers.') },
+    { icon: <CheckCircle size={24} />, title: t('Step 3: The Option to Join a Youth Ensemble', 'Stap 3: De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles: choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles: koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
   ];
 
   return (
@@ -70,8 +70,8 @@ export default function SchoolConcerts() {
           </div>
           <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
             {t(
-              'These three steps are always connected at this stage — the youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
-              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden — de mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
+              'These three steps are always connected at this stage: the youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
+              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden: de mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
             )}
           </p>
         </div>

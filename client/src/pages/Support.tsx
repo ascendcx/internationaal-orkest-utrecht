@@ -113,7 +113,7 @@ export default function Support() {
                 <span className="text-xs text-[oklch(0.52_0.015_60)]">{t('Card / international', 'Kaart / internationaal')}</span>
               </div>
               <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed">{t('Secure international and credit card payments. Available for donors worldwide.', 'Veilige internationale betalingen en creditcardbetalingen.')}</p>
-              <a href="https://www.mollie.com" target="_blank" rel="noopener noreferrer" className="btn-secondary text-xs py-2 px-4 inline-flex items-center gap-1 whitespace-nowrap">{t('Donate', 'Doneren')} <ExternalLink size={12} /></a>
+              <a href="https://payment-links.mollie.com/en/payment/nHXpkaYBF7uaFt2kIpYJR/details" target="_blank" rel="noopener noreferrer" className="btn-secondary text-xs py-2 px-4 inline-flex items-center gap-1 whitespace-nowrap">{t('Donate', 'Doneren')} <ExternalLink size={12} /></a>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[6rem_1fr_auto] gap-x-6 gap-y-2 py-6 border-t border-b border-[oklch(0.88_0.015_195)] items-start">
               <div>
