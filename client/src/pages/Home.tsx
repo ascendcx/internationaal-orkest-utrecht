@@ -36,8 +36,8 @@ export default function Home() {
             </h1>
             <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
               {t(
-                'Every child deserves the chance to discover that music can be part of their life. We bring live symphonic and vocal music into schools, then open the door to free local ensembles where children can sing, play, and belong. Together, teachers, parents, musicians, and supporters make that possible.',
-                'Elk kind verdient de kans om te ontdekken dat muziek deel kan zijn van zijn of haar leven. Wij brengen live symfonische en vocale muziek naar scholen, en openen daarna de deur naar gratis lokale ensembles waar kinderen kunnen zingen, spelen en erbij horen. Samen maken leraren, ouders, muzikanten en supporters dat mogelijk.'
+                'Every child deserves the chance to discover that music can be part of their life. We bring symphonic and vocal music into schools, then invite children into free local ensembles where they can sing, play, and belong. Together, teachers, parents, musicians, and supporters make that possible.',
+                'Elk kind verdient de kans om te ontdekken dat muziek deel kan zijn van zijn of haar leven. Wij brengen symfonische en vocale muziek naar scholen, en nodigen kinderen daarna uit voor gratis lokale ensembles waar ze kunnen zingen, spelen en erbij horen. Samen maken leraren, ouders, muzikanten en supporters dat mogelijk.'
               )}
             </p>
             <div className="flex flex-wrap gap-4">
@@ -46,7 +46,7 @@ export default function Home() {
                 <ArrowRight size={16} />
               </Link>
               <Link href="/youth-ensembles" className="btn-secondary border-white/50 text-white hover:bg-white/10">
-                {t('Explore Youth Ensembles', 'Ontdek Jeugdensembles')}
+                {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
               </Link>
             </div>
           </div>
