@@ -179,16 +179,16 @@ export default function Home() {
         <div className="relative container text-center text-white">
           <span className="section-rule mx-auto" />
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
-            {t('Music Connects Us All. You Make It Possible.', 'Muziek Verbindt Ons Allen. U Maakt Het Mogelijk.')}
+            {t('900 Children Clapping. You Could Make That Happen Again.', '900 Klappende Kinderen. Dat Kunt U Opnieuw Mogelijk Maken.')}
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
             {t(
-              'Our youth ensembles and school outreach are funded by the generosity of individuals, grants, and corporate sponsors. Help us ensure every child has access to high-quality music education.',
-              'Onze jeugdensembles en schoolactiviteiten worden gefinancierd door de vrijgevigheid van particulieren, subsidies en bedrijfssponsors. Help ons ervoor te zorgen dat elk kind toegang heeft tot hoogwaardige muziekonderwijs.'
+              'Nearly 900 children in a single school laughed, clapped, and had the time of their lives while our orchestra played. Every donation funds the next concert, the next ensemble, and the next child who discovers that music is for them. No fees, ever, for the children. Only because of you.',
+              'Bijna 900 kinderen op één school lachten, klapten en hadden de tijd van hun leven terwijl ons orkest speelde. Elke donatie financiert het volgende concert, het volgende ensemble en het volgende kind dat ontdekt dat muziek er ook voor hen is. Nooit kosten voor de kinderen. Alleen dankzij u.'
             )}
           </p>
           <Link href="/support" className="btn-gold">
-            {t('Support the Orchestra', 'Steun het Orkest')}
+            {t('Make It Happen', 'Maak Het Mogelijk')}
             <ArrowRight size={16} />
           </Link>
         </div>
