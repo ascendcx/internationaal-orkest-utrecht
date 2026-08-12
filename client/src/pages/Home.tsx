@@ -76,7 +76,7 @@ export default function Home() {
           <div className="mb-14 fade-up">
             <span className="section-rule" />
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] max-w-xl">
-              {t('Two Ways We Serve Our Community', 'Twee Manieren Waarop Wij Onze Gemeenschap Dienen')}
+              {t('Music That Moves. Opportunities That Last.', 'Muziek Die Beweegt. Kansen Die Blijven.')}
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -103,8 +103,8 @@ export default function Home() {
                 </h3>
                 <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                   {t(
-                    'Subsidized, customizable instrumental and vocal performances, often in collaboration with vocal ensembles from the area, brought directly to your school or venue. We handle the music; you watch your students light up.',
-                    'Gesubsidieerde, aanpasbare instrumentale en vocale optredens, vaak in samenwerking met vocale ensembles uit de regio, direct naar uw school of locatie gebracht. Wij zorgen voor de muziek; u kijkt hoe uw leerlingen oplichten.'
+                    'Funded through grants and donations, our customizable instrumental and vocal concerts come to your school at no cost. Often joined by vocal ensembles from the area, every performance is designed to do one thing: make your students fall in love with music.',
+                    'Gefinancierd door subsidies en donaties komen onze aanpasbare instrumentale en vocale concerten gratis naar uw school. Vaak aangevuld met vocale ensembles uit de regio, is elk optreden ontworpen om één ding te doen: uw leerlingen verliefd laten worden op muziek.'
                   )}
                 </p>
                 <Link href="/school-concerts" className="btn-primary text-sm">
@@ -137,12 +137,12 @@ export default function Home() {
                 </h3>
                 <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                   {t(
-                    'Did your child discover a love for music at our concert? Through Nederland in Harmonie, they can join a free after-school ensemble, such as a choir, symphonic band, marching band, percussion ensemble, or orchestra, and build lasting friendships along the way.',
-                    'Heeft uw kind een liefde voor muziek ontdekt bij ons concert? Via Nederland in Harmonie kan het deelnemen aan een gratis naschools ensemble, zoals een koor, harmonieorkest, fanfare, slagwerkensemble of orkest, en onderweg vriendschappen opbouwen.'
+                    'Whether your child heard us at school or you found us here, Nederland in Harmonie is ready for them. A choir, symphonic band, marching band, percussion ensemble, or orchestra, completely free, after school, at a local school near you. A place to play, sing, grow, and belong.',
+                    'Of uw kind ons nu op school heeft gehoord of u ons hier heeft gevonden, Nederland in Harmonie staat voor hen klaar. Een koor, harmonieorkest, fanfare, slagwerkensemble of orkest, volledig gratis, naschools, op een school bij u in de buurt. Een plek om te spelen, te zingen, te groeien en erbij te horen.'
                   )}
                 </p>
                 <Link href="/youth-ensembles" className="btn-primary text-sm">
-                  {t('Join an Ensemble', 'Doe Mee met een Ensemble')}
+                  {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
                   <ArrowRight size={14} />
                 </Link>
               </div>
