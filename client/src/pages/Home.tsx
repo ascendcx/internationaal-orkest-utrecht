@@ -36,17 +36,17 @@ export default function Home() {
             </h1>
             <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
               {t(
-                'Our orchestra brings symphonic and vocal music into schools across the Netherlands, inspiring children to express themselves through any type of music, and to continue that journey for free in a youth ensemble.',
-                'Ons orkest brengt symfonische en vocale muziek naar scholen door heel Nederland, om kinderen te inspireren zich uit te drukken door elke vorm van muziek, en die reis gratis voort te zetten in een jeugdensemble.'
+                'Every child deserves the chance to discover that music can be part of their life. We bring live symphonic and vocal music into schools, then open the door to free local ensembles where children can sing, play, and belong. Together, teachers, parents, musicians, and supporters make that possible.',
+                'Elk kind verdient de kans om te ontdekken dat muziek deel kan zijn van zijn of haar leven. Wij brengen live symfonische en vocale muziek naar scholen, en openen daarna de deur naar gratis lokale ensembles waar kinderen kunnen zingen, spelen en erbij horen. Samen maken leraren, ouders, muzikanten en supporters dat mogelijk.'
               )}
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/school-concerts" className="btn-gold">
-                {t('Book a School Concert', 'Boek een Schoolconcert')}
+                {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
                 <ArrowRight size={16} />
               </Link>
               <Link href="/youth-ensembles" className="btn-secondary border-white/50 text-white hover:bg-white/10">
-                {t('Enroll in a Youth Ensemble', 'Inschrijven voor een Jeugdensemble')}
+                {t('Explore Youth Ensembles', 'Ontdek Jeugdensembles')}
               </Link>
             </div>
           </div>
