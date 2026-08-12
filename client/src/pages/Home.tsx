@@ -179,12 +179,12 @@ export default function Home() {
         <div className="relative container text-center text-white">
           <span className="section-rule mx-auto" />
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
-            {t('900 Children Clapping. You Could Make That Happen Again.', '900 Klappende Kinderen. Dat Kunt U Opnieuw Mogelijk Maken.')}
+            {t('You Could Be the Reason They Clap.', 'U Kunt de Reden Zijn Dat Zij Klappen.')}
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
             {t(
-              'Nearly 900 children in a single school laughed, clapped, and had the time of their lives while our orchestra played. Every donation funds the next concert, the next ensemble, and the next child who discovers that music is for them. No fees, ever, for the children. Only because of you.',
-              'Bijna 900 kinderen op één school lachten, klapten en hadden de tijd van hun leven terwijl ons orkest speelde. Elke donatie financiert het volgende concert, het volgende ensemble en het volgende kind dat ontdekt dat muziek er ook voor hen is. Nooit kosten voor de kinderen. Alleen dankzij u.'
+              'Every donation funds the next concert, the next ensemble, and the next child who discovers that music is for them. No fees, ever, for the children. That is only possible because of people like you.',
+              'Elke donatie financiert het volgende concert, het volgende ensemble en het volgende kind dat ontdekt dat muziek er ook voor hen is. Nooit kosten voor de kinderen. Dat is alleen mogelijk dankzij mensen als u.'
             )}
           </p>
           <Link href="/support" className="btn-gold">
