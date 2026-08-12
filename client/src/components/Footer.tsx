@@ -34,10 +34,9 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/70 leading-relaxed mb-6">
-              {t(
-                'All children in the Netherlands united through music. Free youth ensembles and interactive instrumental and vocal school concerts across the Netherlands.',
-                'Alle kinderen in Nederland verenigd door muziek. Gratis jeugdensembles en interactieve instrumentale en vocale schoolconcerten door heel Nederland.'
-              )}
+              {t('All children in the Netherlands united through music.', 'Alle kinderen in Nederland verenigd door muziek.')}
+              <br />
+              {t('Free concerts, free ensembles, lasting bonds.', 'Gratis concerten, gratis ensembles, blijvende banden.')}
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/internationaalorkestutrecht/" target="_blank" rel="noopener noreferrer"
