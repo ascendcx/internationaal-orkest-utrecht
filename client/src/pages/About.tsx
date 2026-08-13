@@ -50,8 +50,8 @@ export default function About() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
-              'Founded by professional and conservatory musicians, the IOU brings live symphonic and vocal music to schools and communities across the Netherlands.',
-              'Opgericht door professionele en conservatoriummusici brengt het IOU live symfonische en vocale muziek naar scholen en gemeenschappen door heel Nederland.'
+              'The Internationaal Orkest Utrecht believes every child in the Netherlands deserves to experience live music. Founded by professional and conservatory musicians from across the globe, we bring symphonic and vocal concerts into schools and use those performances as the spark to build free local youth ensembles.',
+              'Het Internationaal Orkest Utrecht gelooft dat elk kind in Nederland live muziek moet kunnen ervaren. Opgericht door professionele en conservatoriummusici van over de hele wereld, brengen wij symfonische en vocale concerten naar scholen en gebruiken die optredens als vonk om gratis lokale jeugdensembles op te bouwen.'
             )}
           </p>
         </div>
@@ -68,14 +68,14 @@ export default function About() {
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'The International Orchestra of Utrecht was founded on a simple belief: making music together builds better citizens. Our orchestra is the vehicle: we plan, collaborate with vocal ensembles from the area, and perform customized instrumental and vocal concerts for schools, using those performances as the spark to build free youth ensembles of every kind, from choirs to symphonic bands.',
-                  'Het Internationaal Orkest Utrecht is opgericht op een eenvoudige overtuiging: samen muziek maken bouwt betere burgers. Ons orkest is daarbij het voertuig: we plannen, werken samen met vocale ensembles uit de regio en voeren op maat gemaakte instrumentale en vocale concerten uit voor scholen, waarbij we die optredens gebruiken als vonk om gratis jeugdensembles van elke soort op te bouwen, van koren tot harmonieorkesten.'
+                  'Internationaal Orkest Utrecht was founded on a simple belief. Making music together builds better citizens. Our orchestra is the vehicle. We plan, collaborate with vocal ensembles from the area, and perform customized instrumental and vocal concerts for schools, using those performances as the spark to build free youth ensembles of every kind, from choirs to symphonic bands.',
+                  'Internationaal Orkest Utrecht is opgericht op een eenvoudige overtuiging. Samen muziek maken bouwt betere burgers. Ons orkest is het voertuig. We plannen, werken samen met vocale ensembles uit de regio en voeren op maat gemaakte instrumentale en vocale concerten uit voor scholen, waarbij we die optredens gebruiken als vonk om gratis jeugdensembles van elke soort op te bouwen, van koren tot harmonieorkesten.'
                 )}
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                 {t(
-                  'Our ultimate goal is social cohesion: creating spaces where children of all backgrounds feel welcome, understood, and connected through the universal language of music.',
-                  'Ons uiteindelijke doel is sociale cohesie: het creëren van ruimtes waar kinderen van alle achtergronden zich welkom, begrepen en verbonden voelen door de universele taal van muziek.'
+                  'Our ultimate goal is social cohesion, creating spaces where children of all backgrounds feel welcome, understood, and connected through the universal language of music.',
+                  'Ons uiteindelijke doel is sociale cohesie, het creëren van ruimtes waar kinderen van alle achtergronden zich welkom, begrepen en verbonden voelen door de universele taal van muziek.'
                 )}
               </p>
               <Link href="/school-concerts" className="btn-primary">
@@ -125,8 +125,8 @@ export default function About() {
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
                 {t(
-                  'Jennifer founded the International Orchestra of Utrecht to pass the joy of music to the next generation and to build social bonds through the power of collective music-making.',
-                  'Jennifer richtte het Internationaal Orkest Utrecht op om de vreugde van muziek door te geven aan de volgende generatie en om sociale banden op te bouwen door de kracht van collectief musiceren.'
+                  'Jennifer founded the Internationaal Orkest Utrecht because she believes music is not a privilege. It belongs to every child. Her goal is simple: use the power of collective music-making to build social bonds that last long after the concert ends.',
+                  'Jennifer richtte het Internationaal Orkest Utrecht op omdat zij gelooft dat muziek geen privilege is. Het is er voor elk kind. Haar doel is simpel: de kracht van collectief musiceren gebruiken om sociale banden op te bouwen die blijven bestaan lang na het concert.'
                 )}
               </p>
             </div>
