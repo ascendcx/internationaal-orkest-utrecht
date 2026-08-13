@@ -17,7 +17,7 @@ export default function Support() {
         <div className="relative container text-center text-white">
           <span className="section-rule mx-auto" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold mb-4">
-            {t('You Could Be the Reason a Child Picks Up an Instrument.', 'U Kunt de Reden Zijn Dat een Kind een Instrument Opneemt.')}
+            {t('Be the Reason They Play.', 'Wees de Reden Dat Zij Spelen.')}
           </h1>
           <p className="text-white/80 max-w-xl mx-auto text-lg leading-relaxed">
             {t(
