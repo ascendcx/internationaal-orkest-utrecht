@@ -28,13 +28,13 @@ export default function YouthEnsembles() {
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'Nederland in Harmonie (The Netherlands in Harmony) provides free group music lessons, including choirs, symphonic bands, marching bands, percussion ensembles, and orchestras, for every child living in the Netherlands. No prior experience required.',
-              'Nederland in Harmonie biedt gratis groepsmuziekles, waaronder koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten, voor ieder kind dat in Nederland woont. Geen voorkennis vereist.'
+              'Nederland in Harmonie (The Netherlands in Harmony) offers free ensemble programs for every child living in the Netherlands. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras. No audition, no experience, no fees. Ever.',
+              'Nederland in Harmonie biedt gratis ensembleprogramma\'s voor ieder kind dat in Nederland woont. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten. Geen auditie, geen ervaring, geen kosten. Nooit.'
             )}
           </p>
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-[oklch(0.72_0.12_75)]" />
-            <span className="text-white text-sm font-medium">{t('100% Free: No fees, ever', '100% Gratis: Nooit kosten')}</span>
+            <span className="text-white text-sm font-medium">{t('No Fees. Ever.', 'Nooit Kosten.')}</span>
           </div>
         </div>
       </section>
@@ -58,8 +58,8 @@ export default function YouthEnsembles() {
               </h3>
               <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
                 {t(
-                  'Thanks to our donors and subsidies, there are no fees for instruction or instrument access. Ever. Every child participates on equal footing.',
-                  'Dankzij onze donateurs en subsidies zijn er nooit kosten voor les of instrumenten. Elk kind doet mee op gelijke voet.'
+                  'Thanks to our donors, grants, and supporters, there are no fees for instruction or instrument access. Ever. Every child participates on equal footing.',
+                  'Dankzij onze donateurs, subsidies en supporters zijn er nooit kosten voor les of instrumenten. Elk kind doet mee op gelijke voet.'
                 )}
               </p>
             </div>
@@ -72,8 +72,8 @@ export default function YouthEnsembles() {
               </h3>
               <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
                 {t(
-                  'Integrated Dutch ensembles, welcoming every child living in the Netherlands regardless of background or experience level. No audition, no prior knowledge required.',
-                  'Geïntegreerde Nederlandse ensembles, welkom voor ieder kind dat in Nederland woont, ongeacht achtergrond of ervaringsniveau. Geen auditie, geen voorkennis vereist.'
+                  'Integrated Dutch ensembles, welcoming every child living in the Netherlands regardless of background or experience level. No audition, no prior knowledge required. A place to make music, make friends, and belong.',
+                  'Geïntegreerde Nederlandse ensembles, welkom voor ieder kind dat in Nederland woont, ongeacht achtergrond of ervaringsniveau. Geen auditie, geen voorkennis vereist. Een plek om muziek te maken, vrienden te maken en erbij te horen.'
                 )}
               </p>
             </div>
@@ -123,8 +123,8 @@ export default function YouthEnsembles() {
               {
                 title: t('The Option to Join a Youth Ensemble', 'De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'),
                 desc: t(
-                  'Children have the option to join Nederland in Harmonie, such as a choir, symphonic band, marching band, percussion ensemble, or orchestra, completely free.',
-                  'Kinderen hebben de mogelijkheid om deel te nemen aan Nederland in Harmonie, zoals een koor, harmonieorkest, fanfare, slagwerkensemble of orkest, volledig gratis.'
+                  'Children have the option to join Nederland in Harmonie. A choir, symphonic band, marching band, percussion ensemble, or orchestra, completely free.',
+                  'Kinderen hebben de mogelijkheid om deel te nemen aan Nederland in Harmonie. Een koor, harmonieorkest, fanfare, slagwerkensemble of orkest, volledig gratis.'
                 ),
               },
             ].map((step, i) => (
@@ -140,8 +140,8 @@ export default function YouthEnsembles() {
           </div>
           <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
             {t(
-              'These three steps are always connected at this stage: the youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
-              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden: de mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
+              'These three steps are always connected at this stage. The youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
+              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden. De mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
             )}
           </p>
         </div>
