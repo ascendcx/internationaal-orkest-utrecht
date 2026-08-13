@@ -17,7 +17,7 @@ export default function SchoolConcerts() {
   const steps = [
     { icon: <Music2 size={24} />, title: t('Step 1: The Orchestra Performs', 'Stap 1: Het Orkest Treedt Op'), desc: t('Our orchestra, often joined by vocal ensembles from the area, performs a customized instrumental and vocal concert for your students, at your school or a local hall.', 'Ons orkest, vaak samen met vocale ensembles uit de regio, verzorgt een op maat gemaakt instrumentaal en vocaal concert voor uw leerlingen, op uw school of in een lokale zaal.') },
     { icon: <Users size={24} />, title: t('Step 2: Students Try It Themselves', 'Stap 2: Leerlingen Proberen Het Zelf'), desc: t('After the performance, children try out instruments or sing in a group at their own school, guided by our musicians and singers.', 'Na de uitvoering proberen kinderen zelf instrumenten uit of zingen ze in een groep op hun eigen school, begeleid door onze muzikanten en zangers.') },
-    { icon: <CheckCircle size={24} />, title: t('Step 3: The Option to Join a Youth Ensemble', 'Stap 3: De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles: choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles: koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
+    { icon: <CheckCircle size={24} />, title: t('Step 3: The Option to Join a Youth Ensemble', 'Stap 3: De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
   ];
 
   return (
@@ -36,8 +36,8 @@ export default function SchoolConcerts() {
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'Subsidized, interactive instrumental and vocal concerts tailored to your students. From the first note to the hands-on instrument and singing sessions, we handle the details.',
-              'Gesubsidieerde, interactieve instrumentale en vocale concerten op maat voor uw leerlingen. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen de details.'
+              'Funded through grants and donations, our interactive instrumental and vocal concerts come to your school at no cost. From the first note to the hands-on instrument and singing sessions, we handle everything.',
+              'Gefinancierd door subsidies en donaties komen onze interactieve instrumentale en vocale concerten gratis naar uw school. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen alles.'
             )}
           </p>
           <a href="#booking" className="btn-gold">
@@ -52,7 +52,7 @@ export default function SchoolConcerts() {
           <div className="mb-12 fade-up">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] max-w-lg">
-              {t('A Seamless Experience for Your Staff', 'Een Naadloze Ervaring voor Uw Personeel')}
+              {t('We Handle Everything. Your Students Just Show Up.', 'Wij Regelen Alles. Uw Leerlingen Komen Gewoon Genieten.')}
             </h2>
           </div>
           {/* Annual-report style process: numbered steps with thin rules, no icon boxes */}
@@ -70,8 +70,8 @@ export default function SchoolConcerts() {
           </div>
           <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
             {t(
-              'These three steps are always connected at this stage: the youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
-              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden: de mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
+              'These three steps are always connected at this stage. The youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
+              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden. De mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
             )}
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function SchoolConcerts() {
             {t('Ready to Inspire Your Students?', 'Klaar om Uw Leerlingen te Inspireren?')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8">
-            {t('Contact us to discuss funding options, subsidies, and scheduling for your school.', 'Neem contact met ons op om financieringsopties, subsidies en planning voor uw school te bespreken.')}
+            {t('Tell us about your school and we will take it from there. No cost, no commitment, just music.', 'Vertel ons over uw school en wij nemen het van daaruit over. Geen kosten, geen verplichting, alleen muziek.')}
           </p>
           {submitted ? (
             <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
