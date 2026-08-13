@@ -52,7 +52,7 @@ export default function ConductorWorkshops() {
             <div>
               <span className="section-rule" />
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">
-                {t('Elevate Your Craft', 'Verbeter Uw Vak')}
+                {t('Train With a Professional Orchestra. Fund the Music.', 'Train Met een Professioneel Orkest. Financier de Muziek.')}
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
@@ -62,16 +62,16 @@ export default function ConductorWorkshops() {
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                 {t(
-                  'The workshops serve two purposes simultaneously: they generate funding for the orchestra and count toward rehearsal preparation for our next concert. This is smart programming that benefits everyone involved.',
-                  'De workshops dienen twee doelen tegelijkertijd: ze genereren financiering voor het orkest en tellen mee voor de repetitievoorbereidingen voor ons volgende concert. Dit is slim programmeren dat iedereen ten goede komt.'
+                  'Every workshop generates funding for the orchestra and counts toward rehearsal preparation for our next concert. You develop your craft. The music continues.',
+                  'Elke workshop genereert financiering voor het orkest en telt mee voor de repetitievoorbereidingen voor ons volgende concert. U ontwikkelt uw vak. De muziek gaat door.'
                 )}
               </p>
               <div className="bg-[oklch(0.95_0.02_195)] rounded-xl p-6 mb-6">
                 <h3 className="font-display font-semibold text-[oklch(0.22_0.01_60)] mb-3">{t('Workshop Leader', 'Workshop Leider')}</h3>
                 <p className="text-sm text-[oklch(0.42_0.01_60)] leading-relaxed">
                   {t(
-                    'Jennifer Diepman holds a Master of Music in Conducting from Messiah University and has studied at the Juilliard School of Music. She is a recipient of the Fred J. Miller 1st Prize Outstanding Achievement Award in Conducting.',
-                    'Jennifer Diepman heeft een Master of Music in Directie van de Messiah University en heeft gestudeerd aan de Juilliard School of Music. Ze is ontvanger van de Fred J. Miller 1e Prijs voor Uitstekende Prestatie in Directie.'
+                    'Jennifer Diepman holds a Master of Music in Conducting from Messiah University and has studied at the Juilliard School of Music. She is a recipient of the Fred J. Miller 1st Prize Outstanding Achievement Award in Conducting and the John Philip Sousa Award in Oboe Performance. She has led ensembles across the globe and founded the Internationaal Orkest Utrecht to bring that experience directly into the next generation of conductors.',
+                    'Jennifer Diepman heeft een Master of Music in Directie van de Messiah University en heeft gestudeerd aan de Juilliard School of Music. Ze is ontvanger van de Fred J. Miller 1e Prijs voor Uitstekende Prestatie in Directie en de John Philip Sousa Award in Hobo-uitvoering. Ze heeft ensembles over de hele wereld geleid en richtte het Internationaal Orkest Utrecht op om die ervaring rechtstreeks door te geven aan de volgende generatie dirigenten.'
                   )}
                 </p>
               </div>
@@ -87,11 +87,11 @@ export default function ConductorWorkshops() {
             </div>
             <div>
               <div className="bg-[oklch(0.38_0.09_195)] rounded-xl p-8 text-white mb-6">
-                <h3 className="font-display text-xl font-bold mb-4">{t('2026 / 2027 Season: Dates Coming Soon', 'Seizoen 2026 / 2027: Data Volgen Binnenkort')}</h3>
+                <h3 className="font-display text-xl font-bold mb-4">{t('2026 / 2027 Season — Dates Coming Soon', 'Seizoen 2026 / 2027 — Data Volgen Binnenkort')}</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-4">
                   {t(
-                    'Our conductor workshops are scheduled around rehearsal preparation for upcoming concerts. This means workshop dates follow directly from our concert calendar: once the concert season is confirmed, workshop registration opens shortly after.',
-                    'Onze dirigeerworkshops worden gepland rond de repetitievoorbereiding voor aankomende concerten. Dit betekent dat workshopdata rechtstreeks volgen uit onze concertkalender: zodra het concertseizoen is vastgesteld, opent de workshopinschrijving kort daarna.'
+                    'Our conductor workshops are scheduled around rehearsal preparation for upcoming concerts. This means workshop dates follow directly from our concert calendar. Once the concert season is confirmed, workshop registration opens shortly after.',
+                    'Onze dirigeerworkshops worden gepland rond de repetitievoorbereiding voor aankomende concerten. Dit betekent dat workshopdata rechtstreeks volgen uit onze concertkalender. Zodra het concertseizoen is vastgesteld, opent de workshopinschrijving kort daarna.'
                   )}
                 </p>
                 <p className="text-white/80 text-sm leading-relaxed mb-4">
