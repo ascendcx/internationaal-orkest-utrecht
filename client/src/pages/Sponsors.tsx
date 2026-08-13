@@ -32,8 +32,8 @@ export default function Sponsors() {
           </h1>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
-              'Align your business with a mission that brings music, education, and social cohesion to youth across the Netherlands.',
-              'Verbind uw bedrijf met een missie die muziek, onderwijs en sociale cohesie brengt aan jongeren door heel Nederland.'
+              'Your business can be part of something Utrecht\'s children will remember. We bring live music into schools, open the door to free youth ensembles, and build the kind of community bonds that last. Sponsors make that possible.',
+              'Uw bedrijf kan deel uitmaken van iets dat de kinderen van Utrecht zich zullen herinneren. Wij brengen live muziek naar scholen, openen de deur naar gratis jeugdensembles en bouwen aan de gemeenschapsbanden die blijven bestaan. Sponsors maken dat mogelijk.'
             )}
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function Sponsors() {
           </div>
           <div className="bg-[oklch(0.95_0.02_195)] rounded-xl p-12 text-center border border-dashed border-[oklch(0.88_0.015_195)]">
             <p className="text-[oklch(0.52_0.015_60)]">
-              {t('Sponsor logos and profiles will appear here. Be the first to support the International Orchestra of Utrecht!', 'Sponsorlogo\'s en -profielen verschijnen hier. Wees de eerste die het Internationaal Orkest Utrecht steunt!')}
+              {t('Sponsor logos and profiles will appear here. Reach out today and your business will be among the first to stand behind Nederland in Harmonie and the children it serves.', 'Sponsorlogo\'s en -profielen verschijnen hier. Neem vandaag contact op en uw bedrijf staat als een van de eersten achter Nederland in Harmonie en de kinderen die het dient.')}
             </p>
           </div>
         </div>
@@ -65,8 +65,8 @@ export default function Sponsors() {
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8 leading-relaxed">
             {t(
-              'Sponsoring the International Orchestra of Utrecht means more than a logo at a concert. It means your business stands behind something real: music education, social cohesion, and opportunity for every child in the Netherlands, regardless of background. That is a story worth telling.',
-              'Het sponsoren van het Internationaal Orkest Utrecht betekent meer dan een logo bij een concert. Het betekent dat uw bedrijf achter iets echts staat: muziekeducatie, sociale cohesie en kansen voor ieder kind in Nederland, ongeacht achtergrond. Dat is een verhaal dat het vertellen waard is.'
+              'Sponsoring the Internationaal Orkest Utrecht means more than a logo at a concert. It means your business stands behind something real. Music education, social cohesion, and opportunity for every child in the Netherlands, regardless of background. Your community will know you made it possible.',
+              'Het sponsoren van het Internationaal Orkest Utrecht betekent meer dan een logo bij een concert. Het betekent dat uw bedrijf achter iets echts staat. Muziekeducatie, sociale cohesie en kansen voor ieder kind in Nederland, ongeacht achtergrond. Uw gemeenschap zal weten dat u dit mogelijk heeft gemaakt.'
             )}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
@@ -90,7 +90,7 @@ export default function Sponsors() {
             {t('Become a Sponsor', 'Word Sponsor')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8">
-            {t('Contact us to discuss a custom partnership package for your business.', 'Neem contact met ons op om een op maat gemaakt partnerschapspakket voor uw bedrijf te bespreken.')}
+            {t('Tell us about your business and we will put together a partnership that works for both of us.', 'Vertel ons over uw bedrijf en wij stellen een partnerschap samen dat voor ons beiden werkt.')}
           </p>
           {submitted ? (
             <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
