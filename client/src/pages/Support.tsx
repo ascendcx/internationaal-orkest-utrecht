@@ -17,12 +17,12 @@ export default function Support() {
         <div className="relative container text-center text-white">
           <span className="section-rule mx-auto" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold mb-4">
-            {t('Your Support Changes Lives', 'Uw Steun Verandert Levens')}
+            {t('You Could Be the Reason a Child Picks Up an Instrument.', 'U Kunt de Reden Zijn Dat een Kind een Instrument Opneemt.')}
           </h1>
           <p className="text-white/80 max-w-xl mx-auto text-lg leading-relaxed">
             {t(
-              'Every contribution directly funds instrument access, professional instruction, and program administration for our free youth ensembles.',
-              'Elke bijdrage financiert direct toegang tot instrumenten, professionele instructie en programmaadministratie voor onze gratis jeugdensembles.'
+              'Every contribution puts an instrument in a child\'s hands, a teacher by their side, and a place in an ensemble where they belong. No fees, ever, for the children. Only because of people like you.',
+              'Elke bijdrage legt een instrument in de handen van een kind, zet een docent aan hun zijde en geeft hen een plek in een ensemble waar ze erbij horen. Nooit kosten voor de kinderen. Alleen dankzij mensen als u.'
             )}
           </p>
         </div>
@@ -38,8 +38,8 @@ export default function Support() {
             </h2>
             <p className="text-[oklch(0.52_0.015_60)] mb-6 leading-relaxed">
               {t(
-                'We believe in full transparency. The annual cost per student is calculated as follows:',
-                'Wij geloven in volledige transparantie. De jaarlijkse kosten per leerling worden als volgt berekend:'
+                'We believe in full transparency. Here is how the annual cost per student breaks down. Exact figures will be published once school relationships are established.',
+                'Wij geloven in volledige transparantie. Zo worden de jaarlijkse kosten per leerling opgebouwd. Exacte cijfers worden gepubliceerd zodra schoolrelaties zijn vastgesteld.'
               )}
             </p>
             <div className="bg-[oklch(0.95_0.02_195)] rounded-lg p-6 font-mono text-sm text-[oklch(0.38_0.09_195)]">
@@ -51,9 +51,6 @@ export default function Support() {
                 <span className="text-[oklch(0.72_0.12_75)]">{t('Coming soon', 'Binnenkort')}</span>
               </div>
             </div>
-            <p className="text-xs text-[oklch(0.52_0.015_60)] mt-4">
-              {t('Exact figures will be published once school relationships are established.', 'Exacte cijfers worden gepubliceerd zodra schoolrelaties zijn vastgesteld.')}
-            </p>
           </div>
         </div>
       </section>
@@ -76,7 +73,7 @@ export default function Support() {
               )}
             </p>
             <div className="bg-white/10 rounded-lg p-4 mb-6 text-sm text-white/70">
-              {t('Campaign link will be active once our Zeffy account is set up. Check back soon!', 'Campagnelink wordt actief zodra ons Zeffy-account is ingesteld. Kom snel terug!')}
+              {t('Our Zeffy campaign is being set up now. Once live, every euro donated here goes directly to the children with zero platform fees. Check back soon or join the newsletter below to be notified the moment it launches.', 'Onze Zeffy-campagne wordt nu opgezet. Zodra deze live is, gaat elke euro die hier wordt gedoneerd rechtstreeks naar de kinderen, zonder platformkosten. Kom snel terug of meld u aan voor de nieuwsbrief hieronder om op de hoogte te worden gebracht zodra de campagne van start gaat.')}
             </div>
             <label className="flex items-start gap-3 cursor-pointer mb-4">
               <input type="checkbox" checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} className="mt-0.5 rounded" />
