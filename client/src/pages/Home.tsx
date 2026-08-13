@@ -76,7 +76,9 @@ export default function Home() {
           <div className="mb-14 fade-up">
             <span className="section-rule" />
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] max-w-xl">
-              {t('Music That Moves. Opportunities That Last.', 'Muziek Die Beweegt. Kansen Die Blijven.')}
+              {t('Music That Moves.', 'Muziek Die Beweegt.')}
+              <br />
+              {t('Opportunities That Last.', 'Kansen Die Blijven.')}
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

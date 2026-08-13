@@ -33,10 +33,13 @@ export default function Footer() {
                 <div className="font-display font-semibold text-sm tracking-widest uppercase text-[oklch(0.72_0.12_75)]">Utrecht</div>
               </div>
             </div>
-            <p className="text-sm text-white/70 leading-relaxed mb-6">
-              {t('All children in the Netherlands united through music.', 'Alle kinderen in Nederland verenigd door muziek.')}
-              <br />
-              {t('Free concerts, free ensembles, lasting bonds.', 'Gratis concerten, gratis ensembles, blijvende banden.')}
+            <p className="mb-6">
+              <span className="block text-sm text-white/70 leading-relaxed">
+                {t('All children in the Netherlands united through music.', 'Alle kinderen in Nederland verenigd door muziek.')}
+              </span>
+              <span className="block text-xs font-light text-white/60 leading-relaxed mt-1.5">
+                {t('Free concerts, free ensembles, lasting bonds.', 'Gratis concerten, gratis ensembles, blijvende banden.')}
+              </span>
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/internationaalorkestutrecht/" target="_blank" rel="noopener noreferrer"
