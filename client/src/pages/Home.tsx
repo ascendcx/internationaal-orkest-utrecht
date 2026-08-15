@@ -22,8 +22,7 @@ export default function Home() {
             alt="Orchestra performing for children"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
         </div>
         <div className="relative container">
           <div className="max-w-2xl">
