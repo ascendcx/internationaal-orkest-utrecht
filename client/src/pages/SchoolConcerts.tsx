@@ -23,7 +23,7 @@ export default function SchoolConcerts() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-end pb-20 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-end pb-8 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg" alt="School concert" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
@@ -34,10 +34,16 @@ export default function SchoolConcerts() {
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
             {t('Bring a Symphony to Your School', 'Breng een Symfonie naar Uw School')}
           </h1>
-          <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
+          <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
               'Funded through grants and donations, our interactive instrumental and vocal concerts come to your school at no cost. From the first note to the hands-on instrument and singing sessions, we handle everything.',
               'Gefinancierd door subsidies en donaties komen onze interactieve instrumentale en vocale concerten gratis naar uw school. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen alles.'
+            )}
+          </p>
+          <p className="md:hidden text-white/85 text-lg max-w-xl leading-relaxed mb-8">
+            {t(
+              'Funded through grants and donations, our interactive instrumental and vocal concerts come to your school at no cost.',
+              'Gefinancierd door subsidies en donaties komen onze interactieve instrumentale en vocale concerten gratis naar uw school.'
             )}
           </p>
           <a href="#booking" className="btn-gold">
