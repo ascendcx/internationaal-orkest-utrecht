@@ -27,7 +27,7 @@ export default function Home() {
           {/* Desktop: transparent left fading to dark teal right */}
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-transparent from-0% via-transparent via-58% to-[oklch(0.22_0.05_195)]/92 to-100%" />
         </div>
-        <div className="relative h-full min-h-screen flex items-end pb-20 md:pb-0 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-center">
+        <div className="relative h-full min-h-screen flex items-end pb-20 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-end md:pb-20 lg:pb-24">
           <div className="container">
             <div className="max-w-2xl md:max-w-xl md:ml-auto md:mr-4 lg:mr-8">
               <span className="section-rule" />
