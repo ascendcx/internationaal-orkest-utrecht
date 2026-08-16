@@ -20,14 +20,14 @@ export default function Home() {
           <img
             src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg"
             alt="Orchestra performing for children"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[20%_center] md:object-center"
           />
           {/* Mobile: transparent top fading to dark teal bottom */}
           <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
           {/* Desktop: transparent left fading to dark teal right, reaching strong opacity early so it stays consistent behind the text block */}
           <div className="absolute inset-0 hidden md:block bg-[linear-gradient(to_right,transparent_0%,transparent_58%,oklch(0.22_0.05_195/93%)_74%,oklch(0.22_0.05_195/96%)_100%)]" />
         </div>
-        <div className="relative h-full min-h-screen flex items-end pb-20 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-end md:pb-20 lg:pb-24">
+        <div className="relative h-full min-h-screen flex items-end pb-24 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-end md:pb-20 lg:pb-24">
           <div className="container">
             <div className="max-w-2xl md:max-w-xl md:ml-auto md:mr-4 lg:mr-8">
               <span className="section-rule" />
@@ -45,20 +45,35 @@ export default function Home() {
               </p>
               <p className="md:hidden text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
                 {t(
-                  'Live music in schools. Free ensembles for every child.',
-                  'Live muziek op school. Gratis ensembles voor elk kind.'
+                  'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
+                  'Het begint met een concert, groeit met een ensemble en duurt een leven lang.'
                 )}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col gap-4 md:flex-row md:flex-wrap">
                 <Link href="/school-concerts" className="btn-gold">
                   {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
                   <ArrowRight size={16} />
                 </Link>
-                <Link href="/youth-ensembles" className="hidden md:inline-flex btn-secondary border-2 border-white/50 text-white hover:bg-white/10">
+                <Link href="/youth-ensembles" className="btn-secondary border-2 border-white/50 text-white hover:bg-white/10">
                   {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro / How It Works */}
+      <section className="py-16 lg:py-20 bg-[oklch(0.98_0.008_80)]">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="section-rule mx-auto" />
+            <p className="text-lg lg:text-xl text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t(
+                'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
+                'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
+              )}
+            </p>
           </div>
         </div>
       </section>
