@@ -45,7 +45,7 @@ export default function Home() {
               </p>
               <p className="md:hidden text-lg text-white/85 leading-relaxed mb-4 max-w-xl">
                 {t(
-                  'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
+                  'It starts with a concert, grows with an ensemble, and lasts a lifetime.',
                   'Het begint met een concert, groeit met een ensemble en duurt een leven lang.'
                 )}
               </p>
