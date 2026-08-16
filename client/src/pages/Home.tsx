@@ -15,38 +15,49 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-end pb-20 overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg"
             alt="Orchestra performing for children"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
+          {/* Mobile: transparent top fading to dark teal bottom */}
+          <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
+          {/* Desktop: transparent left fading to dark teal right */}
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-transparent from-0% via-transparent via-45% to-[oklch(0.22_0.05_195)]/92 to-100%" />
         </div>
-        <div className="relative container">
-          <div className="max-w-2xl">
-            <span className="section-rule" />
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              {t(
-                'All Children in the Netherlands United Through Music',
-                'Alle Kinderen in Nederland Verenigd door Muziek'
-              )}
-            </h1>
-            <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
-              {t(
-                'Every child deserves the chance to discover that music can be part of their life. We bring symphonic and vocal music into schools, then invite children into free local ensembles where they can sing, play, and belong. Together, teachers, parents, musicians, and supporters make that possible.',
-                'Elk kind verdient de kans om te ontdekken dat muziek deel kan zijn van zijn of haar leven. Wij brengen symfonische en vocale muziek naar scholen, en nodigen kinderen daarna uit voor gratis lokale ensembles waar ze kunnen zingen, spelen en erbij horen. Samen maken leraren, ouders, muzikanten en supporters dat mogelijk.'
-              )}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/school-concerts" className="btn-gold">
-                {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
-                <ArrowRight size={16} />
-              </Link>
-              <Link href="/youth-ensembles" className="btn-secondary border-white/50 text-white hover:bg-white/10">
-                {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
-              </Link>
+        <div className="relative h-full min-h-screen flex items-end pb-20 md:items-center md:pb-0">
+          <div className="container">
+            <div className="max-w-2xl md:max-w-xl md:ml-auto md:mr-4 lg:mr-8">
+              <span className="section-rule" />
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                {t(
+                  'All Children in the Netherlands United Through Music',
+                  'Alle Kinderen in Nederland Verenigd door Muziek'
+                )}
+              </h1>
+              <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
+                {t(
+                  'Every child deserves the chance to discover that music can be part of their life. We bring symphonic and vocal music into schools, then invite children into free local ensembles where they can sing, play, and belong. Together, teachers, parents, musicians, and supporters make that possible.',
+                  'Elk kind verdient de kans om te ontdekken dat muziek deel kan zijn van zijn of haar leven. Wij brengen symfonische en vocale muziek naar scholen, en nodigen kinderen daarna uit voor gratis lokale ensembles waar ze kunnen zingen, spelen en erbij horen. Samen maken leraren, ouders, muzikanten en supporters dat mogelijk.'
+                )}
+              </p>
+              <p className="md:hidden text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
+                {t(
+                  'Live music in schools. Free ensembles for every child.',
+                  'Live muziek op school. Gratis ensembles voor elk kind.'
+                )}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/school-concerts" className="btn-gold">
+                  {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
+                  <ArrowRight size={16} />
+                </Link>
+                <Link href="/youth-ensembles" className="hidden md:inline-flex btn-secondary border-white/50 text-white hover:bg-white/10">
+                  {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
