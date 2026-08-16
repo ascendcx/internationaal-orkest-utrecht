@@ -33,14 +33,14 @@ export default function Home() {
               <span className="section-rule" />
               <h1 className="font-display text-4xl sm:text-5xl md:text-4xl font-bold text-white leading-tight mb-6">
                 {t(
-                  'All Children in the Netherlands United Through Music',
-                  'Alle Kinderen in Nederland Verenigd door Muziek'
+                  'Children United Through Music',
+                  'Kinderen Verenigd door Muziek'
                 )}
               </h1>
               <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-sm">
                 {t(
-                  'Every child deserves the chance to discover that music can be part of their life. We bring symphonic and vocal music into schools, then invite children into free local ensembles where they can sing, play, and belong. Together, teachers, parents, musicians, and supporters make that possible.',
-                  'Elk kind verdient de kans om te ontdekken dat muziek deel kan zijn van zijn of haar leven. Wij brengen symfonische en vocale muziek naar scholen, en nodigen kinderen daarna uit voor gratis lokale ensembles waar ze kunnen zingen, spelen en erbij horen. Samen maken leraren, ouders, muzikanten en supporters dat mogelijk.'
+                  'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
+                  'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
                 )}
               </p>
               <p className="md:hidden text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
