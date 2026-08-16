@@ -25,19 +25,19 @@ export default function Home() {
           {/* Mobile: transparent top fading to dark teal bottom */}
           <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
           {/* Desktop: transparent left fading to dark teal right */}
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-transparent from-0% via-transparent via-45% to-[oklch(0.22_0.05_195)]/92 to-100%" />
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-transparent from-0% via-transparent via-58% to-[oklch(0.22_0.05_195)]/92 to-100%" />
         </div>
-        <div className="relative h-full min-h-screen flex items-end pb-20 md:items-center md:pb-0">
+        <div className="relative h-full min-h-screen flex items-end pb-20 md:pb-0 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-center">
           <div className="container">
             <div className="max-w-2xl md:max-w-xl md:ml-auto md:mr-4 lg:mr-8">
               <span className="section-rule" />
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-4xl font-bold text-white leading-tight mb-6">
                 {t(
                   'All Children in the Netherlands United Through Music',
                   'Alle Kinderen in Nederland Verenigd door Muziek'
                 )}
               </h1>
-              <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
+              <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-sm">
                 {t(
                   'Every child deserves the chance to discover that music can be part of their life. We bring symphonic and vocal music into schools, then invite children into free local ensembles where they can sing, play, and belong. Together, teachers, parents, musicians, and supporters make that possible.',
                   'Elk kind verdient de kans om te ontdekken dat muziek deel kan zijn van zijn of haar leven. Wij brengen symfonische en vocale muziek naar scholen, en nodigen kinderen daarna uit voor gratis lokale ensembles waar ze kunnen zingen, spelen en erbij horen. Samen maken leraren, ouders, muzikanten en supporters dat mogelijk.'
@@ -54,7 +54,7 @@ export default function Home() {
                   {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
                   <ArrowRight size={16} />
                 </Link>
-                <Link href="/youth-ensembles" className="hidden md:inline-flex btn-secondary border-white/50 text-white hover:bg-white/10">
+                <Link href="/youth-ensembles" className="hidden md:inline-flex btn-secondary border-2 border-white/50 text-white hover:bg-white/10">
                   {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
                 </Link>
               </div>
