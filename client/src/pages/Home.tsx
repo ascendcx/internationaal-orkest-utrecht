@@ -27,11 +27,11 @@ export default function Home() {
           {/* Desktop: transparent left fading to dark teal right, reaching strong opacity early so it stays consistent behind the text block */}
           <div className="absolute inset-0 hidden md:block bg-[linear-gradient(to_right,transparent_0%,transparent_58%,oklch(0.22_0.05_195/93%)_74%,oklch(0.22_0.05_195/96%)_100%)]" />
         </div>
-        <div className="relative h-full min-h-screen flex items-end pb-24 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-end md:pb-20 lg:pb-24">
+        <div className="relative h-full min-h-screen flex items-end pb-8 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-end md:pb-20 lg:pb-24">
           <div className="container">
             <div className="max-w-2xl md:max-w-xl md:ml-auto md:mr-4 lg:mr-8">
-              <span className="section-rule" />
-              <h1 className="font-display text-4xl sm:text-5xl md:text-4xl font-bold text-white leading-tight mb-6">
+              <span className="section-rule mb-2 md:mb-4" />
+              <h1 className="font-display text-4xl sm:text-5xl md:text-4xl font-bold text-white leading-tight mb-3 md:mb-6">
                 {t(
                   'Children United Through Music',
                   'Kinderen Verenigd door Muziek'
@@ -43,13 +43,13 @@ export default function Home() {
                   'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
                 )}
               </p>
-              <p className="md:hidden text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
+              <p className="md:hidden text-lg text-white/85 leading-relaxed mb-4 max-w-xl">
                 {t(
                   'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
                   'Het begint met een concert, groeit met een ensemble en duurt een leven lang.'
                 )}
               </p>
-              <div className="flex flex-col gap-4 md:flex-row md:flex-wrap">
+              <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:gap-4">
                 <Link href="/school-concerts" className="btn-gold">
                   {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
                   <ArrowRight size={16} />
