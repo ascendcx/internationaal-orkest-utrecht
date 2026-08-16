@@ -24,8 +24,8 @@ export default function Home() {
           />
           {/* Mobile: transparent top fading to dark teal bottom */}
           <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
-          {/* Desktop: transparent left fading to dark teal right */}
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-transparent from-0% via-transparent via-58% to-[oklch(0.22_0.05_195)]/92 to-100%" />
+          {/* Desktop: transparent left fading to dark teal right, reaching strong opacity early so it stays consistent behind the text block */}
+          <div className="absolute inset-0 hidden md:block bg-[linear-gradient(to_right,transparent_0%,transparent_58%,oklch(0.22_0.05_195/93%)_74%,oklch(0.22_0.05_195/96%)_100%)]" />
         </div>
         <div className="relative h-full min-h-screen flex items-end pb-20 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-end md:pb-20 lg:pb-24">
           <div className="container">
