@@ -24,7 +24,7 @@ export default function ConductorWorkshops() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-end pb-20 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-end pb-12 overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-conductor.jpg" alt="Conductor workshop" className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/60" />
@@ -35,21 +35,26 @@ export default function ConductorWorkshops() {
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
             {t('Professional Development for Conductors', 'Professionele Ontwikkeling voor Dirigenten')}
           </h1>
-          <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
+          <p className="text-white/85 text-lg max-w-xl leading-relaxed">
             {t(
-              'Led by Artistic Director Jennifer Diepman, our conductor workshops offer rigorous training while directly supporting Internationaal Orkest Utrecht.',
-              'Geleid door Artistiek Directeur Jennifer Diepman bieden onze dirigeerworkshops rigoureuze training terwijl ze het Internationaal Orkest Utrecht direct ondersteunen.'
+              'Rigorous training that directly funds the orchestra.',
+              'Rigoureuze training die het orkest direct financiert.'
             )}
           </p>
-          <div className="flex flex-wrap gap-3">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.72_0.12_75)]" />
-              {t('Hands-on podium time', 'Praktische podiumtijd')}
-            </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.72_0.12_75)]" />
-              {t('Funds the orchestra', 'Financiert het orkest')}
-            </div>
+        </div>
+      </section>
+
+      {/* Intro / About the Workshops */}
+      <section className="py-16 lg:py-20 bg-[oklch(0.98_0.008_80)]">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="section-rule mx-auto" />
+            <p className="text-lg lg:text-xl text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t(
+                'Led by Artistic Director Jennifer Diepman, our conductor workshops offer rigorous training while directly supporting Internationaal Orkest Utrecht.',
+                'Geleid door Artistiek Directeur Jennifer Diepman bieden onze dirigeerworkshops rigoureuze training terwijl ze het Internationaal Orkest Utrecht direct ondersteunen.'
+              )}
+            </p>
           </div>
         </div>
       </section>
