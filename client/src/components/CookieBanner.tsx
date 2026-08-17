@@ -11,12 +11,12 @@ export default function CookieBanner() {
     if (!consent) setVisible(true);
   }, []);
 
-  const accept = () => {
-    localStorage.setItem('iou-cookie-consent', 'accepted');
+  const acceptAll = () => {
+    localStorage.setItem('iou-cookie-consent', 'all');
     setVisible(false);
   };
-  const decline = () => {
-    localStorage.setItem('iou-cookie-consent', 'declined');
+  const essentialOnly = () => {
+    localStorage.setItem('iou-cookie-consent', 'essential');
     setVisible(false);
   };
 
@@ -27,17 +27,17 @@ export default function CookieBanner() {
       <div className="container py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="text-sm text-white/80 max-w-2xl">
           {t(
-            'We use cookies to improve your experience on our site. By continuing, you agree to our ',
-            'Wij gebruiken cookies om uw ervaring op onze site te verbeteren. Door verder te gaan, gaat u akkoord met ons '
+            'We use cookies to improve your experience. Essential cookies are always on. You can choose whether to allow analytics cookies. ',
+            'Wij gebruiken cookies om uw ervaring te verbeteren. Essentiële cookies staan altijd aan. U kunt zelf kiezen of u analytische cookies toestaat. '
           )}
-          <Link href="/privacy" className="text-[oklch(0.72_0.12_75)] underline">{t('Privacy Policy', 'Privacybeleid')}</Link>.
+          <Link href="/privacy" className="text-[oklch(0.72_0.12_75)] underline">{t('Privacy & Cookie Policy', 'Privacy- en Cookiebeleid')}</Link>.
         </p>
         <div className="flex gap-3 shrink-0">
-          <button onClick={decline} className="btn-secondary text-sm py-2 px-4 border-white/30 text-white hover:bg-white/10">
-            {t('Decline', 'Weigeren')}
+          <button onClick={essentialOnly} className="btn-secondary text-sm py-2 px-4 border-white/30 text-white hover:bg-white/10">
+            {t('Essential Only', 'Alleen Essentieel')}
           </button>
-          <button onClick={accept} className="btn-gold text-sm py-2 px-4">
-            {t('Accept', 'Accepteren')}
+          <button onClick={acceptAll} className="btn-gold text-sm py-2 px-4">
+            {t('Accept All', 'Alles Accepteren')}
           </button>
         </div>
       </div>
