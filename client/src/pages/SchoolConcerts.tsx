@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Music2, Users, ArrowRight } from 'lucide-react';
 
@@ -8,6 +9,14 @@ export default function SchoolConcerts() {
   const revealRef = useScrollReveal();
   const [form, setForm] = useState({ name: '', school: '', role: '', email: '', phone: '', dates: '', message: '', newsletter: false });
   const [submitted, setSubmitted] = useState(false);
+  useSEO({
+    title: 'Bring a Symphony to Your School | Internationaal Orkest Utrecht',
+    titleNl: 'Breng een Symfonie naar Uw School | Internationaal Orkest Utrecht',
+    description: 'Free, interactive instrumental and vocal concerts for schools across the Netherlands, funded through grants and donations.',
+    descriptionNl: 'Gratis, interactieve instrumentale en vocale concerten voor scholen in heel Nederland, gefinancierd door subsidies en donaties.',
+    path: '/school-concerts',
+    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

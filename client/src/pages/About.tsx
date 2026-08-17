@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useSEO } from '@/hooks/useSEO';
 import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';
 
@@ -25,6 +26,14 @@ const musicians = {
 export default function About() {
   const { t } = useLanguage();
   const revealRef = useScrollReveal();
+  useSEO({
+    title: 'About the Orchestra | Internationaal Orkest Utrecht',
+    titleNl: 'Over het Orkest | Internationaal Orkest Utrecht',
+    description: 'Meet the international musicians and conductor behind Internationaal Orkest Utrecht\'s mission to bring music and social cohesion to children across the Netherlands.',
+    descriptionNl: 'Maak kennis met de internationale muzikanten en dirigent achter de missie van Internationaal Orkest Utrecht om muziek en sociale cohesie te brengen bij kinderen in heel Nederland.',
+    path: '/about',
+    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+  });
 
   return (
     <div className="min-h-screen pt-20">

@@ -1,7 +1,16 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function Privacy() {
   const { t } = useLanguage();
+  useSEO({
+    title: 'Privacy & Cookie Policy | Internationaal Orkest Utrecht',
+    titleNl: 'Privacy- en Cookiebeleid | Internationaal Orkest Utrecht',
+    description: 'Read the Privacy & Cookie Policy for Internationaal Orkest Utrecht.',
+    descriptionNl: 'Lees het Privacy- en Cookiebeleid van Internationaal Orkest Utrecht.',
+    path: '/privacy',
+    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+  });
   return (
     <div className="min-h-screen pt-20">
       <section className="bg-[oklch(0.95_0.02_195)] py-16">

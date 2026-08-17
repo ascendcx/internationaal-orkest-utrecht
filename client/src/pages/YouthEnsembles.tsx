@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, ArrowRight, Music, Heart, Star, ExternalLink } from 'lucide-react';
 
@@ -6,6 +7,14 @@ export default function YouthEnsembles() {
   const { t } = useLanguage();
   const [form, setForm] = useState({ parentName: '', childName: '', childAge: '', school: '', email: '', phone: '', interest: '', newsletter: false });
   const [submitted, setSubmitted] = useState(false);
+  useSEO({
+    title: 'Nederland in Harmonie | Free Youth Ensembles',
+    titleNl: 'Nederland in Harmonie | Gratis Jeugdensembles',
+    description: 'Free after-school music ensembles for every child in the Netherlands. No audition, no fees, ever.',
+    descriptionNl: 'Gratis naschoolse muziekensembles voor elk kind in Nederland. Geen auditie, geen kosten, nooit.',
+    path: '/youth-ensembles',
+    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-youth-ensemble.jpg',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

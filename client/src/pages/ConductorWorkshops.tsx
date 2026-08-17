@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, ArrowRight, ExternalLink } from 'lucide-react';
 
@@ -6,6 +7,14 @@ export default function ConductorWorkshops() {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', role: '', message: '', newsletter: false });
   const [submitted, setSubmitted] = useState(false);
+  useSEO({
+    title: 'Conductor Workshops | Internationaal Orkest Utrecht',
+    titleNl: 'Dirigentenworkshops | Internationaal Orkest Utrecht',
+    description: 'Professional development workshops for conductors, led by Artistic Director Jennifer Diepman.',
+    descriptionNl: 'Professionele ontwikkelingsworkshops voor dirigenten, geleid door Artistiek Directeur Jennifer Diepman.',
+    path: '/conductor-workshops',
+    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-conductor.jpg',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -7,10 +7,19 @@ import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Music, Users, School } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function Home() {
   const { t } = useLanguage();
   const revealRef = useScrollReveal();
+  useSEO({
+    title: 'Internationaal Orkest Utrecht | Free Music Programs for Children in the Netherlands',
+    titleNl: 'Internationaal Orkest Utrecht | Gratis Muziekprogramma\'s voor Kinderen in Nederland',
+    description: 'Live orchestral concerts in schools and free youth ensembles for every child in the Netherlands. No fees, ever.',
+    descriptionNl: 'Live orkestconcerten op scholen en gratis jeugdensembles voor elk kind in Nederland. Geen kosten, nooit.',
+    path: '/',
+    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+  });
 
   return (
     <div className="min-h-screen">

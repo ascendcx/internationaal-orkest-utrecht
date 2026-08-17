@@ -1,10 +1,19 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSEO } from '@/hooks/useSEO';
 import { ExternalLink, QrCode, CreditCard, Building2, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Support() {
   const { t } = useLanguage();
   const [newsletter, setNewsletter] = useState(false);
+  useSEO({
+    title: 'Donate | Internationaal Orkest Utrecht',
+    titleNl: 'Doneren | Internationaal Orkest Utrecht',
+    description: 'Support free youth music ensembles and school concerts across the Netherlands. Every donation helps a child play, sing, and belong.',
+    descriptionNl: 'Steun gratis jeugdmuziekensembles en schoolconcerten in heel Nederland. Elke donatie helpt een kind spelen, zingen en erbij horen.',
+    path: '/support',
+    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-support.jpg',
+  });
 
   return (
     <div className="min-h-screen pt-20">
