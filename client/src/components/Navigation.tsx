@@ -87,16 +87,16 @@ export default function Navigation() {
               {/* Language Toggle */}
               <div className={`flex items-center text-xs font-medium rounded-full border overflow-hidden ${isHome && !scrolled ? 'border-white/40' : 'border-[oklch(0.88_0.015_195)]'}`}>
                 <button
-                  onClick={() => setLang('en')}
-                  className={`px-3 py-1.5 transition-colors duration-150 ${lang === 'en' ? 'bg-[oklch(0.38_0.09_195)] text-white' : `${textColor} hover:bg-[oklch(0.95_0.02_195)]`}`}
-                >
-                  EN
-                </button>
-                <button
                   onClick={() => setLang('nl')}
                   className={`px-3 py-1.5 transition-colors duration-150 ${lang === 'nl' ? 'bg-[oklch(0.38_0.09_195)] text-white' : `${textColor} hover:bg-[oklch(0.95_0.02_195)]`}`}
                 >
                   NL
+                </button>
+                <button
+                  onClick={() => setLang('en')}
+                  className={`px-3 py-1.5 transition-colors duration-150 ${lang === 'en' ? 'bg-[oklch(0.38_0.09_195)] text-white' : `${textColor} hover:bg-[oklch(0.95_0.02_195)]`}`}
+                >
+                  EN
                 </button>
               </div>
               <Link href="/support" className="btn-gold text-sm py-2 px-4">
@@ -136,16 +136,16 @@ export default function Navigation() {
             <div className="mt-4 flex items-center gap-3">
               <div className="flex items-center text-xs font-medium rounded-full border border-[oklch(0.88_0.015_195)] overflow-hidden">
                 <button
-                  onClick={() => setLang('en')}
-                  className={`px-4 py-2 transition-colors ${lang === 'en' ? 'bg-[oklch(0.38_0.09_195)] text-white' : 'text-[oklch(0.22_0.01_60)]'}`}
-                >
-                  EN
-                </button>
-                <button
                   onClick={() => setLang('nl')}
                   className={`px-4 py-2 transition-colors ${lang === 'nl' ? 'bg-[oklch(0.38_0.09_195)] text-white' : 'text-[oklch(0.22_0.01_60)]'}`}
                 >
                   NL
+                </button>
+                <button
+                  onClick={() => setLang('en')}
+                  className={`px-4 py-2 transition-colors ${lang === 'en' ? 'bg-[oklch(0.38_0.09_195)] text-white' : 'text-[oklch(0.22_0.01_60)]'}`}
+                >
+                  EN
                 </button>
               </div>
               <Link href="/support" className="btn-gold text-sm">
