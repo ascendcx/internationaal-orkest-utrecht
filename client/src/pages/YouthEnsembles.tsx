@@ -37,13 +37,28 @@ export default function YouthEnsembles() {
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'Nederland in Harmonie (The Netherlands in Harmony) offers free ensemble programs for every child living in the Netherlands. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras. No audition, no experience, no fees. Ever.',
-              'Nederland in Harmonie biedt gratis ensembleprogramma\'s voor ieder kind dat in Nederland woont. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten. Geen auditie, geen ervaring, geen kosten. Nooit.'
+              'Every child in the Netherlands can join, for free.',
+              'Elk kind in Nederland kan meedoen, gratis.'
             )}
           </p>
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-[oklch(0.72_0.12_75)]" />
             <span className="text-white text-sm font-medium">{t('No Fees. Ever.', 'Nooit Kosten.')}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro / About Nederland in Harmonie */}
+      <section className="py-16 lg:py-20 bg-[oklch(0.98_0.008_80)]">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="section-rule mx-auto" />
+            <p className="text-lg lg:text-xl text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t(
+                'Nederland in Harmonie (The Netherlands in Harmony) offers free ensemble programs for every child living in the Netherlands. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras. No audition, no experience, no fees. Ever.',
+                'Nederland in Harmonie biedt gratis ensembleprogramma\'s voor ieder kind dat in Nederland woont. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten. Geen auditie, geen ervaring, geen kosten. Nooit.'
+              )}
+            </p>
           </div>
         </div>
       </section>
