@@ -18,12 +18,12 @@ export default function Contact() {
         <div className="container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
-            {t("We'd Love to Hear From You", 'We Horen Graag van U')}
+            {t('Let\'s Bring Music to Your School', 'Laten We Muziek Naar Uw School Brengen')}
           </h1>
           <p className="text-[oklch(0.52_0.015_60)] max-w-xl leading-relaxed">
             {t(
-              'Whether you have a question about a concert, want to join an ensemble, or are interested in supporting our work, please reach out.',
-              'Of u nu een vraag heeft over een concert, wilt deelnemen aan een ensemble of geïnteresseerd bent in het ondersteunen van ons werk, neem gerust contact op.'
+              'Whether you have a question about a concert, want to join an ensemble, or are interested in supporting our work, please reach out. We respond within 2 business days.',
+              'Of u nu een vraag heeft over een concert, wilt deelnemen aan een ensemble of geïnteresseerd bent in het ondersteunen van ons werk, neem gerust contact op. Wij reageren binnen 2 werkdagen.'
             )}
           </p>
         </div>
