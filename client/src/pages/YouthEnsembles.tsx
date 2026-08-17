@@ -24,7 +24,7 @@ export default function YouthEnsembles() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-end pb-12 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-end pb-12 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-youth-ensemble.jpg" alt="Youth ensemble" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
@@ -35,12 +35,22 @@ export default function YouthEnsembles() {
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
             {t('Learn, Play, and Grow Together', 'Leren, Spelen en Samen Groeien')}
           </h1>
-          <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
+          <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
+            {t(
+              'Nederland in Harmonie (The Netherlands in Harmony) offers free ensemble programs for every child living in the Netherlands. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras. No audition, no experience, no fees. Ever.',
+              'Nederland in Harmonie biedt gratis ensembleprogramma\'s voor ieder kind dat in Nederland woont. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten. Geen auditie, geen ervaring, geen kosten. Nooit.'
+            )}
+          </p>
+          <p className="md:hidden text-white/85 text-lg max-w-xl leading-relaxed">
             {t(
               'Every child in the Netherlands can join, for free.',
               'Elk kind in Nederland kan meedoen, gratis.'
             )}
           </p>
+          <div className="hidden md:inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
+            <span className="w-2 h-2 rounded-full bg-[oklch(0.72_0.12_75)]" />
+            <span className="text-white text-sm font-medium">{t('No Fees. Ever.', 'Nooit Kosten.')}</span>
+          </div>
         </div>
       </section>
 
