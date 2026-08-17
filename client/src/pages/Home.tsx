@@ -48,14 +48,14 @@ export default function Home() {
               </h1>
               <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-sm">
                 {t(
-                  'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
-                  'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
+                  'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
+                  'Het begint met een concert, groeit met een ensemble en duurt daarna een leven lang.'
                 )}
               </p>
               <p className="md:hidden text-lg text-white/85 leading-relaxed mb-4 max-w-xl">
                 {t(
-                  'It starts with a concert, grows with an ensemble, and lasts a lifetime.',
-                  'Het begint met een concert, groeit met een ensemble en duurt een leven lang.'
+                  'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
+                  'Het begint met een concert, groeit met een ensemble en duurt daarna een leven lang.'
                 )}
               </p>
               <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:gap-4">
