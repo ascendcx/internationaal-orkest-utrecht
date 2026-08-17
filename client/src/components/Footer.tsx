@@ -132,8 +132,8 @@ export default function Footer() {
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
           <p>© {new Date().getFullYear()} Stichting Internationaal Orkest Utrecht. {t('All rights reserved.', 'Alle rechten voorbehouden.')}</p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-white/70 transition-colors no-underline">{t('Privacy Policy', 'Privacybeleid')}</Link>
-            <Link href="/privacy" className="hover:text-white/70 transition-colors no-underline">{t('Cookie Policy', 'Cookiebeleid')}</Link>
+            <Link href="/privacy#privacy-policy" className="hover:text-white/70 transition-colors no-underline">{t('Privacy Policy', 'Privacybeleid')}</Link>
+            <Link href="/privacy#cookie-policy" className="hover:text-white/70 transition-colors no-underline">{t('Cookie Policy', 'Cookiebeleid')}</Link>
             <a href="mailto:info@internationaalorkest.nl" className="hover:text-white/70 transition-colors no-underline">info@internationaalorkest.nl</a>
           </div>
         </div>

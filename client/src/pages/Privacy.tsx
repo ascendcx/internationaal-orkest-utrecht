@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
+import { useEffect } from 'react';
 
 export default function Privacy() {
   const { t } = useLanguage();
@@ -11,9 +12,32 @@ export default function Privacy() {
     path: '/privacy',
     image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
   });
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash.slice(1);
+      // "privacy-policy" is the top hero section, already positioned to clear
+      // the fixed nav via the page's pt-20 wrapper — treat it as "scroll to top"
+      // rather than scrollIntoView, which would overshoot by the nav's height.
+      const el = hash && hash !== 'privacy-policy' ? document.getElementById(hash) : null;
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: hash ? 'smooth' : 'auto' });
+      }
+    };
+    scrollToHash();
+    window.addEventListener('pushState', scrollToHash);
+    window.addEventListener('popstate', scrollToHash);
+    return () => {
+      window.removeEventListener('pushState', scrollToHash);
+      window.removeEventListener('popstate', scrollToHash);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen pt-20">
-      <section className="bg-[oklch(0.95_0.02_195)] py-16">
+      <section id="privacy-policy" className="bg-[oklch(0.95_0.02_195)] py-16">
         <div className="container max-w-3xl">
           <span className="section-rule" />
           <h1 className="font-display text-4xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
@@ -38,7 +62,7 @@ export default function Privacy() {
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('3. How We Use Your Data', '3. Hoe Wij Uw Gegevens Gebruiken')}</h2>
               <p>{t('Your data is used solely to respond to your inquiry, process your registration, or send you updates you have opted into. We do not sell, rent, or share your personal data with third parties for marketing purposes.', 'Uw gegevens worden uitsluitend gebruikt om te reageren op uw vraag, uw inschrijving te verwerken of u updates te sturen waarvoor u zich heeft aangemeld. Wij verkopen, verhuren of delen uw persoonsgegevens niet met derden voor marketingdoeleinden.')}</p>
             </div>
-            <div>
+            <div id="cookie-policy" className="scroll-mt-20">
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('4. Cookies', '4. Cookies')}</h2>
               <p>{t('This website uses functional cookies to ensure proper operation and analytical cookies to understand how visitors use our site. We do not use advertising or tracking cookies. You can manage your cookie preferences at any time through your browser settings.', 'Deze website gebruikt functionele cookies om een goede werking te garanderen en analytische cookies om te begrijpen hoe bezoekers onze site gebruiken. Wij gebruiken geen advertentie- of trackingcookies. U kunt uw cookievoorkeuren op elk moment beheren via uw browserinstellingen.')}</p>
             </div>
