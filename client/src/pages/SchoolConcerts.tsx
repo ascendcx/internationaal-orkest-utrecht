@@ -41,18 +41,18 @@ export default function SchoolConcerts() {
         <div className="relative container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
-            {t('Bring a Symphony to Your School', 'Breng een Symfonie naar Uw School')}
+            {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
           </h1>
           <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'Funded through grants and donations, our interactive instrumental and vocal concerts come to your school at no cost. From the first note to the hands-on instrument and singing sessions, we handle everything.',
-              'Gefinancierd door subsidies en donaties komen onze interactieve instrumentale en vocale concerten gratis naar uw school. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen alles.'
+              'Funded through grants and donations, our interactive symphonic and vocal concerts come to your school at no cost. From the first note to the hands-on instrument and singing sessions, we handle everything.',
+              'Gefinancierd door subsidies en donaties komen onze interactieve symfonische en vocale concerten gratis naar uw school. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen alles.'
             )}
           </p>
           <p className="md:hidden text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
-              'Funded through grants and donations, our interactive instrumental and vocal concerts come to your school at no cost.',
-              'Gefinancierd door subsidies en donaties komen onze interactieve instrumentale en vocale concerten gratis naar uw school.'
+              'Funded through grants and donations, our interactive symphonic and vocal concerts come to your school at no cost.',
+              'Gefinancierd door subsidies en donaties komen onze interactieve symfonische en vocale concerten gratis naar uw school.'
             )}
           </p>
           <a href="#booking" className="btn-gold">

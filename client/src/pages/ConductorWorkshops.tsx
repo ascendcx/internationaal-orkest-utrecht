@@ -92,8 +92,8 @@ export default function ConductorWorkshops() {
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                 {t(
-                  'Every workshop generates funding for the orchestra and counts toward rehearsal preparation for our next concert. You develop your craft. The music continues.',
-                  'Elke workshop genereert financiering voor het orkest en telt mee voor de repetitievoorbereidingen voor ons volgende concert. U ontwikkelt uw vak. De muziek gaat door.'
+                  'Every workshop supports our youth concerts and ensembles. You develop your artistry.',
+                  'Elke workshop ondersteunt onze jeugdconcerten en ensembles. U ontwikkelt uw artisticiteit.'
                 )}
               </p>
               <div className="bg-[oklch(0.95_0.02_195)] rounded-xl p-6 mb-6">

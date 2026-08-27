@@ -93,8 +93,8 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <blockquote className="pull-quote text-center border-none pl-0 mb-6">
               {t(
-                '"Almost 900 children, laughing, clapping, and having the time of their lives while our orchestra played."',
-                '"Bijna 900 kinderen, lachend, klappend en de tijd van hun leven hebbend terwijl ons orkest speelde."'
+                '"More than 600 children, laughing, clapping, and having the time of their lives while our orchestra played."',
+                '"Meer dan 600 kinderen, lachend, klappend en de tijd van hun leven hebbend terwijl ons orkest speelde."'
               )}
             </blockquote>
             <cite className="text-sm text-[oklch(0.52_0.015_60)] not-italic font-medium">
@@ -192,10 +192,10 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
             {[
-              { num: '40+', label: t('International Musicians', 'Internationale Muzikanten') },
-              { num: '900+', label: t('Children Reached', 'Kinderen Bereikt') },
+              { num: '50', label: t('International Musicians', 'Internationale Muzikanten') },
+              { num: '600+', label: t('Children Reached', 'Kinderen Bereikt') },
               { num: '0€', label: t('Cost to Youth Participants', 'Kosten voor Jongeren') },
-              { num: '15+', label: t('Countries Represented', 'Vertegenwoordigde Landen') },
+              { num: '50+', label: t('Nationalities Connected Through Music', 'Nationaliteiten Verbonden Door Muziek') },
             ].map((stat) => (
               <div key={stat.label} className="py-4">
                 <div className="font-display text-4xl lg:text-5xl font-bold text-[oklch(0.72_0.12_75)] mb-2">{stat.num}</div>
