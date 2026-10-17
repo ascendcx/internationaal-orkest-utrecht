@@ -1,17 +1,51 @@
 /*
  * IOU Home Page — Refined Civic Warmth
  * Hero: full-bleed image, left-anchored text, dual CTA
- * Sections: Magical Moment quote, Two Pillars, Impact Stats, Support CTA
+ * Sections: Journey, Funding, Schools, Parents, Quote, Impact Stats, Support CTA
  */
 import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, Music, Users, School } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+const IMG = 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
 
 export default function Home() {
   const { t } = useLanguage();
   const revealRef = useScrollReveal();
+  const fundedRef = useScrollReveal();
+  const schoolsRef = useScrollReveal();
+  const parentsRef = useScrollReveal();
+  const journeySteps = [
+    {
+      img: 'iou-school-concert.jpg',
+      alt: t('School concert', 'Schoolconcert'),
+      title: t('A child hears music', 'Een kind hoort muziek'),
+      body: t(
+        'A free concert comes to their own school.',
+        'Een gratis concert komt naar hun eigen school.'
+      ),
+    },
+    {
+      img: 'iou-conductor.jpg',
+      alt: t('Conductor leading musicians', 'Dirigent met musici'),
+      title: t('The moment it clicks', 'Het moment dat het klikt'),
+      body: t(
+        'They see and hear real musicians. And they want to try.',
+        'Ze zien en horen echte musici. En ze willen het zelf proberen.'
+      ),
+    },
+    {
+      img: 'iou-youth-ensemble.jpg',
+      alt: t('Youth ensemble rehearsal', 'Repetitie jeugdensemble'),
+      title: t('They keep it', 'Ze houden het vast'),
+      body: t(
+        'A free local ensemble, Nederland in Harmonie, where they learn to play, sing, and belong.',
+        'Een gratis lokaal ensemble, Nederland in Harmonie, waar ze leren spelen, zingen en erbij horen.'
+      ),
+    },
+  ];
   useSEO({
     title: 'Internationaal Orkest Utrecht | Free Music Programs for Children in the Netherlands',
     titleNl: 'Internationaal Orkest Utrecht | Gratis Muziekprogramma\'s voor Kinderen in Nederland',
@@ -72,17 +106,144 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intro / How It Works */}
-      <section className="py-16 lg:py-20 bg-[oklch(0.98_0.008_80)]">
+      {/* The Journey */}
+      <section className="py-20 lg:py-28 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
         <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <span className="section-rule mx-auto" />
-            <p className="text-lg lg:text-xl text-[oklch(0.42_0.01_60)] leading-relaxed">
+          <div className="mb-14 fade-up">
+            <span className="section-rule" />
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] max-w-xl">
+              {t('One Path. Every Child.', 'Eén Pad. Elk Kind.')}
+            </h2>
+          </div>
+          <div className="flex flex-col lg:flex-row lg:items-stretch">
+            {journeySteps.map((step, i) => (
+              <div key={step.img} className="contents">
+                <div
+                  className="fade-up flex-1 overflow-hidden rounded-xl bg-white shadow-sm border border-[oklch(0.92_0.01_195)]"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <div className="h-52 overflow-hidden">
+                    <img src={IMG + step.img} alt={step.alt} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-6 lg:p-7">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] text-sm font-bold mb-3">
+                      {i + 1}
+                    </span>
+                    <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{step.title}</h3>
+                    <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">{step.body}</p>
+                  </div>
+                </div>
+                {i < journeySteps.length - 1 && (
+                  <>
+                    {/* Mobile: vertical gold line */}
+                    <div className="lg:hidden mx-auto w-px h-10 bg-[oklch(0.72_0.12_75)]" aria-hidden="true" />
+                    {/* Desktop: horizontal gold line with arrow */}
+                    <div className="hidden lg:flex items-center self-center w-12 shrink-0 text-[oklch(0.72_0.12_75)]" aria-hidden="true">
+                      <div className="flex-1 h-px bg-[oklch(0.72_0.12_75)]" />
+                      <ArrowRight size={16} className="-ml-1" />
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it is funded */}
+      <section className="py-12 bg-[oklch(0.95_0.02_195)]" ref={fundedRef}>
+        <div className="container">
+          <div className="fade-up max-w-3xl mx-auto text-center">
+            <p className="text-lg text-[oklch(0.32_0.02_60)] leading-relaxed mb-4">
               {t(
-                'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
-                'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
+                'Free for every child. Made possible by donations, grants, and other funds.',
+                'Gratis voor elk kind. Mogelijk gemaakt door donaties, subsidies en andere fondsen.'
               )}
             </p>
+            <Link href="/support" className="inline-flex items-center gap-2 text-sm font-semibold text-[oklch(0.38_0.09_195)] hover:underline">
+              {t('See how you can help', 'Zie hoe u kunt helpen')}
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* For Schools */}
+      <section className="py-20 lg:py-24 bg-[oklch(0.98_0.008_80)]" ref={schoolsRef}>
+        <div className="container">
+          <div className="fade-up max-w-2xl mb-10">
+            <span className="section-rule" />
+            <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
+              {t('For Schools', 'Voor Scholen')}
+            </span>
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
+              {t('Bring the Concert to Your School', 'Breng het Concert naar Uw School')}
+            </h2>
+            <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t('Choose what fits your school. Both options are free.', 'Kies wat bij uw school past. Beide opties zijn gratis.')}
+            </p>
+          </div>
+          <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6" style={{ transitionDelay: '80ms' }}>
+            <Link
+              href="/contact?interest=concert"
+              className="group rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
+                {t('Book a concert', 'Boek een concert')}
+              </h3>
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+                {t(
+                  'A concert only. Good for schools that already have a music program, such as MuziekRoute.',
+                  'Alleen een concert. Fijn voor scholen die al een muziekprogramma hebben, zoals MuziekRoute.'
+                )}
+              </p>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-[oklch(0.38_0.09_195)] group-hover:underline">
+                {t('Get in touch', 'Neem contact op')}
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+            <Link
+              href="/contact?interest=concert-ensemble"
+              className="group rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
+                {t('Concert and ensemble', 'Concert en ensemble')}
+              </h3>
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+                {t(
+                  'A concert, plus a local Nederland in Harmonie (The Netherlands in Harmony) ensemble for your students to join.',
+                  'Een concert, plus een lokaal Nederland in Harmonie (The Netherlands in Harmony) ensemble waar uw leerlingen aan kunnen deelnemen.'
+                )}
+              </p>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-[oklch(0.38_0.09_195)] group-hover:underline">
+                {t('Get in touch', 'Neem contact op')}
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* For Parents */}
+      <section className="py-14 bg-[oklch(0.95_0.02_195)]" ref={parentsRef}>
+        <div className="container">
+          <div className="fade-up max-w-2xl">
+            <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
+              {t('For Parents', 'Voor Ouders')}
+            </span>
+            <h2 className="font-display text-2xl lg:text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
+              {t('Want your child to join?', 'Wilt u dat uw kind meedoet?')}
+            </h2>
+            <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
+              {t(
+                'Find a free ensemble near you. No fees, ever.',
+                'Vind een gratis ensemble bij u in de buurt. Nooit kosten.'
+              )}
+            </p>
+            <Link href="/youth-ensembles" className="btn-primary text-sm">
+              {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
+              <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
@@ -100,89 +261,6 @@ export default function Home() {
             <cite className="text-sm text-[oklch(0.52_0.015_60)] not-italic font-medium">
               Jennifer Diepman, {t('Founder & Artistic Director', 'Oprichter & Artistiek Directeur')}
             </cite>
-          </div>
-        </div>
-      </section>
-
-      {/* Two Pillars */}
-      <section className="py-20 lg:py-28 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
-        <div className="container">
-          <div className="mb-14 fade-up">
-            <span className="section-rule" />
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] max-w-xl">
-              {t('Music That Moves.', 'Muziek Die Beweegt.')}
-              <br />
-              {t('Opportunities That Last.', 'Kansen Die Blijven.')}
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* For Schools */}
-            <div className="fade-up group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[oklch(0.92_0.01_195)]">
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg"
-                  alt="School concert"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-[oklch(0.95_0.02_195)]">
-                    <School size={20} className="text-[oklch(0.38_0.09_195)]" />
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)]">
-                    {t('For Schools', 'Voor Scholen')}
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
-                  {t('Interactive School Concerts', 'Interactieve Schoolconcerten')}
-                </h3>
-                <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
-                  {t(
-                    'Funded through grants and donations, our customizable instrumental and vocal concerts come to your school at no cost. Often joined by vocal ensembles from the area, every performance is designed to do one thing: make your students fall in love with music.',
-                    'Gefinancierd door subsidies en donaties komen onze aanpasbare instrumentale en vocale concerten gratis naar uw school. Vaak aangevuld met vocale ensembles uit de regio, is elk optreden ontworpen om één ding te doen: uw leerlingen verliefd laten worden op muziek.'
-                  )}
-                </p>
-                <Link href="/school-concerts" className="btn-primary text-sm">
-                  {t('Learn How It Works', 'Ontdek Hoe Het Werkt')}
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
-
-            {/* For Parents */}
-            <div className="fade-up group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[oklch(0.92_0.01_195)]" style={{ transitionDelay: '80ms' }}>
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-youth-ensemble.jpg"
-                  alt="Youth ensemble rehearsal"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-[oklch(0.95_0.02_195)]">
-                    <Users size={20} className="text-[oklch(0.38_0.09_195)]" />
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)]">
-                    {t('For Parents & Youth', 'Voor Ouders & Jongeren')}
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
-                  {t('Free Youth Ensembles', 'Gratis Jeugdensembles')}
-                </h3>
-                <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
-                  {t(
-                    'Whether your child heard us at school or you found us here, Nederland in Harmonie is ready for them. A choir, symphonic band, marching band, percussion ensemble, or orchestra, completely free, after school, at a local school near you. A place to play, sing, grow, and belong.',
-                    'Of uw kind ons nu op school heeft gehoord of u ons hier heeft gevonden, Nederland in Harmonie staat voor hen klaar. Een koor, harmonieorkest, fanfare, slagwerkensemble of orkest, volledig gratis, naschools, op een school bij u in de buurt. Een plek om te spelen, te zingen, te groeien en erbij te horen.'
-                  )}
-                </p>
-                <Link href="/youth-ensembles" className="btn-primary text-sm">
-                  {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
