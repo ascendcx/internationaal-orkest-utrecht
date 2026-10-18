@@ -88,8 +88,14 @@ export default function YouthEnsembles() {
               </h3>
               <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
                 {t(
-                  'Thanks to our donors, grants, and supporters, there are no fees for instruction or instrument access. Ever. Every child participates on equal footing.',
-                  'Dankzij onze donateurs, subsidies en supporters zijn er nooit kosten voor les of instrumenten. Elk kind doet mee op gelijke voet.'
+                  'Free for every child, thanks to donations, grants, and other funds. There are no fees for instruction or instrument access. Ever. Every child participates on equal footing.',
+                  'Gratis voor elk kind, dankzij donaties, subsidies en andere fondsen. Er zijn nooit kosten voor les of instrumenten. Elk kind doet mee op gelijke voet.'
+                )}
+              </p>
+              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm mt-3">
+                {t(
+                  'Anyone can join for free. Families who are able are warmly welcome to support us during our fundraising campaigns. It is never required.',
+                  'Iedereen mag gratis meedoen. Gezinnen die dat kunnen, zijn tijdens onze fondsenwervende acties van harte welkom om ons te steunen. Het is nooit verplicht.'
                 )}
               </p>
             </div>

@@ -31,6 +31,7 @@ export default function Footer() {
               <div className="leading-tight">
                 <div className="font-display font-semibold text-sm text-white">Internationaal Orkest</div>
                 <div className="font-display font-semibold text-sm tracking-widest uppercase text-[oklch(0.72_0.12_75)]">Utrecht</div>
+                <div className="text-[10px] font-light tracking-wide text-white/60 mt-0.5">{t('in partnership with local choirs', 'in samenwerking met lokale koren')}</div>
               </div>
             </div>
             <p className="mb-6">

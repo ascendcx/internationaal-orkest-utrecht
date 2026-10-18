@@ -62,6 +62,9 @@ export default function Navigation() {
                 <span className={`font-display font-semibold text-sm tracking-widest uppercase ${logoColor} transition-colors duration-300`}>
                   Utrecht
                 </span>
+                <span className={`font-normal text-[10px] tracking-wide opacity-70 ${logoColor} transition-colors duration-300`}>
+                  {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
+                </span>
               </div>
             </Link>
 

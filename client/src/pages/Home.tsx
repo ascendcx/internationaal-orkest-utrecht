@@ -74,12 +74,15 @@ export default function Home() {
           <div className="container">
             <div className="max-w-2xl md:max-w-xl md:ml-auto md:mr-4 lg:mr-8">
               <span className="section-rule mb-2 md:mb-4" />
-              <h1 className="font-display text-4xl sm:text-5xl md:text-4xl font-bold text-white leading-tight mb-3 md:mb-6">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-4xl font-bold text-white leading-tight mb-1 md:mb-2">
                 {t(
                   'Children United Through Music',
                   'Kinderen Verenigd door Muziek'
                 )}
               </h1>
+              <p className="text-xs font-light tracking-wide text-white/70 mb-3 md:mb-6 first-letter:uppercase">
+                {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
+              </p>
               <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-sm">
                 {t(
                   'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
@@ -236,8 +239,8 @@ export default function Home() {
             </h2>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
               {t(
-                'Find a free ensemble near you. No fees, ever.',
-                'Vind een gratis ensemble bij u in de buurt. Nooit kosten.'
+                'Find a free ensemble near you. Free for every child, made possible by donations, grants, and other funds.',
+                'Vind een gratis ensemble bij u in de buurt. Gratis voor elk kind, mogelijk gemaakt door donaties, subsidies en andere fondsen.'
               )}
             </p>
             <Link href="/youth-ensembles" className="btn-primary text-sm">
@@ -297,8 +300,8 @@ export default function Home() {
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
             {t(
-              'Every donation funds the next concert, the next ensemble, and the next child who discovers that music is for them. No fees, ever, for the children. That is only possible because of people like you.',
-              'Elke donatie financiert het volgende concert, het volgende ensemble en het volgende kind dat ontdekt dat muziek er ook voor hen is. Nooit kosten voor de kinderen. Dat is alleen mogelijk dankzij mensen als u.'
+              'Donations fund our free program. Every donation pays for the next concert, the next ensemble, and the next child who discovers that music is for them. No fees, ever, for the children. That is only possible because of people like you.',
+              'Donaties financieren ons gratis programma. Elke donatie betaalt het volgende concert, het volgende ensemble en het volgende kind dat ontdekt dat muziek er ook voor hen is. Nooit kosten voor de kinderen. Dat is alleen mogelijk dankzij mensen als u.'
             )}
           </p>
           <Link href="/support" className="btn-gold">

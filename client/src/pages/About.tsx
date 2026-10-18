@@ -57,6 +57,9 @@ export default function About() {
           <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-tight">
             {t('About the Orchestra', 'Over het Orkest')}
           </h1>
+          <p className="text-xs font-light tracking-wide text-white/70 mb-4 first-letter:uppercase">
+            {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
+          </p>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
               'The Internationaal Orkest Utrecht believes every child in the Netherlands deserves to experience live music. Founded by professional and conservatory musicians from across the globe, we bring symphonic and vocal concerts into schools and use those performances as the spark to build free local youth ensembles.',

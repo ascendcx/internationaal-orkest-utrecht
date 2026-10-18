@@ -34,6 +34,12 @@ export default function Support() {
               'Elke bijdrage legt een instrument in de handen van een kind, zet een docent aan hun zijde en geeft hen een plek in een ensemble waar ze erbij horen. Nooit kosten voor de kinderen. Alleen dankzij mensen als u.'
             )}
           </p>
+          <p className="text-white/70 max-w-xl mx-auto text-sm leading-relaxed mt-4">
+            {t(
+              'Anyone can join for free. Families who are able are warmly welcome to support us during our fundraising campaigns. It is never required.',
+              'Iedereen mag gratis meedoen. Gezinnen die dat kunnen, zijn tijdens onze fondsenwervende acties van harte welkom om ons te steunen. Het is nooit verplicht.'
+            )}
+          </p>
         </div>
       </section>
 
