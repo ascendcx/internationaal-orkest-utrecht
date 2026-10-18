@@ -43,7 +43,7 @@ export default function SchoolConcerts() {
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
             {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
           </h1>
-          <p className="text-xs font-light tracking-wide text-white/70 mb-4 first-letter:uppercase">
+          <p className="text-xs font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
           </p>
           <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">

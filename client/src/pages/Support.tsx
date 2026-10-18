@@ -63,7 +63,7 @@ export default function Support() {
               <div className="flex justify-between mb-3"><span>+ {t('Program administration per student', 'Programmaadministratie per leerling')}</span><span className="text-[oklch(0.52_0.015_60)]">[TBD]</span></div>
               <div className="flex justify-between border-t border-[oklch(0.88_0.015_195)] pt-3 font-bold text-[oklch(0.22_0.01_60)]">
                 <span>= {t('Annual cost per student', 'Jaarlijkse kosten per leerling')}</span>
-                <span className="text-[oklch(0.72_0.12_75)]">{t('Coming soon', 'Binnenkort')}</span>
+                <span className="text-[oklch(0.5_0.12_75)]">{t('Coming soon', 'Binnenkort')}</span>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function Support() {
           <div className="bg-[oklch(0.38_0.09_195)] rounded-xl p-8 text-white">
             <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-2 block">{t('Primary Campaign', 'Primaire Campagne')}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-[oklch(0.85_0.1_75)] mb-2 block">{t('Primary Campaign', 'Primaire Campagne')}</span>
                 <h2 className="font-display text-2xl font-bold">{t('Support Our Current Campaign', 'Steun Onze Huidige Campagne')}</h2>
               </div>
               <span className="text-xs bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] font-bold px-3 py-1 rounded-full">{t('Zero Fees', 'Nul Kosten')}</span>

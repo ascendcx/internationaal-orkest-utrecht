@@ -87,7 +87,7 @@ export default function Footer() {
               <li><Link href="/contact" className="hover:text-white transition-colors no-underline">{t('Contact Us', 'Neem Contact Op')}</Link></li>
             </ul>
             <div className="mt-6">
-              <p className="text-xs text-white/50 mb-1">{t('Registered at', 'Geregistreerd bij')}</p>
+              <p className="text-xs text-white/70 mb-1">{t('Registered at', 'Geregistreerd bij')}</p>
               <p className="text-xs text-white/70">{t('Dutch Chamber of Commerce', 'Kamer van Koophandel Nederland')}</p>
             </div>
           </div>
@@ -115,9 +115,9 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('Your email address', 'Uw e-mailadres')}
                   required
-                  className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[oklch(0.72_0.12_75)] transition-colors"
+                  className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 text-sm focus:outline-none focus:border-[oklch(0.72_0.12_75)] transition-colors"
                 />
-                <label className="flex items-start gap-2 text-xs text-white/50 cursor-pointer">
+                <label className="flex items-start gap-2 text-xs text-white/70 cursor-pointer">
                   <input type="checkbox" required className="mt-0.5 rounded" />
                   <span>{t('I agree to receive periodic updates (GDPR compliant)', 'Ik ga akkoord met het ontvangen van periodieke updates (AVG-conform)')}</span>
                 </label>
@@ -130,12 +130,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>© {new Date().getFullYear()} Stichting Internationaal Orkest Utrecht. {t('All rights reserved.', 'Alle rechten voorbehouden.')}</p>
-          <div className="flex gap-4">
-            <Link href="/privacy#privacy-policy" className="hover:text-white/70 transition-colors no-underline">{t('Privacy Policy', 'Privacybeleid')}</Link>
-            <Link href="/privacy#cookie-policy" className="hover:text-white/70 transition-colors no-underline">{t('Cookie Policy', 'Cookiebeleid')}</Link>
-            <a href="mailto:info@internationaalorkest.nl" className="hover:text-white/70 transition-colors no-underline">info@internationaalorkest.nl</a>
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
+          <p className="text-center sm:text-left">© {new Date().getFullYear()} Stichting Internationaal Orkest Utrecht. {t('All rights reserved.', 'Alle rechten voorbehouden.')}</p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <Link href="/privacy#privacy-policy" className="hover:text-white transition-colors no-underline whitespace-nowrap">{t('Privacy Policy', 'Privacybeleid')}</Link>
+            <Link href="/privacy#cookie-policy" className="hover:text-white transition-colors no-underline whitespace-nowrap">{t('Cookie Policy', 'Cookiebeleid')}</Link>
+            <a href="mailto:info@internationaalorkest.nl" className="hover:text-white transition-colors no-underline whitespace-nowrap">info@internationaalorkest.nl</a>
           </div>
         </div>
       </div>

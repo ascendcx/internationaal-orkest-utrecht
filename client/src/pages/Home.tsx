@@ -30,6 +30,7 @@ export default function Home() {
     {
       img: 'iou-conductor.jpg',
       alt: t('Conductor leading musicians', 'Dirigent met musici'),
+      pos: 'object-[50%_15%]',
       title: t('The moment it clicks', 'Het moment dat het klikt'),
       body: t(
         'They see and hear real musicians. And they want to try.',
@@ -80,7 +81,7 @@ export default function Home() {
                   'Kinderen Verenigd door Muziek'
                 )}
               </h1>
-              <p className="text-xs font-light tracking-wide text-white/70 mb-3 md:mb-6 first-letter:uppercase">
+              <p className="text-xs font-light tracking-wide text-white/85 mb-3 md:mb-6 first-letter:uppercase">
                 {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
               </p>
               <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-sm">
@@ -118,46 +119,53 @@ export default function Home() {
               {t('One Path. Every Child.', 'Eén Pad. Elk Kind.')}
             </h2>
           </div>
-          <div className="flex flex-col lg:flex-row lg:items-stretch">
-            {journeySteps.map((step, i) => (
-              <div key={step.img} className="contents">
-                <div
-                  className="fade-up flex-1 overflow-hidden rounded-xl bg-white shadow-sm border border-[oklch(0.92_0.01_195)]"
+          <ol className="relative m-0 flex list-none flex-col gap-12 p-0 lg:grid lg:grid-cols-3 lg:gap-x-10">
+            {journeySteps.map((step, i) => {
+              const last = i === journeySteps.length - 1;
+              return (
+                <li
+                  key={step.img}
+                  className="fade-up relative flex flex-col pl-12 lg:pl-0"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="h-52 overflow-hidden">
-                    <img src={IMG + step.img} alt={step.alt} className="w-full h-full object-cover" />
+                  {/* Mobile: vertical gold line down to the next marker */}
+                  {!last && (
+                    <span
+                      className="path-seg lg:hidden absolute left-[15px] top-4 w-0.5 h-[calc(100%+3rem)] bg-[oklch(0.72_0.12_75)]"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <div className="overflow-hidden rounded-xl aspect-[4/3] lg:order-1">
+                    <img src={IMG + step.img} alt={step.alt} className={`w-full h-full object-cover ${step.pos ?? ''}`} />
                   </div>
-                  <div className="p-6 lg:p-7">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] text-sm font-bold mb-3">
+                  {/* Marker sits on the path */}
+                  <div className="absolute left-0 top-0 lg:relative lg:order-2 lg:my-6 lg:h-8">
+                    {/* Desktop: horizontal gold line runs behind the markers */}
+                    <span
+                      className={`path-seg hidden lg:block absolute left-4 top-[15px] h-0.5 bg-[oklch(0.72_0.12_75)] ${last ? 'w-[calc(100%-1rem)]' : 'w-[calc(100%+2.5rem)]'}`}
+                      style={{ '--d': `${i * 500}ms` } as React.CSSProperties}
+                      aria-hidden="true"
+                    />
+                    <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[oklch(0.72_0.12_75)] text-sm font-bold text-[oklch(0.22_0.01_60)]">
                       {i + 1}
                     </span>
-                    <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{step.title}</h3>
+                  </div>
+                  <div className="mt-5 lg:mt-0 lg:order-3">
+                    <h3 className="font-display text-2xl lg:text-3xl font-bold leading-tight text-[oklch(0.22_0.01_60)] mb-3">{step.title}</h3>
                     <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">{step.body}</p>
                   </div>
-                </div>
-                {i < journeySteps.length - 1 && (
-                  <>
-                    {/* Mobile: vertical gold line */}
-                    <div className="lg:hidden mx-auto w-px h-10 bg-[oklch(0.72_0.12_75)]" aria-hidden="true" />
-                    {/* Desktop: horizontal gold line with arrow */}
-                    <div className="hidden lg:flex items-center self-center w-12 shrink-0 text-[oklch(0.72_0.12_75)]" aria-hidden="true">
-                      <div className="flex-1 h-px bg-[oklch(0.72_0.12_75)]" />
-                      <ArrowRight size={16} className="-ml-1" />
-                    </div>
-                  </>
-                )}
-              </div>
-            ))}
-          </div>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </section>
 
       {/* How it is funded */}
-      <section className="py-12 bg-[oklch(0.95_0.02_195)]" ref={fundedRef}>
+      <section className="py-16 lg:py-20 bg-[oklch(0.95_0.02_195)]" ref={fundedRef}>
         <div className="container">
           <div className="fade-up max-w-3xl mx-auto text-center">
-            <p className="text-lg text-[oklch(0.32_0.02_60)] leading-relaxed mb-4">
+            <p className="font-display text-2xl lg:text-3xl font-semibold text-[oklch(0.22_0.01_60)] leading-snug mb-5">
               {t(
                 'Free for every child. Made possible by donations, grants, and other funds.',
                 'Gratis voor elk kind. Mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
@@ -187,50 +195,43 @@ export default function Home() {
             </p>
           </div>
           <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6" style={{ transitionDelay: '80ms' }}>
-            <Link
-              href="/contact?interest=concert"
-              className="group rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
-            >
+            <div className="flex flex-col items-start rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm">
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
                 {t('Book a concert', 'Boek een concert')}
               </h3>
-              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-5">
                 {t(
                   'A concert only. Good for schools that already have a music program, such as MuziekRoute.',
                   'Alleen een concert. Fijn voor scholen die al een muziekprogramma hebben, zoals MuziekRoute.'
                 )}
               </p>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold text-[oklch(0.38_0.09_195)] group-hover:underline">
-                {t('Get in touch', 'Neem contact op')}
-                <ArrowRight size={14} />
-              </span>
-            </Link>
-            <Link
-              href="/contact?interest=concert-ensemble"
-              className="group rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
-            >
+              <Link href="/contact?interest=concert" className="btn-primary mt-auto min-h-11 text-sm">
+                {t('Book a concert', 'Boek een concert')}
+              </Link>
+            </div>
+            <div className="flex flex-col items-start rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm">
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
                 {t('Concert and ensemble', 'Concert en ensemble')}
               </h3>
-              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-5">
                 {t(
                   'A concert, plus a local Nederland in Harmonie (The Netherlands in Harmony) ensemble for your students to join.',
                   'Een concert, plus een lokaal Nederland in Harmonie (The Netherlands in Harmony) ensemble waar uw leerlingen aan kunnen deelnemen.'
                 )}
               </p>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold text-[oklch(0.38_0.09_195)] group-hover:underline">
-                {t('Get in touch', 'Neem contact op')}
-                <ArrowRight size={14} />
-              </span>
-            </Link>
+              <Link href="/contact?interest=concert-ensemble" className="btn-primary mt-auto min-h-11 text-sm">
+                {t('Set up concert and ensemble', 'Start concert en ensemble')}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* For Parents */}
-      <section className="py-14 bg-[oklch(0.95_0.02_195)]" ref={parentsRef}>
+      <section className="py-14 lg:py-20 bg-[oklch(0.95_0.02_195)]" ref={parentsRef}>
         <div className="container">
-          <div className="fade-up max-w-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="fade-up max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
               {t('For Parents', 'Voor Ouders')}
             </span>
@@ -248,20 +249,24 @@ export default function Home() {
               <ArrowRight size={14} />
             </Link>
           </div>
+          <div className="fade-up overflow-hidden rounded-xl aspect-[16/10]" style={{ transitionDelay: '80ms' }}>
+            <img src={IMG + 'iou-support.jpg'} alt="" className="w-full h-full object-cover" />
+          </div>
+          </div>
         </div>
       </section>
 
       {/* Magical Moment Pull Quote */}
-      <section className="bg-[oklch(0.95_0.02_195)] py-16 lg:py-20">
+      <section className="bg-[oklch(0.22_0.05_195)] py-16 lg:py-24">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="pull-quote text-center border-none pl-0 mb-6">
+            <blockquote className="pull-quote text-center border-none pl-0 mb-6 !text-white">
               {t(
                 '"More than 600 children, laughing, clapping, and having the time of their lives while our orchestra played."',
                 '"Meer dan 600 kinderen, lachend, klappend en de tijd van hun leven hebbend terwijl ons orkest speelde."'
               )}
             </blockquote>
-            <cite className="text-sm text-[oklch(0.52_0.015_60)] not-italic font-medium">
+            <cite className="text-sm text-[oklch(0.72_0.12_75)] not-italic font-medium">
               Jennifer Diepman, {t('Founder & Artistic Director', 'Oprichter & Artistiek Directeur')}
             </cite>
           </div>
@@ -275,11 +280,11 @@ export default function Home() {
             {[
               { num: '50', label: t('International Musicians', 'Internationale Muzikanten') },
               { num: '600+', label: t('Children Reached', 'Kinderen Bereikt') },
-              { num: '0€', label: t('Cost to Youth Participants', 'Kosten voor Jongeren') },
+              { num: '€0', label: t('Cost to Youth Participants', 'Kosten voor Jongeren') },
               { num: '50+', label: t('Nationalities Connected Through Music', 'Nationaliteiten Verbonden Door Muziek') },
             ].map((stat) => (
               <div key={stat.label} className="py-4">
-                <div className="font-display text-4xl lg:text-5xl font-bold text-[oklch(0.72_0.12_75)] mb-2">{stat.num}</div>
+                <div className="font-display text-4xl lg:text-5xl font-bold lining-nums text-[oklch(0.72_0.12_75)] mb-2">{stat.num}</div>
                 <div className="text-sm text-white/80 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -305,7 +310,7 @@ export default function Home() {
             )}
           </p>
           <Link href="/support" className="btn-gold">
-            {t('Make It Happen', 'Maak Het Mogelijk')}
+            {t('Support the Children', 'Steun de kinderen')}
             <ArrowRight size={16} />
           </Link>
         </div>

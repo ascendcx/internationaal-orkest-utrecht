@@ -57,7 +57,7 @@ export default function About() {
           <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-tight">
             {t('About the Orchestra', 'Over het Orkest')}
           </h1>
-          <p className="text-xs font-light tracking-wide text-white/70 mb-4 first-letter:uppercase">
+          <p className="text-xs font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
           </p>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
