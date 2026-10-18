@@ -160,7 +160,7 @@ export default function Home() {
             <p className="text-lg text-[oklch(0.32_0.02_60)] leading-relaxed mb-4">
               {t(
                 'Free for every child. Made possible by donations, grants, and other funds.',
-                'Gratis voor elk kind. Mogelijk gemaakt door donaties, subsidies en andere fondsen.'
+                'Gratis voor elk kind. Mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
               )}
             </p>
             <Link href="/support" className="inline-flex items-center gap-2 text-sm font-semibold text-[oklch(0.38_0.09_195)] hover:underline">
@@ -240,7 +240,7 @@ export default function Home() {
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
               {t(
                 'Find a free ensemble near you. Free for every child, made possible by donations, grants, and other funds.',
-                'Vind een gratis ensemble bij u in de buurt. Gratis voor elk kind, mogelijk gemaakt door donaties, subsidies en andere fondsen.'
+                'Vind een gratis ensemble bij u in de buurt. Gratis voor elk kind, mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
               )}
             </p>
             <Link href="/youth-ensembles" className="btn-primary text-sm">

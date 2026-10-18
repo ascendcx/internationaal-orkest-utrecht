@@ -13,7 +13,7 @@ export default function SchoolConcerts() {
     title: 'Bring a Symphony to Your School | Internationaal Orkest Utrecht',
     titleNl: 'Breng een Symfonie naar Uw School | Internationaal Orkest Utrecht',
     description: 'Free, interactive instrumental and vocal concerts for schools across the Netherlands, funded through donations, grants, and other funds.',
-    descriptionNl: 'Gratis, interactieve instrumentale en vocale concerten voor scholen in heel Nederland, gefinancierd door donaties, subsidies en andere fondsen.',
+    descriptionNl: 'Gratis, interactieve instrumentale en vocale concerten voor scholen in heel Nederland, gefinancierd door donaties, bijdragen van fondsen en andere middelen.',
     path: '/school-concerts',
     image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg',
   });
@@ -49,13 +49,13 @@ export default function SchoolConcerts() {
           <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
               'Funded through donations, grants, and other funds, our interactive symphonic and vocal concerts come to your school at no cost. From the first note to the hands-on instrument and singing sessions, we handle everything.',
-              'Gefinancierd door donaties, subsidies en andere fondsen komen onze interactieve symfonische en vocale concerten gratis naar uw school. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen alles.'
+              'Gefinancierd door donaties, bijdragen van fondsen en andere middelen komen onze interactieve symfonische en vocale concerten gratis naar uw school. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen alles.'
             )}
           </p>
           <p className="md:hidden text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
               'Funded through donations, grants, and other funds, our interactive symphonic and vocal concerts come to your school at no cost.',
-              'Gefinancierd door donaties, subsidies en andere fondsen komen onze interactieve symfonische en vocale concerten gratis naar uw school.'
+              'Gefinancierd door donaties, bijdragen van fondsen en andere middelen komen onze interactieve symfonische en vocale concerten gratis naar uw school.'
             )}
           </p>
           <a href="#booking" className="btn-gold">
