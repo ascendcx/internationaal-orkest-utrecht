@@ -63,7 +63,7 @@ export default function Support() {
               <div className="flex justify-between mb-3"><span>+ {t('Program administration per student', 'Programmaadministratie per leerling')}</span><span className="text-[oklch(0.52_0.015_60)]">[TBD]</span></div>
               <div className="flex justify-between border-t border-[oklch(0.88_0.015_195)] pt-3 font-bold text-[oklch(0.22_0.01_60)]">
                 <span>= {t('Annual cost per student', 'Jaarlijkse kosten per leerling')}</span>
-                <span className="text-[oklch(0.5_0.12_75)]">{t('Coming soon', 'Binnenkort')}</span>
+                <span className="text-[var(--gold-on-light)]">{t('Coming soon', 'Binnenkort')}</span>
               </div>
             </div>
           </div>

@@ -82,7 +82,7 @@ export default function YouthEnsembles() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr_1px_1fr] gap-0 items-stretch">
             {/* Fact 1 — dominant */}
             <div className="py-10 lg:pr-12">
-              <div className="text-[oklch(0.72_0.12_75)] font-display text-6xl font-bold mb-3 leading-none">€0</div>
+              <div className="text-[var(--gold-on-light)] font-display text-6xl font-bold mb-3 leading-none">€0</div>
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
                 {t('Always Free', 'Altijd Gratis')}
               </h3>
