@@ -40,8 +40,8 @@ export default function ForSchools() {
     {
       title: t('Nederland in Harmonie', 'Nederland in Harmonie'),
       desc: t(
-        'A free, ongoing youth ensemble that students can join after school. This is where a single concert turns into a lasting relationship with music.',
-        'Een gratis, doorlopend jeugdensemble waar leerlingen na school aan kunnen deelnemen. Hier verandert één concert in een blijvende band met muziek.'
+        'A free, ongoing youth ensemble that students can join. This is where a single concert turns into a lasting relationship with music.',
+        'Een gratis, doorlopend jeugdensemble waar leerlingen aan kunnen deelnemen. Hier verandert één concert in een blijvende band met muziek.'
       ),
     },
   ];
