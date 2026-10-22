@@ -65,39 +65,41 @@ export default function Home() {
           <img
             src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg"
             alt="Orchestra performing for children"
-            className="w-full h-full object-cover object-[20%_center] md:object-center"
+            className="w-full h-full object-cover object-[20%_center] lg:object-center"
           />
+          {/* Header scrim: keeps the logo, choir line and nav readable over bright parts of the photo */}
+          <div className="absolute inset-x-0 top-0 h-[calc(4rem+40px)] xl:h-[calc(5rem+40px)] bg-gradient-to-b from-[oklch(0.22_0.05_195)]/75 to-transparent" aria-hidden="true" />
           {/* Mobile: transparent top fading to dark teal bottom */}
-          <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
+          <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
           {/* Desktop: transparent left fading to dark teal right, reaching strong opacity early so it stays consistent behind the text block */}
-          <div className="absolute inset-0 hidden md:block bg-[linear-gradient(to_right,transparent_0%,transparent_58%,oklch(0.22_0.05_195/93%)_74%,oklch(0.22_0.05_195/96%)_100%)]" />
+          <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_0%,transparent_50%,oklch(0.22_0.05_195/93%)_68%,oklch(0.22_0.05_195/96%)_100%)]" />
         </div>
-        <div className="relative h-full min-h-screen flex items-end pb-8 md:h-auto md:min-h-0 md:absolute md:inset-0 md:flex md:items-end md:pb-20 lg:pb-24">
+        <div className="relative h-full min-h-screen flex items-end pb-8 lg:h-auto lg:min-h-0 lg:absolute lg:inset-0 lg:flex lg:items-end lg:pb-20 lg:pb-24">
           <div className="container">
-            <div className="max-w-2xl md:max-w-xl md:ml-auto md:mr-4 lg:mr-8">
-              <span className="section-rule mb-2 md:mb-4" />
-              <h1 className="font-display text-4xl sm:text-5xl md:text-4xl font-bold text-white leading-tight mb-1 md:mb-2">
+            <div className="max-w-2xl lg:max-w-[27rem] xl:max-w-xl lg:ml-auto lg:mr-4 lg:mr-8">
+              <span className="section-rule mb-2 lg:mb-4" />
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-4xl font-bold text-white leading-tight mb-1 lg:mb-2">
                 {t(
                   'Children United Through Music',
                   'Kinderen Verenigd door Muziek'
                 )}
               </h1>
-              <p className="text-sm font-light tracking-wide text-white/85 mb-3 md:mb-6 first-letter:uppercase">
+              <p className="text-sm font-light tracking-wide text-white/85 mb-3 lg:mb-6 first-letter:uppercase">
                 {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
               </p>
-              <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-sm">
+              <p className="hidden lg:block text-lg text-white/90 leading-relaxed mb-8 max-w-lg xl:max-w-xl">
+                {t(
+                  'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
+                  'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
+                )}
+              </p>
+              <p className="lg:hidden text-lg text-white/85 leading-relaxed mb-4 max-w-xl">
                 {t(
                   'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
                   'Het begint met een concert, groeit met een ensemble en duurt daarna een leven lang.'
                 )}
               </p>
-              <p className="md:hidden text-lg text-white/85 leading-relaxed mb-4 max-w-xl">
-                {t(
-                  'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
-                  'Het begint met een concert, groeit met een ensemble en duurt daarna een leven lang.'
-                )}
-              </p>
-              <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:gap-4">
+              <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-4">
                 <Link href="/school-concerts" className="btn-gold">
                   {t('Bring Music to Your School', 'Breng muziek naar uw school')}
                   <ArrowRight size={16} />
@@ -107,6 +109,21 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Full intro, mobile only (desktop shows it in the hero) */}
+      <section className="lg:hidden py-12 bg-[oklch(0.98_0.008_80)]">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="section-rule mx-auto" />
+            <p className="text-lg text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t(
+                'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
+                'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
+              )}
+            </p>
           </div>
         </div>
       </section>
@@ -216,8 +233,8 @@ export default function Home() {
               </h3>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-5">
                 {t(
-                  'A free concert, followed by working with IOU to set up a local Nederland in Harmonie (The Netherlands in Harmony) ensemble where your students can keep playing or singing.',
-                  'Een gratis concert, gevolgd door samenwerking met IOU om een lokaal ensemble van Nederland in Harmonie (The Netherlands in Harmony) op te zetten, waar uw leerlingen kunnen blijven spelen of zingen.'
+                  'A free concert, followed by working with IOU to set up a local Nederland in Harmonie (The Netherlands in Harmony) ensemble where your students can keep playing or singing.',
+                  'Een gratis concert, gevolgd door samenwerking met IOU om een lokaal ensemble van Nederland in Harmonie (The Netherlands in Harmony) op te zetten, waar uw leerlingen kunnen blijven spelen of zingen.'
                 )}
               </p>
               <Link href="/contact?interest=concert-ensemble" className="btn-primary mt-auto">
@@ -231,8 +248,8 @@ export default function Home() {
       {/* For Parents */}
       <section className="py-12 lg:py-16 bg-[oklch(0.95_0.02_195)]" ref={parentsRef}>
         <div className="container">
-          <div>
-          <div className="fade-up max-w-xl">
+          <div className="grid grid-cols-1 items-start lg:grid-cols-2">
+          <div className="fade-up max-w-xl pb-10 lg:pb-0 lg:pr-14">
             <span className="block text-sm font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
               {t('For Parents', 'Voor ouders')}
             </span>
@@ -250,23 +267,18 @@ export default function Home() {
               <ArrowRight size={14} />
             </Link>
           </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Magical Moment Pull Quote */}
-      <section className="bg-[oklch(0.98_0.008_80)] py-14 lg:py-16">
-        <div className="container">
-          <div className="max-w-2xl bg-white border border-[oklch(0.88_0.015_195)] rounded-lg p-6 md:p-8">
+          {/* Founder quote */}
+          <div className="fade-up max-w-xl border-t border-[oklch(0.88_0.015_195)] pt-10 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-14" style={{ transitionDelay: '80ms' }}>
             <blockquote className="pull-quote mb-4">
               {t(
                 '"More than 600 children, laughing, clapping, and having the time of their lives while our orchestra played."',
                 '"Meer dan 600 kinderen, lachend, klappend en de tijd van hun leven hebbend terwijl ons orkest speelde."'
               )}
             </blockquote>
-            <cite className="block pl-[calc(1.5rem+3px)] text-sm text-[var(--gold-on-light)] not-italic font-medium">
+            <cite className="block pl-[calc(1.5rem+3px)] text-sm text-[oklch(0.35_0.01_60)] not-italic font-medium">
               Jennifer Diepman, {t('Founder & Artistic Director', 'Oprichter & artistiek directeur')}
             </cite>
+          </div>
           </div>
         </div>
       </section>
