@@ -29,7 +29,7 @@ function Router() {
         <Route path="/school-concerts" component={SchoolConcerts} />
         <Route path="/youth-ensembles" component={YouthEnsembles} />
         <Route path="/conductor-workshops" component={ConductorWorkshops} />
-        <Route path="/scholen"><Redirect to="/school-concerts" replace /></Route>
+        <Route path="/scholen"><Redirect to="/school-concerts?lang=nl" replace /></Route>
         <Route path="/support" component={Support} />
         <Route path="/sponsors" component={Sponsors} />
         <Route path="/contact" component={Contact} />

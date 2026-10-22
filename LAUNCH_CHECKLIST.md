@@ -16,6 +16,7 @@ Work through this before the site goes live on the real domain.
 
 - [ ] Add the verified KvK number and legal name, only if approved. Places to update: `client/src/components/Footer.tsx` (registration lines) and `client/src/pages/Privacy.tsx` (controller paragraph).
 - [ ] Approve the Dutch copy on every page.
+- [ ] Set AUTO_DETECT_LANGUAGE to true once the Dutch copy is approved (`client/src/contexts/LanguageContext.tsx`).
 
 ## Environment (Vercel project settings, see `.env.example`)
 

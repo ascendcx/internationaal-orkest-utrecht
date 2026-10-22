@@ -23,7 +23,12 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (switchable) {
-      const stored = localStorage.getItem("theme");
+      let stored: string | null = null;
+      try {
+        stored = localStorage.getItem("theme");
+      } catch {
+        // Storage blocked. Use the default theme.
+      }
       return (stored as Theme) || defaultTheme;
     }
     return defaultTheme;
@@ -38,7 +43,11 @@ export function ThemeProvider({
     }
 
     if (switchable) {
-      localStorage.setItem("theme", theme);
+      try {
+        localStorage.setItem("theme", theme);
+      } catch {
+        // Storage blocked. The theme only applies to this visit.
+      }
     }
   }, [theme, switchable]);
 

@@ -1,4 +1,4 @@
 {
-  "redirects": [{ "source": "/scholen", "destination": "/school-concerts", "statusCode": 301 }],
+  "redirects": [{ "source": "/scholen", "destination": "/school-concerts?lang=nl", "statusCode": 301 }],
   "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 }

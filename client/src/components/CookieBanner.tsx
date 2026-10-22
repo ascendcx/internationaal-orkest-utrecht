@@ -2,21 +2,34 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'wouter';
 
+function saveConsent(value: string) {
+  try {
+    localStorage.setItem('iou-cookie-consent', value);
+  } catch {
+    // Storage blocked. The choice only applies to this visit.
+  }
+}
+
 export default function CookieBanner() {
   const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('iou-cookie-consent');
+    let consent: string | null = null;
+    try {
+      consent = localStorage.getItem('iou-cookie-consent');
+    } catch {
+      // Storage blocked. Show the banner on every visit.
+    }
     if (!consent) setVisible(true);
   }, []);
 
   const acceptAll = () => {
-    localStorage.setItem('iou-cookie-consent', 'all');
+    saveConsent('all');
     setVisible(false);
   };
   const essentialOnly = () => {
-    localStorage.setItem('iou-cookie-consent', 'essential');
+    saveConsent('essential');
     setVisible(false);
   };
 
