@@ -67,6 +67,7 @@ export default function Privacy() {
             <div id="cookie-policy" className="scroll-mt-20">
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('4. Cookies', '4. Cookies')}</h2>
               <p>{t('This website uses functional cookies to ensure proper operation and analytical cookies to understand how visitors use our site. We do not use advertising or tracking cookies. You can manage your cookie preferences at any time through your browser settings.', 'Deze website gebruikt functionele cookies om een goede werking te garanderen en analytische cookies om te begrijpen hoe bezoekers onze site gebruiken. Wij gebruiken geen advertentie- of trackingcookies. U kunt uw cookievoorkeuren op elk moment beheren via uw browserinstellingen.')}</p>
+              <p className="mt-3">{t('We store your language choice and your cookie choice in your browser. This stays on your device.', 'We slaan uw taalkeuze en uw cookiekeuze op in uw browser. Dit blijft op uw apparaat.')}</p>
             </div>
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('5. Your Rights (GDPR)', '5. Uw rechten (AVG)')}</h2>
