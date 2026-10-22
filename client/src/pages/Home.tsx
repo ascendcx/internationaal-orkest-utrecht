@@ -19,9 +19,11 @@ export default function Home() {
   const parentsRef = useScrollReveal();
   const journeySteps = [
     {
-      img: 'iou-hero.jpg',
-      alt: t('Children watching an orchestra', 'Kinderen kijken naar een orkest'),
-      imgStyle: { objectPosition: '0% 50%', transform: 'scale(1.6)', transformOrigin: '20% 50%' },
+      img: 'iou-chamber-orchestra.webp',
+      alt: t('A chamber orchestra seen from above, with the conductor in the foreground.', 'Een kamerorkest van bovenaf gezien, met de dirigent op de voorgrond.'),
+      width: 1440,
+      height: 714,
+      imgStyle: { objectPosition: '52% 50%' },
       title: t('A child hears music', 'Een kind hoort muziek'),
       body: t(
         'A free concert brings live music to their school.',
@@ -29,9 +31,11 @@ export default function Home() {
       ),
     },
     {
-      img: 'iou-school-concert.jpg',
-      alt: t('A musician shows a child a violin', 'Een musicus laat een kind een viool zien'),
-      imgStyle: { objectPosition: '0% 50%', transform: 'scale(1.75)', transformOrigin: '36% 27%' },
+      img: 'iou-flute-child.webp',
+      alt: t('A child reacts with surprise as a musician shows her a flute.', 'Een kind kijkt verrast terwijl een musicus haar een dwarsfluit laat zien.'),
+      width: 1440,
+      height: 959,
+      imgStyle: { objectPosition: '50% 40%' },
       title: t('The moment it clicks', 'Het moment dat het klikt'),
       body: t(
         'Children try instruments or sing together, guided by musicians and singers.',
@@ -39,8 +43,11 @@ export default function Home() {
       ),
     },
     {
-      img: 'iou-youth-ensemble.jpg',
-      alt: t('Youth ensemble rehearsal', 'Repetitie jeugdensemble'),
+      img: 'iou-timpani-child.webp',
+      alt: t('A smiling girl plays the timpani with soft mallets.', 'Een lachend meisje bespeelt de pauken met zachte stokken.'),
+      width: 1440,
+      height: 959,
+      imgStyle: { objectPosition: '50% 45%' },
       title: t('They keep making music', 'Samen muziek blijven maken'),
       body: t(
         'Through Nederland in Harmonie, children can continue playing or singing in a free local ensemble.',
@@ -154,7 +161,7 @@ export default function Home() {
                     />
                   )}
                   <div className="overflow-hidden rounded-xl aspect-[3/2] lg:order-1">
-                    <img src={IMG + step.img} alt={step.alt} className="w-full h-full object-cover" style={step.imgStyle} />
+                    <img src={IMG + step.img} alt={step.alt} width={step.width} height={step.height} loading="lazy" className="w-full h-full object-cover" style={step.imgStyle} />
                   </div>
                   {/* Marker sits on the path */}
                   <div className="absolute left-0 top-0 lg:relative lg:order-2 lg:my-6 lg:h-8">

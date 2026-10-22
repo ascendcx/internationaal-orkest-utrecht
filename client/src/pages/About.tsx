@@ -97,8 +97,12 @@ export default function About() {
             </div>
             <div className="fade-up" style={{ transitionDelay: '80ms' }}>
               <img
-                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg"
-                alt="Orchestra with children"
+                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-chamber-orchestra.webp"
+                alt={t('A chamber orchestra seen from above, with the conductor in the foreground.', 'Een kamerorkest van bovenaf gezien, met de dirigent op de voorgrond.')}
+                width={1440}
+                height={714}
+                loading="lazy"
+                style={{ objectPosition: '52% 50%' }}
                 className="rounded-xl shadow-lg w-full object-cover aspect-[4/3]"
               />
             </div>
@@ -112,8 +116,12 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="order-2 lg:order-1">
               <img
-                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-conductor.jpg"
-                alt="Jennifer Diepman, Conductor"
+                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-jennifer-diepman.webp"
+                alt={t('Jennifer Diepman, Artistic Director and Chief Conductor', 'Jennifer Diepman, artistiek directeur en chef-dirigent')}
+                width={1362}
+                height={2046}
+                loading="lazy"
+                style={{ objectPosition: '50% 30%' }}
                 className="rounded-xl shadow-lg w-full object-cover aspect-[3/4] max-w-sm mx-auto lg:mx-0"
               />
             </div>
