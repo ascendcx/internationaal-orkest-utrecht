@@ -13,6 +13,15 @@ export function useScrollReveal() {
       segs.forEach((seg) => seg.classList.add('visible'));
       return;
     }
+    const revealAll = () => {
+      children.forEach((child) => child.classList.add('visible'));
+      segs.forEach((seg) => seg.classList.add('visible'));
+    };
+    // Without IntersectionObserver there is nothing to trigger the reveal, so show everything.
+    if (typeof IntersectionObserver === 'undefined') {
+      revealAll();
+      return;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,7 +35,19 @@ export function useScrollReveal() {
       { threshold: 0.12 }
     );
     children.forEach((child) => observer.observe(child));
-    return () => observer.disconnect();
+    // Safety net: anything near the viewport that the observer has not revealed after 2s is shown anyway.
+    const fallback = window.setTimeout(() => {
+      children.forEach((child) => {
+        if (child.getBoundingClientRect().top < window.innerHeight * 1.2) {
+          child.classList.add('visible');
+          child.querySelectorAll('.path-seg').forEach((seg) => seg.classList.add('visible'));
+        }
+      });
+    }, 2000);
+    return () => {
+      window.clearTimeout(fallback);
+      observer.disconnect();
+    };
   }, []);
   return ref;
 }

@@ -3,7 +3,7 @@
  * Scroll-aware header: transparent over hero → solid white/90 backdrop-blur on scroll
  * Language toggle EN/NL in top-right utility area
  */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X } from 'lucide-react';
@@ -24,6 +24,7 @@ export default function Navigation() {
   const { lang, setLang, t } = useLanguage();
   const [location] = useLocation();
   const isHome = location === '/';
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -35,11 +36,26 @@ export default function Navigation() {
     setMobileOpen(false);
   }, [location]);
 
-  const headerBg = isHome && !scrolled
+  // Escape closes the mobile menu and returns focus to the menu button.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [mobileOpen]);
+
+  // Over the hero the header is transparent; with the mobile menu open it must be solid.
+  const overHero = isHome && !scrolled && !mobileOpen;
+  const headerBg = overHero
     ? 'bg-transparent'
     : 'bg-white/95 backdrop-blur-md shadow-sm';
-  const textColor = isHome && !scrolled ? 'text-white' : 'text-[oklch(0.22_0.01_60)]';
-  const logoColor = isHome && !scrolled ? 'text-white' : 'text-[oklch(0.38_0.09_195)]';
+  const textColor = overHero ? 'text-white' : 'text-[oklch(0.22_0.01_60)]';
+  const logoColor = overHero ? 'text-white' : 'text-[oklch(0.38_0.09_195)]';
 
   return (
     <>
@@ -47,7 +63,7 @@ export default function Navigation() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}
       >
         <div className="container">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-16 xl:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 no-underline">
               <img
@@ -62,14 +78,14 @@ export default function Navigation() {
                 <span className={`font-display font-semibold text-sm tracking-widest uppercase ${logoColor} transition-colors duration-300`}>
                   Utrecht
                 </span>
-                <span className={`font-normal text-[10px] tracking-wide opacity-70 ${logoColor} transition-colors duration-300`}>
+                <span className={`font-normal text-[13px] tracking-wide opacity-90 ${logoColor} transition-colors duration-300`}>
                   {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
                 </span>
               </div>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden xl:flex items-center gap-1" aria-label={t('Main', 'Hoofdmenu')}>
               {navItems.slice(1, -1).map((item) => (
                 <Link
                   key={item.href}
@@ -86,32 +102,37 @@ export default function Navigation() {
             </nav>
 
             {/* Right: Lang Toggle + CTA */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden xl:flex items-center gap-3">
               {/* Language Toggle */}
-              <div className={`flex items-center text-xs font-medium rounded-full border overflow-hidden ${isHome && !scrolled ? 'border-white/40' : 'border-[oklch(0.88_0.015_195)]'}`}>
+              <div className={`flex items-center text-sm font-medium rounded-full border overflow-hidden ${isHome && !scrolled ? 'border-white/40' : 'border-[oklch(0.88_0.015_195)]'}`}>
                 <button
                   onClick={() => setLang('nl')}
+                  aria-pressed={lang === 'nl'}
                   className={`px-3 py-1.5 transition-colors duration-150 ${lang === 'nl' ? 'bg-[oklch(0.38_0.09_195)] text-white' : `${textColor} hover:bg-[oklch(0.95_0.02_195)]`}`}
                 >
                   NL
                 </button>
                 <button
                   onClick={() => setLang('en')}
+                  aria-pressed={lang === 'en'}
                   className={`px-3 py-1.5 transition-colors duration-150 ${lang === 'en' ? 'bg-[oklch(0.38_0.09_195)] text-white' : `${textColor} hover:bg-[oklch(0.95_0.02_195)]`}`}
                 >
                   EN
                 </button>
               </div>
-              <Link href="/support" className="btn-gold text-sm py-2 px-4">
+              <Link href="/support" className="btn-gold text-sm py-2 px-4 whitespace-nowrap">
                 {t('Support Us', 'Steun Ons')}
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className={`lg:hidden p-2 rounded-md ${textColor}`}
+              ref={menuButtonRef}
+              className={`xl:hidden flex h-11 w-11 items-center justify-center rounded-md ${textColor}`}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -121,13 +142,14 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-white pt-16">
+        <div id="mobile-menu" className="fixed inset-0 z-40 overflow-y-auto bg-white pt-16 xl:hidden">
           <div className="container py-6 flex flex-col gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-3 text-base font-medium rounded-lg no-underline transition-colors
+                aria-current={location === item.href ? 'page' : undefined}
+                className={`flex min-h-11 items-center px-4 py-3 text-base font-medium rounded-lg no-underline transition-colors
                   ${location === item.href
                     ? 'bg-[oklch(0.95_0.02_195)] text-[oklch(0.38_0.09_195)]'
                     : 'text-[oklch(0.22_0.01_60)] hover:bg-[oklch(0.95_0.02_195)]'
@@ -137,21 +159,23 @@ export default function Navigation() {
               </Link>
             ))}
             <div className="mt-4 flex items-center gap-3">
-              <div className="flex items-center text-xs font-medium rounded-full border border-[oklch(0.88_0.015_195)] overflow-hidden">
+              <div className="flex items-center text-sm font-medium rounded-full border border-[oklch(0.88_0.015_195)] overflow-hidden">
                 <button
                   onClick={() => setLang('nl')}
-                  className={`px-4 py-2 transition-colors ${lang === 'nl' ? 'bg-[oklch(0.38_0.09_195)] text-white' : 'text-[oklch(0.22_0.01_60)]'}`}
+                  aria-pressed={lang === 'nl'}
+                  className={`min-h-11 px-4 py-2 transition-colors ${lang === 'nl' ? 'bg-[oklch(0.38_0.09_195)] text-white' : 'text-[oklch(0.22_0.01_60)]'}`}
                 >
                   NL
                 </button>
                 <button
                   onClick={() => setLang('en')}
-                  className={`px-4 py-2 transition-colors ${lang === 'en' ? 'bg-[oklch(0.38_0.09_195)] text-white' : 'text-[oklch(0.22_0.01_60)]'}`}
+                  aria-pressed={lang === 'en'}
+                  className={`min-h-11 px-4 py-2 transition-colors ${lang === 'en' ? 'bg-[oklch(0.38_0.09_195)] text-white' : 'text-[oklch(0.22_0.01_60)]'}`}
                 >
                   EN
                 </button>
               </div>
-              <Link href="/support" className="btn-gold text-sm">
+              <Link href="/support" className="btn-gold">
                 {t('Support Us', 'Steun Ons')}
               </Link>
             </div>

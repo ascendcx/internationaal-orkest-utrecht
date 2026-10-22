@@ -43,7 +43,7 @@ export default function SchoolConcerts() {
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
             {t('Bring Music to Your School', 'Breng muziek naar uw school')}
           </h1>
-          <p className="text-xs font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
+          <p className="text-sm font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
           </p>
           <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
@@ -65,7 +65,7 @@ export default function SchoolConcerts() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
+      <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
         <div className="container">
           <div className="mb-12 fade-up">
             <span className="section-rule" />
@@ -76,17 +76,17 @@ export default function SchoolConcerts() {
           {/* Annual-report style process: numbered steps with thin rules, no icon boxes */}
           <div className="space-y-0 fade-up" style={{ transitionDelay: '80ms' }}>
             {steps.map((step, i) => (
-              <div key={i} className="grid grid-cols-[3rem_1fr] lg:grid-cols-[4rem_1fr_2fr] gap-x-6 gap-y-2 py-8 border-t border-[oklch(0.88_0.015_195)] items-start">
-                <div className="font-display text-3xl font-bold text-[oklch(0.88_0.015_195)] leading-none pt-1">0{i + 1}</div>
+              <div key={i} className="grid grid-cols-[3rem_1fr] lg:grid-cols-[4rem_1fr_2fr] gap-x-6 gap-y-2 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
+                <div className="font-display text-3xl font-bold text-[oklch(0.38_0.09_195)] leading-none pt-1">0{i + 1}</div>
                 <div className="lg:col-span-2">
-                  <h3 className="font-display font-semibold text-lg text-[oklch(0.22_0.01_60)] mb-1">{step.title}</h3>
-                  <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-xl">{step.desc}</p>
+                  <h3 className="font-display font-bold text-xl text-[oklch(0.22_0.01_60)] mb-2">{step.title}</h3>
+                  <p className="text-base text-[oklch(0.35_0.01_60)] leading-relaxed max-w-prose">{step.desc}</p>
                 </div>
               </div>
             ))}
             <div className="border-t border-[oklch(0.88_0.015_195)]" />
           </div>
-          <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
+          <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-8">
             {t(
               'Schools can request a concert on its own or discuss a concert followed by a local youth ensemble. At this stage, the youth ensemble program starts through a school concert.',
               'Scholen kunnen alleen een concert aanvragen of een concert met een lokaal jeugdensemble bespreken. In deze fase start het jeugdensembleprogramma altijd met een schoolconcert.'
@@ -96,7 +96,7 @@ export default function SchoolConcerts() {
       </section>
 
       {/* Booking Form */}
-      <section id="booking" className="py-20 bg-[oklch(0.95_0.02_195)]">
+      <section id="booking" className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
@@ -128,7 +128,7 @@ export default function SchoolConcerts() {
                     required={required}
                     value={(form as any)[key]}
                     onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
+                    className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
                   />
                 </div>
               ))}
@@ -138,7 +138,7 @@ export default function SchoolConcerts() {
                   rows={4}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)] resize-none"
+                  className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)] resize-none"
                 />
               </div>
               <label className="flex items-start gap-3 cursor-pointer">
@@ -149,7 +149,7 @@ export default function SchoolConcerts() {
               {t('Request Concert Information', 'Concertinformatie aanvragen')}
               <ArrowRight size={16} />
             </button>
-            <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-3">
+            <p className="text-center text-sm text-[oklch(0.52_0.015_60)] mt-3">
               {t('We respond within 2 business days. No commitment required.', 'We reageren binnen 2 werkdagen. Geen verplichting vereist.')}
             </p>
             </form>

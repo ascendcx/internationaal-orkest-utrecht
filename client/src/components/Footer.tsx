@@ -31,14 +31,14 @@ export default function Footer() {
               <div className="leading-tight">
                 <div className="font-display font-semibold text-sm text-white">Internationaal Orkest</div>
                 <div className="font-display font-semibold text-sm tracking-widest uppercase text-[oklch(0.72_0.12_75)]">Utrecht</div>
-                <div className="text-[10px] font-light tracking-wide text-white/60 mt-0.5">{t('in partnership with local choirs', 'in samenwerking met lokale koren')}</div>
+                <div className="text-sm font-light tracking-wide text-white/60 mt-0.5">{t('in partnership with local choirs', 'in samenwerking met lokale koren')}</div>
               </div>
             </div>
             <p className="mb-6">
               <span className="block text-sm text-white/70 leading-relaxed">
                 {t('All children in the Netherlands united through music.', 'Alle kinderen in Nederland verenigd door muziek.')}
               </span>
-              <span className="block text-xs font-light text-white/60 leading-relaxed mt-1.5">
+              <span className="block text-sm font-light text-white/60 leading-relaxed mt-1.5">
                 {t('Free concerts, free ensembles, lasting bonds.', 'Gratis concerten, gratis ensembles, blijvende banden.')}
               </span>
             </p>
@@ -87,8 +87,8 @@ export default function Footer() {
               <li><Link href="/contact" className="hover:text-white transition-colors no-underline">{t('Contact Us', 'Neem Contact Op')}</Link></li>
             </ul>
             <div className="mt-6">
-              <p className="text-xs text-white/70 mb-1">{t('Registered at', 'Geregistreerd bij')}</p>
-              <p className="text-xs text-white/70">{t('Dutch Chamber of Commerce', 'Kamer van Koophandel Nederland')}</p>
+              <p className="text-sm text-white/70 mb-1">{t('Registered at', 'Geregistreerd bij')}</p>
+              <p className="text-sm text-white/70">{t('Dutch Chamber of Commerce', 'Kamer van Koophandel Nederland')}</p>
             </div>
           </div>
 
@@ -115,9 +115,9 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('Your email address', 'Uw e-mailadres')}
                   required
-                  className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 text-sm focus:outline-none focus:border-[oklch(0.72_0.12_75)] transition-colors"
+                  className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 text-sm focus:border-[oklch(0.72_0.12_75)] transition-colors"
                 />
-                <label className="flex items-start gap-2 text-xs text-white/70 cursor-pointer">
+                <label className="flex items-start gap-2 text-sm text-white/70 cursor-pointer">
                   <input type="checkbox" required className="mt-0.5 rounded" />
                   <span>{t('I agree to receive periodic updates (GDPR compliant)', 'Ik ga akkoord met het ontvangen van periodieke updates (AVG-conform)')}</span>
                 </label>
@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/70">
           <p className="text-center sm:text-left">© {new Date().getFullYear()} Stichting Internationaal Orkest Utrecht. {t('All rights reserved.', 'Alle rechten voorbehouden.')}</p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
             <Link href="/privacy#privacy-policy" className="hover:text-white transition-colors no-underline whitespace-nowrap">{t('Privacy Policy', 'Privacybeleid')}</Link>

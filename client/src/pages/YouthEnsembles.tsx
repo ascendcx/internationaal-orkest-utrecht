@@ -70,7 +70,7 @@ export default function YouthEnsembles() {
       </section>
 
       {/* Key Facts */}
-      <section className="py-20 bg-[oklch(0.98_0.008_80)] overflow-hidden">
+      <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
         <div className="container">
           <div className="mb-10">
             <span className="section-rule" />
@@ -86,13 +86,13 @@ export default function YouthEnsembles() {
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
                 {t('Always Free', 'Altijd gratis')}
               </h3>
-              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed text-base">
                 {t(
                   'Free for every child, thanks to donations, grants, and other funds. There are no fees for instruction or instrument access. Ever. Every child participates on equal footing.',
                   'Gratis voor elk kind, dankzij donaties, bijdragen van fondsen en andere middelen. Er zijn nooit kosten voor les of instrumenten. Elk kind doet mee op gelijke voet.'
                 )}
               </p>
-              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm mt-3">
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed text-base mt-3">
                 {t(
                   'Anyone can join for free. Families who are able are warmly welcome to support us during our fundraising campaigns. It is never required.',
                   'Iedereen mag gratis meedoen. Gezinnen die dat kunnen, zijn tijdens onze fondsenwervende acties van harte welkom om ons te steunen. Het is nooit verplicht.'
@@ -106,7 +106,7 @@ export default function YouthEnsembles() {
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
                 {t('All Backgrounds Welcome', 'Alle achtergronden welkom')}
               </h3>
-              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed text-base">
                 {t(
                   'Integrated Dutch ensembles, welcoming every child living in the Netherlands regardless of background or experience level. No audition, no prior knowledge required. A place to make music, make friends, and belong.',
                   'Geïntegreerde Nederlandse ensembles, welkom voor ieder kind dat in Nederland woont, ongeacht achtergrond of ervaringsniveau. Geen auditie, geen voorkennis vereist. Een plek om muziek te maken, vrienden te maken en erbij te horen.'
@@ -120,7 +120,7 @@ export default function YouthEnsembles() {
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
                 {t('After school at a participating local school', 'Na schooltijd op een deelnemende school in de buurt')}
               </h3>
-              <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed text-base">
                 {t(
                   'Rehearsals take place after school at participating local schools. Schedules and locations are confirmed when you register.',
                   'Repetities vinden plaats na schooltijd op deelnemende scholen in de buurt. Schema\'s en locaties worden bevestigd bij inschrijving.'
@@ -132,7 +132,7 @@ export default function YouthEnsembles() {
       </section>
 
       {/* How Children Join — the three-step package */}
-      <section className="py-20 bg-[oklch(0.98_0.008_80)]">
+      <section className="py-16 bg-[oklch(0.98_0.008_80)]">
         <div className="container">
           <div className="mb-12">
             <span className="section-rule" />
@@ -168,13 +168,13 @@ export default function YouthEnsembles() {
                 <div className="font-display text-3xl font-bold text-[oklch(0.88_0.015_195)] leading-none pt-1">0{i + 1}</div>
                 <div className="lg:col-span-2">
                   <h3 className="font-display font-semibold text-lg text-[oklch(0.22_0.01_60)] mb-1">{step.title}</h3>
-                  <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-xl">{step.desc}</p>
+                  <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-xl">{step.desc}</p>
                 </div>
               </div>
             ))}
             <div className="border-t border-[oklch(0.88_0.015_195)]" />
           </div>
-          <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
+          <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-8">
             {t(
               'These three steps are always connected at this stage. The youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
               'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden. De mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
@@ -184,7 +184,7 @@ export default function YouthEnsembles() {
       </section>
 
       {/* Sistema Europe Recognition */}
-      <section className="py-20 bg-[oklch(0.95_0.02_195)]">
+      <section className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-3xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
@@ -209,18 +209,12 @@ export default function YouthEnsembles() {
       </section>
 
       {/* Enrollment Form */}
-      <section className="py-20 bg-[oklch(0.95_0.02_195)]">
+      <section className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
             {t('Register Your Interest', 'Meld uw belangstelling')}
           </h2>
-          <p className="text-[oklch(0.52_0.015_60)] mb-3 leading-relaxed">
-            {t(
-              'We are currently building our interest list. Once our first ensemble launches in your area, we will reach out with everything you need: confirmed location, schedule, and what to bring on the first day. No commitment required.',
-              'We stellen momenteel onze interesselijst samen. Zodra ons eerste ensemble van start gaat in uw regio, nemen we contact met u op met alles wat u moet weten: bevestigde locatie, schema en wat u mee moet nemen op de eerste dag. Geen verplichting.'
-            )}
-          </p>
           {/* Trust signals */}
           <div className="flex flex-wrap gap-4 mb-8">
             {[
@@ -228,7 +222,7 @@ export default function YouthEnsembles() {
               t('No audition required', 'Geen auditie vereist'),
               t('Response within 2 days', 'Reactie binnen 2 dagen'),
             ].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-xs text-[oklch(0.38_0.09_195)] font-medium">
+              <div key={item} className="flex items-center gap-2 text-sm text-[oklch(0.38_0.09_195)] font-medium">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="oklch(0.38 0.09 195)" fillOpacity="0.12"/><path d="M4 7l2 2 4-4" stroke="oklch(0.38 0.09 195)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 {item}
               </div>
@@ -257,7 +251,7 @@ export default function YouthEnsembles() {
                     required={required}
                     value={(form as any)[key]}
                     onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
+                    className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
                   />
                 </div>
               ))}
@@ -266,7 +260,7 @@ export default function YouthEnsembles() {
                 <select
                   value={form.interest}
                   onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
+                  className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
                 >
                   <option value="undecided">{t('Not sure yet', 'Nog niet zeker')}</option>
                   <option value="choir">{t('Choir / Singing', 'Koor / zingen')}</option>
@@ -280,11 +274,17 @@ export default function YouthEnsembles() {
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra and ensemble programs.', 'Ik wil periodieke updates ontvangen over het orkest en de ensembleprogramma\'s.')}</span>
               </label>
+              <p className="border-l-2 border-[oklch(0.72_0.12_75)] pl-4 text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-prose">
+                {t(
+                  'We are currently building our interest list. Once our first ensemble launches in your area, we will reach out with everything you need: confirmed location, schedule, and what to bring on the first day. No commitment required.',
+                  'We stellen momenteel onze interesselijst samen. Zodra ons eerste ensemble van start gaat in uw regio, nemen we contact met u op met alles wat u moet weten: bevestigde locatie, schema en wat u mee moet nemen op de eerste dag. Geen verplichting.'
+                )}
+              </p>
               <button type="submit" className="btn-primary w-full justify-center">
                 {t('Register My Interest', 'Meld mijn belangstelling')}
                 <ArrowRight size={16} />
               </button>
-              <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-3">
+              <p className="text-center text-sm text-[oklch(0.52_0.015_60)] mt-3">
                 {t('By submitting, you agree to our Privacy Policy. We never share your data.', 'Door in te dienen gaat u akkoord met ons Privacybeleid. We delen uw gegevens nooit.')}
               </p>
             </form>

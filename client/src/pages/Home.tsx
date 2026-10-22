@@ -82,7 +82,7 @@ export default function Home() {
                   'Kinderen Verenigd door Muziek'
                 )}
               </h1>
-              <p className="text-xs font-light tracking-wide text-white/85 mb-3 md:mb-6 first-letter:uppercase">
+              <p className="text-sm font-light tracking-wide text-white/85 mb-3 md:mb-6 first-letter:uppercase">
                 {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
               </p>
               <p className="hidden md:block text-lg text-white/85 leading-relaxed mb-8 max-w-sm">
@@ -112,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* The Journey */}
-      <section className="py-20 lg:py-28 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
+      <section className="py-16 lg:py-20 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
         <div className="container">
           <div className="mb-14 fade-up">
             <span className="section-rule" />
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* How it is funded */}
-      <section className="py-16 lg:py-20 bg-[oklch(0.95_0.02_195)]" ref={fundedRef}>
+      <section className="py-12 lg:py-14 bg-[oklch(0.95_0.02_195)]" ref={fundedRef}>
         <div className="container">
           <div className="fade-up max-w-3xl mx-auto text-center">
             <p className="font-display text-2xl lg:text-3xl font-semibold text-[oklch(0.22_0.01_60)] leading-snug mb-5">
@@ -181,11 +181,11 @@ export default function Home() {
       </section>
 
       {/* For Schools */}
-      <section className="py-20 lg:py-24 bg-[oklch(0.98_0.008_80)]" ref={schoolsRef}>
+      <section className="py-16 lg:py-20 bg-[oklch(0.98_0.008_80)]" ref={schoolsRef}>
         <div className="container">
           <div className="fade-up max-w-2xl mb-10">
             <span className="section-rule" />
-            <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
+            <span className="block text-sm font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
               {t('For Schools', 'Voor scholen')}
             </span>
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
@@ -206,7 +206,7 @@ export default function Home() {
                   'Een gratis concert voor uw leerlingen. Een goede keuze als uw school al een muziekprogramma heeft, zoals MuziekRoute.'
                 )}
               </p>
-              <Link href="/contact?interest=concert" className="btn-primary mt-auto min-h-11 text-sm">
+              <Link href="/contact?interest=concert" className="btn-primary mt-auto">
                 {t('Book a concert', 'Boek een concert')}
               </Link>
             </div>
@@ -220,7 +220,7 @@ export default function Home() {
                   'Een gratis concert, gevolgd door samenwerking met IOU om een lokaal ensemble van Nederland in Harmonie (The Netherlands in Harmony) op te zetten, waar uw leerlingen kunnen blijven spelen of zingen.'
                 )}
               </p>
-              <Link href="/contact?interest=concert-ensemble" className="btn-primary mt-auto min-h-11 text-sm">
+              <Link href="/contact?interest=concert-ensemble" className="btn-primary mt-auto">
                 {t('Discuss a concert and ensemble', 'Bespreek een concert en ensemble')}
               </Link>
             </div>
@@ -229,11 +229,11 @@ export default function Home() {
       </section>
 
       {/* For Parents */}
-      <section className="py-14 lg:py-20 bg-[oklch(0.95_0.02_195)]" ref={parentsRef}>
+      <section className="py-12 lg:py-16 bg-[oklch(0.95_0.02_195)]" ref={parentsRef}>
         <div className="container">
           <div>
           <div className="fade-up max-w-xl">
-            <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
+            <span className="block text-sm font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
               {t('For Parents', 'Voor ouders')}
             </span>
             <h2 className="font-display text-2xl lg:text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
@@ -245,7 +245,7 @@ export default function Home() {
                 'Meld uw belangstelling voor een gratis ensemble. We nemen contact met u op zodra er meer bekend is over de start, locatie en repetities. Gratis voor elk kind, mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
               )}
             </p>
-            <Link href="/contact?interest=parent" className="btn-primary text-sm">
+            <Link href="/contact?interest=parent" className="btn-primary">
               {t('Register your interest', 'Meld uw belangstelling')}
               <ArrowRight size={14} />
             </Link>

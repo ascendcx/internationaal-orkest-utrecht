@@ -76,7 +76,7 @@ export default function Contact() {
                         required={required}
                         value={(form as any)[key]}
                         onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-white"
+                        className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-white"
                       />
                     </div>
                   ))}
@@ -87,7 +87,7 @@ export default function Contact() {
                       required
                       value={form.interest}
                       onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-white"
+                      className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-white"
                     >
                       <option value="" disabled>{t('Choose an option', 'Kies een optie')}</option>
                       {interestOptions.map((o) => (
@@ -103,7 +103,7 @@ export default function Contact() {
                   <div>
                     <label className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('Message', 'Bericht')} *</label>
                     <textarea rows={5} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-white resize-none" />
+                      className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-white resize-none" />
                   </div>
                   <label className="flex items-start gap-3 cursor-pointer">
                     <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />

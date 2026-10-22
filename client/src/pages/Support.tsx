@@ -34,7 +34,7 @@ export default function Support() {
               'Elke bijdrage legt een instrument in de handen van een kind, zet een docent aan hun zijde en geeft hen een plek in een ensemble waar ze erbij horen. Nooit kosten voor de kinderen. Alleen dankzij mensen als u.'
             )}
           </p>
-          <p className="text-white/70 max-w-xl mx-auto text-sm leading-relaxed mt-4">
+          <p className="text-white/85 max-w-xl mx-auto text-base leading-relaxed mt-4">
             {t(
               'Anyone can join for free. Families who are able are warmly welcome to support us during our fundraising campaigns. It is never required.',
               'Iedereen mag gratis meedoen. Gezinnen die dat kunnen, zijn tijdens onze fondsenwervende acties van harte welkom om ons te steunen. Het is nooit verplicht.'
@@ -67,10 +67,10 @@ export default function Support() {
           <div className="bg-[oklch(0.38_0.09_195)] rounded-xl p-8 text-white">
             <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[oklch(0.85_0.1_75)] mb-2 block">{t('Primary Campaign', 'Primaire campagne')}</span>
+                <span className="text-sm font-bold uppercase tracking-widest text-[oklch(0.85_0.1_75)] mb-2 block">{t('Primary Campaign', 'Primaire campagne')}</span>
                 <h2 className="font-display text-2xl font-bold">{t('Our next fundraising campaign is coming soon.', 'Onze volgende inzamelingsactie komt binnenkort.')}</h2>
               </div>
-              <span className="text-xs bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] font-bold px-3 py-1 rounded-full">{t('Zero Fees', 'Nul kosten')}</span>
+              <span className="text-sm bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] font-bold px-3 py-1 rounded-full">{t('Zero Fees', 'Nul kosten')}</span>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               {t(
@@ -78,7 +78,7 @@ export default function Support() {
                 '100% van uw donatie gaat rechtstreeks naar het orkest via Zeffy, een platform zonder kosten voor non-profitorganisaties. Elke euro bereikt de kinderen.'
               )}
             </p>
-            <div className="bg-white/10 rounded-lg p-4 mb-6 text-sm text-white/70">
+            <div className="bg-white/10 rounded-lg p-4 mb-6 text-base text-white/85">
               {t('Our Zeffy campaign is being set up now. Once live, every euro donated here goes directly to the children with zero platform fees. Check back soon or join the newsletter below to be notified the moment it launches.', 'Onze Zeffy-campagne wordt nu opgezet. Zodra deze live is, gaat elke euro die hier wordt gedoneerd rechtstreeks naar de kinderen, zonder platformkosten. Kom snel terug of meld u aan voor de nieuwsbrief hieronder om op de hoogte te worden gebracht zodra de campagne van start gaat.')}
             </div>
             <label className="flex items-start gap-3 cursor-pointer mb-4">
@@ -110,32 +110,29 @@ export default function Support() {
             <div className="grid grid-cols-1 sm:grid-cols-[6rem_1fr_auto] gap-x-6 gap-y-2 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
               <div>
                 <div className="flex items-center gap-2 mb-0.5"><QrCode size={14} className="text-[oklch(0.38_0.09_195)]" /><span className="font-display font-bold text-sm text-[oklch(0.22_0.01_60)]">WERO</span></div>
-                <span className="text-xs text-[oklch(0.52_0.015_60)]">{t('Dutch donors', 'NL donateurs')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('Dutch donors', 'NL donateurs')}</span>
               </div>
-              <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed">{t('Fast and secure payments directly from your Dutch bank.', 'Snelle en veilige betalingen rechtstreeks van uw Nederlandse bank.')}</p>
-              <div className="bg-[oklch(0.95_0.02_195)] rounded px-3 py-1.5 text-xs text-[oklch(0.52_0.015_60)] whitespace-nowrap">{t('QR code coming soon', 'Binnenkort')}</div>
+              <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">{t('Fast and secure payments directly from your Dutch bank.', 'Snelle en veilige betalingen rechtstreeks van uw Nederlandse bank.')}</p>
+              <div className="bg-[oklch(0.95_0.02_195)] rounded px-3 py-1.5 text-sm text-[oklch(0.52_0.015_60)] whitespace-nowrap">{t('QR code coming soon', 'Binnenkort')}</div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[6rem_1fr_auto] gap-x-6 gap-y-2 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
               <div>
                 <div className="flex items-center gap-2 mb-0.5"><CreditCard size={14} className="text-[oklch(0.38_0.09_195)]" /><span className="font-display font-bold text-sm text-[oklch(0.22_0.01_60)]">Mollie</span></div>
-                <span className="text-xs text-[oklch(0.52_0.015_60)]">{t('Card / international', 'Kaart / internationaal')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('Card / international', 'Kaart / internationaal')}</span>
               </div>
-              <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed">{t('Secure international and credit card payments. Available for donors worldwide.', 'Veilige internationale betalingen en creditcardbetalingen.')}</p>
-              <a href="https://payment-links.mollie.com/en/payment/nHXpkaYBF7uaFt2kIpYJR/details" target="_blank" rel="noopener noreferrer" className="btn-secondary text-xs py-2 px-4 inline-flex items-center gap-1 whitespace-nowrap">{t('Donate', 'Doneren')} <ExternalLink size={12} /></a>
+              <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">{t('Secure international and credit card payments. Available for donors worldwide.', 'Veilige internationale betalingen en creditcardbetalingen.')}</p>
+              <a href="https://payment-links.mollie.com/en/payment/nHXpkaYBF7uaFt2kIpYJR/details" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2 px-4 inline-flex items-center gap-1 whitespace-nowrap">{t('Donate', 'Doneren')} <ExternalLink size={12} /></a>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-[6rem_1fr_auto] gap-x-6 gap-y-2 py-6 border-t border-b border-[oklch(0.88_0.015_195)] items-start">
               <div>
                 <div className="flex items-center gap-2 mb-0.5"><Building2 size={14} className="text-[oklch(0.38_0.09_195)]" /><span className="font-display font-bold text-sm text-[oklch(0.22_0.01_60)]">{t('Bank Transfer', 'Overboeking')}</span></div>
-                <span className="text-xs text-[oklch(0.52_0.015_60)]">{t('Wire transfer', 'Internationale overboeking')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('Wire transfer', 'Internationale overboeking')}</span>
               </div>
-              <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed">{t('Direct international bank transfers welcome.', 'Directe internationale bankoverschrijvingen welkom.')}</p>
-              <div className="text-xs space-y-1 bg-[oklch(0.95_0.02_195)] rounded p-3">
-                <div><span className="font-medium text-[oklch(0.22_0.01_60)]">IBAN:</span> <span className="text-[oklch(0.52_0.015_60)]">[Pending]</span></div>
-                <div><span className="font-medium text-[oklch(0.22_0.01_60)]">SWIFT:</span> <span className="text-[oklch(0.52_0.015_60)]">[Pending]</span></div>
-              </div>
+              <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">{t('Direct international bank transfers welcome.', 'Directe internationale bankoverschrijvingen welkom.')}</p>
+              <div className="bg-[oklch(0.95_0.02_195)] rounded px-3 py-1.5 text-sm text-[oklch(0.42_0.01_60)] whitespace-nowrap">{t('Coming soon', 'Binnenkort')}</div>
             </div>
           </div>
-          <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-6">
+          <p className="text-center text-sm text-[oklch(0.52_0.015_60)] mt-6">
             {t('All donation methods include an automatic digital receipt and optional newsletter opt-in.', 'Alle donatiewijzen omvatten een automatisch digitaal ontvangstbewijs en optionele nieuwsbriefinschrijving.')}
           </p>
         </div>

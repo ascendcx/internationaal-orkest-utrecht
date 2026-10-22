@@ -76,7 +76,7 @@ export default function ConductorWorkshops() {
       </section>
 
       {/* Workshop Details */}
-      <section className="py-20 bg-[oklch(0.98_0.008_80)]">
+      <section className="py-16 bg-[oklch(0.98_0.008_80)]">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -154,7 +154,7 @@ export default function ConductorWorkshops() {
                         required={required}
                         value={(form as any)[key]}
                         onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
+                        className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
                       />
                     </div>
                   ))}

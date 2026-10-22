@@ -51,13 +51,13 @@ export default function About() {
         </div>
         <div className="relative container">
           <span className="section-rule" />
-          <p className="text-xs font-semibold uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-3">
             {t('Our Story', 'Ons verhaal')}
           </p>
           <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-tight">
             {t('About the Orchestra', 'Over het orkest')}
           </h1>
-          <p className="text-xs font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
+          <p className="text-sm font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
           </p>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
@@ -70,7 +70,7 @@ export default function About() {
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-[oklch(0.98_0.008_80)]" ref={revealRef}>
+      <section className="py-16 bg-[oklch(0.98_0.008_80)]" ref={revealRef}>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="fade-up">
@@ -107,7 +107,7 @@ export default function About() {
       </section>
 
       {/* Jennifer Bio */}
-      <section className="py-20 bg-[oklch(0.95_0.02_195)]">
+      <section className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="order-2 lg:order-1">
@@ -119,7 +119,7 @@ export default function About() {
             </div>
             <div className="order-1 lg:order-2">
               <span className="section-rule" />
-              <p className="text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-2">
+              <p className="text-sm font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-2">
                 {t('Artistic Director & Chief Conductor', 'Artistiek directeur & chef-dirigent')}
               </p>
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">Jennifer Diepman</h2>
@@ -147,7 +147,7 @@ export default function About() {
       </section>
 
       {/* Orchestra Roster */}
-      <section className="py-20 bg-[oklch(0.98_0.008_80)] overflow-hidden">
+      <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
         <div className="container">
           <div className="mb-10">
             <span className="section-rule" />
@@ -166,13 +166,13 @@ export default function About() {
             {Object.entries(musicians).map(([section, members]) => (
               <div key={section} className="break-inside-avoid mb-8">
                 <div className="border-t-2 border-[oklch(0.38_0.09_195)] pt-3 mb-2">
-                  <h3 className="font-sans text-xs font-semibold text-[oklch(0.38_0.09_195)] uppercase tracking-widest">
+                  <h3 className="font-sans text-sm font-semibold text-[oklch(0.38_0.09_195)] uppercase tracking-widest">
                     {section}
                   </h3>
                 </div>
                 <ul className="space-y-1">
                   {members.map((m) => (
-                    <li key={m} className="text-xs text-[oklch(0.42_0.01_60)] leading-relaxed">{m}</li>
+                    <li key={m} className="text-sm text-[oklch(0.42_0.01_60)] leading-relaxed">{m}</li>
                   ))}
                 </ul>
               </div>
