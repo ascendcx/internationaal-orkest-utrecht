@@ -16,9 +16,9 @@ export default function YouthEnsembles() {
   const { sending, failed, submitted, submit } = useFormSubmit('youth-ensemble');
   useSEO({
     title: 'Nederland in Harmonie | Free Youth Ensembles',
-    titleNl: 'Nederland in Harmonie | Gratis Jeugdensembles',
-    description: 'Free after-school music ensembles for every child in the Netherlands. No audition, no fees, ever.',
-    descriptionNl: 'Gratis naschoolse muziekensembles voor elk kind in Nederland. Geen auditie, geen kosten, nooit.',
+    titleNl: 'Nederland in Harmonie | Gratis jeugdensembles',
+    description: 'Free local youth music groups for children in the Netherlands. No audition or previous experience needed. Register your interest in Nederland in Harmonie.',
+    descriptionNl: 'Gratis lokale muziekgroepen voor kinderen in Nederland. Geen auditie of eerdere ervaring nodig. Meld uw belangstelling voor Nederland in Harmonie.',
     path: '/youth-ensembles',
     image: mediaUrl('images/iou-youth-ensemble.jpg'),
   });
@@ -130,7 +130,7 @@ export default function YouthEnsembles() {
               },
             ].map((step, i) => (
               <div key={i} className="grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr] gap-x-6 gap-y-2 py-8 border-t border-[oklch(0.88_0.015_195)] items-start">
-                <div className="font-display text-3xl font-bold text-[oklch(0.88_0.015_195)] leading-none pt-1">{i + 1}</div>
+                <div className="font-display text-3xl font-bold text-[var(--gold-on-light)] leading-none pt-1">{i + 1}</div>
                 <div>
                   <h3 className="font-display font-semibold text-lg text-[oklch(0.22_0.01_60)] mb-1">{step.title}</h3>
                   <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-xl">{step.desc}</p>

@@ -117,7 +117,7 @@ export default function Footer() {
                 />
                 <label className="flex items-start gap-2 text-sm text-white/70 cursor-pointer">
                   <input type="checkbox" required checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 rounded" />
-                  <span>{t('I agree to receive periodic updates (GDPR compliant)', 'Ik ga akkoord met het ontvangen van periodieke updates (AVG-conform)')}</span>
+                  <span>{t('I agree to receive periodic updates', 'Ik ga akkoord met het ontvangen van periodieke updates')}</span>
                 </label>
                 <FormError show={failed} light />
                 <button type="submit" disabled={sending} className="btn-gold text-sm py-2 mt-1 disabled:opacity-60 disabled:cursor-not-allowed">
