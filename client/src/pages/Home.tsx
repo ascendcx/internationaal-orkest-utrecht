@@ -19,8 +19,9 @@ export default function Home() {
   const parentsRef = useScrollReveal();
   const journeySteps = [
     {
-      img: 'iou-school-concert.jpg',
-      alt: t('School concert', 'Schoolconcert'),
+      img: 'iou-hero.jpg',
+      alt: t('Children watching an orchestra', 'Kinderen kijken naar een orkest'),
+      imgStyle: { objectPosition: '0% 50%', transform: 'scale(1.6)', transformOrigin: '20% 50%' },
       title: t('A child hears music', 'Een kind hoort muziek'),
       body: t(
         'A free concert brings live music to their school.',
@@ -28,9 +29,9 @@ export default function Home() {
       ),
     },
     {
-      img: 'iou-conductor.jpg',
-      alt: t('Conductor leading musicians', 'Dirigent met musici'),
-      pos: 'object-[50%_15%]',
+      img: 'iou-school-concert.jpg',
+      alt: t('A musician shows a child a violin', 'Een musicus laat een kind een viool zien'),
+      imgStyle: { objectPosition: '0% 50%', transform: 'scale(1.75)', transformOrigin: '36% 27%' },
       title: t('The moment it clicks', 'Het moment dat het klikt'),
       body: t(
         'Children try instruments or sing together, guided by musicians and singers.',
@@ -135,8 +136,8 @@ export default function Home() {
                       aria-hidden="true"
                     />
                   )}
-                  <div className="overflow-hidden rounded-xl aspect-[4/3] lg:order-1">
-                    <img src={IMG + step.img} alt={step.alt} className={`w-full h-full object-cover ${step.pos ?? ''}`} />
+                  <div className="overflow-hidden rounded-xl aspect-[3/2] lg:order-1">
+                    <img src={IMG + step.img} alt={step.alt} className="w-full h-full object-cover" style={step.imgStyle} />
                   </div>
                   {/* Marker sits on the path */}
                   <div className="absolute left-0 top-0 lg:relative lg:order-2 lg:my-6 lg:h-8">
@@ -194,8 +195,8 @@ export default function Home() {
               {t('Choose what fits your school. Both options are free.', 'Kies wat bij uw school past. Beide opties zijn gratis.')}
             </p>
           </div>
-          <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6" style={{ transitionDelay: '80ms' }}>
-            <div className="flex flex-col items-start rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm">
+          <div className="fade-up grid grid-cols-1 md:grid-cols-2" style={{ transitionDelay: '80ms' }}>
+            <div className="flex flex-col items-start pb-10 md:pb-0 md:pr-10 lg:pr-16">
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
                 {t('School concert', 'Schoolconcert')}
               </h3>
@@ -209,7 +210,7 @@ export default function Home() {
                 {t('Book a concert', 'Boek een concert')}
               </Link>
             </div>
-            <div className="flex flex-col items-start rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm">
+            <div className="flex flex-col items-start border-t border-[oklch(0.88_0.015_195)] pt-10 md:border-t-0 md:border-l md:pt-0 md:pl-10 lg:pl-16">
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
                 {t('School concert and local ensemble', 'Schoolconcert en lokaal ensemble')}
               </h3>
@@ -230,7 +231,7 @@ export default function Home() {
       {/* For Parents */}
       <section className="py-14 lg:py-20 bg-[oklch(0.95_0.02_195)]" ref={parentsRef}>
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
           <div className="fade-up max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
               {t('For Parents', 'Voor ouders')}
@@ -249,24 +250,21 @@ export default function Home() {
               <ArrowRight size={14} />
             </Link>
           </div>
-          <div className="fade-up overflow-hidden rounded-xl aspect-[16/10]" style={{ transitionDelay: '80ms' }}>
-            <img src={IMG + 'iou-support.jpg'} alt="" className="w-full h-full object-cover" />
-          </div>
           </div>
         </div>
       </section>
 
       {/* Magical Moment Pull Quote */}
-      <section className="bg-[oklch(0.22_0.05_195)] py-16 lg:py-24">
+      <section className="bg-[oklch(0.98_0.008_80)] py-14 lg:py-16">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="pull-quote text-center border-none pl-0 mb-6 !text-white">
+          <div className="max-w-2xl bg-white border border-[oklch(0.88_0.015_195)] rounded-lg p-6 md:p-8">
+            <blockquote className="pull-quote mb-4">
               {t(
                 '"More than 600 children, laughing, clapping, and having the time of their lives while our orchestra played."',
                 '"Meer dan 600 kinderen, lachend, klappend en de tijd van hun leven hebbend terwijl ons orkest speelde."'
               )}
             </blockquote>
-            <cite className="text-sm text-[oklch(0.72_0.12_75)] not-italic font-medium">
+            <cite className="block pl-[calc(1.5rem+3px)] text-sm text-[var(--gold-on-light)] not-italic font-medium">
               Jennifer Diepman, {t('Founder & Artistic Director', 'Oprichter & artistiek directeur')}
             </cite>
           </div>
@@ -274,17 +272,17 @@ export default function Home() {
       </section>
 
       {/* Impact Stats */}
-      <section className="py-16 bg-[oklch(0.38_0.09_195)]">
+      <section className="py-8 lg:py-10 bg-[oklch(0.38_0.09_195)]">
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4 text-center text-white">
             {[
               { num: '50', label: t('International Musicians', 'Internationale muzikanten') },
               { num: '600+', label: t('Children Reached', 'Kinderen bereikt') },
               { num: '€0', label: t('Cost to Youth Participants', 'Kosten voor jongeren') },
               { num: '50+', label: t('Nationalities Connected Through Music', 'Nationaliteiten verbonden door muziek') },
             ].map((stat) => (
-              <div key={stat.label} className="py-4">
-                <div className="font-display text-4xl lg:text-5xl font-bold lining-nums text-[oklch(0.72_0.12_75)] mb-2">{stat.num}</div>
+              <div key={stat.label} className="py-1">
+                <div className="font-display text-3xl lg:text-4xl font-bold lining-nums text-[oklch(0.72_0.12_75)] mb-1">{stat.num}</div>
                 <div className="text-sm text-white/80 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -293,12 +291,8 @@ export default function Home() {
       </section>
 
       {/* Support CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-support.jpg" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[oklch(0.22_0.05_195)]/85" />
-        </div>
-        <div className="relative container text-center text-white">
+      <section className="py-20 lg:py-24 bg-[oklch(0.3_0.07_195)]">
+        <div className="container text-center text-white">
           <span className="section-rule mx-auto" />
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
             {t('You Could Be the Reason They Clap.', 'U kunt de reden zijn dat zij klappen.')}
