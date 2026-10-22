@@ -87,7 +87,7 @@ export default function Home() {
               <p className="text-sm font-light tracking-wide text-white/85 mb-3 lg:mb-6 first-letter:uppercase">
                 {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
               </p>
-              <p className="hidden lg:block text-lg text-white/90 leading-relaxed mb-8 max-w-lg xl:max-w-xl">
+              <p className="hidden lg:block text-lg text-white/90 leading-relaxed mb-8 max-w-lg xl:max-w-xl text-balance">
                 {t(
                   'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
                   'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
