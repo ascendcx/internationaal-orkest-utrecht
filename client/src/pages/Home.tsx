@@ -58,8 +58,8 @@ export default function Home() {
   useSEO({
     title: 'Internationaal Orkest Utrecht | Free Music Programs for Children in the Netherlands',
     titleNl: 'Internationaal Orkest Utrecht | Gratis Muziekprogramma\'s voor Kinderen in Nederland',
-    description: 'Live orchestral concerts in schools and free youth ensembles for every child in the Netherlands. No fees, ever.',
-    descriptionNl: 'Live orkestconcerten op scholen en gratis jeugdensembles voor elk kind in Nederland. Geen kosten, nooit.',
+    description: 'Free concerts and youth ensembles for children in the Netherlands, made possible by donations, grants, and other funds.',
+    descriptionNl: 'Gratis concerten en jeugdensembles voor kinderen in Nederland, mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.',
     path: '/',
     image: mediaUrl('images/iou-hero.jpg'),
   });
