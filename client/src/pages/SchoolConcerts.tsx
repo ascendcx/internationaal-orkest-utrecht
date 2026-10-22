@@ -253,9 +253,6 @@ export default function SchoolConcerts() {
                 {t('Send inquiry', 'Verstuur aanvraag')}
                 <ArrowRight size={16} />
               </button>
-              <p className="text-center text-sm text-[oklch(0.52_0.015_60)] mt-3">
-                {t('We respond within 2 business days.', 'We reageren binnen 2 werkdagen.')}
-              </p>
             </form>
           )}
         </div>
