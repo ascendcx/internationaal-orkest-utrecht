@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
+import { Link } from 'wouter';
 import { useRef, useState } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
@@ -195,11 +196,18 @@ export default function Sponsors() {
           >
             {t('Let\'s discuss sponsorship', 'Laten we sponsoring bespreken')}
           </h2>
-          <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-8">
+          <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-3">
             {t(
               'Tell us about your business and what you would like to support. We will contact you to discuss the sponsorship options. Sending an inquiry does not commit you to a sponsorship.',
               'Vertel ons over uw bedrijf en wat u wilt steunen. We nemen contact met u op om de sponsormogelijkheden te bespreken. Een aanvraag verplicht u tot niets.'
             )}
+          </p>
+          <p className="text-sm text-[oklch(0.52_0.015_60)] mb-8">
+            {t('Prefer to make a donation instead? ', 'Liever een donatie doen? ')}
+            <Link href="/support" className="underline text-[oklch(0.38_0.09_195)]">
+              {t('See how to give', 'Bekijk hoe u kunt geven')}
+            </Link>
+            .
           </p>
           {submitted ? (
             <div role="status" className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">

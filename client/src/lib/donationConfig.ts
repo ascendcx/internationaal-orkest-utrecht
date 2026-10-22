@@ -3,7 +3,9 @@
 export const MOLLIE_URL = 'https://payment-links.mollie.com/en/payment/nHXpkaYBF7uaFt2kIpYJR/details';
 export const MOLLIE_RECIPIENT = 'Stichting Internationaal Orkest Utrecht';
 
-/** Leave empty to render nothing for Zeffy. Set both values when the campaign is ready. */
+/** Show the Zeffy block. With an empty campaign URL it shows a plain placeholder line and no button. */
+export const SHOW_ZEFFY = true;
+/** Set both values once the owning legal entity and campaign are confirmed. */
 export const ZEFFY_CAMPAIGN_URL = '';
 export const ZEFFY_RECIPIENT_NAME = '';
 

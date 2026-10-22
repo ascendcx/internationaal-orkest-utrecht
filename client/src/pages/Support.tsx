@@ -8,6 +8,7 @@ import { Honeypot, FormError } from '@/components/FormParts';
 import {
   MOLLIE_URL,
   MOLLIE_RECIPIENT,
+  SHOW_ZEFFY,
   ZEFFY_CAMPAIGN_URL,
   ZEFFY_RECIPIENT_NAME,
   SUPPORT_EMAIL,
@@ -119,7 +120,7 @@ export default function Support() {
   const [newsletter, setNewsletter] = useState(false);
   const { sending, failed, submitted, submit } = useFormSubmit('newsletter');
   const donateHeading = useRef<HTMLHeadingElement>(null);
-  const showZeffy = ZEFFY_CAMPAIGN_URL !== '';
+  const zeffyLive = SHOW_ZEFFY && ZEFFY_CAMPAIGN_URL !== '';
   useSEO({
     title: 'Donate | Internationaal Orkest Utrecht',
     titleNl: 'Doneren | Internationaal Orkest Utrecht',
@@ -128,6 +129,59 @@ export default function Support() {
     path: '/support',
     image: mediaUrl('images/iou-support.jpg'),
   });
+
+  const blockClass = 'border-t border-[oklch(0.88_0.015_195)] pt-6 first:border-t-0 first:pt-0';
+  const blockHeading = 'font-display text-lg font-bold text-[oklch(0.22_0.01_60)] mb-2';
+
+  const mollieBlock = (
+    <div className={blockClass}>
+      <h3 className={blockHeading}>{t('Donate through Mollie', 'Doneren via Mollie')}</h3>
+      <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-1">
+        {t('Continue to our Mollie payment page to choose your donation amount.', 'Ga naar onze betaalpagina bij Mollie en kies het bedrag dat u wilt geven.')}
+      </p>
+      <p className="text-sm text-[oklch(0.52_0.015_60)] mb-4">
+        {t(`Donations are made to ${MOLLIE_RECIPIENT}.`, `U doneert aan ${MOLLIE_RECIPIENT}.`)}
+      </p>
+      <a href={MOLLIE_URL} target="_blank" rel="noopener noreferrer" className={DONATE_BUTTON}>
+        {t('Donate via Mollie', 'Doneer via Mollie')} <ExternalLink size={14} aria-hidden="true" />
+      </a>
+    </div>
+  );
+
+  // Zeffy block: a plain placeholder line until a campaign link exists. Never a button, date, goal or progress bar without one.
+  const zeffyBlock = SHOW_ZEFFY ? (
+    <div className={blockClass}>
+      <h3 className={blockHeading}>{t('Fundraising campaigns on Zeffy', 'Fundraisingacties via Zeffy')}</h3>
+      <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-3">
+        {t(
+          'We plan to hold fundraising campaigns on Zeffy, an online platform for nonprofits.',
+          'We willen fondsenwervende acties houden via Zeffy, een online platform voor non-profitorganisaties.'
+        )}
+      </p>
+      {zeffyLive ? (
+        <>
+          {ZEFFY_RECIPIENT_NAME !== '' && (
+            <p className="text-sm text-[oklch(0.52_0.015_60)] mb-4">
+              {t(`Donations through Zeffy are made to ${ZEFFY_RECIPIENT_NAME}.`, `Donaties via Zeffy gaan naar ${ZEFFY_RECIPIENT_NAME}.`)}
+            </p>
+          )}
+          <a href={ZEFFY_CAMPAIGN_URL} target="_blank" rel="noopener noreferrer" className={DONATE_BUTTON}>
+            {t('Donate via Zeffy', 'Doneer via Zeffy')} <ExternalLink size={14} aria-hidden="true" />
+          </a>
+          <p className="text-sm text-[oklch(0.52_0.015_60)] mt-3">
+            {t(
+              'Zeffy may ask for an optional contribution to Zeffy. This is separate from your donation and can be changed or set to zero.',
+              'Zeffy kan vragen om een optionele bijdrage aan Zeffy. Die staat los van uw donatie en kunt u aanpassen of op nul zetten.'
+            )}
+          </p>
+        </>
+      ) : (
+        <p className="text-sm text-[oklch(0.52_0.015_60)]">
+          {t('Campaign details will be added here.', 'De gegevens van de actie worden hier toegevoegd.')}
+        </p>
+      )}
+    </div>
+  ) : null;
 
   const goToDonate = () => {
     const el = donateHeading.current;
@@ -200,35 +254,16 @@ export default function Support() {
           </h2>
 
           <div className="space-y-6">
-            <div>
-              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-1">
-                {t('Continue to our Mollie payment page to choose your donation amount.', 'Ga naar onze betaalpagina bij Mollie en kies het bedrag dat u wilt geven.')}
-              </p>
-              <p className="text-sm text-[oklch(0.52_0.015_60)] mb-4">
-                {t(`Donations are made to ${MOLLIE_RECIPIENT}.`, `U doneert aan ${MOLLIE_RECIPIENT}.`)}
-              </p>
-              <a href={MOLLIE_URL} target="_blank" rel="noopener noreferrer" className={DONATE_BUTTON}>
-                {t('Donate via Mollie', 'Doneer via Mollie')} <ExternalLink size={14} aria-hidden="true" />
-              </a>
-            </div>
-
-            {showZeffy && (
-              <div>
-                {ZEFFY_RECIPIENT_NAME !== '' && (
-                  <p className="text-sm text-[oklch(0.52_0.015_60)] mb-4">
-                    {t(`Donations through Zeffy are made to ${ZEFFY_RECIPIENT_NAME}.`, `Donaties via Zeffy gaan naar ${ZEFFY_RECIPIENT_NAME}.`)}
-                  </p>
-                )}
-                <a href={ZEFFY_CAMPAIGN_URL} target="_blank" rel="noopener noreferrer" className={DONATE_BUTTON}>
-                  {t('Donate via Zeffy', 'Doneer via Zeffy')} <ExternalLink size={14} aria-hidden="true" />
-                </a>
-                <p className="text-sm text-[oklch(0.52_0.015_60)] mt-3">
-                  {t(
-                    'Zeffy may ask for an optional contribution to Zeffy. This is separate from your donation and can be changed or set to zero.',
-                    'Zeffy kan vragen om een optionele bijdrage aan Zeffy. Die staat los van uw donatie en kunt u aanpassen of op nul zetten.'
-                  )}
-                </p>
-              </div>
+            {zeffyLive ? (
+              <>
+                {zeffyBlock}
+                {mollieBlock}
+              </>
+            ) : (
+              <>
+                {mollieBlock}
+                {zeffyBlock}
+              </>
             )}
 
             {(SHOW_WERO || SHOW_BANK_TRANSFER) && (

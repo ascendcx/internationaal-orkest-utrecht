@@ -8,7 +8,7 @@ Work through this before the site goes live on the real domain.
 
 - [ ] Bank transfer: fill `BANK_ACCOUNT_HOLDER`, `BANK_IBAN` and `BANK_BIC`. Use the real values only, never examples. Otherwise set `SHOW_BANK_TRANSFER = false`.
 - [ ] WERO: add `WERO_QR_IMAGE_URL` and `WERO_PAYEE_NAME`. Otherwise set `SHOW_WERO = false`.
-- [ ] Zeffy: set `ZEFFY_CAMPAIGN_URL` and `ZEFFY_RECIPIENT_NAME`, or leave both empty so nothing Zeffy shows.
+- [ ] Zeffy block: set `ZEFFY_CAMPAIGN_URL` and `ZEFFY_RECIPIENT_NAME` (`client/src/lib/donationConfig.ts`) once the owning legal entity and campaign are confirmed, or set `SHOW_ZEFFY` to `false`. A block that still says "Campaign details will be added here." must not go live.
 - [ ] Mollie: confirm the flow end to end with `MOLLIE_URL`, and confirm the Mollie page title and recipient (`MOLLIE_RECIPIENT`) read correctly.
 - [ ] `SUPPORT_EMAIL` is a monitored mailbox.
 
