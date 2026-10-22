@@ -2,16 +2,21 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
-import { CheckCircle, Music2, Users, ArrowRight } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 
 // Set to false until music licensing for online use is confirmed.
 const SHOW_ORCHESTRA_VIDEO = true;
 
+function interestFromUrl() {
+  const value = new URLSearchParams(window.location.search).get('interest') ?? '';
+  return value === 'concert' || value === 'concert-ensemble' ? value : '';
+}
+
 export default function SchoolConcerts() {
   const { t } = useLanguage();
   const revealRef = useScrollReveal();
-  const [form, setForm] = useState({ name: '', school: '', role: '', email: '', phone: '', dates: '', message: '', newsletter: false });
+  const [form, setForm] = useState({ name: '', school: '', role: '', email: '', phone: '', dates: '', interest: interestFromUrl(), message: '', newsletter: false });
   const [submitted, setSubmitted] = useState(false);
   useSEO({
     title: 'Bring a Symphony to Your School | Internationaal Orkest Utrecht',
@@ -28,9 +33,19 @@ export default function SchoolConcerts() {
   };
 
   const steps = [
-    { icon: <Music2 size={24} />, title: t('Step 1: The Orchestra Performs', 'Stap 1: het orkest treedt op'), desc: t('Our orchestra, often joined by vocal ensembles from the area, performs a customized instrumental and vocal concert for your students, at your school or a local hall.', 'Ons orkest, vaak samen met vocale ensembles uit de regio, verzorgt een op maat gemaakt instrumentaal en vocaal concert voor uw leerlingen, op uw school of in een lokale zaal.') },
-    { icon: <Users size={24} />, title: t('Step 2: Students Try It Themselves', 'Stap 2: leerlingen proberen het zelf'), desc: t('After the performance, children try out instruments or sing in a group at their own school, guided by our musicians and singers.', 'Na de uitvoering proberen kinderen zelf instrumenten uit of zingen ze in een groep op hun eigen school, begeleid door onze muzikanten en zangers.') },
-    { icon: <CheckCircle size={24} />, title: t('Step 3: The Option to Join a Youth Ensemble', 'Stap 3: de mogelijkheid om deel te nemen aan een jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
+    { title: t('Hear live music', 'Live muziek beleven'), desc: t('Our orchestra, together with local choirs, performs for your students. Children experience live instrumental and vocal music.', 'Ons orkest treedt op voor uw leerlingen, samen met lokale koren. Kinderen beleven live instrumentale muziek en zang.') },
+    { title: t('Try it themselves', 'Zelf proberen'), desc: t('After the concert, children try instruments or sing together at their school, guided by our musicians and singers.', 'Na het concert proberen kinderen op hun school instrumenten uit of zingen ze samen, begeleid door onze musici en zangers.') },
+    { title: t('Keep making music', 'Samen muziek blijven maken'), desc: t('With the concert and ensemble option, we work with your school to set up a local Nederland in Harmonie (The Netherlands in Harmony) ensemble. Children can continue playing or singing together, free of charge.', 'Kiest u voor een concert en ensemble? Dan werken we samen met uw school aan het opzetten van een lokaal ensemble van Nederland in Harmonie (The Netherlands in Harmony). Kinderen kunnen daar gratis blijven spelen of zingen.') },
+  ];
+
+  const options = [
+    { title: t('School concert', 'Schoolconcert'), desc: t('A concert on its own. A good fit if your school already has a music program, such as MuziekRoute.', 'Een concert zonder vervolgensemble. Geschikt voor scholen die al een muziekprogramma hebben, zoals MuziekRoute.') },
+    { title: t('School concert and local ensemble', 'Schoolconcert en lokaal ensemble'), desc: t('A concert followed by working with IOU to set up a free local ensemble where interested students can keep making music.', 'Een concert, gevolgd door het samen met IOU opzetten van een gratis lokaal ensemble. Zo kunnen geïnteresseerde leerlingen samen muziek blijven maken.') },
+  ];
+
+  const interestOptions = [
+    { value: 'concert', label: t('A school concert', 'Een schoolconcert') },
+    { value: 'concert-ensemble', label: t('A school concert and local ensemble', 'Een schoolconcert en lokaal ensemble') },
   ];
 
   return (
@@ -50,31 +65,37 @@ export default function SchoolConcerts() {
           <p className="text-sm font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
           </p>
-          <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
+          <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-4">
             {t(
-              'Funded through donations, grants, and other funds, our interactive symphonic and vocal concerts come to your school at no cost. From the first note to the hands-on instrument and singing sessions, we handle everything.',
-              'Gefinancierd door donaties, bijdragen van fondsen en andere middelen komen onze interactieve symfonische en vocale concerten gratis naar uw school. Van de eerste noot tot de sessies waarin kinderen zelf een instrument proberen of zingen, wij regelen alles.'
+              'Free, interactive concerts bring live orchestral music and singing to your school. Children hear the musicians perform, then try instruments or sing together.',
+              'Gratis, interactieve concerten brengen orkestmuziek en zang naar uw school. Kinderen luisteren naar de musici en proberen daarna zelf instrumenten uit of zingen samen.'
             )}
           </p>
-          <p className="md:hidden text-white/85 text-lg max-w-xl leading-relaxed mb-8">
+          <p className="md:hidden text-white/85 text-lg max-w-xl leading-relaxed mb-4">
             {t(
-              'Funded through donations, grants, and other funds, our interactive symphonic and vocal concerts come to your school at no cost.',
-              'Gefinancierd door donaties, bijdragen van fondsen en andere middelen komen onze interactieve symfonische en vocale concerten gratis naar uw school.'
+              'Free school concerts where children hear live music, try instruments and sing together.',
+              'Gratis schoolconcerten waarbij kinderen live muziek beleven, instrumenten uitproberen en samen zingen.'
+            )}
+          </p>
+          <p className="text-white/85 text-lg max-w-xl leading-relaxed font-medium mb-8">
+            {t(
+              'Free for every child. Made possible by donations, grants, and other funds.',
+              'Gratis voor elk kind. Mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
             )}
           </p>
           <a href="#booking" className="btn-gold">
-            {t('Request a Concert', 'Concert aanvragen')}
+            {t('Ask about a school concert', 'Vraag een schoolconcert aan')}
           </a>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Journey */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
         <div className="container">
           <div className="mb-12 fade-up">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] max-w-lg">
-              {t('We help you bring live music to your school.', 'Wij helpen u live muziek naar uw school te brengen.')}
+              {t('From Hearing Music to Making It', 'Van luisteren naar zelf muziek maken')}
             </h2>
           </div>
           {/* Annual-report style process: numbered steps with thin rules, no icon boxes */}
@@ -90,28 +111,22 @@ export default function SchoolConcerts() {
             ))}
             <div className="border-t border-[oklch(0.88_0.015_195)]" />
           </div>
-          <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-8">
-            {t(
-              'Schools can request a concert on its own or discuss a concert followed by a local youth ensemble. At this stage, the youth ensemble program starts through a school concert.',
-              'Scholen kunnen alleen een concert aanvragen of een concert met een lokaal jeugdensemble bespreken. In deze fase start het jeugdensembleprogramma altijd met een schoolconcert.'
-            )}
-          </p>
         </div>
       </section>
 
-      {/* Orchestra video */}
+      {/* Concert video */}
       {SHOW_ORCHESTRA_VIDEO && (
         <section className="pb-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
           <div className="container">
             <div className="max-w-[720px] mx-auto">
               <span className="section-rule" />
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-                {t('Hear the orchestra', 'Beluister het orkest')}
+                {t('Where the Journey Begins', 'Hier begint de muzikale reis')}
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                 {t(
-                  'The orchestra performing in concert, filmed from behind the conductor.',
-                  'Het orkest tijdens een concert, gefilmd vanachter de dirigent.'
+                  'A live concert can spark a child\'s curiosity. Our school concerts turn that first experience into a chance to try an instrument or sing together.',
+                  'Een live concert kan kinderen nieuwsgierig maken naar muziek. Bij onze schoolconcerten blijft het niet bij luisteren: kinderen proberen zelf instrumenten uit of zingen samen.'
                 )}
               </p>
               <video
@@ -130,15 +145,50 @@ export default function SchoolConcerts() {
         </section>
       )}
 
-      {/* Booking Form */}
+      {/* Two school options */}
+      <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
+        <div className="container">
+          <div className="mb-10">
+            <span className="section-rule" />
+            <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] max-w-lg mb-2">
+              {t('Choose What Fits Your School', 'Kies wat bij uw school past')}
+            </h2>
+            <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t('Both options are free.', 'Beide opties zijn gratis.')}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0">
+            {options.map((option, i) => (
+              <div
+                key={i}
+                className={i === 0 ? 'md:pr-10 lg:pr-16' : 'border-t border-[oklch(0.88_0.015_195)] pt-10 md:border-t-0 md:border-l md:pt-0 md:pl-10 lg:pl-16'}
+              >
+                <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{option.title}</h3>
+                <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-prose">{option.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-10">
+            {t(
+              'At this stage, the youth ensemble program starts through a school concert. Contact us to discuss what is possible for your school.',
+              'In deze fase begint het jeugdensembleprogramma met een schoolconcert. Neem contact met ons op om te bespreken wat er mogelijk is voor uw school.'
+            )}
+          </p>
+        </div>
+      </section>
+
+      {/* Inquiry Form */}
       <section id="booking" className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-            {t('Ready to Inspire Your Students?', 'Klaar om uw leerlingen te inspireren?')}
+            {t('Tell Us About Your School', 'Vertel ons over uw school')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8">
-            {t('Tell us about your school and we will take it from there. No cost, no commitment, just music.', 'Vertel ons over uw school en wij nemen het van daaruit over. Geen kosten, geen verplichting, alleen muziek.')}
+            {t(
+              'Share your school\'s details, preferred dates and the option you are interested in. We will contact you to discuss the next steps. Sending an inquiry does not commit you to a booking.',
+              'Laat ons weten om welke school het gaat, wanneer u een concert zou willen en welke optie uw belangstelling heeft. We nemen contact met u op om de mogelijkheden te bespreken. Een aanvraag verplicht u tot niets.'
+            )}
           </p>
           {submitted ? (
             <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
@@ -149,12 +199,12 @@ export default function SchoolConcerts() {
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm space-y-5">
               {[
-                { key: 'name', label: t('Your Name', 'Uw naam'), type: 'text', required: true },
-                { key: 'school', label: t('School Name', 'Naam van de school'), type: 'text', required: true },
-                { key: 'role', label: t('Your Role', 'Uw functie'), type: 'text', required: false },
-                { key: 'email', label: t('Email Address', 'E-mailadres'), type: 'email', required: true },
-                { key: 'phone', label: t('Phone Number', 'Telefoonnummer'), type: 'tel', required: false },
-                { key: 'dates', label: t('Preferred Dates / Season', 'Gewenste data / seizoen'), type: 'text', required: false },
+                { key: 'name', label: t('Your name', 'Uw naam'), type: 'text', required: true },
+                { key: 'school', label: t('School name', 'Naam van de school'), type: 'text', required: true },
+                { key: 'role', label: t('Your role', 'Uw functie'), type: 'text', required: false },
+                { key: 'email', label: t('Email address', 'E-mailadres'), type: 'email', required: true },
+                { key: 'phone', label: t('Phone number', 'Telefoonnummer'), type: 'tel', required: false },
+                { key: 'dates', label: t('Preferred dates or term', 'Gewenste datum of periode'), type: 'text', required: false },
               ].map(({ key, label, type, required }) => (
                 <div key={key}>
                   <label className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{label}{required && ' *'}</label>
@@ -168,25 +218,44 @@ export default function SchoolConcerts() {
                 </div>
               ))}
               <div>
-                <label className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('Message', 'Bericht')}</label>
+                <label htmlFor="interest" className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('I am interested in', 'Ik ben geïnteresseerd in')} *</label>
+                <select
+                  id="interest"
+                  required
+                  value={form.interest}
+                  onChange={(e) => setForm({ ...form, interest: e.target.value })}
+                  className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
+                >
+                  <option value="" disabled>{t('Choose an option', 'Kies een optie')}</option>
+                  {interestOptions.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('Message', 'Bericht')}</label>
                 <textarea
+                  id="message"
                   rows={4}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)] resize-none"
                 />
+                <p className="text-sm text-[oklch(0.52_0.015_60)] mt-1">
+                  {t('Include your school\'s town or city and any questions.', 'Vermeld ook de plaats van uw school en eventuele vragen.')}
+                </p>
               </div>
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
-                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programs.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
               </label>
               <button type="submit" className="btn-primary w-full justify-center">
-              {t('Request Concert Information', 'Concertinformatie aanvragen')}
-              <ArrowRight size={16} />
-            </button>
-            <p className="text-center text-sm text-[oklch(0.52_0.015_60)] mt-3">
-              {t('We respond within 2 business days. No commitment required.', 'We reageren binnen 2 werkdagen. Geen verplichting vereist.')}
-            </p>
+                {t('Send inquiry', 'Verstuur aanvraag')}
+                <ArrowRight size={16} />
+              </button>
+              <p className="text-center text-sm text-[oklch(0.52_0.015_60)] mt-3">
+                {t('We respond within 2 business days.', 'We reageren binnen 2 werkdagen.')}
+              </p>
             </form>
           )}
         </div>
