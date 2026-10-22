@@ -76,10 +76,6 @@ export default function ConductorWorkshops() {
             </a>
             <div className="hidden md:inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.72_0.12_75)]" />
-              {t('Hands-on podium time', 'Praktische podiumtijd')}
-            </div>
-            <div className="hidden md:inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.72_0.12_75)]" />
               {t('Practical conducting experience', 'Praktijkervaring als dirigent')}
             </div>
           </div>
@@ -120,7 +116,7 @@ export default function ConductorWorkshops() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-[16rem_1fr] gap-8 md:gap-12 items-start">
             <img
-              src={mediaUrl('images/iou-jennifer-conductor.webp')}
+              src={mediaUrl('images/iou-jennifer-diepman-conductor.webp')}
               alt={t(
                 'Jennifer Diepman, Founder, Artistic Director and Chief Conductor of Internationaal Orkest Utrecht, smiling.',
                 'Jennifer Diepman, oprichter, artistiek directeur en chef-dirigent van Internationaal Orkest Utrecht, lacht naar de camera.'
