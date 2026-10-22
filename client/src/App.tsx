@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Redirect, Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -14,7 +14,6 @@ import About from "./pages/About";
 import SchoolConcerts from "./pages/SchoolConcerts";
 import YouthEnsembles from "./pages/YouthEnsembles";
 import ConductorWorkshops from "./pages/ConductorWorkshops";
-import ForSchools from "./pages/ForSchools";
 import Support from "./pages/Support";
 import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
@@ -30,7 +29,7 @@ function Router() {
         <Route path="/school-concerts" component={SchoolConcerts} />
         <Route path="/youth-ensembles" component={YouthEnsembles} />
         <Route path="/conductor-workshops" component={ConductorWorkshops} />
-        <Route path="/scholen" component={ForSchools} />
+        <Route path="/scholen"><Redirect to="/school-concerts" replace /></Route>
         <Route path="/support" component={Support} />
         <Route path="/sponsors" component={Sponsors} />
         <Route path="/contact" component={Contact} />
