@@ -157,6 +157,12 @@ export default function ConductorWorkshops() {
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
               {t('Your learning supports music for children', 'Uw ontwikkeling helpt kinderen muziek maken')}
             </h2>
+            <p className="text-[oklch(0.22_0.01_60)] text-lg leading-relaxed font-medium mb-4">
+              {t(
+                'Every workshop supports our youth concerts and ensembles. You develop your artistry. The music continues.',
+                'Elke workshop steunt onze concerten en jeugdensembles. U ontwikkelt uw artistieke vaardigheden. De muziek gaat verder.'
+              )}
+            </p>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
               {t(
                 'The workshops help support IOU\'s school concerts and youth ensembles, giving children the chance to hear live music and then make music together.',

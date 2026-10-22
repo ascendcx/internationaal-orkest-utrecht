@@ -61,8 +61,8 @@ export default function SchoolConcerts() {
   const [form, setForm] = useState({ name: '', school: '', role: '', email: '', phone: '', dates: '', interest: interestFromUrl(), message: '', newsletter: false });
   const { sending, failed, submitted, submit } = useFormSubmit('school-concert');
   useSEO({
-    title: 'Bring a Symphony to Your School | Internationaal Orkest Utrecht',
-    titleNl: 'Breng een Symfonie naar Uw School | Internationaal Orkest Utrecht',
+    title: 'Bring Music to Your School | Internationaal Orkest Utrecht',
+    titleNl: 'Breng muziek naar uw school | Internationaal Orkest Utrecht',
     description: 'Free, interactive instrumental and vocal concerts for schools across the Netherlands, funded through donations, grants, and other funds.',
     descriptionNl: 'Gratis, interactieve instrumentale en vocale concerten voor scholen in heel Nederland, gefinancierd door donaties, bijdragen van fondsen en andere middelen.',
     path: '/school-concerts',
