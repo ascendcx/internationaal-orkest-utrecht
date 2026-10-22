@@ -231,7 +231,7 @@ export default function Home() {
                 )}
               </p>
               <Link href="/contact?interest=concert" className="btn-primary mt-auto">
-                {t('Book a concert', 'Boek een concert')}
+                {t('Ask about a school concert', 'Vraag een schoolconcert aan')}
               </Link>
             </div>
             <div className="flex flex-col items-start border-t border-[oklch(0.88_0.015_195)] pt-10 md:border-t-0 md:border-l md:pt-0 md:pl-10 lg:pl-16">
