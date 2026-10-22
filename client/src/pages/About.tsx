@@ -3,6 +3,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
 import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';
+import { useRef } from 'react';
 import { mediaUrl } from '@/lib/media';
 
 const musicians = {
@@ -24,9 +25,74 @@ const musicians = {
   'Piano': ['Daisuke Kanamaru (Japan)', 'Sofia Skopou (Greece)'],
 };
 
+/** Dutch display labels. The roster records above stay in English. */
+const instrumentNl: Record<string, string> = {
+  'Violin': 'Viool',
+  'Viola': 'Altviool',
+  'Cello': 'Cello',
+  'Double Bass': 'Contrabas',
+  'Flute/Piccolo': 'Fluit/piccolo',
+  'Oboe/English Horn': 'Hobo/althobo',
+  'Clarinet': 'Klarinet',
+  'Saxophone': 'Saxofoon',
+  'Bassoon': 'Fagot',
+  'Horn': 'Hoorn',
+  'Trumpet': 'Trompet',
+  'Trombone': 'Trombone',
+  'Tuba': 'Tuba',
+  'Percussion/Timpani': 'Slagwerk/pauken',
+  'Harp': 'Harp',
+  'Piano': 'Piano',
+};
+
+const countryNl: Record<string, string> = {
+  'Argentina': 'Argentinië',
+  'Australia': 'Australië',
+  'Belgium': 'België',
+  'China': 'China',
+  'Cyprus': 'Cyprus',
+  'France': 'Frankrijk',
+  'Germany': 'Duitsland',
+  'Greece': 'Griekenland',
+  'Hungary': 'Hongarije',
+  'Italy': 'Italië',
+  'Japan': 'Japan',
+  'Korea': 'Korea',
+  'Luxembourg': 'Luxemburg',
+  'Netherlands': 'Nederland',
+  'Norway': 'Noorwegen',
+  'Poland': 'Polen',
+  'Portugal': 'Portugal',
+  'Russia': 'Rusland',
+  'Slovenia': 'Slovenië',
+  'Spain': 'Spanje',
+  'UK': 'Verenigd Koninkrijk',
+  'United States': 'Verenigde Staten',
+  'Uzbekistan': 'Oezbekistan',
+};
+
+/** "Name (Country/Country)" with the country part translated for the Dutch page. */
+function memberLabel(member: string, lang: string): string {
+  if (lang !== 'nl') return member;
+  const match = member.match(/^(.*) \((.*)\)$/);
+  if (!match) return member;
+  const countries = match[2].split('/').map((c) => countryNl[c] ?? c).join('/');
+  return `${match[1]} (${countries})`;
+}
+
 export default function About() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const revealRef = useScrollReveal();
+  const missionHeading = useRef<HTMLHeadingElement>(null);
+
+  const goToMission = () => {
+    const el = missionHeading.current;
+    if (!el) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    el.focus({ preventScroll: true });
+  };
+
   useSEO({
     title: 'About the Orchestra | Internationaal Orkest Utrecht',
     titleNl: 'Over het Orkest | Internationaal Orkest Utrecht',
@@ -38,8 +104,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Page Hero */}
-      {/* Page Hero — full-bleed image */}
+      {/* Page Hero, full-bleed image */}
       <section className="relative min-h-[65vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -56,7 +121,7 @@ export default function About() {
         <div className="relative container">
           <span className="section-rule" />
           <p className="text-sm font-semibold uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-3">
-            {t('Our Story', 'Ons verhaal')}
+            {t('Our story', 'Ons verhaal')}
           </p>
           <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-tight">
             {t('About the Orchestra', 'Over het orkest')}
@@ -66,10 +131,17 @@ export default function About() {
           </p>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
-              'The Internationaal Orkest Utrecht believes every child in the Netherlands deserves to experience live music. Founded by professional and conservatory musicians from across the globe, we bring symphonic and vocal concerts into schools and use those performances as the spark to build free local youth ensembles.',
-              'Het Internationaal Orkest Utrecht gelooft dat elk kind in Nederland live muziek moet kunnen ervaren. Opgericht door professionele en conservatoriummusici van over de hele wereld, brengen wij symfonische en vocale concerten naar scholen en gebruiken die optredens als vonk om gratis lokale jeugdensembles op te bouwen.'
+              'Internationaal Orkest Utrecht brings together musicians from different countries to help children discover and make music. Our work connects free school concerts with the development of free local youth ensembles.',
+              'Internationaal Orkest Utrecht brengt musici uit verschillende landen samen om kinderen muziek te laten ontdekken en zelf muziek te laten maken. We verbinden gratis schoolconcerten met het opzetten van gratis lokale jeugdensembles.'
             )}
           </p>
+          <button
+            type="button"
+            onClick={goToMission}
+            className="btn-gold mt-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            {t('Discover our work', 'Ontdek wat we doen')} <ArrowRight size={16} aria-hidden="true" />
+          </button>
         </div>
       </section>
 
@@ -79,23 +151,34 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="fade-up">
               <span className="section-rule" />
-              <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">
-                {t('Building Social Bonds Through Music', 'Sociale banden opbouwen door muziek')}
+              <h2
+                ref={missionHeading}
+                id="mission"
+                tabIndex={-1}
+                className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6 scroll-mt-28 rounded focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-[oklch(0.38_0.09_195)]"
+              >
+                {t('Music brings children together', 'Muziek brengt kinderen samen')}
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'Internationaal Orkest Utrecht was founded on a simple belief. Making music together builds better citizens. Our orchestra is the vehicle. We plan, collaborate with vocal ensembles from the area, and perform customized instrumental and vocal concerts for schools. Those performances open the door to Nederland in Harmonie, our free local youth music program, where children can join ensembles of every kind, from choirs to symphonic bands.',
-                  'Internationaal Orkest Utrecht is opgericht op een eenvoudige overtuiging. Samen muziek maken bouwt betere burgers. Ons orkest is het voertuig. We plannen, werken samen met vocale ensembles uit de regio en voeren op maat gemaakte instrumentale en vocale concerten uit voor scholen. Die optredens openen de deur naar Nederland in Harmonie, ons gratis lokale jeugdmuziekprogramma, waar kinderen kunnen deelnemen aan ensembles van elke soort, van koren tot harmonieorkesten.'
+                  'Every child should have the chance to hear live music and try making it themselves. Our orchestra brings concerts to schools, together with local choirs. Children can then try instruments or sing, guided by musicians and singers.',
+                  'Elk kind moet de kans krijgen om live muziek te beleven en zelf muziek te proberen. Ons orkest brengt concerten naar scholen, samen met lokale koren. Daarna kunnen kinderen instrumenten uitproberen of zingen, begeleid door musici en zangers.'
                 )}
               </p>
-              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'Our ultimate goal is children from different backgrounds making music together, in spaces where they feel welcome, understood, and connected through the universal language of music.',
-                  'Ons uiteindelijke doel is dat kinderen met verschillende achtergronden samen muziek maken, in ruimtes waar ze zich welkom, begrepen en verbonden voelen door de universele taal van muziek.'
+                  'We work with participating schools to develop Nederland in Harmonie (The Netherlands in Harmony), free local youth ensembles where children can keep playing or singing together. The aim is a place to learn, make friends and feel they belong.',
+                  'Samen met deelnemende scholen werken we aan Nederland in Harmonie: gratis lokale jeugdensembles waar kinderen samen blijven spelen of zingen. Een plek om te leren, vrienden te maken en erbij te horen.'
+                )}
+              </p>
+              <p className="text-[oklch(0.22_0.01_60)] font-medium leading-relaxed mb-6">
+                {t(
+                  'Free for every child. Made possible by donations, grants, and other funds.',
+                  'Gratis voor elk kind. Mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
                 )}
               </p>
               <Link href="/school-concerts" className="btn-primary">
-                {t('See Our School Programs', 'Bekijk onze schoolprogramma\'s')}
+                {t('Explore our school concerts', 'Bekijk onze schoolconcerten')}
                 <ArrowRight size={16} />
               </Link>
             </div>
@@ -132,25 +215,25 @@ export default function About() {
             <div className="order-1 lg:order-2">
               <span className="section-rule" />
               <p className="text-sm font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-2">
-                {t('Artistic Director & Chief Conductor', 'Artistiek directeur & chef-dirigent')}
+                {t('Founder, Artistic Director and Chief Conductor', 'Oprichter, artistiek directeur en chef-dirigent')}
               </p>
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">Jennifer Diepman</h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'Jennifer Diepman grew up surrounded by music, beginning piano at age 3 and quickly expanding to violin, flute, oboe, and percussion. She holds a Master of Music in Conducting from Messiah University and has studied at the Juilliard School of Music and the Cascais Music Conservatory in Portugal.',
-                  'Jennifer Diepman groeide op omringd door muziek, begon op 3-jarige leeftijd met piano en breidde al snel uit naar viool, fluit, hobo en percussie. Ze heeft een Master of Music in Directie van de Messiah University en heeft gestudeerd aan de Juilliard School of Music en het Cascais Muziekconservatorium in Portugal.'
+                  'Jennifer Diepman grew up surrounded by music, beginning piano at age 3 and quickly expanding to violin, flute, oboe, and percussion.',
+                  'Jennifer Diepman groeide op omringd door muziek, begon op 3-jarige leeftijd met piano en breidde al snel uit naar viool, fluit, hobo en percussie.'
                 )}
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'An award-winning oboist and conductor, Jennifer has led ensembles across the globe. She received the Fred J. Miller 1st Prize Outstanding Achievement Award in Conducting and the John Philip Sousa Award in Oboe Performance.',
-                  'Als bekroond hoboïst en dirigent heeft Jennifer ensembles over de hele wereld geleid. Ze ontving de Fred J. Miller 1e Prijs voor Uitstekende Prestatie in Directie en de John Philip Sousa Award in Hobo-uitvoering.'
+                  'She holds a Master of Music in Conducting from Messiah University and has studied at the Juilliard School of Music and the Cascais Music Conservatory in Portugal. She received the Fred J. Miller 1st Prize Outstanding Achievement Award in Conducting and the John Philip Sousa Award in Oboe Performance.',
+                  'Ze heeft een Master of Music in Directie van de Messiah University en heeft gestudeerd aan de Juilliard School of Music en het Cascais Muziekconservatorium in Portugal. Ze ontving de Fred J. Miller 1st Prize Outstanding Achievement Award in Conducting en de John Philip Sousa Award in Oboe Performance.'
                 )}
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
                 {t(
-                  'Jennifer founded the Internationaal Orkest Utrecht because she believes music is not a privilege. It belongs to every child. Her goal is simple: use the power of collective music-making to build social bonds that last long after the concert ends.',
-                  'Jennifer richtte het Internationaal Orkest Utrecht op omdat zij gelooft dat muziek geen privilege is. Het is er voor elk kind. Haar doel is simpel: de kracht van collectief musiceren gebruiken om sociale banden op te bouwen die blijven bestaan lang na het concert.'
+                  'Jennifer founded Internationaal Orkest Utrecht because she believes every child should have the chance to make music. Through school concerts and local ensembles, she wants children to have a place to learn, play, sing and feel they belong.',
+                  'Jennifer richtte Internationaal Orkest Utrecht op omdat zij vindt dat elk kind de kans moet krijgen om muziek te maken. Met schoolconcerten en lokale ensembles wil zij kinderen een plek geven om te leren, te spelen, te zingen en erbij te horen.'
                 )}
               </p>
             </div>
@@ -164,12 +247,12 @@ export default function About() {
           <div className="mb-10">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-              {t('An International Ensemble', 'Een internationaal ensemble')}
+              {t('Meet our musicians', 'Maak kennis met onze musici')}
             </h2>
             <p className="text-[oklch(0.52_0.015_60)] max-w-xl">
               {t(
                 'Our musicians come from many countries and bring different musical backgrounds to every performance.',
-                'Onze musici komen uit veel landen en brengen verschillende muzikale achtergronden mee naar elk optreden.'
+                'Onze musici komen uit verschillende landen en brengen hun eigen muzikale achtergrond mee naar elk optreden.'
               )}
             </p>
           </div>
@@ -187,17 +270,50 @@ export default function About() {
               <div key={section} className="break-inside-avoid mb-8">
                 <div className="border-t-2 border-[oklch(0.38_0.09_195)] pt-3 mb-2">
                   <h3 className="font-sans text-sm font-semibold text-[oklch(0.38_0.09_195)] uppercase tracking-widest">
-                    {section}
+                    {lang === 'nl' ? instrumentNl[section] ?? section : section}
                   </h3>
                 </div>
                 <ul className="space-y-1">
                   {members.map((m) => (
-                    <li key={m} className="text-sm text-[oklch(0.42_0.01_60)] leading-relaxed">{m}</li>
+                    <li key={m} className="text-sm text-[oklch(0.42_0.01_60)] leading-relaxed">{memberLabel(m, lang)}</li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Closing invitation */}
+      <section className="py-16 bg-[oklch(0.95_0.02_195)]">
+        <div className="container">
+          <span className="section-rule" />
+          <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
+            {t('Explore our work', 'Ontdek wat we doen')}
+          </h2>
+          <p className="text-[oklch(0.42_0.01_60)] leading-relaxed max-w-xl mb-6">
+            {t(
+              'Find out about our school concerts and youth ensembles, or help make free music possible for more children.',
+              'Lees meer over onze schoolconcerten en jeugdensembles, of help gratis muziek mogelijk te maken voor meer kinderen.'
+            )}
+          </p>
+          <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-3">
+            {[
+              { href: '/school-concerts', label: t('School concerts', 'Schoolconcerten') },
+              { href: '/youth-ensembles', label: t('Youth ensembles', 'Jeugdensembles') },
+              { href: '/support', label: t('Support the children', 'Steun de kinderen') },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="inline-flex items-center gap-1.5 font-medium text-[oklch(0.38_0.09_195)] underline underline-offset-4 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(0.38_0.09_195)]"
+                >
+                  {l.label}
+                  <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </div>
