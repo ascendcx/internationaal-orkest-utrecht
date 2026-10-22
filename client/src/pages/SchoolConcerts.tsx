@@ -4,6 +4,9 @@ import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Music2, Users, ArrowRight } from 'lucide-react';
 
+// Set to false until music licensing for online use is confirmed.
+const SHOW_ORCHESTRA_VIDEO = true;
+
 export default function SchoolConcerts() {
   const { t } = useLanguage();
   const revealRef = useScrollReveal();
@@ -94,6 +97,36 @@ export default function SchoolConcerts() {
           </p>
         </div>
       </section>
+
+      {/* Orchestra video */}
+      {SHOW_ORCHESTRA_VIDEO && (
+        <section className="pb-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
+          <div className="container">
+            <div className="max-w-[720px] mx-auto">
+              <span className="section-rule" />
+              <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
+                {t('Hear the orchestra', 'Beluister het orkest')}
+              </h2>
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
+                {t(
+                  'The orchestra performing in concert, filmed from behind the conductor.',
+                  'Het orkest tijdens een concert, gefilmd vanachter de dirigent.'
+                )}
+              </p>
+              <video
+                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/videos/iou-video.mp4#t=0.5"
+                controls
+                playsInline
+                preload="metadata"
+                width={854}
+                height={480}
+                aria-label={t('Video: the orchestra performing in concert', 'Video: het orkest tijdens een concert')}
+                className="w-full max-w-full aspect-video rounded-xl bg-black"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Booking Form */}
       <section id="booking" className="py-16 bg-[oklch(0.95_0.02_195)]">
