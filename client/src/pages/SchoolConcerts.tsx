@@ -143,7 +143,7 @@ export default function SchoolConcerts() {
           <div className="space-y-0 fade-up" style={{ transitionDelay: '80ms' }}>
             {steps.map((step, i) => (
               <div key={i} className="grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr] gap-x-6 gap-y-2 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
-                <div className="font-display text-3xl font-bold text-[oklch(0.38_0.09_195)] leading-none pt-1">0{i + 1}</div>
+                <div className="font-display text-3xl font-bold text-[oklch(0.38_0.09_195)] leading-none pt-1">{i + 1}</div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-[oklch(0.22_0.01_60)] mb-2">{step.title}</h3>
                   <p className="text-base text-[oklch(0.35_0.01_60)] leading-relaxed max-w-prose">{step.desc}</p>
