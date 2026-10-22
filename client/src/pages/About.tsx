@@ -42,9 +42,12 @@ export default function About() {
       <section className="relative min-h-[65vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg"
-            alt="Orchestra performing"
-            className="w-full h-full object-cover object-center"
+            src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-chamber-orchestra.webp"
+            alt={t('An orchestra seen from above, with the conductor in the foreground.', 'Een orkest van bovenaf gezien, met de dirigent op de voorgrond.')}
+            width={1440}
+            height={714}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '52% 75%' }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/85 via-[oklch(0.22_0.05_195)]/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/70 via-transparent to-transparent" />
@@ -97,12 +100,12 @@ export default function About() {
             </div>
             <div className="fade-up" style={{ transitionDelay: '80ms' }}>
               <img
-                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-chamber-orchestra.webp"
-                alt={t('A chamber orchestra seen from above, with the conductor in the foreground.', 'Een kamerorkest van bovenaf gezien, met de dirigent op de voorgrond.')}
+                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-violin-child.webp"
+                alt={t('A small boy holds a violin while an adult leans in to talk with him.', 'Een jongetje houdt een viool vast terwijl een volwassene voorover buigt om met hem te praten.')}
                 width={1440}
-                height={714}
+                height={959}
                 loading="lazy"
-                style={{ objectPosition: '52% 50%' }}
+                style={{ objectPosition: '60% 50%' }}
                 className="rounded-xl shadow-lg w-full object-cover aspect-[4/3]"
               />
             </div>
@@ -169,6 +172,14 @@ export default function About() {
               )}
             </p>
           </div>
+          <img
+            src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-teachers.webp"
+            alt={t('Three smiling musicians stand together holding a flute, a clarinet and a saxophone.', 'Drie lachende musici staan samen en houden een dwarsfluit, een klarinet en een saxofoon vast.')}
+            width={1440}
+            height={1164}
+            loading="lazy"
+            className="rounded-xl w-full max-w-[720px] h-auto mx-auto mb-12"
+          />
           {/* Annual-report style roster: sections as typographic groups, not cards */}
           <div className="columns-2 sm:columns-3 lg:columns-4 gap-8 space-y-0">
             {Object.entries(musicians).map(([section, members]) => (

@@ -115,8 +115,12 @@ export default function ForSchools() {
               <div className="border-t border-[oklch(0.88_0.015_195)]" />
             </div>
             <img
-              src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-youth-ensemble.jpg"
-              alt="Youth ensemble"
+              src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-violin-child.webp"
+              alt={t('A small boy holds a violin while an adult leans in to talk with him.', 'Een jongetje houdt een viool vast terwijl een volwassene voorover buigt om met hem te praten.')}
+              width={1440}
+              height={959}
+              loading="lazy"
+              style={{ objectPosition: '80% 50%' }}
               className="hidden lg:block rounded-xl shadow-lg w-full object-cover aspect-[3/4] sticky top-24"
             />
           </div>

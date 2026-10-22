@@ -20,7 +20,7 @@ export default function Home() {
   const journeySteps = [
     {
       img: 'iou-chamber-orchestra.webp',
-      alt: t('A chamber orchestra seen from above, with the conductor in the foreground.', 'Een kamerorkest van bovenaf gezien, met de dirigent op de voorgrond.'),
+      alt: t('An orchestra seen from above, with the conductor in the foreground.', 'Een orkest van bovenaf gezien, met de dirigent op de voorgrond.'),
       width: 1440,
       height: 714,
       imgStyle: { objectPosition: '52% 50%' },
