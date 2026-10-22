@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { mediaUrl } from '@/lib/media';
 
 export default function Sponsors() {
   const { t } = useLanguage();
@@ -13,7 +14,7 @@ export default function Sponsors() {
     description: 'Partner with Internationaal Orkest Utrecht and support free music education for children across the Netherlands.',
     descriptionNl: 'Ga een partnerschap aan met Internationaal Orkest Utrecht en steun gratis muziekonderwijs voor kinderen in heel Nederland.',
     path: '/sponsors',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent) => {

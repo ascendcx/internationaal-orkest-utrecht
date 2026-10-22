@@ -3,6 +3,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
 import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';
+import { mediaUrl } from '@/lib/media';
 
 const musicians = {
   'Violin': ['Anastasia Obsieger (Germany)', 'Dámian Cabedo (Spain)', 'Tina Draadjer (Netherlands)', 'Emese Jeszenöi (Hungary)', 'Magdalena Karas (Poland)', 'Tanja Kim (Uzbekistan/Korea)', 'Camille Rabot (France)', 'Julia Raggers (Netherlands)', 'Noa Staal (China)', 'Elisa van Aalst (Netherlands)', 'Myrthe van der Mullen (Netherlands)', 'Naomi van Hessen (Netherlands)', 'Hanna van Hoye (Belgium)', 'Fran Wilhelm (United States)'],
@@ -32,7 +33,7 @@ export default function About() {
     description: 'Meet the international musicians and conductor behind Internationaal Orkest Utrecht\'s mission to bring music to children across the Netherlands, with children from different backgrounds making music together.',
     descriptionNl: 'Maak kennis met de internationale muzikanten en dirigent achter de missie van Internationaal Orkest Utrecht om muziek te brengen bij kinderen in heel Nederland, waarbij kinderen met verschillende achtergronden samen muziek maken.',
     path: '/about',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   return (
@@ -42,7 +43,7 @@ export default function About() {
       <section className="relative min-h-[65vh] flex items-end pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-chamber-orchestra.webp"
+            src={mediaUrl('images/iou-chamber-orchestra.webp')}
             alt={t('An orchestra seen from above, with the conductor in the foreground.', 'Een orkest van bovenaf gezien, met de dirigent op de voorgrond.')}
             width={1440}
             height={714}
@@ -100,7 +101,7 @@ export default function About() {
             </div>
             <div className="fade-up" style={{ transitionDelay: '80ms' }}>
               <img
-                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-violin-child.webp"
+                src={mediaUrl('images/iou-violin-child.webp')}
                 alt={t('A small boy holds a violin while an adult leans in to talk with him.', 'Een jongetje houdt een viool vast terwijl een volwassene voorover buigt om met hem te praten.')}
                 width={1440}
                 height={959}
@@ -119,7 +120,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="order-2 lg:order-1">
               <img
-                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-jennifer-diepman.webp"
+                src={mediaUrl('images/iou-jennifer-diepman.webp')}
                 alt={t('Jennifer Diepman, Artistic Director and Chief Conductor', 'Jennifer Diepman, artistiek directeur en chef-dirigent')}
                 width={1362}
                 height={2046}
@@ -173,7 +174,7 @@ export default function About() {
             </p>
           </div>
           <img
-            src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-teachers.webp"
+            src={mediaUrl('images/iou-teachers.webp')}
             alt={t('Three smiling musicians stand together holding a flute, a clarinet and a saxophone.', 'Drie lachende musici staan samen en houden een dwarsfluit, een klarinet en een saxofoon vast.')}
             width={1440}
             height={1164}

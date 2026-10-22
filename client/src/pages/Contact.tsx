@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Mail, Instagram, Facebook, Linkedin, ArrowRight } from 'lucide-react';
+import { mediaUrl } from '@/lib/media';
 
 const INTEREST_KEYS = ['concert', 'concert-ensemble', 'parent', 'sponsor', 'workshops', 'other'] as const;
 
@@ -28,7 +29,7 @@ export default function Contact() {
     description: 'Get in touch about school concerts, youth ensembles, or supporting our mission.',
     descriptionNl: 'Neem contact met ons op over schoolconcerten, jeugdensembles of het steunen van onze missie.',
     path: '/contact',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent) => {

@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { ArrowRight } from 'lucide-react';
+import { mediaUrl } from '@/lib/media';
 
 export default function ForSchools() {
   const { t } = useLanguage();
@@ -10,7 +11,7 @@ export default function ForSchools() {
     description: 'Free live concerts, classroom introductions, and youth ensembles for Utrecht schools, funded through your existing cultuureducatie budget.',
     descriptionNl: 'Gratis live concerten, klasintroducties en jeugdensembles voor Utrechtse scholen, gefinancierd via uw bestaande cultuureducatiebudget.',
     path: '/scholen',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg',
+    image: mediaUrl('images/iou-school-concert.jpg'),
   });
 
   const steps = [
@@ -50,7 +51,7 @@ export default function ForSchools() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end pb-12 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg" alt="School concert" className="w-full h-full object-cover" />
+          <img src={mediaUrl('images/iou-school-concert.jpg')} alt="School concert" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>
@@ -115,7 +116,7 @@ export default function ForSchools() {
               <div className="border-t border-[oklch(0.88_0.015_195)]" />
             </div>
             <img
-              src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-violin-child.webp"
+              src={mediaUrl('images/iou-violin-child.webp')}
               alt={t('A small boy holds a violin while an adult leans in to talk with him.', 'Een jongetje houdt een viool vast terwijl een volwassene voorover buigt om met hem te praten.')}
               width={1440}
               height={959}

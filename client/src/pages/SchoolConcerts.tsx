@@ -3,6 +3,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Music2, Users, ArrowRight } from 'lucide-react';
+import { mediaUrl } from '@/lib/media';
 
 // Set to false until music licensing for online use is confirmed.
 const SHOW_ORCHESTRA_VIDEO = true;
@@ -18,7 +19,7 @@ export default function SchoolConcerts() {
     description: 'Free, interactive instrumental and vocal concerts for schools across the Netherlands, funded through donations, grants, and other funds.',
     descriptionNl: 'Gratis, interactieve instrumentale en vocale concerten voor scholen in heel Nederland, gefinancierd door donaties, bijdragen van fondsen en andere middelen.',
     path: '/school-concerts',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg',
+    image: mediaUrl('images/iou-school-concert.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -37,7 +38,7 @@ export default function SchoolConcerts() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end pb-8 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-school-concert.jpg" alt="School concert" className="w-full h-full object-cover" />
+          <img src={mediaUrl('images/iou-school-concert.jpg')} alt="School concert" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>
@@ -114,7 +115,8 @@ export default function SchoolConcerts() {
                 )}
               </p>
               <video
-                src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/videos/iou-video.mp4#t=0.5"
+                src={mediaUrl('videos/iou-video.mp4')}
+                poster={mediaUrl('images/iou-video-poster.jpg')}
                 controls
                 playsInline
                 preload="metadata"

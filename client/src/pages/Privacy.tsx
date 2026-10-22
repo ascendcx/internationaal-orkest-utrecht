@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useEffect } from 'react';
+import { mediaUrl } from '@/lib/media';
 
 export default function Privacy() {
   const { t } = useLanguage();
@@ -10,7 +11,7 @@ export default function Privacy() {
     description: 'Read the Privacy & Cookie Policy for Internationaal Orkest Utrecht.',
     descriptionNl: 'Lees het Privacy- en Cookiebeleid van Internationaal Orkest Utrecht.',
     path: '/privacy',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   useEffect(() => {

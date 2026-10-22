@@ -7,9 +7,9 @@ import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight } from 'lucide-react';
 
-const IMG = 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
+import { mediaUrl } from '@/lib/media';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -61,7 +61,7 @@ export default function Home() {
     description: 'Live orchestral concerts in schools and free youth ensembles for every child in the Netherlands. No fees, ever.',
     descriptionNl: 'Live orkestconcerten op scholen en gratis jeugdensembles voor elk kind in Nederland. Geen kosten, nooit.',
     path: '/',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
+    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   return (
@@ -70,7 +70,7 @@ export default function Home() {
       <section className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg"
+            src={mediaUrl('images/iou-hero.jpg')}
             alt="Orchestra performing for children"
             className="w-full h-full object-cover object-[20%_center] lg:object-center"
           />
@@ -161,7 +161,7 @@ export default function Home() {
                     />
                   )}
                   <div className="overflow-hidden rounded-xl aspect-[3/2] lg:order-1">
-                    <img src={IMG + step.img} alt={step.alt} width={step.width} height={step.height} loading="lazy" className="w-full h-full object-cover" style={step.imgStyle} />
+                    <img src={mediaUrl('images/' + step.img)} alt={step.alt} width={step.width} height={step.height} loading="lazy" className="w-full h-full object-cover" style={step.imgStyle} />
                   </div>
                   {/* Marker sits on the path */}
                   <div className="absolute left-0 top-0 lg:relative lg:order-2 lg:my-6 lg:h-8">

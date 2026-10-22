@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { ExternalLink, QrCode, CreditCard, Building2, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import { mediaUrl } from '@/lib/media';
 
 export default function Support() {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export default function Support() {
     description: 'Support free youth music ensembles and school concerts across the Netherlands. Every donation helps a child play, sing, and belong.',
     descriptionNl: 'Steun gratis jeugdmuziekensembles en schoolconcerten in heel Nederland. Elke donatie helpt een kind spelen, zingen en erbij horen.',
     path: '/support',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-support.jpg',
+    image: mediaUrl('images/iou-support.jpg'),
   });
 
   return (
@@ -20,7 +21,7 @@ export default function Support() {
       {/* Hero */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-support.jpg" alt="" className="w-full h-full object-cover" />
+          <img src={mediaUrl('images/iou-support.jpg')} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[oklch(0.22_0.05_195)]/85" />
         </div>
         <div className="relative container text-center text-white">

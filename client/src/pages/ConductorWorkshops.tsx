@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, ArrowRight, ExternalLink } from 'lucide-react';
+import { mediaUrl } from '@/lib/media';
 
 export default function ConductorWorkshops() {
   const { t } = useLanguage();
@@ -13,7 +14,7 @@ export default function ConductorWorkshops() {
     description: 'Professional development workshops for conductors, led by Artistic Director Jennifer Diepman.',
     descriptionNl: 'Professionele ontwikkelingsworkshops voor dirigenten, geleid door Artistiek Directeur Jennifer Diepman.',
     path: '/conductor-workshops',
-    image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-conductor.jpg',
+    image: mediaUrl('images/iou-conductor.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -26,7 +27,7 @@ export default function ConductorWorkshops() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end pb-12 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-conductor.jpg" alt="Conductor workshop" className="w-full h-full object-cover object-top md:object-[center_25%]" />
+          <img src={mediaUrl('images/iou-conductor.jpg')} alt="Conductor workshop" className="w-full h-full object-cover object-top md:object-[center_25%]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/60" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>
