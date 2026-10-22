@@ -1,8 +1,8 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
-import { useState } from 'react';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { CheckCircle, ArrowRight, Play } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 
 // Set to false until music licensing for online use is confirmed.
@@ -11,6 +11,46 @@ const SHOW_ORCHESTRA_VIDEO = true;
 function interestFromUrl() {
   const value = new URLSearchParams(window.location.search).get('interest') ?? '';
   return value === 'concert' || value === 'concert-ensemble' ? value : '';
+}
+
+function ConcertVideo({ t }: { t: (en: string, nl: string) => string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [started, setStarted] = useState(false);
+
+  const handlePlay = () => {
+    // If play() is rejected the button stays, so the visitor can try again or use the native controls.
+    videoRef.current?.play().catch(() => {});
+  };
+
+  return (
+    <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
+      <video
+        ref={videoRef}
+        src={mediaUrl('videos/iou-video.mp4')}
+        poster={mediaUrl('images/iou-video-poster.jpg')}
+        controls
+        playsInline
+        preload="metadata"
+        width={854}
+        height={480}
+        onPlay={() => setStarted(true)}
+        aria-label={t('Video: the orchestra performing in concert', 'Video: het orkest tijdens een concert')}
+        className="absolute inset-0 w-full h-full max-w-full"
+      />
+      {!started && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <button
+            type="button"
+            onClick={handlePlay}
+            aria-label={t('Play concert video', 'Speel de concertvideo af')}
+            className="pointer-events-auto flex h-20 w-20 items-center justify-center rounded-full bg-[oklch(0.98_0.008_80)] text-[oklch(0.38_0.09_195)] shadow-lg ring-4 ring-white/40 transition-transform duration-150 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100 focus-visible:outline-none focus-visible:ring-[oklch(0.72_0.12_75)]"
+          >
+            <Play size={32} fill="currentColor" aria-hidden="true" className="ml-1" />
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function SchoolConcerts() {
@@ -92,6 +132,8 @@ export default function SchoolConcerts() {
       {/* Journey */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
         <div className="container">
+          {/* Same 720px column as the video section below, so the two read as one sequence. */}
+          <div className="max-w-[720px] mx-auto">
           <div className="mb-12 fade-up">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] max-w-lg">
@@ -101,15 +143,16 @@ export default function SchoolConcerts() {
           {/* Annual-report style process: numbered steps with thin rules, no icon boxes */}
           <div className="space-y-0 fade-up" style={{ transitionDelay: '80ms' }}>
             {steps.map((step, i) => (
-              <div key={i} className="grid grid-cols-[3rem_1fr] lg:grid-cols-[4rem_1fr_2fr] gap-x-6 gap-y-2 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
+              <div key={i} className="grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr] gap-x-6 gap-y-2 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
                 <div className="font-display text-3xl font-bold text-[oklch(0.38_0.09_195)] leading-none pt-1">0{i + 1}</div>
-                <div className="lg:col-span-2">
+                <div>
                   <h3 className="font-display font-bold text-xl text-[oklch(0.22_0.01_60)] mb-2">{step.title}</h3>
                   <p className="text-base text-[oklch(0.35_0.01_60)] leading-relaxed max-w-prose">{step.desc}</p>
                 </div>
               </div>
             ))}
             <div className="border-t border-[oklch(0.88_0.015_195)]" />
+          </div>
           </div>
         </div>
       </section>
@@ -129,17 +172,7 @@ export default function SchoolConcerts() {
                   'Een live concert kan kinderen nieuwsgierig maken naar muziek. Bij onze schoolconcerten blijft het niet bij luisteren: kinderen proberen zelf instrumenten uit of zingen samen.'
                 )}
               </p>
-              <video
-                src={mediaUrl('videos/iou-video.mp4')}
-                poster={mediaUrl('images/iou-video-poster.jpg')}
-                controls
-                playsInline
-                preload="metadata"
-                width={854}
-                height={480}
-                aria-label={t('Video: the orchestra performing in concert', 'Video: het orkest tijdens een concert')}
-                className="w-full max-w-full aspect-video rounded-xl bg-black"
-              />
+              <ConcertVideo t={t} />
             </div>
           </div>
         </section>

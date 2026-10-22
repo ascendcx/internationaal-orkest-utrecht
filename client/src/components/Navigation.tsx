@@ -64,7 +64,7 @@ export default function Navigation() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}
       >
         <div className="container">
-          <div className="flex items-center justify-between h-16 xl:h-20">
+          <div className="flex items-center justify-between h-[72px] xl:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 no-underline">
               <img
@@ -73,13 +73,13 @@ export default function Navigation() {
                 className="h-9 w-9 object-contain"
               />
               <div className="flex flex-col leading-tight">
-                <span className={`font-display font-semibold text-sm tracking-wide ${logoColor} transition-colors duration-300`}>
+                <span className={`font-display font-semibold text-base tracking-wide ${logoColor} transition-colors duration-300`}>
                   Internationaal Orkest
                 </span>
-                <span className={`font-display font-semibold text-sm tracking-widest uppercase ${logoColor} transition-colors duration-300`}>
+                <span className={`font-display font-semibold text-base tracking-widest uppercase ${logoColor} transition-colors duration-300`}>
                   Utrecht
                 </span>
-                <span className={`font-normal text-[13px] tracking-wide opacity-90 ${logoColor} transition-colors duration-300`}>
+                <span className={`font-normal text-sm tracking-wide ${logoColor} transition-colors duration-300`}>
                   {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
                 </span>
               </div>
@@ -129,9 +129,9 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               ref={menuButtonRef}
-              className={`xl:hidden flex h-11 w-11 items-center justify-center rounded-md ${textColor}`}
+              className={`xl:hidden flex h-11 w-11 items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.72_0.12_75)] ${textColor}`}
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
+              aria-label={mobileOpen ? t("Close menu", "Sluit menu") : t("Open menu", "Open menu")}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
             >
@@ -143,7 +143,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div id="mobile-menu" className="fixed inset-0 z-40 overflow-y-auto bg-white pt-16 xl:hidden">
+        <div id="mobile-menu" className="fixed inset-0 z-40 overflow-y-auto bg-white pt-[72px] xl:hidden">
           <div className="container py-6 flex flex-col gap-1">
             {navItems.map((item) => (
               <Link
