@@ -4,6 +4,8 @@ import { useSEO } from '@/hooks/useSEO';
 import { useRef, useState } from 'react';
 import { CheckCircle, ArrowRight, Play } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import { Honeypot, FormError } from '@/components/FormParts';
 
 // Set to false until music licensing for online use is confirmed.
 const SHOW_ORCHESTRA_VIDEO = true;
@@ -57,7 +59,7 @@ export default function SchoolConcerts() {
   const { t } = useLanguage();
   const revealRef = useScrollReveal();
   const [form, setForm] = useState({ name: '', school: '', role: '', email: '', phone: '', dates: '', interest: interestFromUrl(), message: '', newsletter: false });
-  const [submitted, setSubmitted] = useState(false);
+  const { sending, failed, submitted, submit } = useFormSubmit('school-concert');
   useSEO({
     title: 'Bring a Symphony to Your School | Internationaal Orkest Utrecht',
     titleNl: 'Breng een Symfonie naar Uw School | Internationaal Orkest Utrecht',
@@ -67,10 +69,7 @@ export default function SchoolConcerts() {
     image: mediaUrl('images/iou-school-concert.jpg'),
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
 
   const steps = [
     { title: t('Hear live music', 'Live muziek beleven'), desc: t('Our orchestra, together with local choirs, performs for your students. Children experience live instrumental and vocal music.', 'Ons orkest treedt op voor uw leerlingen, samen met lokale koren. Kinderen beleven live instrumentale muziek en zang.') },
@@ -224,10 +223,9 @@ export default function SchoolConcerts() {
             )}
           </p>
           {submitted ? (
-            <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
+            <div role="status" className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
               <CheckCircle size={40} className="text-[oklch(0.38_0.09_195)] mx-auto mb-4" />
-              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Thank you!', 'Bedankt!')}</h3>
-              <p className="text-[oklch(0.52_0.015_60)]">{t("We'll be in touch within 2 business days.", 'We nemen binnen 2 werkdagen contact met u op.')}</p>
+              <p className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)]">{t('Thank you. We have received your message and will be in touch.', 'Dank u wel. We hebben uw bericht ontvangen en nemen contact met u op.')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm space-y-5">
@@ -282,10 +280,12 @@ export default function SchoolConcerts() {
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programs.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
               </label>
-              <button type="submit" className="btn-primary w-full justify-center">
+              <FormError show={failed} />
+              <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
                 {t('Send inquiry', 'Verstuur aanvraag')}
                 <ArrowRight size={16} />
               </button>
+              <Honeypot />
             </form>
           )}
         </div>

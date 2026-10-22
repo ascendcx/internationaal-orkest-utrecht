@@ -3,10 +3,14 @@ import { useSEO } from '@/hooks/useSEO';
 import { ExternalLink, QrCode, CreditCard, Building2, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { mediaUrl } from '@/lib/media';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import { Honeypot, FormError } from '@/components/FormParts';
 
 export default function Support() {
   const { t } = useLanguage();
+  const [email, setEmail] = useState('');
   const [newsletter, setNewsletter] = useState(false);
+  const { sending, failed, submitted, submit } = useFormSubmit('newsletter');
   useSEO({
     title: 'Donate | Internationaal Orkest Utrecht',
     titleNl: 'Doneren | Internationaal Orkest Utrecht',
@@ -82,18 +86,34 @@ export default function Support() {
             <div className="bg-white/10 rounded-lg p-4 mb-6 text-base text-white/85">
               {t('Our Zeffy campaign is being set up now. Once live, every euro donated here goes directly to the children with zero platform fees. Check back soon or join the newsletter below to be notified the moment it launches.', 'Onze Zeffy-campagne wordt nu opgezet. Zodra deze live is, gaat elke euro die hier wordt gedoneerd rechtstreeks naar de kinderen, zonder platformkosten. Kom snel terug of meld u aan voor de nieuwsbrief hieronder om op de hoogte te worden gebracht zodra de campagne van start gaat.')}
             </div>
-            <label className="flex items-start gap-3 cursor-pointer mb-4">
-              <input type="checkbox" checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} className="mt-0.5 rounded" />
-              <span className="text-sm text-white/80">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
-            </label>
-            <button
-              type="button"
-              disabled
-              aria-disabled="true"
-              className="inline-flex min-h-11 cursor-not-allowed items-center rounded-md bg-white/15 px-7 py-3 text-[0.9375rem] font-semibold text-white"
-            >
-              {t('Coming soon', 'Binnenkort')}
-            </button>
+            {submitted ? (
+              <p role="status" className="text-base font-medium text-white">
+                {t('Thank you. You are on our list.', 'Dank u wel. U staat op onze lijst.')}
+              </p>
+            ) : (
+              <form onSubmit={(e) => submit(e, { email, newsletter, source: 'support' })} className="space-y-3">
+                <div>
+                  <label htmlFor="support-newsletter-email" className="block text-sm font-medium text-white mb-1">{t('Email address', 'E-mailadres')} *</label>
+                  <input
+                    id="support-newsletter-email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-2.5 rounded-lg border border-white/30 text-sm bg-white text-[oklch(0.22_0.01_60)]"
+                  />
+                </div>
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input type="checkbox" required checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} className="mt-0.5 rounded" />
+                  <span className="text-sm text-white/80">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
+                </label>
+                <FormError show={failed} light />
+                <button type="submit" disabled={sending} className="btn-gold disabled:opacity-60 disabled:cursor-not-allowed">
+                  {t('Keep me updated', 'Houd mij op de hoogte')}
+                </button>
+                <Honeypot />
+              </form>
+            )}
           </div>
         </div>
       </section>

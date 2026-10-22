@@ -3,11 +3,13 @@ import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, ArrowRight, Music, Heart, Star, ExternalLink } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import { Honeypot, FormError } from '@/components/FormParts';
 
 export default function YouthEnsembles() {
   const { t } = useLanguage();
   const [form, setForm] = useState({ parentName: '', childName: '', childAge: '', school: '', email: '', phone: '', interest: '', newsletter: false });
-  const [submitted, setSubmitted] = useState(false);
+  const { sending, failed, submitted, submit } = useFormSubmit('youth-ensemble');
   useSEO({
     title: 'Nederland in Harmonie | Free Youth Ensembles',
     titleNl: 'Nederland in Harmonie | Gratis Jeugdensembles',
@@ -17,10 +19,7 @@ export default function YouthEnsembles() {
     image: mediaUrl('images/iou-youth-ensemble.jpg'),
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
 
   return (
     <div className="min-h-screen pt-20">
@@ -221,7 +220,6 @@ export default function YouthEnsembles() {
             {[
               t('No fees, ever', 'Nooit kosten'),
               t('No audition required', 'Geen auditie vereist'),
-              t('Response within 2 days', 'Reactie binnen 2 dagen'),
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm text-[oklch(0.38_0.09_195)] font-medium">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="oklch(0.38 0.09 195)" fillOpacity="0.12"/><path d="M4 7l2 2 4-4" stroke="oklch(0.38 0.09 195)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -230,10 +228,9 @@ export default function YouthEnsembles() {
             ))}
           </div>
           {submitted ? (
-            <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
+            <div role="status" className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
               <CheckCircle size={40} className="text-[oklch(0.38_0.09_195)] mx-auto mb-4" />
-              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Registration Received!', 'Inschrijving ontvangen!')}</h3>
-              <p className="text-[oklch(0.52_0.015_60)]">{t("We'll contact you within 2 business days with next steps.", 'We nemen binnen 2 werkdagen contact met u op met de volgende stappen.')}</p>
+              <p className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)]">{t('Thank you. We have received your interest and will be in touch about next steps.', 'Dank u wel. We hebben uw belangstelling ontvangen en nemen contact met u op over de volgende stappen.')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm space-y-5">
@@ -281,13 +278,15 @@ export default function YouthEnsembles() {
                   'We stellen momenteel onze interesselijst samen. Zodra ons eerste ensemble van start gaat in uw regio, nemen we contact met u op met alles wat u moet weten: bevestigde locatie, schema en wat u mee moet nemen op de eerste dag. Geen verplichting.'
                 )}
               </p>
-              <button type="submit" className="btn-primary w-full justify-center">
+              <FormError show={failed} />
+              <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
                 {t('Register My Interest', 'Meld mijn belangstelling')}
                 <ArrowRight size={16} />
               </button>
               <p className="text-center text-sm text-[oklch(0.52_0.015_60)] mt-3">
                 {t('By submitting, you agree to our Privacy Policy. We never share your data.', 'Door in te dienen gaat u akkoord met ons Privacybeleid. We delen uw gegevens nooit.')}
               </p>
+              <Honeypot />
             </form>
           )}
         </div>

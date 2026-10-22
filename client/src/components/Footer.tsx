@@ -7,19 +7,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Instagram, Facebook, Linkedin, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { mediaUrl } from '@/lib/media';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import { Honeypot, FormError } from '@/components/FormParts';
 
 export default function Footer() {
   const { t } = useLanguage();
   const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+  const { sending, failed, submitted: subscribed, submit } = useFormSubmit('newsletter');
+  const [consent, setConsent] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail('');
-    }
-  };
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => submit(e, { email, newsletter: consent, source: 'footer' });
 
   return (
     <footer className="bg-[oklch(0.22_0.05_195)] text-white">
@@ -105,8 +102,8 @@ export default function Footer() {
               )}
             </p>
             {subscribed ? (
-              <p className="text-sm text-[oklch(0.72_0.12_75)] font-medium">
-                {t('Thank you for subscribing!', 'Bedankt voor uw aanmelding!')}
+              <p role="status" className="text-sm text-[oklch(0.72_0.12_75)] font-medium">
+                {t('Thank you. You are on our list.', 'Dank u wel. U staat op onze lijst.')}
               </p>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
@@ -119,12 +116,14 @@ export default function Footer() {
                   className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 text-sm focus:border-[oklch(0.72_0.12_75)] transition-colors"
                 />
                 <label className="flex items-start gap-2 text-sm text-white/70 cursor-pointer">
-                  <input type="checkbox" required className="mt-0.5 rounded" />
+                  <input type="checkbox" required checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 rounded" />
                   <span>{t('I agree to receive periodic updates (GDPR compliant)', 'Ik ga akkoord met het ontvangen van periodieke updates (AVG-conform)')}</span>
                 </label>
-                <button type="submit" className="btn-gold text-sm py-2 mt-1">
+                <FormError show={failed} light />
+                <button type="submit" disabled={sending} className="btn-gold text-sm py-2 mt-1 disabled:opacity-60 disabled:cursor-not-allowed">
                   {t('Subscribe', 'Aanmelden')}
                 </button>
+                <Honeypot />
               </form>
             )}
           </div>

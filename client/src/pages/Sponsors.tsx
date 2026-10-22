@@ -3,11 +3,13 @@ import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import { Honeypot, FormError } from '@/components/FormParts';
 
 export default function Sponsors() {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', company: '', email: '', phone: '', message: '', newsletter: false });
-  const [submitted, setSubmitted] = useState(false);
+  const { sending, failed, submitted, submit } = useFormSubmit('sponsor');
   useSEO({
     title: 'Become a Sponsor | Internationaal Orkest Utrecht',
     titleNl: 'Word Sponsor | Internationaal Orkest Utrecht',
@@ -17,10 +19,7 @@ export default function Sponsors() {
     image: mediaUrl('images/iou-hero.jpg'),
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
 
   const benefits = [
     t('Recognition in printed concert programs', 'Erkenning in gedrukte concertprogramma\'s'),
@@ -103,10 +102,9 @@ export default function Sponsors() {
             {t('Tell us about your business and we will put together a partnership that works for both of us.', 'Vertel ons over uw bedrijf en wij stellen een partnerschap samen dat voor ons beiden werkt.')}
           </p>
           {submitted ? (
-            <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
+            <div role="status" className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
               <CheckCircle size={40} className="text-[oklch(0.38_0.09_195)] mx-auto mb-4" />
-              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Thank you!', 'Bedankt!')}</h3>
-              <p className="text-[oklch(0.52_0.015_60)]">{t("We'll be in touch within 2 business days.", 'We nemen binnen 2 werkdagen contact met u op.')}</p>
+              <p className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)]">{t('Thank you. We have received your message and will be in touch.', 'Dank u wel. We hebben uw bericht ontvangen en nemen contact met u op.')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm space-y-5">
@@ -136,10 +134,12 @@ export default function Sponsors() {
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
               </label>
-              <button type="submit" className="btn-primary w-full justify-center">
+              <FormError show={failed} />
+              <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
                 {t('Request Sponsorship Details', 'Sponsordetails aanvragen')}
                 <ArrowRight size={16} />
               </button>
+              <Honeypot />
             </form>
           )}
         </div>

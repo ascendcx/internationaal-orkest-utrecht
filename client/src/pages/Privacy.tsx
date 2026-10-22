@@ -62,6 +62,7 @@ export default function Privacy() {
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('3. How We Use Your Data', '3. Hoe wij uw gegevens gebruiken')}</h2>
               <p>{t('Your data is used solely to respond to your inquiry, process your registration, or send you updates you have opted into. We do not sell, rent, or share your personal data with third parties for marketing purposes.', 'Uw gegevens worden uitsluitend gebruikt om te reageren op uw vraag, uw inschrijving te verwerken of u updates te sturen waarvoor u zich heeft aangemeld. Wij verkopen, verhuren of delen uw persoonsgegevens niet met derden voor marketingdoeleinden.')}</p>
+              <p className="mt-2">{t('Form submissions are sent to us by email through Resend, our email service, and are used only to reply to you. We keep them only as long as needed to respond.', 'Formulierinzendingen worden per e-mail naar ons verstuurd via Resend, onze e-mailservice, en worden alleen gebruikt om u te antwoorden. We bewaren ze alleen zo lang als nodig is om te reageren.')}</p>
             </div>
             <div id="cookie-policy" className="scroll-mt-20">
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('4. Cookies', '4. Cookies')}</h2>

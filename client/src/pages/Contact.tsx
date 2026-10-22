@@ -3,6 +3,8 @@ import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Mail, Instagram, Facebook, Linkedin, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import { Honeypot, FormError } from '@/components/FormParts';
 
 const INTEREST_KEYS = ['concert', 'concert-ensemble', 'parent', 'sponsor', 'workshops', 'other'] as const;
 
@@ -22,7 +24,7 @@ export default function Contact() {
     { value: 'workshops', label: t('Conductor workshops', 'Dirigentenworkshops') },
     { value: 'other', label: t('Something else', 'Iets anders') },
   ];
-  const [submitted, setSubmitted] = useState(false);
+  const { sending, failed, submitted, submit } = useFormSubmit('contact');
   useSEO({
     title: 'Contact Us | Internationaal Orkest Utrecht',
     titleNl: 'Neem Contact Op | Internationaal Orkest Utrecht',
@@ -32,10 +34,7 @@ export default function Contact() {
     image: mediaUrl('images/iou-hero.jpg'),
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
 
   return (
     <div className="min-h-screen pt-20">
@@ -47,8 +46,8 @@ export default function Contact() {
           </h1>
           <p className="text-[oklch(0.52_0.015_60)] max-w-xl leading-relaxed">
             {t(
-              'Whether you have a question about a concert, want to join an ensemble, or are interested in supporting our work, please reach out. We respond within 2 business days.',
-              'Of u nu een vraag heeft over een concert, wilt deelnemen aan een ensemble of geïnteresseerd bent in het ondersteunen van ons werk, neem gerust contact op. Wij reageren binnen 2 werkdagen.'
+              'Whether you have a question about a concert, want to join an ensemble, or are interested in supporting our work, please reach out.',
+              'Of u nu een vraag heeft over een concert, wilt deelnemen aan een ensemble of geïnteresseerd bent in het ondersteunen van ons werk, neem gerust contact op.'
             )}
           </p>
         </div>
@@ -58,10 +57,9 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               {submitted ? (
-                <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
+                <div role="status" className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
                   <CheckCircle size={40} className="text-[oklch(0.38_0.09_195)] mx-auto mb-4" />
-                  <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Message Sent!', 'Bericht verzonden!')}</h3>
-                  <p className="text-[oklch(0.52_0.015_60)]">{t("We'll respond within 2 business days.", 'We reageren binnen 2 werkdagen.')}</p>
+                  <p className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)]">{t('Thank you. We have received your message and will be in touch.', 'Dank u wel. We hebben uw bericht ontvangen en nemen contact met u op.')}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -110,9 +108,11 @@ export default function Contact() {
                     <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
                     <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
                   </label>
-                  <button type="submit" className="btn-primary w-full justify-center">
+                  <FormError show={failed} />
+                  <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
                     {t('Send Message', 'Bericht verzenden')} <ArrowRight size={16} />
                   </button>
+                  <Honeypot />
                 </form>
               )}
             </div>
