@@ -7,7 +7,7 @@ export default function Privacy() {
   const { t } = useLanguage();
   useSEO({
     title: 'Privacy & Cookie Policy | Internationaal Orkest Utrecht',
-    titleNl: 'Privacy- en Cookiebeleid | Internationaal Orkest Utrecht',
+    titleNl: 'Privacy- en cookiebeleid | Internationaal Orkest Utrecht',
     description: 'Read the Privacy & Cookie Policy for Internationaal Orkest Utrecht.',
     descriptionNl: 'Lees het Privacy- en Cookiebeleid van Internationaal Orkest Utrecht.',
     path: '/privacy',

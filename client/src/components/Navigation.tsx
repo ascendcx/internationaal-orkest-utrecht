@@ -11,10 +11,10 @@ import { mediaUrl } from '@/lib/media';
 
 const navItems = [
   { href: '/', en: 'Home', nl: 'Home' },
-  { href: '/about', en: 'About', nl: 'Over Ons' },
+  { href: '/about', en: 'About', nl: 'Over ons' },
   { href: '/school-concerts', en: 'School Concerts', nl: 'Schoolconcerten' },
   { href: '/youth-ensembles', en: 'Youth Ensembles', nl: 'Jeugdensembles' },
-  { href: '/conductor-workshops', en: 'Conductor Workshops', nl: 'Dirigeerworkshops' },
+  { href: '/conductor-workshops', en: 'Conductor Workshops', nl: 'Dirigentenworkshops' },
   { href: '/sponsors', en: 'Sponsors', nl: 'Sponsors' },
   { href: '/contact', en: 'Contact', nl: 'Contact' },
 ];
@@ -69,7 +69,7 @@ export default function Navigation() {
             <Link href="/" className="flex items-center gap-3 no-underline">
               <img
                 src={mediaUrl('images/iou-logo.png')}
-                alt="IOU Logo"
+                alt={t('IOU Logo', 'IOU-logo')}
                 className="h-9 w-9 object-contain"
               />
               <div className="flex flex-col leading-tight">
@@ -122,7 +122,7 @@ export default function Navigation() {
                 </button>
               </div>
               <Link href="/support" className="btn-gold text-sm py-2 px-4 whitespace-nowrap">
-                {t('Support Us', 'Steun Ons')}
+                {t('Support Us', 'Steun ons')}
               </Link>
             </div>
 
@@ -177,7 +177,7 @@ export default function Navigation() {
                 </button>
               </div>
               <Link href="/support" className="btn-gold">
-                {t('Support Us', 'Steun Ons')}
+                {t('Support Us', 'Steun ons')}
               </Link>
             </div>
           </div>

@@ -71,7 +71,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src={mediaUrl('images/iou-hero.jpg')}
-            alt="Orchestra performing for children"
+            alt={t('Orchestra performing for children', 'Een orkest speelt voor kinderen')}
             className="w-full h-full object-cover object-[20%_center] lg:object-center"
           />
           {/* Header scrim: keeps the logo, choir line and nav readable over bright parts of the photo */}
@@ -81,7 +81,7 @@ export default function Home() {
           {/* Desktop: transparent left fading to dark teal right, reaching strong opacity early so it stays consistent behind the text block */}
           <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_0%,transparent_50%,oklch(0.22_0.05_195/93%)_68%,oklch(0.22_0.05_195/96%)_100%)]" />
         </div>
-        <div className="relative h-full min-h-screen flex items-end pb-8 lg:h-auto lg:min-h-0 lg:absolute lg:inset-0 lg:flex lg:items-end lg:pb-20 lg:pb-24">
+        <div className="relative h-full min-h-screen flex items-end pb-24 lg:h-auto lg:min-h-0 lg:absolute lg:inset-0 lg:flex lg:items-end lg:pb-20 lg:pb-24">
           <div className="container">
             <div className="max-w-2xl lg:max-w-[27rem] xl:max-w-xl lg:ml-auto lg:mr-4 lg:mr-8">
               <span className="section-rule mb-2 lg:mb-4" />

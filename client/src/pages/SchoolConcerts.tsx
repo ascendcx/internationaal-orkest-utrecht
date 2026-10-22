@@ -63,8 +63,8 @@ export default function SchoolConcerts() {
   useSEO({
     title: 'Bring Music to Your School | Internationaal Orkest Utrecht',
     titleNl: 'Breng muziek naar uw school | Internationaal Orkest Utrecht',
-    description: 'Free, interactive instrumental and vocal concerts for schools across the Netherlands, funded through donations, grants, and other funds.',
-    descriptionNl: 'Gratis, interactieve instrumentale en vocale concerten voor scholen in heel Nederland, gefinancierd door donaties, bijdragen van fondsen en andere middelen.',
+    description: 'Free, interactive school concerts with Internationaal Orkest Utrecht. Children hear live music, then try instruments or sing together. Ask about a concert for your school.',
+    descriptionNl: 'Gratis, interactieve schoolconcerten van Internationaal Orkest Utrecht. Kinderen beleven live muziek en proberen daarna instrumenten uit of zingen samen. Vraag een concert aan voor uw school.',
     path: '/school-concerts',
     image: mediaUrl('images/iou-school-concert.jpg'),
   });
@@ -92,7 +92,7 @@ export default function SchoolConcerts() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end pb-8 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={mediaUrl('images/iou-school-concert.jpg')} alt="School concert" className="w-full h-full object-cover" />
+          <img src={mediaUrl('images/iou-school-concert.jpg')} alt={t('School concert', 'Schoolconcert')} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>

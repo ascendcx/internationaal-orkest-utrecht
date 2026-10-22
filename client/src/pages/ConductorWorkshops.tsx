@@ -15,7 +15,7 @@ export default function ConductorWorkshops() {
     title: 'Conductor Workshops | Internationaal Orkest Utrecht',
     titleNl: 'Dirigentenworkshops | Internationaal Orkest Utrecht',
     description: 'Professional development workshops for conductors, led by Artistic Director Jennifer Diepman.',
-    descriptionNl: 'Professionele ontwikkelingsworkshops voor dirigenten, geleid door Artistiek Directeur Jennifer Diepman.',
+    descriptionNl: 'Professionele ontwikkelingsworkshops voor dirigenten, geleid door artistiek directeur Jennifer Diepman.',
     path: '/conductor-workshops',
     image: mediaUrl('images/iou-conductor.jpg'),
   });
@@ -52,7 +52,7 @@ export default function ConductorWorkshops() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end pb-12 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={mediaUrl('images/iou-conductor.jpg')} alt="Conductor workshop" className="w-full h-full object-cover object-top md:object-[center_25%]" />
+          <img src={mediaUrl('images/iou-conductor.jpg')} alt={t('Conductor workshop', 'Dirigentenworkshop')} className="w-full h-full object-cover object-top md:object-[center_25%]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_195)]/90 to-[oklch(0.22_0.05_195)]/60" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.05_195)]/60 via-transparent to-transparent" />
         </div>

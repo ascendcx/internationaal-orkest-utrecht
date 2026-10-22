@@ -95,7 +95,7 @@ export default function About() {
 
   useSEO({
     title: 'About the Orchestra | Internationaal Orkest Utrecht',
-    titleNl: 'Over het Orkest | Internationaal Orkest Utrecht',
+    titleNl: 'Over het orkest | Internationaal Orkest Utrecht',
     description: 'Meet the international musicians and conductor behind Internationaal Orkest Utrecht\'s mission to bring music to children across the Netherlands, with children from different backgrounds making music together.',
     descriptionNl: 'Maak kennis met de internationale muzikanten en dirigent achter de missie van Internationaal Orkest Utrecht om muziek te brengen bij kinderen in heel Nederland, waarbij kinderen met verschillende achtergronden samen muziek maken.',
     path: '/about',

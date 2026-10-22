@@ -27,7 +27,7 @@ export default function Contact() {
   const { sending, failed, submitted, submit } = useFormSubmit('contact');
   useSEO({
     title: 'Contact Us | Internationaal Orkest Utrecht',
-    titleNl: 'Neem Contact Op | Internationaal Orkest Utrecht',
+    titleNl: 'Neem contact op | Internationaal Orkest Utrecht',
     description: 'Get in touch about school concerts, youth ensembles, or supporting our mission.',
     descriptionNl: 'Neem contact met ons op over schoolconcerten, jeugdensembles of het steunen van onze missie.',
     path: '/contact',
@@ -118,7 +118,7 @@ export default function Contact() {
             </div>
             <div className="space-y-8">
               <div>
-                <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)] mb-4">{t('Direct Contact', 'Direct Contact')}</h3>
+                <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)] mb-4">{t('Direct Contact', 'Direct contact')}</h3>
                 <div className="space-y-3">
                   <a href="mailto:info@internationaalorkest.nl" className="flex items-center gap-3 text-[oklch(0.38_0.09_195)] hover:underline">
                     <Mail size={18} /> info@internationaalorkest.nl

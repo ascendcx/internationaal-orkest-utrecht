@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src={mediaUrl('images/iou-logo.png')} alt="IOU Logo" className="h-10 w-10 object-contain brightness-200" />
+              <img src={mediaUrl('images/iou-logo.png')} alt={t('IOU Logo', 'IOU-logo')} className="h-10 w-10 object-contain brightness-200" />
               <div className="leading-tight">
                 <div className="font-display font-semibold text-sm text-white">Internationaal Orkest</div>
                 <div className="font-display font-semibold text-sm tracking-widest uppercase text-[oklch(0.72_0.12_75)]">Utrecht</div>
@@ -54,7 +54,7 @@ export default function Footer() {
                 <Linkedin size={16} />
               </a>
               <a href="mailto:info@internationaalorkest.nl"
-                className="p-2 rounded-full bg-white/10 hover:bg-[oklch(0.72_0.12_75)] transition-colors duration-150" aria-label="Email">
+                className="p-2 rounded-full bg-white/10 hover:bg-[oklch(0.72_0.12_75)] transition-colors duration-150" aria-label={t('Email', 'E-mail')}>
                 <Mail size={16} />
               </a>
             </div>
@@ -68,8 +68,8 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               <li><Link href="/school-concerts" className="hover:text-white transition-colors no-underline">{t('School Concerts', 'Schoolconcerten')}</Link></li>
               <li><Link href="/youth-ensembles" className="hover:text-white transition-colors no-underline">{t('Youth Ensembles', 'Jeugdensembles')}</Link></li>
-              <li><Link href="/conductor-workshops" className="hover:text-white transition-colors no-underline">{t('Conductor Workshops', 'Dirigeerworkshops')}</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors no-underline">{t('About the Orchestra', 'Over het Orkest')}</Link></li>
+              <li><Link href="/conductor-workshops" className="hover:text-white transition-colors no-underline">{t('Conductor Workshops', 'Dirigentenworkshops')}</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors no-underline">{t('About the Orchestra', 'Over het orkest')}</Link></li>
               <li><Link href="/sponsors" className="hover:text-white transition-colors no-underline">{t('Sponsors', 'Sponsors')}</Link></li>
             </ul>
           </div>
@@ -81,8 +81,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li><Link href="/support" className="hover:text-white transition-colors no-underline">{t('Donate', 'Doneren')}</Link></li>
-              <li><Link href="/sponsors" className="hover:text-white transition-colors no-underline">{t('Become a Sponsor', 'Word Sponsor')}</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors no-underline">{t('Contact Us', 'Neem Contact Op')}</Link></li>
+              <li><Link href="/sponsors" className="hover:text-white transition-colors no-underline">{t('Become a Sponsor', 'Word sponsor')}</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors no-underline">{t('Contact Us', 'Neem contact op')}</Link></li>
             </ul>
             <div className="mt-6">
               <p className="text-sm text-white/70 mb-1">{t('Registered at', 'Geregistreerd bij')}</p>
