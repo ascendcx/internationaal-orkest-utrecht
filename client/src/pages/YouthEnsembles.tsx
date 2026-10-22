@@ -213,7 +213,7 @@ export default function YouthEnsembles() {
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-            {t('Register Your Interest', 'Registreer uw interesse')}
+            {t('Register Your Interest', 'Meld uw belangstelling')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-3 leading-relaxed">
             {t(
@@ -281,7 +281,7 @@ export default function YouthEnsembles() {
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra and ensemble programs.', 'Ik wil periodieke updates ontvangen over het orkest en de ensembleprogramma\'s.')}</span>
               </label>
               <button type="submit" className="btn-primary w-full justify-center">
-                {t('Register My Interest', 'Registreer mijn interesse')}
+                {t('Register My Interest', 'Meld mijn belangstelling')}
                 <ArrowRight size={16} />
               </button>
               <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-3">

@@ -3,9 +3,24 @@ import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Mail, Instagram, Facebook, Linkedin, ArrowRight } from 'lucide-react';
 
+const INTEREST_KEYS = ['concert', 'concert-ensemble', 'parent', 'sponsor', 'workshops', 'other'] as const;
+
+function interestFromUrl() {
+  const value = new URLSearchParams(window.location.search).get('interest') ?? '';
+  return (INTEREST_KEYS as readonly string[]).includes(value) ? value : '';
+}
+
 export default function Contact() {
   const { t } = useLanguage();
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '', newsletter: false });
+  const [form, setForm] = useState({ name: '', email: '', interest: interestFromUrl(), subject: '', message: '', newsletter: false });
+  const interestOptions = [
+    { value: 'concert', label: t('A school concert', 'Een schoolconcert') },
+    { value: 'concert-ensemble', label: t('A school concert and local ensemble', 'Een schoolconcert en lokaal ensemble') },
+    { value: 'parent', label: t('A free youth ensemble for my child (register interest)', 'Een gratis jeugdensemble voor mijn kind (belangstelling melden)') },
+    { value: 'sponsor', label: t('Sponsoring or donating', 'Sponsoring of doneren') },
+    { value: 'workshops', label: t('Conductor workshops', 'Dirigentenworkshops') },
+    { value: 'other', label: t('Something else', 'Iets anders') },
+  ];
   const [submitted, setSubmitted] = useState(false);
   useSEO({
     title: 'Contact Us | Internationaal Orkest Utrecht',
@@ -27,7 +42,7 @@ export default function Contact() {
         <div className="container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
-            {t('Let\'s Bring Music to Your School', 'Laten We Muziek Naar Uw School Brengen')}
+            {t('Questions about concerts, youth ensembles or supporting IOU?', 'Vragen over concerten, jeugdensembles of het steunen van IOU?')}
           </h1>
           <p className="text-[oklch(0.52_0.015_60)] max-w-xl leading-relaxed">
             {t(
@@ -65,6 +80,26 @@ export default function Contact() {
                       />
                     </div>
                   ))}
+                  <div>
+                    <label htmlFor="interest" className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('I am interested in', 'Ik ben geïnteresseerd in')} *</label>
+                    <select
+                      id="interest"
+                      required
+                      value={form.interest}
+                      onChange={(e) => setForm({ ...form, interest: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-white"
+                    >
+                      <option value="" disabled>{t('Choose an option', 'Kies een optie')}</option>
+                      {interestOptions.map((o) => (
+                        <option key={o.value} value={o.value}>{o.label}</option>
+                      ))}
+                    </select>
+                    {(form.interest === 'concert' || form.interest === 'concert-ensemble') && (
+                      <p className="text-sm text-[oklch(0.42_0.01_60)] mt-2">
+                        {t('Please tell us whether you are interested in a concert only or a concert and local ensemble.', 'Laat ons weten of u alleen interesse heeft in een concert of in een concert en lokaal ensemble.')}
+                      </p>
+                    )}
+                  </div>
                   <div>
                     <label className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('Message', 'Bericht')} *</label>
                     <textarea rows={5} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}

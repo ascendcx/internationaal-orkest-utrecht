@@ -101,8 +101,8 @@ export default function Home() {
                   {t('Bring Music to Your School', 'Breng muziek naar uw school')}
                   <ArrowRight size={16} />
                 </Link>
-                <Link href="/youth-ensembles" className="btn-secondary border-2 border-white/50 text-white hover:bg-white/10">
-                  {t('Find an Ensemble Near You', 'Vind een ensemble bij u in de buurt')}
+                <Link href="/contact?interest=parent" className="btn-secondary border-2 border-white/50 text-white hover:bg-white/10">
+                  {t('Register your interest', 'Meld uw belangstelling')}
                 </Link>
               </div>
             </div>
@@ -240,12 +240,12 @@ export default function Home() {
             </h2>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
               {t(
-                'Find a free ensemble near you. Free for every child, made possible by donations, grants, and other funds.',
-                'Vind een gratis ensemble bij u in de buurt. Gratis voor elk kind, mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
+                'Register your interest in a free local ensemble. We will contact you when launch details, locations and rehearsal times are confirmed. Free for every child, made possible by donations, grants, and other funds.',
+                'Meld uw belangstelling voor een gratis ensemble. We nemen contact met u op zodra er meer bekend is over de start, locatie en repetities. Gratis voor elk kind, mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.'
               )}
             </p>
-            <Link href="/youth-ensembles" className="btn-primary text-sm">
-              {t('Find an Ensemble Near You', 'Vind een ensemble bij u in de buurt')}
+            <Link href="/contact?interest=parent" className="btn-primary text-sm">
+              {t('Register your interest', 'Meld uw belangstelling')}
               <ArrowRight size={14} />
             </Link>
           </div>
