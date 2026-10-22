@@ -101,7 +101,7 @@ export default function ForSchools() {
             <div className="space-y-0">
               {steps.map((step, i) => (
                 <div key={i} className="grid grid-cols-[3rem_1fr] gap-x-6 gap-y-2 py-8 border-t border-[oklch(0.88_0.015_195)] items-start">
-                  <div className="font-display text-3xl font-bold text-[oklch(0.88_0.015_195)] leading-none pt-1">0{i + 1}</div>
+                  <div className="font-display text-3xl font-bold text-[oklch(0.88_0.015_195)] leading-none pt-1">{i + 1}</div>
                   <div>
                     <h3 className="font-display font-semibold text-lg text-[oklch(0.22_0.01_60)] mb-1">{step.title}</h3>
                     <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-xl">{step.desc}</p>
