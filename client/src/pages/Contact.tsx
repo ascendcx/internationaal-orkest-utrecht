@@ -44,13 +44,13 @@ export default function Contact() {
               {submitted ? (
                 <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
                   <CheckCircle size={40} className="text-[oklch(0.38_0.09_195)] mx-auto mb-4" />
-                  <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Message Sent!', 'Bericht Verzonden!')}</h3>
+                  <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Message Sent!', 'Bericht verzonden!')}</h3>
                   <p className="text-[oklch(0.52_0.015_60)]">{t("We'll respond within 2 business days.", 'We reageren binnen 2 werkdagen.')}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {[
-                    { key: 'name', label: t('Your Name', 'Uw Naam'), type: 'text', required: true },
+                    { key: 'name', label: t('Your Name', 'Uw naam'), type: 'text', required: true },
                     { key: 'email', label: t('Email Address', 'E-mailadres'), type: 'email', required: true },
                     { key: 'subject', label: t('Subject', 'Onderwerp'), type: 'text', required: true },
                   ].map(({ key, label, type, required }) => (
@@ -75,7 +75,7 @@ export default function Contact() {
                     <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
                   </label>
                   <button type="submit" className="btn-primary w-full justify-center">
-                    {t('Send Message', 'Bericht Verzenden')} <ArrowRight size={16} />
+                    {t('Send Message', 'Bericht verzenden')} <ArrowRight size={16} />
                   </button>
                 </form>
               )}
@@ -90,7 +90,7 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)] mb-4">{t('Follow Us', 'Volg Ons')}</h3>
+                <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)] mb-4">{t('Follow Us', 'Volg ons')}</h3>
                 <div className="flex gap-3">
                   {[
                     { href: 'https://www.instagram.com/internationaalorkestutrecht/', icon: <Instagram size={20} />, label: 'Instagram' },
@@ -106,7 +106,7 @@ export default function Contact() {
               </div>
               <div className="bg-[oklch(0.95_0.02_195)] rounded-xl p-6">
                 <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Jennifer Diepman', 'Jennifer Diepman')}</h3>
-                <p className="text-sm text-[oklch(0.52_0.015_60)]">{t('Founder & Artistic Director', 'Oprichter & Artistiek Directeur')}</p>
+                <p className="text-sm text-[oklch(0.52_0.015_60)]">{t('Founder & Artistic Director', 'Oprichter & artistiek directeur')}</p>
                 <p className="text-sm text-[oklch(0.52_0.015_60)] mt-1">Stichting Internationaal Orkest Utrecht</p>
               </div>
             </div>

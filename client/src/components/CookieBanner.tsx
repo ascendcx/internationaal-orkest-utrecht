@@ -30,14 +30,14 @@ export default function CookieBanner() {
             'We use cookies to improve your experience. Essential cookies are always on. You can choose whether to allow analytics cookies. ',
             'Wij gebruiken cookies om uw ervaring te verbeteren. Essentiële cookies staan altijd aan. U kunt zelf kiezen of u analytische cookies toestaat. '
           )}
-          <Link href="/privacy" className="text-[oklch(0.72_0.12_75)] underline">{t('Privacy & Cookie Policy', 'Privacy- en Cookiebeleid')}</Link>.
+          <Link href="/privacy" className="text-[oklch(0.72_0.12_75)] underline">{t('Privacy & Cookie Policy', 'Privacy- en cookiebeleid')}</Link>.
         </p>
         <div className="flex gap-3 shrink-0">
           <button onClick={essentialOnly} className="btn-secondary text-sm py-2 px-4 border-white/30 text-white hover:bg-white/10">
-            {t('Essential Only', 'Alleen Essentieel')}
+            {t('Essential Only', 'Alleen essentieel')}
           </button>
           <button onClick={acceptAll} className="btn-gold text-sm py-2 px-4">
-            {t('Accept All', 'Alles Accepteren')}
+            {t('Accept All', 'Alles accepteren')}
           </button>
         </div>
       </div>

@@ -98,11 +98,11 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:gap-4">
                 <Link href="/school-concerts" className="btn-gold">
-                  {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
+                  {t('Bring Music to Your School', 'Breng muziek naar uw school')}
                   <ArrowRight size={16} />
                 </Link>
                 <Link href="/youth-ensembles" className="btn-secondary border-2 border-white/50 text-white hover:bg-white/10">
-                  {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
+                  {t('Find an Ensemble Near You', 'Vind een ensemble bij u in de buurt')}
                 </Link>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="mb-14 fade-up">
             <span className="section-rule" />
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] max-w-xl">
-              {t('One Path. Every Child.', 'Eén Pad. Elk Kind.')}
+              {t('One Path. Every Child.', 'Eén pad. Elk kind.')}
             </h2>
           </div>
           <ol className="relative m-0 flex list-none flex-col gap-12 p-0 lg:grid lg:grid-cols-3 lg:gap-x-10">
@@ -185,10 +185,10 @@ export default function Home() {
           <div className="fade-up max-w-2xl mb-10">
             <span className="section-rule" />
             <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
-              {t('For Schools', 'Voor Scholen')}
+              {t('For Schools', 'Voor scholen')}
             </span>
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
-              {t('Bring the Concert to Your School', 'Breng het Concert naar Uw School')}
+              {t('Bring the Concert to Your School', 'Breng het concert naar uw school')}
             </h2>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
               {t('Choose what fits your school. Both options are free.', 'Kies wat bij uw school past. Beide opties zijn gratis.')}
@@ -233,7 +233,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="fade-up max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-3">
-              {t('For Parents', 'Voor Ouders')}
+              {t('For Parents', 'Voor ouders')}
             </span>
             <h2 className="font-display text-2xl lg:text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
               {t('Want your child to join?', 'Wilt u dat uw kind meedoet?')}
@@ -245,7 +245,7 @@ export default function Home() {
               )}
             </p>
             <Link href="/youth-ensembles" className="btn-primary text-sm">
-              {t('Find an Ensemble Near You', 'Vind een Ensemble bij Jou in de Buurt')}
+              {t('Find an Ensemble Near You', 'Vind een ensemble bij u in de buurt')}
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -267,7 +267,7 @@ export default function Home() {
               )}
             </blockquote>
             <cite className="text-sm text-[oklch(0.72_0.12_75)] not-italic font-medium">
-              Jennifer Diepman, {t('Founder & Artistic Director', 'Oprichter & Artistiek Directeur')}
+              Jennifer Diepman, {t('Founder & Artistic Director', 'Oprichter & artistiek directeur')}
             </cite>
           </div>
         </div>
@@ -278,10 +278,10 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
             {[
-              { num: '50', label: t('International Musicians', 'Internationale Muzikanten') },
-              { num: '600+', label: t('Children Reached', 'Kinderen Bereikt') },
-              { num: '€0', label: t('Cost to Youth Participants', 'Kosten voor Jongeren') },
-              { num: '50+', label: t('Nationalities Connected Through Music', 'Nationaliteiten Verbonden Door Muziek') },
+              { num: '50', label: t('International Musicians', 'Internationale muzikanten') },
+              { num: '600+', label: t('Children Reached', 'Kinderen bereikt') },
+              { num: '€0', label: t('Cost to Youth Participants', 'Kosten voor jongeren') },
+              { num: '50+', label: t('Nationalities Connected Through Music', 'Nationaliteiten verbonden door muziek') },
             ].map((stat) => (
               <div key={stat.label} className="py-4">
                 <div className="font-display text-4xl lg:text-5xl font-bold lining-nums text-[oklch(0.72_0.12_75)] mb-2">{stat.num}</div>
@@ -301,7 +301,7 @@ export default function Home() {
         <div className="relative container text-center text-white">
           <span className="section-rule mx-auto" />
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
-            {t('You Could Be the Reason They Clap.', 'U Kunt de Reden Zijn Dat Zij Klappen.')}
+            {t('You Could Be the Reason They Clap.', 'U kunt de reden zijn dat zij klappen.')}
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
             {t(

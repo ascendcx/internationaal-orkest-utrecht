@@ -33,7 +33,7 @@ export default function ConductorWorkshops() {
         <div className="relative container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
-            {t('Professional Development for Conductors', 'Professionele Ontwikkeling voor Dirigenten')}
+            {t('Professional Development for Conductors', 'Professionele ontwikkeling voor dirigenten')}
           </h1>
           <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
@@ -82,7 +82,7 @@ export default function ConductorWorkshops() {
             <div>
               <span className="section-rule" />
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">
-                {t('Train With a Professional Orchestra. Fund the Music.', 'Train Met een Professioneel Orkest. Financier de Muziek.')}
+                {t('Train With a Professional Orchestra. Fund the Music.', 'Train met een professioneel orkest. Financier de muziek.')}
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
@@ -97,7 +97,7 @@ export default function ConductorWorkshops() {
                 )}
               </p>
               <div className="bg-[oklch(0.95_0.02_195)] rounded-xl p-6 mb-6">
-                <h3 className="font-display font-semibold text-[oklch(0.22_0.01_60)] mb-3">{t('Workshop Leader', 'Workshop Leider')}</h3>
+                <h3 className="font-display font-semibold text-[oklch(0.22_0.01_60)] mb-3">{t('Workshop Leader', 'Workshopleider')}</h3>
                 <p className="text-sm text-[oklch(0.42_0.01_60)] leading-relaxed">
                   {t(
                     'Jennifer Diepman holds a Master of Music in Conducting from Messiah University and has studied at the Juilliard School of Music. She is a recipient of the Fred J. Miller 1st Prize Outstanding Achievement Award in Conducting and the John Philip Sousa Award in Oboe Performance. She has led ensembles across the globe and founded the Internationaal Orkest Utrecht to bring that experience directly into the next generation of conductors.',
@@ -106,7 +106,7 @@ export default function ConductorWorkshops() {
                 </p>
               </div>
               <div className="flex flex-col gap-3">
-                <p className="text-sm font-medium text-[oklch(0.22_0.01_60)]">{t('External Resources', 'Externe Bronnen')}</p>
+                <p className="text-sm font-medium text-[oklch(0.22_0.01_60)]">{t('External Resources', 'Externe bronnen')}</p>
                 <a href="https://musicalchairs.info" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[oklch(0.38_0.09_195)] hover:underline">
                   Musical Chairs <ExternalLink size={14} />
                 </a>
@@ -117,7 +117,7 @@ export default function ConductorWorkshops() {
             </div>
             <div>
               <div className="bg-[oklch(0.38_0.09_195)] rounded-xl p-8 text-white mb-6">
-                <h3 className="font-display text-xl font-bold mb-4">{t('2026 / 2027 Season — Dates Coming Soon', 'Seizoen 2026 / 2027 — Data Volgen Binnenkort')}</h3>
+                <h3 className="font-display text-xl font-bold mb-4">{t('2026 / 2027 season: dates coming soon', 'Seizoen 2026 / 2027: data volgen binnenkort')}</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-4">
                   {t(
                     'Our conductor workshops are scheduled around rehearsal preparation for upcoming concerts. This means workshop dates follow directly from our concert calendar. Once the concert season is confirmed, workshop registration opens shortly after.',
@@ -141,11 +141,11 @@ export default function ConductorWorkshops() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm space-y-4">
-                  <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)]">{t('Join the Waitlist', 'Aanmelden voor de Wachtlijst')}</h3>
+                  <h3 className="font-display font-bold text-[oklch(0.22_0.01_60)]">{t('Join the Waitlist', 'Aanmelden voor de wachtlijst')}</h3>
                   {[
-                    { key: 'name', label: t('Full Name', 'Volledige Naam'), type: 'text', required: true },
+                    { key: 'name', label: t('Full Name', 'Volledige naam'), type: 'text', required: true },
                     { key: 'email', label: t('Email Address', 'E-mailadres'), type: 'email', required: true },
-                    { key: 'role', label: t('Current Role / Experience Level', 'Huidige Rol / Ervaringsniveau'), type: 'text', required: false },
+                    { key: 'role', label: t('Current Role / Experience Level', 'Huidige rol / ervaringsniveau'), type: 'text', required: false },
                   ].map(({ key, label, type, required }) => (
                     <div key={key}>
                       <label className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{label}{required && ' *'}</label>
@@ -163,7 +163,7 @@ export default function ConductorWorkshops() {
                     <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
                   </label>
                   <button type="submit" className="btn-primary w-full justify-center">
-                    {t('Join the Waitlist', 'Aanmelden voor de Wachtlijst')}
+                    {t('Join the Waitlist', 'Aanmelden voor de wachtlijst')}
                     <ArrowRight size={16} />
                   </button>
                 </form>

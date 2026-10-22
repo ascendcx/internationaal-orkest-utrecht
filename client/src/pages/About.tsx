@@ -52,10 +52,10 @@ export default function About() {
         <div className="relative container">
           <span className="section-rule" />
           <p className="text-xs font-semibold uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-3">
-            {t('Our Story', 'Ons Verhaal')}
+            {t('Our Story', 'Ons verhaal')}
           </p>
           <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-tight">
-            {t('About the Orchestra', 'Over het Orkest')}
+            {t('About the Orchestra', 'Over het orkest')}
           </h1>
           <p className="text-xs font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
@@ -76,7 +76,7 @@ export default function About() {
             <div className="fade-up">
               <span className="section-rule" />
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">
-                {t('Building Social Bonds Through Music', 'Sociale Banden Opbouwen door Muziek')}
+                {t('Building Social Bonds Through Music', 'Sociale banden opbouwen door muziek')}
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
@@ -91,7 +91,7 @@ export default function About() {
                 )}
               </p>
               <Link href="/school-concerts" className="btn-primary">
-                {t('See Our School Programs', 'Bekijk Onze Schoolprogramma\'s')}
+                {t('See Our School Programs', 'Bekijk onze schoolprogramma\'s')}
                 <ArrowRight size={16} />
               </Link>
             </div>
@@ -120,7 +120,7 @@ export default function About() {
             <div className="order-1 lg:order-2">
               <span className="section-rule" />
               <p className="text-xs font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-2">
-                {t('Artistic Director & Chief Conductor', 'Artistiek Directeur & Chef-dirigent')}
+                {t('Artistic Director & Chief Conductor', 'Artistiek directeur & chef-dirigent')}
               </p>
               <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">Jennifer Diepman</h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
@@ -152,7 +152,7 @@ export default function About() {
           <div className="mb-10">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-              {t('An International Ensemble', 'Een Internationaal Ensemble')}
+              {t('An International Ensemble', 'Een internationaal ensemble')}
             </h2>
             <p className="text-[oklch(0.52_0.015_60)] max-w-xl">
               {t(

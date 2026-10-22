@@ -26,7 +26,7 @@ export default function Sponsors() {
     t('Signage at school rehearsals and public performances', 'Bewegwijzering bij schoolrepetities en openbare optredens'),
     t('Dedicated spotlight in our community newsletter', 'Speciale spotlight in onze gemeenschapsnieuwsbrief'),
     t('Mentions across our social media platforms', 'Vermeldingen op onze sociale mediaplatforms'),
-    t('Logo and link on our dedicated Sponsors page', 'Logo en link op onze speciale Sponsorspagina'),
+    t('Logo and link on our dedicated Sponsors page', 'Logo en link op onze speciale sponsorspagina'),
     t('School materials that carry sponsor acknowledgment', 'Schoolmaterialen met sponsorerkenning'),
   ];
 
@@ -37,7 +37,7 @@ export default function Sponsors() {
         <div className="container text-white">
           <span className="section-rule" style={{ backgroundColor: 'oklch(0.72 0.12 75)' }} />
           <h1 className="font-display text-4xl lg:text-5xl font-bold mb-4 max-w-2xl">
-            {t('Partner With Us', 'Word Onze Partner')}
+            {t('Partner With Us', 'Word onze partner')}
           </h1>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
@@ -54,7 +54,7 @@ export default function Sponsors() {
           <div className="text-center mb-10">
             <span className="section-rule mx-auto" />
             <h2 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)]">
-              {t('Our Sponsors', 'Onze Sponsors')}
+              {t('Our Sponsors', 'Onze sponsors')}
             </h2>
           </div>
           <div className="bg-[oklch(0.95_0.02_195)] rounded-xl p-12 text-center border border-dashed border-[oklch(0.88_0.015_195)]">
@@ -70,7 +70,7 @@ export default function Sponsors() {
         <div className="container max-w-3xl">
           <span className="section-rule" />
           <h2 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-            {t('Visibility That Makes a Difference', 'Zichtbaarheid Die Verschil Maakt')}
+            {t('Visibility That Makes a Difference', 'Zichtbaarheid die verschil maakt')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8 leading-relaxed">
             {t(
@@ -96,7 +96,7 @@ export default function Sponsors() {
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-            {t('Become a Sponsor', 'Word Sponsor')}
+            {t('Become a Sponsor', 'Word sponsor')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8">
             {t('Tell us about your business and we will put together a partnership that works for both of us.', 'Vertel ons over uw bedrijf en wij stellen een partnerschap samen dat voor ons beiden werkt.')}
@@ -136,7 +136,7 @@ export default function Sponsors() {
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
               </label>
               <button type="submit" className="btn-primary w-full justify-center">
-                {t('Request Sponsorship Details', 'Sponsordetails Aanvragen')}
+                {t('Request Sponsorship Details', 'Sponsordetails aanvragen')}
                 <ArrowRight size={16} />
               </button>
             </form>

@@ -24,9 +24,9 @@ export default function SchoolConcerts() {
   };
 
   const steps = [
-    { icon: <Music2 size={24} />, title: t('Step 1: The Orchestra Performs', 'Stap 1: Het Orkest Treedt Op'), desc: t('Our orchestra, often joined by vocal ensembles from the area, performs a customized instrumental and vocal concert for your students, at your school or a local hall.', 'Ons orkest, vaak samen met vocale ensembles uit de regio, verzorgt een op maat gemaakt instrumentaal en vocaal concert voor uw leerlingen, op uw school of in een lokale zaal.') },
-    { icon: <Users size={24} />, title: t('Step 2: Students Try It Themselves', 'Stap 2: Leerlingen Proberen Het Zelf'), desc: t('After the performance, children try out instruments or sing in a group at their own school, guided by our musicians and singers.', 'Na de uitvoering proberen kinderen zelf instrumenten uit of zingen ze in een groep op hun eigen school, begeleid door onze muzikanten en zangers.') },
-    { icon: <CheckCircle size={24} />, title: t('Step 3: The Option to Join a Youth Ensemble', 'Stap 3: De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
+    { icon: <Music2 size={24} />, title: t('Step 1: The Orchestra Performs', 'Stap 1: het orkest treedt op'), desc: t('Our orchestra, often joined by vocal ensembles from the area, performs a customized instrumental and vocal concert for your students, at your school or a local hall.', 'Ons orkest, vaak samen met vocale ensembles uit de regio, verzorgt een op maat gemaakt instrumentaal en vocaal concert voor uw leerlingen, op uw school of in een lokale zaal.') },
+    { icon: <Users size={24} />, title: t('Step 2: Students Try It Themselves', 'Stap 2: leerlingen proberen het zelf'), desc: t('After the performance, children try out instruments or sing in a group at their own school, guided by our musicians and singers.', 'Na de uitvoering proberen kinderen zelf instrumenten uit of zingen ze in een groep op hun eigen school, begeleid door onze muzikanten en zangers.') },
+    { icon: <CheckCircle size={24} />, title: t('Step 3: The Option to Join a Youth Ensemble', 'Stap 3: de mogelijkheid om deel te nemen aan een jeugdensemble'), desc: t('Interested students can join Nederland in Harmonie, our free after-school youth ensembles. Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Geïnteresseerde leerlingen kunnen deelnemen aan Nederland in Harmonie, onze gratis naschoolse jeugdensembles. Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.') },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function SchoolConcerts() {
         <div className="relative container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
-            {t('Bring Music to Your School', 'Breng Muziek naar Uw School')}
+            {t('Bring Music to Your School', 'Breng muziek naar uw school')}
           </h1>
           <p className="text-xs font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
@@ -49,7 +49,7 @@ export default function SchoolConcerts() {
           <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
               'Funded through donations, grants, and other funds, our interactive symphonic and vocal concerts come to your school at no cost. From the first note to the hands-on instrument and singing sessions, we handle everything.',
-              'Gefinancierd door donaties, bijdragen van fondsen en andere middelen komen onze interactieve symfonische en vocale concerten gratis naar uw school. Van de eerste noot tot de hands-on instrumenten- en zangsessies, wij regelen alles.'
+              'Gefinancierd door donaties, bijdragen van fondsen en andere middelen komen onze interactieve symfonische en vocale concerten gratis naar uw school. Van de eerste noot tot de sessies waarin kinderen zelf een instrument proberen of zingen, wij regelen alles.'
             )}
           </p>
           <p className="md:hidden text-white/85 text-lg max-w-xl leading-relaxed mb-8">
@@ -59,7 +59,7 @@ export default function SchoolConcerts() {
             )}
           </p>
           <a href="#booking" className="btn-gold">
-            {t('Request a Concert', 'Concert Aanvragen')}
+            {t('Request a Concert', 'Concert aanvragen')}
           </a>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function SchoolConcerts() {
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-            {t('Ready to Inspire Your Students?', 'Klaar om Uw Leerlingen te Inspireren?')}
+            {t('Ready to Inspire Your Students?', 'Klaar om uw leerlingen te inspireren?')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8">
             {t('Tell us about your school and we will take it from there. No cost, no commitment, just music.', 'Vertel ons over uw school en wij nemen het van daaruit over. Geen kosten, geen verplichting, alleen muziek.')}
@@ -114,12 +114,12 @@ export default function SchoolConcerts() {
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm space-y-5">
               {[
-                { key: 'name', label: t('Your Name', 'Uw Naam'), type: 'text', required: true },
-                { key: 'school', label: t('School Name', 'Naam van de School'), type: 'text', required: true },
-                { key: 'role', label: t('Your Role', 'Uw Functie'), type: 'text', required: false },
+                { key: 'name', label: t('Your Name', 'Uw naam'), type: 'text', required: true },
+                { key: 'school', label: t('School Name', 'Naam van de school'), type: 'text', required: true },
+                { key: 'role', label: t('Your Role', 'Uw functie'), type: 'text', required: false },
                 { key: 'email', label: t('Email Address', 'E-mailadres'), type: 'email', required: true },
                 { key: 'phone', label: t('Phone Number', 'Telefoonnummer'), type: 'tel', required: false },
-                { key: 'dates', label: t('Preferred Dates / Season', 'Gewenste Data / Seizoen'), type: 'text', required: false },
+                { key: 'dates', label: t('Preferred Dates / Season', 'Gewenste data / seizoen'), type: 'text', required: false },
               ].map(({ key, label, type, required }) => (
                 <div key={key}>
                   <label className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{label}{required && ' *'}</label>
@@ -146,7 +146,7 @@ export default function SchoolConcerts() {
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
               </label>
               <button type="submit" className="btn-primary w-full justify-center">
-              {t('Request Concert Information', 'Concertinformatie Aanvragen')}
+              {t('Request Concert Information', 'Concertinformatie aanvragen')}
               <ArrowRight size={16} />
             </button>
             <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-3">

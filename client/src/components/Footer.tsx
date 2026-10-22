@@ -95,7 +95,7 @@ export default function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="font-display font-semibold text-sm uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-4">
-              {t('Stay Updated', 'Blijf Op De Hoogte')}
+              {t('Stay Updated', 'Blijf op de hoogte')}
             </h4>
             <p className="text-sm text-white/70 mb-4">
               {t(

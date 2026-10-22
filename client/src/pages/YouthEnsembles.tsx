@@ -33,7 +33,7 @@ export default function YouthEnsembles() {
         <div className="relative container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
-            {t('Learn, Play, and Grow Together', 'Leren, Spelen en Samen Groeien')}
+            {t('Learn, Play, and Grow Together', 'Leren, spelen en samen groeien')}
           </h1>
           <p className="hidden md:block text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t(
@@ -49,7 +49,7 @@ export default function YouthEnsembles() {
           </p>
           <div className="hidden md:inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-[oklch(0.72_0.12_75)]" />
-            <span className="text-white text-sm font-medium">{t('No Fees. Ever.', 'Nooit Kosten.')}</span>
+            <span className="text-white text-sm font-medium">{t('No Fees. Ever.', 'Nooit kosten.')}</span>
           </div>
         </div>
       </section>
@@ -75,7 +75,7 @@ export default function YouthEnsembles() {
           <div className="mb-10">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)]">
-              {t('What You Need to Know', 'Wat U Moet Weten')}
+              {t('What You Need to Know', 'Wat u moet weten')}
             </h2>
           </div>
           {/* Editorial horizontal facts — the "100% Free" fact gets dominant visual weight */}
@@ -84,7 +84,7 @@ export default function YouthEnsembles() {
             <div className="py-10 lg:pr-12">
               <div className="text-[var(--gold-on-light)] font-display text-6xl font-bold mb-3 leading-none">€0</div>
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
-                {t('Always Free', 'Altijd Gratis')}
+                {t('Always Free', 'Altijd gratis')}
               </h3>
               <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
                 {t(
@@ -104,7 +104,7 @@ export default function YouthEnsembles() {
             <div className="py-10 lg:px-12 border-t lg:border-t-0 border-[oklch(0.88_0.015_195)]">
               <div className="w-8 h-0.5 bg-[oklch(0.38_0.09_195)] mb-6" />
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
-                {t('All Backgrounds Welcome', 'Alle Achtergronden Welkom')}
+                {t('All Backgrounds Welcome', 'Alle achtergronden welkom')}
               </h3>
               <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
                 {t(
@@ -137,27 +137,27 @@ export default function YouthEnsembles() {
           <div className="mb-12">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] max-w-lg">
-              {t('How Children Join', 'Hoe Kinderen Meedoen')}
+              {t('How Children Join', 'Hoe kinderen meedoen')}
             </h2>
           </div>
           <div className="space-y-0">
             {[
               {
-                title: t('The Orchestra Performs', 'Het Orkest Treedt Op'),
+                title: t('The Orchestra Performs', 'Het orkest treedt op'),
                 desc: t(
                   'Our orchestra, often joined by vocal ensembles from the area, performs an instrumental and vocal concert for students at their school.',
                   'Ons orkest, vaak samen met vocale ensembles uit de regio, verzorgt een instrumentaal en vocaal concert voor leerlingen op hun school.'
                 ),
               },
               {
-                title: t('Students Try It Themselves', 'Leerlingen Proberen Het Zelf'),
+                title: t('Students Try It Themselves', 'Leerlingen proberen het zelf'),
                 desc: t(
                   'Children try out instruments or sing in a group at their own school, guided by our musicians and singers.',
                   'Kinderen proberen instrumenten uit of zingen in een groep op hun eigen school, begeleid door onze muzikanten en zangers.'
                 ),
               },
               {
-                title: t('The Option to Join a Youth Ensemble', 'De Mogelijkheid om Deel te Nemen aan een Jeugdensemble'),
+                title: t('The Option to Join a Youth Ensemble', 'De mogelijkheid om deel te nemen aan een jeugdensemble'),
                 desc: t(
                   'Children have the option to join Nederland in Harmonie. A choir, symphonic band, marching band, percussion ensemble, or orchestra, completely free.',
                   'Kinderen hebben de mogelijkheid om deel te nemen aan Nederland in Harmonie. Een koor, harmonieorkest, fanfare, slagwerkensemble of orkest, volledig gratis.'
@@ -202,7 +202,7 @@ export default function YouthEnsembles() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[oklch(0.38_0.09_195)] hover:underline font-medium"
           >
-            {t('View the Sistema Europe Network Members', 'Bekijk de Sistema Europe Netwerkleden')}
+            {t('View the Sistema Europe Network Members', 'Bekijk de Sistema Europe-netwerkleden')}
             <ExternalLink size={14} />
           </a>
         </div>
@@ -213,7 +213,7 @@ export default function YouthEnsembles() {
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-            {t('Register Your Interest', 'Registreer Uw Interesse')}
+            {t('Register Your Interest', 'Registreer uw interesse')}
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-3 leading-relaxed">
             {t(
@@ -237,13 +237,13 @@ export default function YouthEnsembles() {
           {submitted ? (
             <div className="bg-white rounded-xl p-8 text-center border border-[oklch(0.88_0.015_195)]">
               <CheckCircle size={40} className="text-[oklch(0.38_0.09_195)] mx-auto mb-4" />
-              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Registration Received!', 'Inschrijving Ontvangen!')}</h3>
+              <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Registration Received!', 'Inschrijving ontvangen!')}</h3>
               <p className="text-[oklch(0.52_0.015_60)]">{t("We'll contact you within 2 business days with next steps.", 'We nemen binnen 2 werkdagen contact met u op met de volgende stappen.')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm space-y-5">
               {[
-                { key: 'parentName', label: t('Parent / Guardian Name', 'Naam Ouder / Voogd'), type: 'text', required: true },
+                { key: 'parentName', label: t('Parent / Guardian Name', 'Naam ouder / voogd'), type: 'text', required: true },
                 { key: 'childName', label: t("Child's Name", 'Naam van het Kind'), type: 'text', required: true },
                 { key: 'childAge', label: t("Child's Age", 'Leeftijd van het Kind'), type: 'number', required: true },
                 { key: 'school', label: t("Child's School", 'School van het Kind'), type: 'text', required: false },
@@ -269,10 +269,10 @@ export default function YouthEnsembles() {
                   className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
                 >
                   <option value="undecided">{t('Not sure yet', 'Nog niet zeker')}</option>
-                  <option value="choir">{t('Choir / Singing', 'Koor / Zingen')}</option>
-                  <option value="strings">{t('Strings (Violin, Viola, Cello)', 'Strijkers (Viool, Altviool, Cello)')}</option>
-                  <option value="woodwinds">{t('Woodwinds (Flute, Clarinet, Oboe)', 'Houtblazers (Fluit, Klarinet, Hobo)')}</option>
-                  <option value="brass">{t('Brass (Trumpet, Horn, Trombone)', 'Koperblazers (Trompet, Hoorn, Trombone)')}</option>
+                  <option value="choir">{t('Choir / Singing', 'Koor / zingen')}</option>
+                  <option value="strings">{t('Strings (Violin, Viola, Cello)', 'Strijkers (viool, altviool, cello)')}</option>
+                  <option value="woodwinds">{t('Woodwinds (Flute, Clarinet, Oboe)', 'Houtblazers (fluit, klarinet, hobo)')}</option>
+                  <option value="brass">{t('Brass (Trumpet, Horn, Trombone)', 'Koperblazers (trompet, hoorn, trombone)')}</option>
                   <option value="percussion">{t('Percussion', 'Percussie')}</option>
                 </select>
               </div>
@@ -281,7 +281,7 @@ export default function YouthEnsembles() {
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like to receive periodic updates about the orchestra and ensemble programs.', 'Ik wil periodieke updates ontvangen over het orkest en de ensembleprogramma\'s.')}</span>
               </label>
               <button type="submit" className="btn-primary w-full justify-center">
-                {t('Register My Interest', 'Registreer Mijn Interesse')}
+                {t('Register My Interest', 'Registreer mijn interesse')}
                 <ArrowRight size={16} />
               </button>
               <p className="text-center text-xs text-[oklch(0.52_0.015_60)] mt-3">

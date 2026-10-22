@@ -26,7 +26,7 @@ export default function Support() {
         <div className="relative container text-center text-white">
           <span className="section-rule mx-auto" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold mb-4">
-            {t('Be the Reason They Play.', 'Wees de Reden Dat Zij Spelen.')}
+            {t('Be the Reason They Play.', 'Wees de reden dat zij spelen.')}
           </h1>
           <p className="text-white/80 max-w-xl mx-auto text-lg leading-relaxed">
             {t(
@@ -49,7 +49,7 @@ export default function Support() {
           <div className="bg-white rounded-xl p-8 border border-[oklch(0.88_0.015_195)] shadow-sm">
             <span className="section-rule" />
             <h2 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
-              {t('Where Your Money Goes', 'Waar Uw Geld Naartoe Gaat')}
+              {t('Where Your Money Goes', 'Waar uw geld naartoe gaat')}
             </h2>
             <p className="text-[oklch(0.52_0.015_60)] mb-6 leading-relaxed">
               {t(
@@ -76,10 +76,10 @@ export default function Support() {
           <div className="bg-[oklch(0.38_0.09_195)] rounded-xl p-8 text-white">
             <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[oklch(0.85_0.1_75)] mb-2 block">{t('Primary Campaign', 'Primaire Campagne')}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-[oklch(0.85_0.1_75)] mb-2 block">{t('Primary Campaign', 'Primaire campagne')}</span>
                 <h2 className="font-display text-2xl font-bold">{t('Support Our Current Campaign', 'Steun Onze Huidige Campagne')}</h2>
               </div>
-              <span className="text-xs bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] font-bold px-3 py-1 rounded-full">{t('Zero Fees', 'Nul Kosten')}</span>
+              <span className="text-xs bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] font-bold px-3 py-1 rounded-full">{t('Zero Fees', 'Nul kosten')}</span>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               {t(
@@ -107,7 +107,7 @@ export default function Support() {
           <div className="mb-8">
             <span className="section-rule" />
             <h2 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)]">
-              {t('Other Ways to Give', 'Andere Manieren om te Geven')}
+              {t('Other Ways to Give', 'Andere manieren om te geven')}
             </h2>
           </div>
           <div className="space-y-0">
