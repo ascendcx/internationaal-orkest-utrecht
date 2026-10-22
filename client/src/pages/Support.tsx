@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
-import { ExternalLink, QrCode, Building2, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
@@ -11,6 +11,11 @@ import {
   ZEFFY_CAMPAIGN_URL,
   ZEFFY_RECIPIENT_NAME,
   SUPPORT_EMAIL,
+  BANK_ACCOUNT_HOLDER,
+  BANK_IBAN,
+  BANK_BIC,
+  WERO_QR_IMAGE_URL,
+  WERO_PAYEE_NAME,
   SHOW_WERO,
   SHOW_BANK_TRANSFER,
 } from '@/lib/donationConfig';
@@ -18,34 +23,92 @@ import {
 const DONATE_BUTTON =
   'btn-secondary !bg-[oklch(0.38_0.09_195)] !text-white hover:!bg-[oklch(0.32_0.09_195)] w-full sm:w-auto justify-center';
 
-/** Hidden while SHOW_WERO is false. */
-function WeroRow() {
+const PLACEHOLDER = ['Details will be added here.', 'De gegevens worden hier toegevoegd.'] as const;
+
+/** One labeled value with a small Copy button. Shows a plain placeholder line when the value is empty. */
+function DetailRow({ label, value, copied, onCopy }: { label: string; value: string; copied: boolean; onCopy: () => void }) {
   const { t } = useLanguage();
-  if (!SHOW_WERO) return null;
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-[6rem_1fr_auto] gap-x-6 gap-y-2 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
-      <div>
-        <div className="flex items-center gap-2 mb-0.5"><QrCode size={14} className="text-[oklch(0.38_0.09_195)]" /><span className="font-display font-bold text-sm text-[oklch(0.22_0.01_60)]">WERO</span></div>
-        <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('Dutch donors', 'NL donateurs')}</span>
-      </div>
-      <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">{t('Fast and secure payments directly from your Dutch bank.', 'Snelle en veilige betalingen rechtstreeks van uw Nederlandse bank.')}</p>
-      <div className="bg-[oklch(0.95_0.02_195)] rounded px-3 py-1.5 text-sm text-[oklch(0.52_0.015_60)] whitespace-nowrap">{t('QR code coming soon', 'Binnenkort')}</div>
+    <div className="py-3 border-t border-[oklch(0.88_0.015_195)] first:border-t-0">
+      <dt className="text-xs uppercase tracking-wider text-[oklch(0.52_0.015_60)] mb-0.5">{label}</dt>
+      {value !== '' ? (
+        <dd className="flex items-center justify-between gap-3">
+          <span className="text-sm text-[oklch(0.22_0.01_60)] break-all">{value}</span>
+          <button
+            type="button"
+            onClick={onCopy}
+            className="shrink-0 text-xs font-medium text-[oklch(0.38_0.09_195)] underline underline-offset-2 rounded px-1 py-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(0.38_0.09_195)]"
+          >
+            {copied ? t('Copied', 'Gekopieerd') : t('Copy', 'Kopieer')}
+          </button>
+        </dd>
+      ) : (
+        <dd className="text-sm text-[oklch(0.52_0.015_60)]">{t(...PLACEHOLDER)}</dd>
+      )}
     </div>
   );
 }
 
-/** Hidden while SHOW_BANK_TRANSFER is false. */
-function BankTransferRow() {
+/** Shown while SHOW_BANK_TRANSFER is true. */
+function BankTransferBlock() {
   const { t } = useLanguage();
+  const [copiedKey, setCopiedKey] = useState('');
+  const [announce, setAnnounce] = useState('');
   if (!SHOW_BANK_TRANSFER) return null;
+
+  const copy = async (key: string, value: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedKey(key);
+      setAnnounce(t('Copied', 'Gekopieerd'));
+      window.setTimeout(() => {
+        setCopiedKey('');
+        setAnnounce('');
+      }, 2000);
+    } catch {
+      // Clipboard unavailable. The value stays visible so it can be selected by hand.
+    }
+  };
+
+  const rows: [string, string, string][] = [
+    ['holder', t('Account holder', 'Naam rekeninghouder'), BANK_ACCOUNT_HOLDER],
+    ['iban', 'IBAN', BANK_IBAN],
+    ['bic', 'BIC/SWIFT', BANK_BIC],
+  ];
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-[6rem_1fr_auto] gap-x-6 gap-y-2 py-6 border-t border-b border-[oklch(0.88_0.015_195)] items-start">
-      <div>
-        <div className="flex items-center gap-2 mb-0.5"><Building2 size={14} className="text-[oklch(0.38_0.09_195)]" /><span className="font-display font-bold text-sm text-[oklch(0.22_0.01_60)]">{t('Bank Transfer', 'Overboeking')}</span></div>
-        <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('Wire transfer', 'Internationale overboeking')}</span>
-      </div>
-      <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">{t('Direct international bank transfers welcome.', 'Directe internationale bankoverschrijvingen welkom.')}</p>
-      <div className="bg-[oklch(0.95_0.02_195)] rounded px-3 py-1.5 text-sm text-[oklch(0.42_0.01_60)] whitespace-nowrap">{t('Coming soon', 'Binnenkort')}</div>
+    <div className="border-t-2 border-[oklch(0.88_0.015_195)] pt-4">
+      <h4 className="font-display text-base font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Bank transfer', 'Overschrijving')}</h4>
+      <dl>
+        {rows.map(([key, label, value]) => (
+          <DetailRow key={key} label={label} value={value} copied={copiedKey === key} onCopy={() => copy(key, value)} />
+        ))}
+      </dl>
+      <span className="sr-only" aria-live="polite">{announce}</span>
+    </div>
+  );
+}
+
+/** Shown while SHOW_WERO is true. */
+function WeroBlock() {
+  const { t } = useLanguage();
+  if (!SHOW_WERO) return null;
+  const payee = WERO_PAYEE_NAME !== '' ? WERO_PAYEE_NAME : '';
+  const alt =
+    payee !== ''
+      ? t(`WERO QR code for donations to ${payee}`, `WERO-QR-code voor donaties aan ${payee}`)
+      : t('WERO QR code for donations', 'WERO-QR-code voor donaties');
+  return (
+    <div className="border-t-2 border-[oklch(0.88_0.015_195)] pt-4">
+      <h4 className="font-display text-base font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Pay with WERO', 'Betalen met WERO')}</h4>
+      {WERO_QR_IMAGE_URL !== '' ? (
+        <div>
+          <img src={WERO_QR_IMAGE_URL} alt={alt} className="w-48 h-48 object-contain bg-white border border-[oklch(0.88_0.015_195)] rounded p-2" />
+          <p className="text-sm text-[oklch(0.42_0.01_60)] mt-2">{t('Scan with your banking app.', 'Scan met uw bank-app.')}</p>
+        </div>
+      ) : (
+        <p className="text-sm text-[oklch(0.52_0.015_60)]">{t(...PLACEHOLDER)}</p>
+      )}
     </div>
   );
 }
@@ -168,8 +231,17 @@ export default function Support() {
               </div>
             )}
 
-            <WeroRow />
-            <BankTransferRow />
+            {(SHOW_WERO || SHOW_BANK_TRANSFER) && (
+              <div className="pt-4">
+                <h3 className="font-display text-lg font-bold text-[oklch(0.22_0.01_60)] mb-4">
+                  {t('Other ways to donate', 'Andere manieren om te doneren')}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <BankTransferBlock />
+                  <WeroBlock />
+                </div>
+              </div>
+            )}
 
             <p className="text-sm text-[oklch(0.42_0.01_60)] pt-2">
               {t('Questions about donating? Contact ', 'Vragen over doneren? Neem contact op via ')}

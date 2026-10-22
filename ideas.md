@@ -69,7 +69,7 @@ Deep Teal `oklch(0.38 0.09 195)` — the IOU turquoise, ownable and consistent a
 
 ## Style Decisions
 - Navigation uses a scroll-aware header: transparent over hero, solid white/90 backdrop-blur on scroll.
-- Donation page (Support) order: hero with a Donate button that scrolls to the donation section, what donations support, a Mollie donation route first, an optional second Zeffy route that renders only when ZEFFY_CAMPAIGN_URL is set, a note that taking part is always free, and an optional Stay in touch signup. WERO and bank transfer stay hidden behind SHOW_WERO and SHOW_BANK_TRANSFER until real details exist. Constants live in client/src/lib/donationConfig.ts.
+- Donation page (Support) order: hero with a Donate button that scrolls to the donation section, what donations support, a Mollie donation route first, an optional second Zeffy route that renders only when ZEFFY_CAMPAIGN_URL is set, a note that taking part is always free, and an optional Stay in touch signup. Under the donation routes, a compact "Other ways to donate" area shows bank transfer and WERO as quiet side by side blocks (stacked on mobile), never styled like the main donation button. Each shows a placeholder line until real details are set, and can be hidden with SHOW_BANK_TRANSFER and SHOW_WERO. See LAUNCH_CHECKLIST.md. Constants live in client/src/lib/donationConfig.ts.
 - Language toggle (EN/NL) lives in the top-right utility area of the nav, always visible.
 - Forms use generous padding, visible labels above inputs, and a single primary CTA per form.
 - Composition: inner-page sections default to an asymmetric editorial grid with edge-anchored headings; centered headings are reserved only for quotes, stats, or major fundraising appeals.
