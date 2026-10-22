@@ -29,8 +29,8 @@ export default function About() {
   useSEO({
     title: 'About the Orchestra | Internationaal Orkest Utrecht',
     titleNl: 'Over het Orkest | Internationaal Orkest Utrecht',
-    description: 'Meet the international musicians and conductor behind Internationaal Orkest Utrecht\'s mission to bring music and social cohesion to children across the Netherlands.',
-    descriptionNl: 'Maak kennis met de internationale muzikanten en dirigent achter de missie van Internationaal Orkest Utrecht om muziek en sociale cohesie te brengen bij kinderen in heel Nederland.',
+    description: 'Meet the international musicians and conductor behind Internationaal Orkest Utrecht\'s mission to bring music to children across the Netherlands, with children from different backgrounds making music together.',
+    descriptionNl: 'Maak kennis met de internationale muzikanten en dirigent achter de missie van Internationaal Orkest Utrecht om muziek te brengen bij kinderen in heel Nederland, waarbij kinderen met verschillende achtergronden samen muziek maken.',
     path: '/about',
     image: 'https://pub-a951c77d806041b192717a4428bf1a9b.r2.dev/images/iou-hero.jpg',
   });
@@ -86,8 +86,8 @@ export default function About() {
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
                 {t(
-                  'Our ultimate goal is social cohesion, creating spaces where children of all backgrounds feel welcome, understood, and connected through the universal language of music.',
-                  'Ons uiteindelijke doel is sociale cohesie, het creëren van ruimtes waar kinderen van alle achtergronden zich welkom, begrepen en verbonden voelen door de universele taal van muziek.'
+                  'Our ultimate goal is children from different backgrounds making music together, in spaces where they feel welcome, understood, and connected through the universal language of music.',
+                  'Ons uiteindelijke doel is dat kinderen met verschillende achtergronden samen muziek maken, in ruimtes waar ze zich welkom, begrepen en verbonden voelen door de universele taal van muziek.'
                 )}
               </p>
               <Link href="/school-concerts" className="btn-primary">
@@ -156,8 +156,8 @@ export default function About() {
             </h2>
             <p className="text-[oklch(0.52_0.015_60)] max-w-xl">
               {t(
-                'Our musicians hail from across the globe, bringing world-class talent and diverse perspectives to every performance.',
-                'Onze muzikanten komen van over de hele wereld en brengen toptalent en diverse perspectieven naar elke uitvoering.'
+                'Our musicians come from many countries and bring different musical backgrounds to every performance.',
+                'Onze musici komen uit veel landen en brengen verschillende muzikale achtergronden mee naar elk optreden.'
               )}
             </p>
           </div>

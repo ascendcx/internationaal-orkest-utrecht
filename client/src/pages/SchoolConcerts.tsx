@@ -70,7 +70,7 @@ export default function SchoolConcerts() {
           <div className="mb-12 fade-up">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] max-w-lg">
-              {t('We Handle Everything. Your Students Just Show Up.', 'Wij Regelen Alles. Uw Leerlingen Komen Gewoon Genieten.')}
+              {t('We help you bring live music to your school.', 'Wij helpen u live muziek naar uw school te brengen.')}
             </h2>
           </div>
           {/* Annual-report style process: numbered steps with thin rules, no icon boxes */}
@@ -88,8 +88,8 @@ export default function SchoolConcerts() {
           </div>
           <p className="text-sm text-[oklch(0.52_0.015_60)] leading-relaxed max-w-2xl mt-8">
             {t(
-              'These three steps are always connected at this stage. The youth ensemble opportunity is only offered in combination with a school concert. Schools that would like a chamber concert on its own, without the youth ensemble pathway, can request one separately by contacting us.',
-              'Deze drie stappen zijn in dit stadium altijd met elkaar verbonden. De mogelijkheid tot een jeugdensemble wordt alleen aangeboden in combinatie met een schoolconcert. Scholen die alleen een kamerconcert willen, zonder het jeugdensembletraject, kunnen dit apart aanvragen door contact met ons op te nemen.'
+              'Schools can request a concert on its own or discuss a concert followed by a local youth ensemble. At this stage, the youth ensemble program starts through a school concert.',
+              'Scholen kunnen alleen een concert aanvragen of een concert met een lokaal jeugdensemble bespreken. In deze fase start het jeugdensembleprogramma altijd met een schoolconcert.'
             )}
           </p>
         </div>

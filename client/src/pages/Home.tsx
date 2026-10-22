@@ -23,8 +23,8 @@ export default function Home() {
       alt: t('School concert', 'Schoolconcert'),
       title: t('A child hears music', 'Een kind hoort muziek'),
       body: t(
-        'A free concert comes to their own school.',
-        'Een gratis concert komt naar hun eigen school.'
+        'A free concert brings live music to their school.',
+        'Kinderen beleven een gratis concert op hun eigen school.'
       ),
     },
     {
@@ -33,17 +33,17 @@ export default function Home() {
       pos: 'object-[50%_15%]',
       title: t('The moment it clicks', 'Het moment dat het klikt'),
       body: t(
-        'They see and hear real musicians. And they want to try.',
-        'Ze zien en horen echte musici. En ze willen het zelf proberen.'
+        'Children try instruments or sing together, guided by musicians and singers.',
+        'Kinderen proberen instrumenten uit of zingen samen, begeleid door musici en zangers.'
       ),
     },
     {
       img: 'iou-youth-ensemble.jpg',
       alt: t('Youth ensemble rehearsal', 'Repetitie jeugdensemble'),
-      title: t('They keep it', 'Ze houden het vast'),
+      title: t('They keep making music', 'Samen muziek blijven maken'),
       body: t(
-        'A free local ensemble, Nederland in Harmonie, where they learn to play, sing, and belong.',
-        'Een gratis lokaal ensemble, Nederland in Harmonie, waar ze leren spelen, zingen en erbij horen.'
+        'Through Nederland in Harmonie, children can continue playing or singing in a free local ensemble.',
+        'Via Nederland in Harmonie kunnen kinderen gratis blijven spelen of zingen in een lokaal ensemble.'
       ),
     },
   ];
@@ -197,12 +197,12 @@ export default function Home() {
           <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6" style={{ transitionDelay: '80ms' }}>
             <div className="flex flex-col items-start rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm">
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-                {t('Book a concert', 'Boek een concert')}
+                {t('School concert', 'Schoolconcert')}
               </h3>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-5">
                 {t(
-                  'A concert only. Good for schools that already have a music program, such as MuziekRoute.',
-                  'Alleen een concert. Fijn voor scholen die al een muziekprogramma hebben, zoals MuziekRoute.'
+                  'A free concert for your students. A good fit if your school already has a music program, such as MuziekRoute.',
+                  'Een gratis concert voor uw leerlingen. Een goede keuze als uw school al een muziekprogramma heeft, zoals MuziekRoute.'
                 )}
               </p>
               <Link href="/contact?interest=concert" className="btn-primary mt-auto min-h-11 text-sm">
@@ -211,16 +211,16 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-start rounded-xl bg-white border border-[oklch(0.92_0.01_195)] p-6 shadow-sm">
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-                {t('Concert and ensemble', 'Concert en ensemble')}
+                {t('School concert and local ensemble', 'Schoolconcert en lokaal ensemble')}
               </h3>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-5">
                 {t(
-                  'A concert, plus a local Nederland in Harmonie (The Netherlands in Harmony) ensemble for your students to join.',
-                  'Een concert, plus een lokaal Nederland in Harmonie (The Netherlands in Harmony) ensemble waar uw leerlingen aan kunnen deelnemen.'
+                  'A free concert, followed by working with IOU to set up a local Nederland in Harmonie (The Netherlands in Harmony) ensemble where your students can keep playing or singing.',
+                  'Een gratis concert, gevolgd door samenwerking met IOU om een lokaal ensemble van Nederland in Harmonie (The Netherlands in Harmony) op te zetten, waar uw leerlingen kunnen blijven spelen of zingen.'
                 )}
               </p>
               <Link href="/contact?interest=concert-ensemble" className="btn-primary mt-auto min-h-11 text-sm">
-                {t('Set up concert and ensemble', 'Start concert en ensemble')}
+                {t('Discuss a concert and ensemble', 'Bespreek een concert en ensemble')}
               </Link>
             </div>
           </div>
@@ -305,8 +305,8 @@ export default function Home() {
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
             {t(
-              'Donations fund our free program. Every donation pays for the next concert, the next ensemble, and the next child who discovers that music is for them. No fees, ever, for the children. That is only possible because of people like you.',
-              'Donaties financieren ons gratis programma. Elke donatie betaalt het volgende concert, het volgende ensemble en het volgende kind dat ontdekt dat muziek er ook voor hen is. Nooit kosten voor de kinderen. Dat is alleen mogelijk dankzij mensen als u.'
+              'Donations fund our free program. Your gift helps bring free school concerts and youth ensembles to more children, so they can hear live music, try an instrument or sing, and keep making music together. That is only possible because of people like you.',
+              'Donaties financieren ons gratis programma. Uw gift helpt gratis schoolconcerten en jeugdensembles naar meer kinderen te brengen, zodat zij live muziek horen, een instrument proberen of zingen en samen muziek blijven maken. Dat is alleen mogelijk dankzij mensen als u.'
             )}
           </p>
           <Link href="/support" className="btn-gold">

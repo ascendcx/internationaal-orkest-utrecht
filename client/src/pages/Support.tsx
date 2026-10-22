@@ -51,21 +51,12 @@ export default function Support() {
             <h2 className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
               {t('Where Your Money Goes', 'Waar uw geld naartoe gaat')}
             </h2>
-            <p className="text-[oklch(0.52_0.015_60)] mb-6 leading-relaxed">
+            <p className="text-[oklch(0.52_0.015_60)] leading-relaxed">
               {t(
-                'We believe in full transparency. Here is how the annual cost per student breaks down. Exact figures will be published once school relationships are established.',
-                'Wij geloven in volledige transparantie. Zo worden de jaarlijkse kosten per leerling opgebouwd. Exacte cijfers worden gepubliceerd zodra schoolrelaties zijn vastgesteld.'
+                'Donations help cover teaching, instruments and the running of our youth ensembles. We will publish the annual cost per child once our school partnerships and costs are confirmed.',
+                'Donaties helpen om lessen, instrumenten en de organisatie van onze jeugdensembles te betalen. We publiceren de jaarlijkse kosten per kind zodra onze samenwerkingen met scholen en de kosten vaststaan.'
               )}
             </p>
-            <div className="bg-[oklch(0.95_0.02_195)] rounded-lg p-6 font-mono text-sm text-[oklch(0.38_0.09_195)]">
-              <div className="flex justify-between mb-2"><span>{t('Teacher hourly rate × lesson hours per year', 'Uurtarief docent × lesuren per jaar')}</span><span className="text-[oklch(0.52_0.015_60)]">[TBD]</span></div>
-              <div className="flex justify-between mb-2"><span>+ {t('Instrument access cost per year', 'Kosten instrumenttoegang per jaar')}</span><span className="text-[oklch(0.52_0.015_60)]">[TBD]</span></div>
-              <div className="flex justify-between mb-3"><span>+ {t('Program administration per student', 'Programmaadministratie per leerling')}</span><span className="text-[oklch(0.52_0.015_60)]">[TBD]</span></div>
-              <div className="flex justify-between border-t border-[oklch(0.88_0.015_195)] pt-3 font-bold text-[oklch(0.22_0.01_60)]">
-                <span>= {t('Annual cost per student', 'Jaarlijkse kosten per leerling')}</span>
-                <span className="text-[var(--gold-on-light)]">{t('Coming soon', 'Binnenkort')}</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -77,7 +68,7 @@ export default function Support() {
             <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-[oklch(0.85_0.1_75)] mb-2 block">{t('Primary Campaign', 'Primaire campagne')}</span>
-                <h2 className="font-display text-2xl font-bold">{t('Support Our Current Campaign', 'Steun Onze Huidige Campagne')}</h2>
+                <h2 className="font-display text-2xl font-bold">{t('Our next fundraising campaign is coming soon.', 'Onze volgende inzamelingsactie komt binnenkort.')}</h2>
               </div>
               <span className="text-xs bg-[oklch(0.72_0.12_75)] text-[oklch(0.22_0.01_60)] font-bold px-3 py-1 rounded-full">{t('Zero Fees', 'Nul kosten')}</span>
             </div>
@@ -94,9 +85,14 @@ export default function Support() {
               <input type="checkbox" checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} className="mt-0.5 rounded" />
               <span className="text-sm text-white/80">{t('I would like to receive periodic updates about the orchestra.', 'Ik wil periodieke updates over het orkest ontvangen.')}</span>
             </label>
-            <a href="#zeffy-placeholder" className="btn-gold inline-flex items-center gap-2">
-              {t('Donate via Zeffy', 'Doneren via Zeffy')} <ExternalLink size={16} />
-            </a>
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="inline-flex min-h-11 cursor-not-allowed items-center rounded-md bg-white/15 px-7 py-3 text-[0.9375rem] font-semibold text-white"
+            >
+              {t('Coming soon', 'Binnenkort')}
+            </button>
           </div>
         </div>
       </section>

@@ -118,12 +118,12 @@ export default function YouthEnsembles() {
             <div className="py-10 lg:pl-12 border-t lg:border-t-0 border-[oklch(0.88_0.015_195)]">
               <div className="w-8 h-0.5 bg-[oklch(0.38_0.09_195)] mb-6" />
               <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">
-                {t('After School, At Your School', 'Na School, Op Uw School')}
+                {t('After school at a participating local school', 'Na schooltijd op een deelnemende school in de buurt')}
               </h3>
               <p className="text-[oklch(0.52_0.015_60)] leading-relaxed text-sm">
                 {t(
-                  'Rehearsals take place after school at local school locations, so no travel is required. Specific schedules and locations are confirmed upon registration.',
-                  'Repetities vinden na school plaats op lokale schoollocaties, zodat reizen niet nodig is. Specifieke schema\'s en locaties worden bevestigd bij inschrijving.'
+                  'Rehearsals take place after school at participating local schools. Schedules and locations are confirmed when you register.',
+                  'Repetities vinden plaats na schooltijd op deelnemende scholen in de buurt. Schema\'s en locaties worden bevestigd bij inschrijving.'
                 )}
               </p>
             </div>

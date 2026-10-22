@@ -74,8 +74,8 @@ export default function Sponsors() {
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8 leading-relaxed">
             {t(
-              'Sponsoring the Internationaal Orkest Utrecht means more than a logo at a concert. It means your business stands behind something real. Music education, social cohesion, and opportunity for every child in the Netherlands, regardless of background. Your community will know you made it possible.',
-              'Het sponsoren van het Internationaal Orkest Utrecht betekent meer dan een logo bij een concert. Het betekent dat uw bedrijf achter iets echts staat. Muziekeducatie, sociale cohesie en kansen voor ieder kind in Nederland, ongeacht achtergrond. Uw gemeenschap zal weten dat u dit mogelijk heeft gemaakt.'
+              'Sponsoring the Internationaal Orkest Utrecht means more than a logo at a concert. It means your business stands behind something real. Music education, children from different backgrounds making music together, and opportunity for every child in the Netherlands. Your community will know you made it possible.',
+              'Het sponsoren van het Internationaal Orkest Utrecht betekent meer dan een logo bij een concert. Het betekent dat uw bedrijf achter iets echts staat. Muziekeducatie, kinderen met verschillende achtergronden die samen muziek maken en kansen voor ieder kind in Nederland. Uw gemeenschap zal weten dat u dit mogelijk heeft gemaakt.'
             )}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
