@@ -97,13 +97,24 @@ export default function ConductorWorkshops() {
                 )}
               </p>
               <div className="bg-[oklch(0.95_0.02_195)] rounded-xl p-6 mb-6">
-                <h3 className="font-display font-semibold text-[oklch(0.22_0.01_60)] mb-3">{t('Workshop Leader', 'Workshopleider')}</h3>
+                <h3 className="font-display font-semibold text-[oklch(0.22_0.01_60)] mb-4">{t('Workshop Leader', 'Workshopleider')}</h3>
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+                <img
+                  src={mediaUrl('images/iou-jennifer-conductor.webp')}
+                  alt={t('Jennifer Diepman, Founder and Artistic Director of Internationaal Orkest Utrecht, smiling.', 'Jennifer Diepman, oprichter en artistiek leider van Internationaal Orkest Utrecht, lacht naar de camera.')}
+                  width={400}
+                  height={500}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/5] w-full max-w-[16rem] shrink-0 rounded-xl object-cover object-[45%_30%] sm:w-44"
+                />
                 <p className="text-sm text-[oklch(0.42_0.01_60)] leading-relaxed">
                   {t(
                     'Jennifer Diepman holds a Master of Music in Conducting from Messiah University and has studied at the Juilliard School of Music. She is a recipient of the Fred J. Miller 1st Prize Outstanding Achievement Award in Conducting and the John Philip Sousa Award in Oboe Performance. She has led ensembles across the globe and founded the Internationaal Orkest Utrecht to bring that experience directly into the next generation of conductors.',
                     'Jennifer Diepman heeft een Master of Music in Directie van de Messiah University en heeft gestudeerd aan de Juilliard School of Music. Ze is ontvanger van de Fred J. Miller 1e Prijs voor Uitstekende Prestatie in Directie en de John Philip Sousa Award in Hobo-uitvoering. Ze heeft ensembles over de hele wereld geleid en richtte het Internationaal Orkest Utrecht op om die ervaring rechtstreeks door te geven aan de volgende generatie dirigenten.'
                   )}
                 </p>
+                </div>
               </div>
               <div className="flex flex-col gap-3">
                 <p className="text-sm font-medium text-[oklch(0.22_0.01_60)]">{t('External Resources', 'Externe bronnen')}</p>
