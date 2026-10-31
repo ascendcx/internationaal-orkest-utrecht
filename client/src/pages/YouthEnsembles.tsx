@@ -2,13 +2,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useRef, useState } from 'react';
 import { Link } from 'wouter';
-import { CheckCircle, ArrowRight, Music, Heart, Star, ExternalLink } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
+import { SHOW_SAFEGUARDING } from '@/lib/siteFlags';
 
-// Hidden until the Sistema Europe wording is confirmed. Strings are kept below for later.
-const SHOW_SISTEMA_NOTE = false;
+// Sistema Europe note, shown with the confirmed wording.
+const SHOW_SISTEMA_NOTE = true;
 
 export default function YouthEnsembles() {
   const { t } = useLanguage();
@@ -20,7 +21,6 @@ export default function YouthEnsembles() {
     description: 'Free local youth music groups for children in the Netherlands. No audition or previous experience needed. Register your interest in Nederland in Harmonie.',
     descriptionNl: 'Gratis lokale muziekgroepen voor kinderen in Nederland. Geen auditie of eerdere ervaring nodig. Meld uw belangstelling voor Nederland in Harmonie.',
     path: '/youth-ensembles',
-    image: mediaUrl('images/iou-youth-ensemble.jpg'),
   });
 
   const formHeadingRef = useRef<HTMLHeadingElement>(null);
@@ -48,10 +48,10 @@ export default function YouthEnsembles() {
         <div className="relative container">
           <span className="section-rule" />
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 max-w-2xl">
-            {t('Learn, Play, and Grow Together', 'Leren, spelen en samen groeien')}
+            {t('Grow together through music', 'Groei samen door muziek')}
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-4">
-            {t('Nederland in Harmonie (The Netherlands in Harmony) brings children together to play, sing and learn in free local music groups. No audition or previous experience is needed.', 'Bij Nederland in Harmonie leren kinderen samen spelen en zingen in gratis lokale muziekgroepen. Een auditie of eerdere ervaring is niet nodig.')}
+            {t('Nederland in Harmonie (The Netherlands in Harmony) brings children together to play, sing and learn in free local music groups. No audition or previous experience is needed. Children make friends, share music and belong to something bigger than themselves.', 'Bij Nederland in Harmonie leren kinderen samen spelen en zingen in gratis lokale muziekgroepen. Een auditie of eerdere ervaring is niet nodig. Kinderen maken vrienden, delen muziek en horen bij iets groters dan zichzelf.')}
           </p>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t('We are preparing our first ensembles. Register your interest to hear about the options for your child\'s school and area.', 'We bereiden de eerste ensembles voor. Meld uw belangstelling om te horen wat er mogelijk is voor de school en omgeving van uw kind.')}
@@ -88,7 +88,7 @@ export default function YouthEnsembles() {
                 {t('Every background welcome', 'Iedere achtergrond is welkom')}
               </h3>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed text-base">
-                {t('Children can start without an audition or previous experience. A place to make music, make friends and feel they belong.', 'Kinderen kunnen beginnen zonder auditie of eerdere ervaring. Een plek om muziek te maken, vrienden te maken en erbij te horen.')}
+                {t('Children can start without an audition or previous experience. A place to make music, make friends and feel they belong. Children from every background make music side by side.', 'Kinderen kunnen beginnen zonder auditie of eerdere ervaring. Een plek om muziek te maken, vrienden te maken en erbij te horen. Kinderen van alle achtergronden maken samen muziek.')}
               </p>
             </div>
             <div className="hidden lg:block bg-[oklch(0.88_0.015_195)]" />
@@ -140,13 +140,24 @@ export default function YouthEnsembles() {
             <div className="border-t border-[oklch(0.88_0.015_195)]" />
           </div>
           <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-8">
-            {t('At this stage, the ensemble program starts through a school concert. Register your interest so we can discuss the options for your child\'s school and area.', 'In deze fase begint het ensembleprogramma met een schoolconcert. Meld uw belangstelling, zodat we kunnen bespreken wat er mogelijk is voor de school en omgeving van uw kind.')}
+            {t('At this stage, the ensemble programme starts through a school concert. Register your interest so we can discuss the options for your child\'s school and area.', 'In deze fase begint het ensembleprogramma met een schoolconcert. Meld uw belangstelling, zodat we kunnen bespreken wat er mogelijk is voor de school en omgeving van uw kind.')}
           </p>
           <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-4">
             {t('Choirs, symphonic bands, marching bands, percussion ensembles, and orchestras.', 'Koren, harmonieorkesten, fanfares, slagwerkensembles en orkesten.')}{' '}
             {t('The options for each area will be confirmed before an ensemble starts.', 'Wat er in elk gebied mogelijk is, wordt bevestigd voordat een ensemble begint.')}
           </p>
-          <p className="mt-4">
+          <div className="mt-10 max-w-2xl border-t border-[oklch(0.88_0.015_195)] pt-8">
+            <h3 className="font-display font-semibold text-xl text-[oklch(0.22_0.01_60)] mb-2">
+              {t('Where we are building ensembles', 'Waar wij ensembles opbouwen')}
+            </h3>
+            <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t(
+                'We are building ensembles in Utrecht, Leeuwarden, Rotterdam, Arnhem, Almelo, Enschede and Roosendaal. All youth choirs and orchestras meet after school.',
+                'Wij bouwen ensembles op in Utrecht, Leeuwarden, Rotterdam, Arnhem, Almelo, Enschede en Roosendaal. Alle jeugdkoren en jeugdorkesten komen na schooltijd bij elkaar.'
+              )}
+            </p>
+          </div>
+          <p className="mt-8">
             <Link href="/school-concerts" className="text-sm font-medium text-[oklch(0.38_0.09_195)] hover:underline">
               {t('Information for schools', 'Informatie voor scholen')}
             </Link>
@@ -167,34 +178,40 @@ export default function YouthEnsembles() {
         </div>
       </section>
 
-      {/* Sistema Europe note (hidden for now) */}
+      {/* Sistema Europe note */}
       {SHOW_SISTEMA_NOTE && (
         <section className="py-16 bg-[oklch(0.95_0.02_195)]">
           <div className="container max-w-3xl">
             <span className="section-rule" />
-            <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
-              {t('Recognized Through Sistema Europe', 'Erkend via Sistema Europe')}
-            </h2>
-            <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+            <p className="text-lg text-[oklch(0.22_0.01_60)] leading-relaxed">
               {t(
-                'Sistema Europe has already welcomed Nederland in Harmonie into its network. Once our first ensemble launches, we will be listed among their member programs, a recognition that provides trusted status among funders and partners, and supports the financial backing that keeps every ensemble free for children.',
-                'Sistema Europe heeft Nederland in Harmonie al verwelkomd in haar netwerk. Zodra ons eerste ensemble van start gaat, worden wij opgenomen in hun ledenprogramma\'s, een erkenning die zorgt voor een betrouwbare status bij financiers en partners en die de financiële ondersteuning versterkt waarmee elk ensemble gratis blijft voor kinderen.'
+                'Children in Nederland in Harmonie become part of the Sistema Europe network, with opportunities to play and sing together with peers from other European countries.',
+                'Kinderen in Nederland in Harmonie worden onderdeel van het Sistema Europe netwerk, met mogelijkheden om samen te spelen en te zingen met leeftijdsgenoten uit andere Europese landen.'
               )}
             </p>
-            <a
-              href="https://www.sistemaeurope.org/Network-Members/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-[oklch(0.38_0.09_195)] hover:underline font-medium"
-            >
-              {t('View the Sistema Europe Network Members', 'Bekijk de Sistema Europe-netwerkleden')}
-              <ExternalLink size={14} />
-            </a>
           </div>
         </section>
       )}
 
-      {/* Enrollment Form */}
+      {/* Safeguarding (hidden until Jen approves the wording, see siteFlags.ts) */}
+      {SHOW_SAFEGUARDING && (
+        <section className="py-16 bg-[oklch(0.98_0.008_80)] border-t border-[oklch(0.88_0.015_195)]">
+          <div className="container max-w-3xl">
+            <span className="section-rule" />
+            <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
+              {t('A safe place for children', 'Een veilige plek voor kinderen')}
+            </h2>
+            <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">
+              {t(
+                'A safe, child-friendly community. Every musician has a background check. Adults are always present.',
+                'Een veilige, kindvriendelijke gemeenschap. Elke muzikant is gescreend. Er zijn altijd volwassenen aanwezig.'
+              )}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Enrolment Form */}
       <section className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
@@ -249,7 +266,7 @@ export default function YouthEnsembles() {
               </div>
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
-                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programs.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programmes.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
               </label>
               <FormError show={failed} />
               <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">

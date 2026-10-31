@@ -3,11 +3,10 @@ import { useSEO } from '@/hooks/useSEO';
 import { Link } from 'wouter';
 import { useRef, useState } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
-import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
 
-// Only add a sponsor here once the organization has approved being listed.
+// Only add a sponsor here once the organisation has approved being listed.
 // While this array is empty, the "Thank you to our sponsors" section renders nothing.
 type ConfirmedSponsor = { name: string; logoUrl?: string; url?: string };
 const CONFIRMED_SPONSORS: ConfirmedSponsor[] = [];
@@ -24,7 +23,7 @@ function ConfirmedSponsors({ sponsors }: { sponsors: ConfirmedSponsor[] }) {
         </h2>
         <p className="text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mb-8">
           {t(
-            'We are grateful to the businesses and organizations helping make our music programs possible.',
+            'We are grateful to the businesses and organisations helping make our music programmes possible.',
             'We zijn de bedrijven en organisaties dankbaar die onze muziekprogramma\'s mogelijk helpen maken.'
           )}
         </p>
@@ -59,7 +58,6 @@ export default function Sponsors() {
     description: 'Sponsor free school concerts and local youth ensembles with Internationaal Orkest Utrecht. Tell us about your business to discuss the options.',
     descriptionNl: 'Sponsor de gratis schoolconcerten en lokale jeugdensembles van Internationaal Orkest Utrecht. Vertel ons over uw bedrijf om de mogelijkheden te bespreken.',
     path: '/sponsors',
-    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
@@ -86,16 +84,10 @@ export default function Sponsors() {
     {
       title: t('A place to keep making music', 'Een plek om samen muziek te blijven maken'),
       desc: t(
-        'Support the development of Nederland in Harmonie (The Netherlands in Harmony), our free local youth ensemble program.',
+        'Support the development of Nederland in Harmonie (The Netherlands in Harmony), our free local youth ensemble programme.',
         'Steun het opzetten van Nederland in Harmonie, ons gratis programma met lokale jeugdensembles.'
       ),
     },
-  ];
-
-  const recognition = [
-    t('Your name or logo in concert programs.', 'Uw naam of logo in concertprogramma\'s.'),
-    t('A mention on social media.', 'Een vermelding op sociale media.'),
-    t('Your logo and a link on our Sponsors page.', 'Uw logo en een link op onze sponsorspagina.'),
   ];
 
   const inputClass = 'w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]';
@@ -161,21 +153,10 @@ export default function Sponsors() {
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
             {t('Recognition for your support', 'Aandacht voor uw steun')}
           </h2>
-          <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
-            {t(
-              'We will discuss how your business\'s support can be acknowledged. Recognition is agreed as part of the sponsorship arrangement and may include:',
-              'We bespreken met u hoe we de steun van uw bedrijf kunnen vermelden. De afspraken maken deel uit van de sponsoring. Mogelijkheden zijn:'
-            )}
-          </p>
-          <ul className="list-disc pl-6 space-y-1 text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
-            {recognition.map((r, i) => (
-              <li key={i}>{r}</li>
-            ))}
-          </ul>
           <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
             {t(
-              'Contact us to discuss the options and what we can offer.',
-              'Neem contact op om de mogelijkheden te bespreken en te horen wat we kunnen bieden.'
+              'We are grateful for every sponsor and would be happy to explore ways to recognise your business or organisation.',
+              'Wij zijn elke sponsor dankbaar en bespreken graag hoe wij uw bedrijf of organisatie kunnen erkennen.'
             )}
           </p>
         </div>
@@ -184,7 +165,7 @@ export default function Sponsors() {
       {/* Confirmed sponsors (renders nothing until approved records exist) */}
       <ConfirmedSponsors sponsors={CONFIRMED_SPONSORS} />
 
-      {/* Sponsorship inquiry */}
+      {/* Sponsorship enquiry */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] border-t border-[oklch(0.88_0.015_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
@@ -198,7 +179,7 @@ export default function Sponsors() {
           </h2>
           <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-3">
             {t(
-              'Tell us about your business and what you would like to support. We will contact you to discuss the sponsorship options. Sending an inquiry does not commit you to a sponsorship.',
+              'Tell us about your business and what you would like to support. We will contact you to discuss the sponsorship options. Sending an enquiry does not commit you to a sponsorship.',
               'Vertel ons over uw bedrijf en wat u wilt steunen. We nemen contact met u op om de sponsormogelijkheden te bespreken. Een aanvraag verplicht u tot niets.'
             )}
           </p>
@@ -255,7 +236,7 @@ export default function Sponsors() {
               </div>
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
-                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programs.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programmes.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
               </label>
               <FormError show={failed} />
               <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">

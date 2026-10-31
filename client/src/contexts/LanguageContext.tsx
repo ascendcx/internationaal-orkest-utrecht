@@ -81,7 +81,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, [search, setLang]);
 
   useEffect(() => {
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'en' ? 'en-GB' : lang;
   }, [lang]);
 
   const t = (en: string, nl: string) => (lang === 'en' ? en : nl);

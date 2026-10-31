@@ -2,7 +2,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Mail, Instagram, Facebook, Linkedin, ArrowRight } from 'lucide-react';
-import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
 
@@ -31,7 +30,6 @@ export default function Contact() {
     description: 'Get in touch about school concerts, youth ensembles, or supporting our mission.',
     descriptionNl: 'Neem contact met ons op over schoolconcerten, jeugdensembles of het steunen van onze missie.',
     path: '/contact',
-    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });

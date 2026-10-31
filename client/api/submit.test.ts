@@ -74,9 +74,15 @@ describe('submit handler', () => {
   it('uses the school name in the subject and reports opt-in and language', async () => {
     await post({ formType: 'school-concert', ...VALID['school-concert'] });
     const sent = JSON.parse(fetchMock.mock.calls[0][1].body);
-    expect(sent.subject).toBe('[IOU website] School concert inquiry: Test School');
+    expect(sent.subject).toBe('[IOU website] School concert enquiry: Test School');
     expect(sent.text).toContain('Page language: NL');
     expect(sent.text).toContain('Email updates: yes');
+  });
+
+  it('accepts the chamber concert option and includes it in the email body', async () => {
+    const res = await post({ formType: 'school-concert', ...VALID['school-concert'], interest: 'chamber-concert' });
+    expect(res.code).toBe(200);
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('Interest: chamber-concert');
   });
 
   it('counts only a ticked box as email updates yes', async () => {

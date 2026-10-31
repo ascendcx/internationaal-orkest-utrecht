@@ -6,13 +6,14 @@ import { CheckCircle, ArrowRight, Play } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
+import { SHOW_RECORDING_NOTICE } from '@/lib/siteFlags';
 
 // Set to false until music licensing for online use is confirmed.
 const SHOW_ORCHESTRA_VIDEO = true;
 
 function interestFromUrl() {
   const value = new URLSearchParams(window.location.search).get('interest') ?? '';
-  return value === 'concert' || value === 'concert-ensemble' ? value : '';
+  return value === 'concert' || value === 'concert-ensemble' || value === 'chamber-concert' ? value : '';
 }
 
 function ConcertVideo({ t }: { t: (en: string, nl: string) => string }) {
@@ -66,7 +67,6 @@ export default function SchoolConcerts() {
     description: 'Free, interactive school concerts with Internationaal Orkest Utrecht. Children hear live music, then try instruments or sing together. Ask about a concert for your school.',
     descriptionNl: 'Gratis, interactieve schoolconcerten van Internationaal Orkest Utrecht. Kinderen beleven live muziek en proberen daarna instrumenten uit of zingen samen. Vraag een concert aan voor uw school.',
     path: '/school-concerts',
-    image: mediaUrl('images/iou-school-concert.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
@@ -78,13 +78,15 @@ export default function SchoolConcerts() {
   ];
 
   const options = [
-    { title: t('School concert', 'Schoolconcert'), desc: t('A concert on its own. A good fit if your school already has a music program, such as MuziekRoute.', 'Een concert zonder vervolgensemble. Geschikt voor scholen die al een muziekprogramma hebben, zoals MuziekRoute.') },
+    { title: t('School concert', 'Schoolconcert'), desc: t('A concert on its own. A good fit if your school already has a music programme, such as MuziekRoute.', 'Een concert zonder vervolgensemble. Geschikt voor scholen die al een muziekprogramma hebben, zoals MuziekRoute.') },
     { title: t('School concert and local ensemble', 'Schoolconcert en lokaal ensemble'), desc: t('A concert followed by working with IOU to set up a free local ensemble where interested students can keep making music.', 'Een concert, gevolgd door het samen met IOU opzetten van een gratis lokaal ensemble. Zo kunnen geïnteresseerde leerlingen samen muziek blijven maken.') },
+    { title: t('A smaller group', 'Een kleinere groep'), desc: t('A few of our musicians can also visit your school for a smaller concert.', 'Een paar van onze muzikanten kunnen ook uw school bezoeken voor een kleiner concert.') },
   ];
 
   const interestOptions = [
     { value: 'concert', label: t('A school concert', 'Een schoolconcert') },
     { value: 'concert-ensemble', label: t('A school concert and local ensemble', 'Een schoolconcert en lokaal ensemble') },
+    { value: 'chamber-concert', label: t('A smaller chamber concert', 'Een kleiner kamerconcert') },
   ];
 
   return (
@@ -177,7 +179,7 @@ export default function SchoolConcerts() {
         </section>
       )}
 
-      {/* Two school options */}
+      {/* School options */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
         <div className="container">
           <div className="mb-10">
@@ -186,14 +188,14 @@ export default function SchoolConcerts() {
               {t('Choose What Fits Your School', 'Kies wat bij uw school past')}
             </h2>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
-              {t('Both options are free.', 'Beide opties zijn gratis.')}
+              {t('All options are free.', 'Alle opties zijn gratis.')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0">
             {options.map((option, i) => (
               <div
                 key={i}
-                className={i === 0 ? 'md:pr-10 lg:pr-16' : 'border-t border-[oklch(0.88_0.015_195)] pt-10 md:border-t-0 md:border-l md:pt-0 md:pl-10 lg:pl-16'}
+                className={i === 0 ? 'md:pr-8 lg:pr-10' : 'border-t border-[oklch(0.88_0.015_195)] pt-10 md:border-t-0 md:border-l md:pt-0 md:px-8 lg:px-10'}
               >
                 <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-2">{option.title}</h3>
                 <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-prose">{option.desc}</p>
@@ -202,14 +204,22 @@ export default function SchoolConcerts() {
           </div>
           <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-10">
             {t(
-              'At this stage, the youth ensemble program starts through a school concert. Contact us to discuss what is possible for your school.',
+              'At this stage, the youth ensemble programme starts through a school concert. Contact us to discuss what is possible for your school.',
               'In deze fase begint het jeugdensembleprogramma met een schoolconcert. Neem contact met ons op om te bespreken wat er mogelijk is voor uw school.'
             )}
           </p>
+          {SHOW_RECORDING_NOTICE && (
+            <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-4">
+              {t(
+                'Some concerts are recorded so that more people can hear the music. Children who should not be filmed can still attend and sit to one side.',
+                'Sommige concerten worden opgenomen, zodat meer mensen de muziek kunnen horen. Kinderen die niet gefilmd mogen worden, kunnen er toch bij zijn en aan de zijkant zitten.'
+              )}
+            </p>
+          )}
         </div>
       </section>
 
-      {/* Inquiry Form */}
+      {/* Enquiry Form */}
       <section id="booking" className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
@@ -218,7 +228,7 @@ export default function SchoolConcerts() {
           </h2>
           <p className="text-[oklch(0.52_0.015_60)] mb-8">
             {t(
-              'Share your school\'s details, preferred dates and the option you are interested in. We will contact you to discuss the next steps. Sending an inquiry does not commit you to a booking.',
+              'Share your school\'s details, preferred dates and the option you are interested in. We will contact you to discuss the next steps. Sending an enquiry does not commit you to a booking.',
               'Laat ons weten om welke school het gaat, wanneer u een concert zou willen en welke optie uw belangstelling heeft. We nemen contact met u op om de mogelijkheden te bespreken. Een aanvraag verplicht u tot niets.'
             )}
           </p>
@@ -278,11 +288,11 @@ export default function SchoolConcerts() {
               </div>
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
-                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programs.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programmes.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
               </label>
               <FormError show={failed} />
               <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
-                {t('Send inquiry', 'Verstuur aanvraag')}
+                {t('Send enquiry', 'Verstuur aanvraag')}
                 <ArrowRight size={16} />
               </button>
               <Honeypot />

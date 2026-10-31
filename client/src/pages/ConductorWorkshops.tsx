@@ -17,7 +17,6 @@ export default function ConductorWorkshops() {
     description: 'Professional development workshops for conductors, led by Artistic Director Jennifer Diepman.',
     descriptionNl: 'Professionele ontwikkelingsworkshops voor dirigenten, geleid door artistiek directeur Jennifer Diepman.',
     path: '/conductor-workshops',
-    image: mediaUrl('images/iou-conductor.jpg'),
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
@@ -82,7 +81,7 @@ export default function ConductorWorkshops() {
         </div>
       </section>
 
-      {/* What you will practice */}
+      {/* What you will practise */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)]">
         <div className="container">
           <div className="mb-10 max-w-2xl">
@@ -244,7 +243,7 @@ export default function ConductorWorkshops() {
               </div>
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
-                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programs.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
+                <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programmes.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>
               </label>
               <FormError show={failed} />
               <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">

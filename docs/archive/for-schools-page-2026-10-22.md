@@ -19,19 +19,19 @@ Image: images/iou-school-concert.jpg, alt text "School concert" (English only, s
 
 - Heading EN: Give your students a concert they will never forget
 - Heading NL: Geef uw leerlingen een concert dat ze nooit vergeten.
-- Body EN: Live musicians in the classroom. A full school concert. A free ensemble your students can join afterward. All at no cost to your school.
+- Body EN: Live musicians in the classroom. A full school concert. A free ensemble your students can join afterwards. All at no cost to your school.
 - Body NL: Live muzikanten in de klas. Een volledig schoolconcert. Een gratis ensemble waar uw leerlingen zich daarna bij kunnen aansluiten. Allemaal zonder kosten voor uw school.
 - Button EN: Book your introduction
 - Button NL: Boek uw introductie (scrolled to the call to action section)
 
 ## Intro
 
-- EN: Internationaal Orkest Utrecht (IOU) brings professional, live orchestral and vocal music directly into schools. We are now introducing this program to a small number of schools around Utrecht, starting with a free classroom visit and building toward an ongoing youth ensemble.
+- EN: Internationaal Orkest Utrecht (IOU) brings professional, live orchestral and vocal music directly into schools. We are now introducing this programme to a small number of schools around Utrecht, starting with a free classroom visit and building towards an ongoing youth ensemble.
 - NL: Internationaal Orkest Utrecht (IOU) brengt professionele, live orkestrale en vocale muziek rechtstreeks naar scholen. We introduceren dit programma nu bij een klein aantal scholen rond Utrecht, beginnend met een gratis klasbezoek en toewerkend naar een doorlopend jeugdensemble.
 
-Commented out in the code (TODO: re-enable once Jennifer confirms IOU has an active listing as a recognized partner with Cultuur & School Utrecht):
+Commented out in the code (TODO: re-enable once Jennifer confirms IOU has an active listing as a recognised partner with Cultuur & School Utrecht):
 
-- Badge EN: Recognized partner · Cultuur & School Utrecht
+- Badge EN: Recognised partner · Cultuur & School Utrecht
 - Badge NL: Erkend partner · Cultuur & School Utrecht
 
 ## Four steps
@@ -64,7 +64,7 @@ Side image on desktop only: images/iou-violin-child.webp, alt EN "A small boy ho
 
 - Heading EN: Already in your budget
 - Heading NL: Al in uw budget
-- EN: Utrecht schools receive a yearly cultuureducatie subsidy from the municipality, about €30.66 per student for 2026, managed through your school board. This program is built to fit that budget as a ready activiteitenplan, so there is nothing new to request.
+- EN: Utrecht schools receive a yearly cultuureducatie subsidy from the municipality, about €30.66 per student for 2026, managed through your school board. This programme is built to fit that budget as a ready activiteitenplan, so there is nothing new to request.
 - NL: Utrechtse scholen ontvangen jaarlijks een cultuureducatie-subsidie van de gemeente, ongeveer €30,66 per leerling voor 2026, beheerd via uw schoolbestuur. Dit programma is zo opgezet dat het past binnen dat budget als kant-en-klaar activiteitenplan, zodat er niets nieuws aangevraagd hoeft te worden.
 
 ## Call to action

@@ -1,7 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useEffect } from 'react';
-import { mediaUrl } from '@/lib/media';
 
 export default function Privacy() {
   const { t } = useLanguage();
@@ -11,7 +10,6 @@ export default function Privacy() {
     description: 'Read the Privacy & Cookie Policy for Internationaal Orkest Utrecht.',
     descriptionNl: 'Lees het Privacy- en Cookiebeleid van Internationaal Orkest Utrecht.',
     path: '/privacy',
-    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   useEffect(() => {
@@ -52,16 +50,16 @@ export default function Privacy() {
           <div className="space-y-8 text-[oklch(0.42_0.01_60)] leading-relaxed">
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('1. Who We Are', '1. Wie wij zijn')}</h2>
-              <p>{t('Stichting Internationaal Orkest Utrecht is a nonprofit foundation registered at the Dutch Chamber of Commerce. We are responsible for the personal data you share with us through this website.', 'Stichting Internationaal Orkest Utrecht is een non-profitstichting geregistreerd bij de Kamer van Koophandel. Wij zijn verantwoordelijk voor de persoonsgegevens die u via deze website met ons deelt.')}</p>
+              <p>{t('Stichting Internationaal Orkest Utrecht is a non-profit foundation registered at the Dutch Chamber of Commerce. We are responsible for the personal data you share with us through this website.', 'Stichting Internationaal Orkest Utrecht is een non-profitstichting geregistreerd bij de Kamer van Koophandel. Wij zijn verantwoordelijk voor de persoonsgegevens die u via deze website met ons deelt.')}</p>
               <p className="mt-2">{t('Contact: info@internationaalorkest.nl', 'Contact: info@internationaalorkest.nl')}</p>
             </div>
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('2. What Data We Collect', '2. Welke gegevens wij verzamelen')}</h2>
-              <p>{t('We collect personal data only when you voluntarily provide it through our contact forms, enrollment forms, or newsletter sign-up. This may include your name, email address, phone number, and the name of your school or organization.', 'Wij verzamelen persoonsgegevens alleen wanneer u deze vrijwillig verstrekt via onze contactformulieren, inschrijvingsformulieren of nieuwsbriefaanmelding. Dit kan uw naam, e-mailadres, telefoonnummer en de naam van uw school of organisatie omvatten.')}</p>
+              <p>{t('We collect personal data only when you voluntarily provide it through our contact forms, enrolment forms, or newsletter sign-up. This may include your name, email address, phone number, and the name of your school or organisation.', 'Wij verzamelen persoonsgegevens alleen wanneer u deze vrijwillig verstrekt via onze contactformulieren, inschrijvingsformulieren of nieuwsbriefaanmelding. Dit kan uw naam, e-mailadres, telefoonnummer en de naam van uw school of organisatie omvatten.')}</p>
             </div>
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('3. How We Use Your Data', '3. Hoe wij uw gegevens gebruiken')}</h2>
-              <p>{t('Your data is used solely to respond to your inquiry, process your registration, or send you updates you have opted into. We do not sell, rent, or share your personal data with third parties for marketing purposes.', 'Uw gegevens worden uitsluitend gebruikt om te reageren op uw vraag, uw inschrijving te verwerken of u updates te sturen waarvoor u zich heeft aangemeld. Wij verkopen, verhuren of delen uw persoonsgegevens niet met derden voor marketingdoeleinden.')}</p>
+              <p>{t('Your data is used solely to respond to your enquiry, process your registration, or send you updates you have opted into. We do not sell, rent, or share your personal data with third parties for marketing purposes.', 'Uw gegevens worden uitsluitend gebruikt om te reageren op uw vraag, uw inschrijving te verwerken of u updates te sturen waarvoor u zich heeft aangemeld. Wij verkopen, verhuren of delen uw persoonsgegevens niet met derden voor marketingdoeleinden.')}</p>
               <p className="mt-2">{t('Form submissions are sent to us by email through Resend, our email service, and are used only to reply to you. We keep them only as long as needed to respond.', 'Formulierinzendingen worden per e-mail naar ons verstuurd via Resend, onze e-mailservice, en worden alleen gebruikt om u te antwoorden. We bewaren ze alleen zo lang als nodig is om te reageren.')}</p>
             </div>
             <div id="cookie-policy" className="scroll-mt-20">
@@ -75,7 +73,7 @@ export default function Privacy() {
             </div>
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('6. Data Retention', '6. Bewaartermijn')}</h2>
-              <p>{t('We retain your personal data only for as long as necessary to fulfill the purpose for which it was collected, or as required by law. Newsletter subscribers can unsubscribe at any time.', 'Wij bewaren uw persoonsgegevens alleen zo lang als nodig is om het doel waarvoor ze zijn verzameld te vervullen, of zoals wettelijk vereist. Nieuwsbriefabonnees kunnen zich op elk moment uitschrijven.')}</p>
+              <p>{t('We retain your personal data only for as long as necessary to fulfil the purpose for which it was collected, or as required by law. Newsletter subscribers can unsubscribe at any time.', 'Wij bewaren uw persoonsgegevens alleen zo lang als nodig is om het doel waarvoor ze zijn verzameld te vervullen, of zoals wettelijk vereist. Nieuwsbriefabonnees kunnen zich op elk moment uitschrijven.')}</p>
             </div>
           </div>
         </div>

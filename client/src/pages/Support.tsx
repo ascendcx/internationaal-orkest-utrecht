@@ -26,7 +26,7 @@ const DONATE_BUTTON =
 
 const PLACEHOLDER = ['Details will be added here.', 'De gegevens worden hier toegevoegd.'] as const;
 
-/** One labeled value with a small Copy button. Shows a plain placeholder line when the value is empty. */
+/** One labelled value with a small Copy button. Shows a plain placeholder line when the value is empty. */
 function DetailRow({ label, value, copied, onCopy }: { label: string; value: string; copied: boolean; onCopy: () => void }) {
   const { t } = useLanguage();
   return (
@@ -127,7 +127,6 @@ export default function Support() {
     description: 'Donate to help fund free school concerts and youth ensembles in the Netherlands.',
     descriptionNl: 'Doneer om gratis schoolconcerten en jeugdensembles in Nederland mogelijk te maken.',
     path: '/support',
-    image: mediaUrl('images/iou-support.jpg'),
   });
 
   const blockClass = 'border-t border-[oklch(0.88_0.015_195)] pt-6 first:border-t-0 first:pt-0';
@@ -154,7 +153,7 @@ export default function Support() {
       <h3 className={blockHeading}>{t('Fundraising campaigns on Zeffy', 'Fundraisingacties via Zeffy')}</h3>
       <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-3">
         {t(
-          'We plan to hold fundraising campaigns on Zeffy, an online platform for nonprofits.',
+          'We plan to hold fundraising campaigns on Zeffy, an online platform for non-profits.',
           'We willen fondsenwervende acties houden via Zeffy, een online platform voor non-profitorganisaties.'
         )}
       </p>
@@ -232,7 +231,7 @@ export default function Support() {
             </h2>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
               {t(
-                'Donations help cover school concerts, teaching, instruments and the running of our youth ensemble program, Nederland in Harmonie (The Netherlands in Harmony). Your support helps us give children a path from hearing music to making it together.',
+                'Donations help cover school concerts, teaching, instruments and the running of our youth ensemble programme, Nederland in Harmonie (The Netherlands in Harmony). Your support helps us give children a path from hearing music to making it together.',
                 'Donaties helpen om schoolconcerten, lessen, instrumenten en de organisatie van Nederland in Harmonie, ons programma met lokale jeugdensembles, te betalen. Met uw steun geven we kinderen de kans om niet alleen naar muziek te luisteren, maar ook samen muziek te maken.'
               )}
             </p>
@@ -312,7 +311,7 @@ export default function Support() {
           </h2>
           <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
             {t(
-              'Receive email news about our concerts, youth music programs and fundraising.',
+              'Receive email news about our concerts, youth music programmes and fundraising.',
               "Ontvang per e-mail nieuws over onze concerten, muziekprogramma's voor kinderen en fondsenwerving."
             )}
           </p>
@@ -337,7 +336,7 @@ export default function Support() {
                 <input type="checkbox" required checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} className="mt-0.5 rounded" />
                 <span className="text-sm text-[oklch(0.42_0.01_60)]">
                   {t(
-                    'I would like email updates about IOU concerts, music programs and fundraising.',
+                    'I would like email updates about IOU concerts, music programmes and fundraising.',
                     "Ik ontvang graag per e-mail nieuws over IOU-concerten, muziekprogramma's en fondsenwerving."
                   )}
                 </span>

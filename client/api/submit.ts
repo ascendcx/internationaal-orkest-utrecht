@@ -30,8 +30,8 @@ const YOUTH_INTERESTS = ['undecided', 'choir', 'strings', 'woodwinds', 'brass', 
 
 const SPECS: Record<string, Spec> = {
   'school-concert': {
-    label: 'School concert inquiry',
-    required: { name: 'text', school: 'text', email: 'email', interest: { oneOf: ['concert', 'concert-ensemble'] } },
+    label: 'School concert enquiry',
+    required: { name: 'text', school: 'text', email: 'email', interest: { oneOf: ['concert', 'concert-ensemble', 'chamber-concert'] } },
     optional: { role: 'text', phone: 'text', dates: 'text', message: 'long' },
   },
   contact: {
@@ -45,7 +45,7 @@ const SPECS: Record<string, Spec> = {
     optional: { school: 'text', phone: 'text', interest: { oneOf: YOUTH_INTERESTS } },
   },
   sponsor: {
-    label: 'Sponsor inquiry',
+    label: 'Sponsor enquiry',
     required: { name: 'text', company: 'text', email: 'email' },
     optional: { phone: 'text', message: 'long' },
   },
@@ -142,13 +142,13 @@ function subjectFor(type: string, v: Record<string, string>): string {
   const prefix = '[IOU website]';
   switch (type) {
     case 'school-concert':
-      return `${prefix} School concert inquiry: ${oneLine(v.school)}`;
+      return `${prefix} School concert enquiry: ${oneLine(v.school)}`;
     case 'contact':
       return `${prefix} Contact message: ${oneLine(v.subject)}`;
     case 'youth-ensemble':
       return `${prefix} Youth ensemble interest: ${oneLine(v.parentName)}`;
     case 'sponsor':
-      return `${prefix} Sponsor inquiry: ${oneLine(v.company)}`;
+      return `${prefix} Sponsor enquiry: ${oneLine(v.company)}`;
     case 'conductor-workshop':
       return `${prefix} Conductor workshop waitlist: ${oneLine(v.name)}`;
     default:

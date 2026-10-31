@@ -63,7 +63,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-display font-semibold text-sm uppercase tracking-widest text-[oklch(0.72_0.12_75)] mb-4">
-              {t('Programs', 'Programma\'s')}
+              {t('Programmes', 'Programma\'s')}
             </h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li><Link href="/school-concerts" className="hover:text-white transition-colors no-underline">{t('School Concerts', 'Schoolconcerten')}</Link></li>
@@ -97,7 +97,7 @@ export default function Footer() {
             </h4>
             <p className="text-sm text-white/70 mb-4">
               {t(
-                'Receive updates on our performances, youth programs, and community news.',
+                'Receive updates on our performances, youth programmes, and community news.',
                 'Ontvang updates over onze voorstellingen, jeugdprogramma\'s en nieuws.'
               )}
             </p>

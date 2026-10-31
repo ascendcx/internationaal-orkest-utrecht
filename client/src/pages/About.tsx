@@ -99,7 +99,6 @@ export default function About() {
     description: 'Internationaal Orkest Utrecht brings musicians from different countries together with local choirs to help children discover and make music.',
     descriptionNl: 'Internationaal Orkest Utrecht brengt musici uit verschillende landen samen met lokale koren om kinderen muziek te laten ontdekken en maken.',
     path: '/about',
-    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   return (

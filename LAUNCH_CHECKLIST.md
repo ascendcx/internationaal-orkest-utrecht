@@ -8,9 +8,14 @@ Work through this before the site goes live on the real domain.
 
 - [ ] Bank transfer: fill `BANK_ACCOUNT_HOLDER`, `BANK_IBAN` and `BANK_BIC`. Use the real values only, never examples. Otherwise set `SHOW_BANK_TRANSFER = false`.
 - [ ] WERO: add `WERO_QR_IMAGE_URL` and `WERO_PAYEE_NAME`. Otherwise set `SHOW_WERO = false`.
-- [ ] Zeffy block: set `ZEFFY_CAMPAIGN_URL` and `ZEFFY_RECIPIENT_NAME` (`client/src/lib/donationConfig.ts`) once the owning legal entity and campaign are confirmed, or set `SHOW_ZEFFY` to `false`. A block that still says "Campaign details will be added here." must not go live.
+- [x] Zeffy is hidden by decision (Jen confirmed it is not available to IOU). `SHOW_ZEFFY` is `false` and all Zeffy code and constants are kept. Set `SHOW_ZEFFY` back to `true` only if that changes, and then fill `ZEFFY_CAMPAIGN_URL` and `ZEFFY_RECIPIENT_NAME`.
 - [ ] Mollie: confirm the flow end to end with `MOLLIE_URL`, and confirm the Mollie page title and recipient (`MOLLIE_RECIPIENT`) read correctly.
 - [ ] `SUPPORT_EMAIL` is a monitored mailbox.
+
+## Content flags (`client/src/lib/siteFlags.ts`)
+
+- [ ] `SHOW_SAFEGUARDING` (Youth Ensembles, "A safe place for children"): currently `false`. Needs Jen's approval of the wording before it is set to `true`.
+- [ ] `SHOW_RECORDING_NOTICE` (School Concerts): currently `false`. Needs Jen's wording and a consent process before it is set to `true`.
 
 ## Legal copy
 

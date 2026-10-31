@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { mediaUrl } from '@/lib/media';
 
 const SITE_URL = 'https://internationaalorkest.nl';
+// One share image for every page, so link previews always show the same real photo.
+const SHARE_IMAGE = mediaUrl('images/iou-og-image.jpg');
 
 interface SEOConfig {
   title: string;
@@ -9,7 +12,6 @@ interface SEOConfig {
   description: string;
   descriptionNl: string;
   path: string;
-  image: string;
 }
 
 function setMetaTag(attr: 'name' | 'property', key: string, content: string) {
@@ -22,7 +24,7 @@ function setMetaTag(attr: 'name' | 'property', key: string, content: string) {
   el.setAttribute('content', content);
 }
 
-export function useSEO({ title, titleNl, description, descriptionNl, path, image }: SEOConfig) {
+export function useSEO({ title, titleNl, description, descriptionNl, path }: SEOConfig) {
   const { lang } = useLanguage();
 
   useEffect(() => {
@@ -35,13 +37,13 @@ export function useSEO({ title, titleNl, description, descriptionNl, path, image
 
     setMetaTag('property', 'og:title', finalTitle);
     setMetaTag('property', 'og:description', finalDescription);
-    setMetaTag('property', 'og:image', image);
+    setMetaTag('property', 'og:image', SHARE_IMAGE);
     setMetaTag('property', 'og:type', 'website');
     setMetaTag('property', 'og:url', url);
 
     setMetaTag('name', 'twitter:card', 'summary_large_image');
     setMetaTag('name', 'twitter:title', finalTitle);
     setMetaTag('name', 'twitter:description', finalDescription);
-    setMetaTag('name', 'twitter:image', image);
-  }, [lang, title, titleNl, description, descriptionNl, path, image]);
+    setMetaTag('name', 'twitter:image', SHARE_IMAGE);
+  }, [lang, title, titleNl, description, descriptionNl, path]);
 }

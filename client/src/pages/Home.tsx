@@ -56,12 +56,11 @@ export default function Home() {
     },
   ];
   useSEO({
-    title: 'Internationaal Orkest Utrecht | Free Music Programs for Children in the Netherlands',
+    title: 'Internationaal Orkest Utrecht | Free Music Programmes for Children in the Netherlands',
     titleNl: 'Internationaal Orkest Utrecht | Gratis Muziekprogramma\'s voor Kinderen in Nederland',
     description: 'Free concerts and youth ensembles for children in the Netherlands, made possible by donations, grants, and other funds.',
     descriptionNl: 'Gratis concerten en jeugdensembles voor kinderen in Nederland, mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen.',
     path: '/',
-    image: mediaUrl('images/iou-hero.jpg'),
   });
 
   return (
@@ -226,7 +225,7 @@ export default function Home() {
               </h3>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-5">
                 {t(
-                  'A free concert for your students. A good fit if your school already has a music program, such as MuziekRoute.',
+                  'A free concert for your students. A good fit if your school already has a music programme, such as MuziekRoute.',
                   'Een gratis concert voor uw leerlingen. Een goede keuze als uw school al een muziekprogramma heeft, zoals MuziekRoute.'
                 )}
               </p>
@@ -318,7 +317,7 @@ export default function Home() {
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
             {t(
-              'Donations fund our free program. Your gift helps bring free school concerts and youth ensembles to more children, so they can hear live music, try an instrument or sing, and keep making music together. That is only possible because of people like you.',
+              'Donations fund our free programme. Your gift helps bring free school concerts and youth ensembles to more children, so they can hear live music, try an instrument or sing, and keep making music together. That is only possible because of people like you.',
               'Donaties financieren ons gratis programma. Uw gift helpt gratis schoolconcerten en jeugdensembles naar meer kinderen te brengen, zodat zij live muziek horen, een instrument proberen of zingen en samen muziek blijven maken. Dat is alleen mogelijk dankzij mensen als u.'
             )}
           </p>
