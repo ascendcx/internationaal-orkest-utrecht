@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
 import { useState } from 'react';
 import { CheckCircle, Mail, Instagram, Facebook, Linkedin, ArrowRight } from 'lucide-react';
+import { Link } from 'wouter';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
 
@@ -121,6 +122,10 @@ export default function Contact() {
                   <a href="mailto:info@internationaalorkest.nl" className="flex items-center gap-3 text-[oklch(0.38_0.09_195)] hover:underline">
                     <Mail size={18} /> info@internationaalorkest.nl
                   </a>
+                  <p className="text-sm text-[oklch(0.42_0.01_60)]">
+                    {t('Looking for a quick answer? ', 'Op zoek naar een snel antwoord? ')}
+                    <Link href="/faq" className="underline text-[oklch(0.38_0.09_195)]">{t('Read our FAQ', 'Lees onze veelgestelde vragen')}</Link>
+                  </p>
                 </div>
               </div>
               <div>

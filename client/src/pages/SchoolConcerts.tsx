@@ -1,12 +1,13 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
-import { useRef, useState } from 'react';
-import { CheckCircle, ArrowRight, Play } from 'lucide-react';
+import { useState } from 'react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
-import { SHOW_RECORDING_NOTICE } from '@/lib/siteFlags';
+import VideoPlayer from '@/components/VideoPlayer';
+import { SHOW_RECORDING_NOTICE, RECORDING_TEXT } from '@/lib/siteFlags';
 
 // Set to false until music licensing for online use is confirmed.
 const SHOW_ORCHESTRA_VIDEO = true;
@@ -17,42 +18,13 @@ function interestFromUrl() {
 }
 
 function ConcertVideo({ t }: { t: (en: string, nl: string) => string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [started, setStarted] = useState(false);
-
-  const handlePlay = () => {
-    // If play() is rejected the button stays, so the visitor can try again or use the native controls.
-    videoRef.current?.play().catch(() => {});
-  };
-
   return (
-    <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
-      <video
-        ref={videoRef}
-        src={mediaUrl('videos/iou-video.mp4')}
-        poster={mediaUrl('images/iou-video-poster.jpg')}
-        controls
-        playsInline
-        preload="metadata"
-        width={854}
-        height={480}
-        onPlay={() => setStarted(true)}
-        aria-label={t('Video: the orchestra performing in concert', 'Video: het orkest tijdens een concert')}
-        className="absolute inset-0 w-full h-full max-w-full"
-      />
-      {!started && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <button
-            type="button"
-            onClick={handlePlay}
-            aria-label={t('Play concert video', 'Speel de concertvideo af')}
-            className="pointer-events-auto flex h-20 w-20 items-center justify-center rounded-full bg-[oklch(0.98_0.008_80)] text-[oklch(0.38_0.09_195)] shadow-lg ring-4 ring-white/40 transition-transform duration-150 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100 focus-visible:outline-none focus-visible:ring-[oklch(0.72_0.12_75)]"
-          >
-            <Play size={32} fill="currentColor" aria-hidden="true" className="ml-1" />
-          </button>
-        </div>
-      )}
-    </div>
+    <VideoPlayer
+      src={mediaUrl('videos/iou-video.mp4')}
+      poster={mediaUrl('images/iou-video-poster.jpg')}
+      label={t('Video: the orchestra performing in concert', 'Video: het orkest tijdens een concert')}
+      playLabel={t('Play concert video', 'Speel de concertvideo af')}
+    />
   );
 }
 
@@ -210,10 +182,7 @@ export default function SchoolConcerts() {
           </p>
           {SHOW_RECORDING_NOTICE && (
             <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-4">
-              {t(
-                'Some concerts are recorded so that more people can hear the music. Children who should not be filmed can still attend and sit to one side.',
-                'Sommige concerten worden opgenomen, zodat meer mensen de muziek kunnen horen. Kinderen die niet gefilmd mogen worden, kunnen er toch bij zijn en aan de zijkant zitten.'
-              )}
+              {t(RECORDING_TEXT.en, RECORDING_TEXT.nl)}
             </p>
           )}
         </div>

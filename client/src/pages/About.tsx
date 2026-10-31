@@ -5,6 +5,8 @@ import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 import { mediaUrl } from '@/lib/media';
+import { WELCOME_MESSAGE } from '@/lib/welcome';
+import { MeetTheMusicians } from '@/components/MeetTheMusicians';
 
 const musicians = {
   'Violin': ['Anastasia Obsieger (Germany)', 'Dámian Cabedo (Spain)', 'Tina Draadjer (Netherlands)', 'Emese Jeszenöi (Hungary)', 'Magdalena Karas (Poland)', 'Tanja Kim (Uzbekistan/Korea)', 'Camille Rabot (France)', 'Julia Raggers (Netherlands)', 'Noa Staal (China)', 'Elisa van Aalst (Netherlands)', 'Myrthe van der Mullen (Netherlands)', 'Naomi van Hessen (Netherlands)', 'Hanna van Hoye (Belgium)', 'Fran Wilhelm (United States)'],
@@ -93,11 +95,19 @@ export default function About() {
     el.focus({ preventScroll: true });
   };
 
+  const coreValues = [
+    { title: t('Everyone belongs.', 'Iedereen hoort erbij.'), body: t('We bring children together through making music as a group.', 'Wij brengen kinderen samen door in groep muziek te maken.') },
+    { title: t('A safe place.', 'Een veilige plek.'), body: t('Children should feel safe taking part in a group.', 'Kinderen moeten zich veilig voelen als ze meedoen in een groep.') },
+    { title: t('Access for all.', 'Toegang voor iedereen.'), body: t('We welcome all young people, especially those with the least resources and the greatest need.', 'Wij verwelkomen alle jongeren, vooral degenen met de minste middelen en de grootste behoefte.') },
+    { title: t('Joyful, high-quality teaching.', 'Vreugdevol, kwalitatief onderwijs.'), body: t('Immersive, energetic music making with regular performances.', 'Meeslepend, energiek muziek maken met regelmatige optredens.') },
+    { title: t('Community.', 'Gemeenschap.'), body: t('A place where children, families, schools and local businesses connect.', 'Een plek waar kinderen, gezinnen, scholen en lokale bedrijven elkaar ontmoeten.') },
+  ];
+
   useSEO({
-    title: 'About the Orchestra | Internationaal Orkest Utrecht',
-    titleNl: 'Over het orkest | Internationaal Orkest Utrecht',
-    description: 'Internationaal Orkest Utrecht brings musicians from different countries together with local choirs to help children discover and make music.',
-    descriptionNl: 'Internationaal Orkest Utrecht brengt musici uit verschillende landen samen met lokale koren om kinderen muziek te laten ontdekken en maken.',
+    title: 'Who We Are | Internationaal Orkest Utrecht',
+    titleNl: 'Wie we zijn | Internationaal Orkest Utrecht',
+    description: 'Who we are: the mission, values and musicians of Internationaal Orkest Utrecht, which brings free music to children across the Netherlands.',
+    descriptionNl: 'Wie we zijn: de missie, waarden en musici van Internationaal Orkest Utrecht, dat gratis muziek naar kinderen in heel Nederland brengt.',
     path: '/about',
   });
 
@@ -123,7 +133,7 @@ export default function About() {
             {t('Our story', 'Ons verhaal')}
           </p>
           <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-tight">
-            {t('About the Orchestra', 'Over het orkest')}
+            {t('Who We Are', 'Wie we zijn')}
           </h1>
           <p className="text-sm font-light tracking-wide text-white/85 mb-4 first-letter:uppercase">
             {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
@@ -144,7 +154,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Why we exist. Uses only wording already on the site.
+          TODO: Jen's personal "why" story is still needed for this section (see LAUNCH_CHECKLIST.md). Do not invent one. */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)]" ref={revealRef}>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -156,7 +167,7 @@ export default function About() {
                 tabIndex={-1}
                 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6 scroll-mt-28 rounded focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-[oklch(0.38_0.09_195)]"
               >
-                {t('Music brings children together', 'Muziek brengt kinderen samen')}
+                {t('Why we exist', 'Waarom wij bestaan')}
               </h2>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
@@ -235,10 +246,72 @@ export default function About() {
                   'Jennifer richtte Internationaal Orkest Utrecht op omdat zij vindt dat elk kind de kans moet krijgen om muziek te maken. Met schoolconcerten en lokale ensembles wil zij kinderen een plek geven om te leren, te spelen, te zingen en erbij te horen.'
                 )}
               </p>
+              <blockquote className="pull-quote mt-8 mb-3">
+                {t(
+                  '"More than 600 children, laughing, clapping, and having the time of their lives while our orchestra played."',
+                  '"Meer dan 600 kinderen, lachend, klappend en de tijd van hun leven hebbend terwijl ons orkest speelde."'
+                )}
+              </blockquote>
+              <cite className="block pl-[calc(1.5rem+3px)] text-sm text-[oklch(0.35_0.01_60)] not-italic font-medium">
+                Jennifer Diepman, {t('Founder & Artistic Director', 'Oprichter & artistiek directeur')}
+              </cite>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Mission statement */}
+      <section className="py-16 bg-[oklch(0.98_0.008_80)]">
+        <div className="container max-w-3xl">
+          <span className="section-rule" />
+          <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">
+            {t('Our mission', 'Onze missie')}
+          </h2>
+          <p className="font-display text-2xl lg:text-3xl italic leading-snug text-[oklch(0.38_0.09_195)]">
+            {t(
+              'Internationaal Orkest Utrecht makes music accessible to children, so that they may be inspired to express themselves through music.',
+              'Internationaal Orkest Utrecht maakt muziek toegankelijk voor kinderen, zodat zij geïnspireerd raken om zich door muziek uit te drukken.'
+            )}
+          </p>
+        </div>
+      </section>
+
+      {/* Core values */}
+      <section className="py-16 bg-[oklch(0.98_0.008_80)] border-t border-[oklch(0.88_0.015_195)]">
+        <div className="container">
+          <div className="mb-10">
+            <span className="section-rule" />
+            <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)]">
+              {t('Our core values', 'Onze kernwaarden')}
+            </h2>
+          </div>
+          <ol className="max-w-3xl">
+            {coreValues.map((v, i) => (
+              <li key={i} className="grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr] gap-x-6 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
+                <span aria-hidden="true" className="font-display text-3xl font-bold text-[var(--gold-on-light)] leading-none pt-1">{i + 1}</span>
+                <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">
+                  <strong className="font-display font-semibold text-lg text-[oklch(0.22_0.01_60)]">{v.title}</strong> {v.body}
+                </p>
+              </li>
+            ))}
+            <li aria-hidden="true" className="border-t border-[oklch(0.88_0.015_195)]" />
+          </ol>
+        </div>
+      </section>
+
+      {/* Welcome message, written by Jen */}
+      <section className="py-16 bg-[oklch(0.95_0.02_195)]">
+        <div className="container max-w-3xl">
+          <span className="section-rule" />
+          <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
+            {t('Welcome', 'Welkom')}
+          </h2>
+          <p className="text-lg text-[oklch(0.22_0.01_60)] leading-relaxed">{t(WELCOME_MESSAGE.en, WELCOME_MESSAGE.nl)}</p>
+        </div>
+      </section>
+
+      {/* Meet the musicians (renders nothing until musicians are added in lib/musicians.ts) */}
+      <MeetTheMusicians />
 
       {/* Orchestra Roster */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
@@ -246,7 +319,7 @@ export default function About() {
           <div className="mb-10">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-              {t('Meet our musicians', 'Maak kennis met onze musici')}
+              {t('Our orchestra', 'Ons orkest')}
             </h2>
             <p className="text-[oklch(0.52_0.015_60)] max-w-xl">
               {t(

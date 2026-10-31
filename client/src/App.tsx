@@ -18,6 +18,8 @@ import Support from "./pages/Support";
 import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
+import Locations from "./pages/Locations";
+import Faq from "./pages/Faq";
 
 function Router() {
   return (
@@ -28,6 +30,8 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/school-concerts" component={SchoolConcerts} />
         <Route path="/youth-ensembles" component={YouthEnsembles} />
+        <Route path="/locations" component={Locations} />
+        <Route path="/faq" component={Faq} />
         <Route path="/conductor-workshops" component={ConductorWorkshops} />
         <Route path="/scholen"><Redirect to="/school-concerts?lang=nl" replace /></Route>
         <Route path="/support" component={Support} />

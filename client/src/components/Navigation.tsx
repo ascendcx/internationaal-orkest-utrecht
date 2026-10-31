@@ -11,9 +11,10 @@ import { mediaUrl } from '@/lib/media';
 
 const navItems = [
   { href: '/', en: 'Home', nl: 'Home' },
-  { href: '/about', en: 'About', nl: 'Over ons' },
+  { href: '/about', en: 'Who We Are', nl: 'Wie we zijn' },
   { href: '/school-concerts', en: 'School Concerts', nl: 'Schoolconcerten' },
   { href: '/youth-ensembles', en: 'Youth Ensembles', nl: 'Jeugdensembles' },
+  { href: '/locations', en: 'Locations', nl: 'Locaties' },
   { href: '/conductor-workshops', en: 'Conductor Workshops', nl: 'Dirigentenworkshops' },
   { href: '/sponsors', en: 'Sponsors', nl: 'Sponsors' },
   { href: '/contact', en: 'Contact', nl: 'Contact' },

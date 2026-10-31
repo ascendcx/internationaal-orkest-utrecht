@@ -6,7 +6,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
-import { SHOW_SAFEGUARDING } from '@/lib/siteFlags';
+import { SHOW_SAFEGUARDING, SAFEGUARDING_TEXT } from '@/lib/siteFlags';
 
 // Sistema Europe note, shown with the confirmed wording.
 const SHOW_SISTEMA_NOTE = true;
@@ -158,6 +158,11 @@ export default function YouthEnsembles() {
             </p>
           </div>
           <p className="mt-8">
+            <Link href="/locations" className="text-sm font-medium text-[oklch(0.38_0.09_195)] hover:underline">
+              {t('See the cities on a map', 'Bekijk de steden op de kaart')}
+            </Link>
+          </p>
+          <p className="mt-4">
             <Link href="/school-concerts" className="text-sm font-medium text-[oklch(0.38_0.09_195)] hover:underline">
               {t('Information for schools', 'Informatie voor scholen')}
             </Link>
@@ -199,13 +204,10 @@ export default function YouthEnsembles() {
           <div className="container max-w-3xl">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
-              {t('A safe place for children', 'Een veilige plek voor kinderen')}
+              {t(SAFEGUARDING_TEXT.title.en, SAFEGUARDING_TEXT.title.nl)}
             </h2>
             <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">
-              {t(
-                'A safe, child-friendly community. Every musician has a background check. Adults are always present.',
-                'Een veilige, kindvriendelijke gemeenschap. Elke muzikant is gescreend. Er zijn altijd volwassenen aanwezig.'
-              )}
+              {t(SAFEGUARDING_TEXT.body.en, SAFEGUARDING_TEXT.body.nl)}
             </p>
           </div>
         </section>

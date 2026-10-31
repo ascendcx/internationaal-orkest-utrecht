@@ -68,8 +68,9 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               <li><Link href="/school-concerts" className="hover:text-white transition-colors no-underline">{t('School Concerts', 'Schoolconcerten')}</Link></li>
               <li><Link href="/youth-ensembles" className="hover:text-white transition-colors no-underline">{t('Youth Ensembles', 'Jeugdensembles')}</Link></li>
+              <li><Link href="/locations" className="hover:text-white transition-colors no-underline">{t('Locations', 'Locaties')}</Link></li>
               <li><Link href="/conductor-workshops" className="hover:text-white transition-colors no-underline">{t('Conductor Workshops', 'Dirigentenworkshops')}</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors no-underline">{t('About the Orchestra', 'Over het orkest')}</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors no-underline">{t('Who We Are', 'Wie we zijn')}</Link></li>
               <li><Link href="/sponsors" className="hover:text-white transition-colors no-underline">{t('Sponsors', 'Sponsors')}</Link></li>
             </ul>
           </div>
@@ -83,6 +84,7 @@ export default function Footer() {
               <li><Link href="/support" className="hover:text-white transition-colors no-underline">{t('Donate', 'Doneren')}</Link></li>
               <li><Link href="/sponsors" className="hover:text-white transition-colors no-underline">{t('Become a Sponsor', 'Word sponsor')}</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors no-underline">{t('Contact Us', 'Neem contact op')}</Link></li>
+              <li><Link href="/faq" className="hover:text-white transition-colors no-underline">{t('FAQ', 'Veelgestelde vragen')}</Link></li>
             </ul>
             <div className="mt-6">
               <p className="text-sm text-white/70 mb-1">{t('Registered at', 'Geregistreerd bij')}</p>

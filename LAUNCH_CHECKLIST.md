@@ -17,6 +17,13 @@ Work through this before the site goes live on the real domain.
 - [ ] `SHOW_SAFEGUARDING` (Youth Ensembles, "A safe place for children"): currently `false`. Needs Jen's approval of the wording before it is set to `true`.
 - [ ] `SHOW_RECORDING_NOTICE` (School Concerts): currently `false`. Needs Jen's wording and a consent process before it is set to `true`.
 
+## Who We Are, musicians and locations
+
+- [ ] Jen's personal "why" story is still needed for the Who We Are page (`client/src/pages/About.tsx`, "Why we exist"). Do not invent one.
+- [ ] Meet the musicians (`client/src/lib/musicians.ts`) is empty, so the section and the Home teaser are hidden. Before adding anyone, each musician must consent to appear online, and the music played must be cleared for online use.
+- [ ] Locations (`client/src/lib/ensembles.ts`): all seven cities are `emerging`. Change a city's `status` to `active` only when its group is meeting.
+- [ ] Jen's welcome message (`client/src/lib/welcome.ts`) is used exactly as written. Get her sign-off on any change.
+
 ## Legal copy
 
 - [ ] Add the verified KvK number and legal name, only if approved. Places to update: `client/src/components/Footer.tsx` (registration lines) and `client/src/pages/Privacy.tsx` (controller paragraph).

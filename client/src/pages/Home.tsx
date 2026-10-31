@@ -10,6 +10,7 @@ import { ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
 import { mediaUrl } from '@/lib/media';
+import { MusiciansTeaser } from '@/components/MeetTheMusicians';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -327,6 +328,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Teaser, renders nothing until musicians are added in lib/musicians.ts */}
+      <MusiciansTeaser />
     </div>
   );
 }
