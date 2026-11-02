@@ -20,6 +20,8 @@ Work through this before the site goes live on the real domain.
 
 ## Who We Are, musicians and locations
 
+- [ ] Confirm with Jen the wording "progress swiftly towards excellence" and "several sessions and hours of activity each week" (Who We Are values, Youth Ensembles "How an ensemble works", FAQ). It is written as an aim, not a promise.
+- [ ] Confirm with Jen the phrase "young people who need it most" (Who We Are, School Concerts, FAQ), where the source said "at-risk youth".
 - [ ] Jen's personal "why" story is still needed for the Who We Are page (`client/src/pages/About.tsx`, "Why we exist"). Do not invent one.
 - [ ] Meet the musicians (`client/src/lib/musicians.ts`) is empty, so the section and the Home teaser are hidden. Before adding anyone, each musician must consent to appear online, and the music played must be cleared for online use.
 - [ ] Locations (`client/src/lib/ensembles.ts`): all seven cities are `emerging`. Change a city's `status` to `active` only when its group is meeting.

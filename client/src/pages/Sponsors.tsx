@@ -153,6 +153,12 @@ export default function Sponsors() {
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
             {t('Recognition for your support', 'Aandacht voor uw steun')}
           </h2>
+          <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
+            {t(
+              'Local businesses and leaders help make an ensemble possible, and each ensemble belongs to its own community.',
+              'Lokale bedrijven en leiders helpen een ensemble mogelijk te maken, en elk ensemble hoort bij de eigen gemeenschap.'
+            )}
+          </p>
           <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
             {t(
               'We are grateful for every sponsor and would be happy to explore ways to recognise your business or organisation.',

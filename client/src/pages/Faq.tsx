@@ -36,6 +36,22 @@ export default function Faq() {
       ),
     },
     {
+      id: 'different',
+      q: t('What makes the ensembles different?', 'Wat maakt de ensembles bijzonder?'),
+      a: t(
+        'They are free, they meet after school, and they bring together children, families, schools and local businesses. We offer orchestral and vocal music as a way to support development, inclusion and integration.',
+        'Ze zijn gratis, komen na schooltijd bij elkaar en brengen kinderen, gezinnen, scholen en lokale bedrijven samen. Wij bieden orkestrale en vocale muziek aan om ontwikkeling, inclusie en integratie te ondersteunen.'
+      ),
+    },
+    {
+      id: 'how-often',
+      q: t('How often will children play?', 'Hoe vaak spelen de kinderen?'),
+      a: t(
+        'We aim for regular sessions, with several hours of activity each week. Register your interest and we will share the details for your city.',
+        'Wij streven naar regelmatige sessies, met meerdere uren activiteit per week. Meld uw interesse en wij delen de details voor uw stad.'
+      ),
+    },
+    {
       id: 'who',
       q: t('Who can join the youth ensembles?', 'Wie kan meedoen met de jeugdensembles?'),
       a: (

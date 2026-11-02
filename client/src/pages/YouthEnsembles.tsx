@@ -167,6 +167,30 @@ export default function YouthEnsembles() {
         </div>
       </section>
 
+      {/* How an ensemble works */}
+      <section className="py-16 bg-[oklch(0.98_0.008_80)] border-t border-[oklch(0.88_0.015_195)]">
+        <div className="container">
+          <span className="section-rule" />
+          <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-8 max-w-xl">
+            {t('How an ensemble works', 'Hoe een ensemble werkt')}
+          </h2>
+          <ul className="max-w-2xl">
+            {[
+              t('Children come together after school for inclusion and teamwork.', 'Kinderen komen na school samen voor inclusie en teamwork.'),
+              t('We aim for regular sessions, with several hours of activity each week.', 'Wij streven naar regelmatige sessies, met meerdere uren activiteit per week.'),
+              t('Teaching is immersive and joyful. As the group grows, children learn from each other.', 'Het onderwijs is meeslepend en vreugdevol. Naarmate de groep groeit, leren kinderen van elkaar.'),
+              t('Children perform regularly.', 'Kinderen treden regelmatig op.'),
+              t('Parents and caregivers meet other families.', 'Ouders en verzorgers ontmoeten andere gezinnen.'),
+            ].map((point, i) => (
+              <li key={i} className="py-4 border-t border-[oklch(0.88_0.015_195)] text-base text-[oklch(0.35_0.01_60)] leading-relaxed">
+                {point}
+              </li>
+            ))}
+            <li aria-hidden="true" className="border-t border-[oklch(0.88_0.015_195)]" />
+          </ul>
+        </div>
+      </section>
+
       {/* How free music is made possible */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] border-t border-[oklch(0.88_0.015_195)]">
         <div className="container">

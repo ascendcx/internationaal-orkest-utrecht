@@ -59,6 +59,12 @@ export default function Locations() {
               'Nederland in Harmonie krijgt vorm in heel Nederland. Elke stad hieronder is een plek waar wij een gratis jeugdorkest en jeugdkoor opbouwen. Zodra een groep klaar is, verandert de badge en ziet u hier de details.'
             )}
           </p>
+          <p className="text-lg text-[oklch(0.35_0.01_60)] leading-relaxed mb-4">
+            {t(
+              'Each ensemble is rooted in its community: after school, close to home, with local families, schools and businesses.',
+              'Elk ensemble is geworteld in de eigen gemeenschap: na schooltijd, dichtbij huis, met lokale gezinnen, scholen en bedrijven.'
+            )}
+          </p>
           <p className="text-lg text-[oklch(0.35_0.01_60)] leading-relaxed font-medium">
             {t('All youth choirs and orchestras meet after school.', 'Alle jeugdkoren en jeugdorkesten komen na schooltijd bij elkaar.')}
           </p>

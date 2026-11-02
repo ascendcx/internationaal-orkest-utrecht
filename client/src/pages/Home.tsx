@@ -293,6 +293,12 @@ export default function Home() {
       {/* Impact Stats */}
       <section className="py-8 lg:py-10 bg-[oklch(0.38_0.09_195)]">
         <div className="container">
+          <p className="max-w-2xl mx-auto text-center text-white/90 leading-relaxed mb-6 text-balance">
+            {t(
+              'Music is how we include every child: orchestral and vocal music for development, inclusion and integration.',
+              'Muziek is hoe wij elk kind erbij betrekken: orkestrale en vocale muziek voor ontwikkeling, inclusie en integratie.'
+            )}
+          </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4 text-center text-white">
             {[
               { num: '50', label: t('International Musicians', 'Internationale muzikanten') },

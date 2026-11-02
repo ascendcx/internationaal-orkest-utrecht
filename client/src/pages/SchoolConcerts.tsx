@@ -177,6 +177,12 @@ export default function SchoolConcerts() {
           </div>
           <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-10">
             {t(
+              'We work with your school, and with local social services where that helps, so an ensemble reaches the children who need it most.',
+              'Wij werken samen met uw school en waar dat helpt met lokale maatschappelijke organisaties, zodat een ensemble de kinderen bereikt die het het hardst nodig hebben.'
+            )}
+          </p>
+          <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-2xl mt-4">
+            {t(
               'At this stage, the youth ensemble programme starts through a school concert. Contact us to discuss what is possible for your school.',
               'In deze fase begint het jeugdensembleprogramma met een schoolconcert. Neem contact met ons op om te bespreken wat er mogelijk is voor uw school.'
             )}

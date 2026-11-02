@@ -95,12 +95,63 @@ export default function About() {
     el.focus({ preventScroll: true });
   };
 
-  const coreValues = [
-    { title: t('Everyone belongs.', 'Iedereen hoort erbij.'), body: t('We bring children together through making music as a group.', 'Wij brengen kinderen samen door in groep muziek te maken.') },
-    { title: t('A safe place.', 'Een veilige plek.'), body: t('Children should feel safe taking part in a group.', 'Kinderen moeten zich veilig voelen als ze meedoen in een groep.') },
-    { title: t('Access for all.', 'Toegang voor iedereen.'), body: t('We welcome all young people, especially those with the least resources and the greatest need.', 'Wij verwelkomen alle jongeren, vooral degenen met de minste middelen en de grootste behoefte.') },
-    { title: t('Joyful, high-quality teaching.', 'Vreugdevol, kwalitatief onderwijs.'), body: t('Immersive, energetic music making with regular performances.', 'Meeslepend, energiek muziek maken met regelmatige optredens.') },
-    { title: t('Community.', 'Gemeenschap.'), body: t('A place where children, families, schools and local businesses connect.', 'Een plek waar kinderen, gezinnen, scholen en lokale bedrijven elkaar ontmoeten.') },
+  const values: { title: string; body: string; points?: string[] }[] = [
+    {
+      title: t('Music for inclusion and integration', 'Muziek voor inclusie en integratie'),
+      body: t(
+        'We offer orchestral and vocal music as a way to support children\'s development, inclusion and integration. Making music together brings children from every background into one group.',
+        'Wij bieden orkestrale en vocale muziek aan als middel voor de ontwikkeling, inclusie en integratie van kinderen. Samen muziek maken brengt kinderen van elke achtergrond samen in één groep.'
+      ),
+    },
+    {
+      title: t('Access for every young person', 'Toegang voor elke jongere'),
+      body: t(
+        'Every young person is welcome. We reach out first to those with the fewest resources and the greatest need.',
+        'Elke jongere is welkom. Wij bereiken eerst degenen met de minste middelen en de grootste behoefte.'
+      ),
+    },
+    {
+      title: t('A safe, welcoming place', 'Een veilige, gastvrije plek'),
+      body: t(
+        'Children make music best when they feel safe. Our groups are friendly, caring places where every child can belong.',
+        'Kinderen maken het best muziek wanneer ze zich veilig voelen. Onze groepen zijn vriendelijke, zorgzame plekken waar elk kind erbij hoort.'
+      ),
+    },
+    {
+      title: t('Learning that moves', 'Leren dat vooruitgaat'),
+      body: t(
+        'We build stimulating places to learn. Children who start young can progress swiftly towards excellence, playing energetic, intense and dynamic music, from classical to modern and traditional.',
+        'Wij bouwen stimulerende leeromgevingen. Kinderen die jong beginnen, kunnen snel groeien richting uitmuntendheid, met energieke, intense en dynamische muziek, van klassiek tot modern en traditioneel.'
+      ),
+    },
+    {
+      title: t('Teaching that is immersive and joyful', 'Onderwijs dat meeslepend en vreugdevol is'),
+      body: t(
+        'High-quality teaching that is immersive, intense and joyful, with regular performances. As the ensembles grow, children also learn from each other.',
+        'Kwalitatief onderwijs dat meeslepend, intens en vreugdevol is, met regelmatige optredens. Naarmate de ensembles groeien, leren kinderen ook van elkaar.'
+      ),
+    },
+    {
+      title: t('Regular, frequent music making', 'Regelmatig en vaak muziek maken'),
+      body: t(
+        'We aim for regular work, with several sessions and hours of activity each week, because children grow through steady practice, not one-off events.',
+        'Wij streven naar een regelmatig aanbod, met meerdere sessies en uren activiteit per week, omdat kinderen groeien door gestage oefening en niet door losse evenementen.'
+      ),
+    },
+    {
+      title: t('A place that connects the community', 'Een plek die de gemeenschap verbindt'),
+      body: t(
+        'Each ensemble is a place where young people make music together and deepen their ties to the community.',
+        'Elk ensemble is een plek waar jongeren samen muziek maken en hun band met de gemeenschap verdiepen.'
+      ),
+      points: [
+        t('Children come together after school for inclusion and teamwork.', 'Kinderen komen na school vaak samen voor inclusie en teamwork.'),
+        t('The programme responds to the challenges a community faces.', 'Het programma speelt in op de uitdagingen van een gemeenschap.'),
+        t('Parents and caregivers meet each other.', 'Ouders en verzorgers ontmoeten elkaar.'),
+        t('Schools and social services work together to support young people who need it most.', 'Scholen en maatschappelijke organisaties werken samen om jongeren te steunen die het het hardst nodig hebben.'),
+        t('Local businesses and leaders add their support.', 'Lokale bedrijven en leiders voegen hun steun toe.'),
+      ],
+    },
   ];
 
   useSEO({
@@ -140,8 +191,8 @@ export default function About() {
           </p>
           <p className="text-white/80 text-lg max-w-xl leading-relaxed">
             {t(
-              'Internationaal Orkest Utrecht brings together musicians from different countries to help children discover and make music. Our work connects free school concerts with the development of free local youth ensembles.',
-              'Internationaal Orkest Utrecht brengt musici uit verschillende landen samen om kinderen muziek te laten ontdekken en zelf muziek te laten maken. We verbinden gratis schoolconcerten met het opzetten van gratis lokale jeugdensembles.'
+              'Internationaal Orkest Utrecht makes music accessible to children, so that they may be inspired to express themselves through music.',
+              'Internationaal Orkest Utrecht maakt muziek toegankelijk voor kinderen, zodat zij geïnspireerd raken om zich door muziek uit te drukken.'
             )}
           </p>
           <button
@@ -151,6 +202,17 @@ export default function About() {
           >
             {t('Discover our work', 'Ontdek wat we doen')} <ArrowRight size={16} aria-hidden="true" />
           </button>
+        </div>
+      </section>
+
+      {/* Welcome message, written by Jen */}
+      <section className="py-16 bg-[oklch(0.95_0.02_195)]">
+        <div className="container max-w-3xl">
+          <span className="section-rule" />
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-[oklch(0.52_0.09_195)] mb-4">
+            {t('A welcome to every child', 'Een welkom voor elk kind')}
+          </h2>
+          <p className="text-lg text-[oklch(0.22_0.01_60)] leading-relaxed">{t(WELCOME_MESSAGE.en, WELCOME_MESSAGE.nl)}</p>
         </div>
       </section>
 
@@ -169,10 +231,16 @@ export default function About() {
               >
                 {t('Why we exist', 'Waarom wij bestaan')}
               </h2>
+              <p className="text-[oklch(0.22_0.01_60)] font-medium leading-relaxed mb-4">
+                {t(
+                  'Internationaal Orkest Utrecht brings together musicians from different countries to help children discover and make music. Our work connects free school concerts with the development of free local youth ensembles.',
+                  'Internationaal Orkest Utrecht brengt musici uit verschillende landen samen om kinderen muziek te laten ontdekken en zelf muziek te laten maken. We verbinden gratis schoolconcerten met het opzetten van gratis lokale jeugdensembles.'
+                )}
+              </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'Every child should have the chance to hear live music and try making it themselves. Our orchestra brings concerts to schools, together with local choirs. Children can then try instruments or sing, guided by musicians and singers.',
-                  'Elk kind moet de kans krijgen om live muziek te beleven en zelf muziek te proberen. Ons orkest brengt concerten naar scholen, samen met lokale koren. Daarna kunnen kinderen instrumenten uitproberen of zingen, begeleid door musici en zangers.'
+                  'Every child deserves the chance to hear live music and try making it themselves. Our orchestra brings concerts to schools, together with local choirs. Children can then try instruments or sing, guided by musicians and singers.',
+                  'Elk kind verdient de kans om live muziek te beleven en zelf muziek te proberen. Ons orkest brengt concerten naar scholen, samen met lokale koren. Daarna kunnen kinderen instrumenten uitproberen of zingen, begeleid door musici en zangers.'
                 )}
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
@@ -260,53 +328,34 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission statement */}
-      <section className="py-16 bg-[oklch(0.98_0.008_80)]">
-        <div className="container max-w-3xl">
-          <span className="section-rule" />
-          <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-6">
-            {t('Our mission', 'Onze missie')}
-          </h2>
-          <p className="font-display text-2xl lg:text-3xl italic leading-snug text-[oklch(0.38_0.09_195)]">
-            {t(
-              'Internationaal Orkest Utrecht makes music accessible to children, so that they may be inspired to express themselves through music.',
-              'Internationaal Orkest Utrecht maakt muziek toegankelijk voor kinderen, zodat zij geïnspireerd raken om zich door muziek uit te drukken.'
-            )}
-          </p>
-        </div>
-      </section>
-
-      {/* Core values */}
+      {/* What we stand for */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] border-t border-[oklch(0.88_0.015_195)]">
         <div className="container">
           <div className="mb-10">
             <span className="section-rule" />
             <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)]">
-              {t('Our core values', 'Onze kernwaarden')}
+              {t('What we stand for', 'Waar wij voor staan')}
             </h2>
           </div>
-          <ol className="max-w-3xl">
-            {coreValues.map((v, i) => (
-              <li key={i} className="grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr] gap-x-6 py-6 border-t border-[oklch(0.88_0.015_195)] items-start">
+          <ol className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16">
+            {values.map((v, i) => (
+              <li key={i} className="grid grid-cols-[3rem_1fr] gap-x-5 py-7 border-t border-[oklch(0.88_0.015_195)] items-start">
                 <span aria-hidden="true" className="font-display text-3xl font-bold text-[var(--gold-on-light)] leading-none pt-1">{i + 1}</span>
-                <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed">
-                  <strong className="font-display font-semibold text-lg text-[oklch(0.22_0.01_60)]">{v.title}</strong> {v.body}
-                </p>
+                <div>
+                  <h3 className="font-display font-bold text-xl text-[oklch(0.22_0.01_60)] mb-2">{v.title}</h3>
+                  <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-prose">{v.body}</p>
+                  {v.points && (
+                    <ul className="mt-3 space-y-1.5 list-disc pl-5 text-base text-[oklch(0.42_0.01_60)] leading-relaxed marker:text-[oklch(0.38_0.09_195)]">
+                      {v.points.map((point, j) => (
+                        <li key={j}>{point}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </li>
             ))}
-            <li aria-hidden="true" className="border-t border-[oklch(0.88_0.015_195)]" />
           </ol>
-        </div>
-      </section>
-
-      {/* Welcome message, written by Jen */}
-      <section className="py-16 bg-[oklch(0.95_0.02_195)]">
-        <div className="container max-w-3xl">
-          <span className="section-rule" />
-          <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-4">
-            {t('Welcome', 'Welkom')}
-          </h2>
-          <p className="text-lg text-[oklch(0.22_0.01_60)] leading-relaxed">{t(WELCOME_MESSAGE.en, WELCOME_MESSAGE.nl)}</p>
+          <div className="border-t border-[oklch(0.88_0.015_195)]" />
         </div>
       </section>
 
