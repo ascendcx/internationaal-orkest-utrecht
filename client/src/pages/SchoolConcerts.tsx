@@ -20,6 +20,7 @@ function interestFromUrl() {
 function ConcertVideo({ t }: { t: (en: string, nl: string) => string }) {
   return (
     <VideoPlayer
+      preload="none"
       src={mediaUrl('videos/iou-video.mp4')}
       poster={mediaUrl('images/iou-video-poster.jpg')}
       label={t('Video: the orchestra performing in concert', 'Video: het orkest tijdens een concert')}
@@ -102,10 +103,31 @@ export default function SchoolConcerts() {
         </div>
       </section>
 
+      {/* Concert video */}
+      {SHOW_ORCHESTRA_VIDEO && (
+        <section className="pt-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
+          <div className="container">
+            <div className="max-w-[720px] mx-auto">
+              <span className="section-rule" />
+              <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
+                {t('Where the Journey Begins', 'Hier begint de muzikale reis')}
+              </h2>
+              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
+                {t(
+                  'A live concert can spark a child\'s curiosity. Our school concerts turn that first experience into a chance to try an instrument or sing together.',
+                  'Een live concert kan kinderen nieuwsgierig maken naar muziek. Bij onze schoolconcerten blijft het niet bij luisteren: kinderen proberen zelf instrumenten uit of zingen samen.'
+                )}
+              </p>
+              <ConcertVideo t={t} />
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Journey */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden" ref={revealRef}>
         <div className="container">
-          {/* Same 720px column as the video section below, so the two read as one sequence. */}
+          {/* Same 720px column as the video section above, so the two read as one sequence. */}
           <div className="max-w-[720px] mx-auto">
           <div className="mb-12 fade-up">
             <span className="section-rule" />
@@ -129,27 +151,6 @@ export default function SchoolConcerts() {
           </div>
         </div>
       </section>
-
-      {/* Concert video */}
-      {SHOW_ORCHESTRA_VIDEO && (
-        <section className="pb-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
-          <div className="container">
-            <div className="max-w-[720px] mx-auto">
-              <span className="section-rule" />
-              <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
-                {t('Where the Journey Begins', 'Hier begint de muzikale reis')}
-              </h2>
-              <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-6">
-                {t(
-                  'A live concert can spark a child\'s curiosity. Our school concerts turn that first experience into a chance to try an instrument or sing together.',
-                  'Een live concert kan kinderen nieuwsgierig maken naar muziek. Bij onze schoolconcerten blijft het niet bij luisteren: kinderen proberen zelf instrumenten uit of zingen samen.'
-                )}
-              </p>
-              <ConcertVideo t={t} />
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* School options */}
       <section className="py-16 bg-[oklch(0.98_0.008_80)] overflow-hidden">
