@@ -76,7 +76,7 @@ export default function Locations() {
     ];
     return parts.filter(Boolean).join(' ');
   };
-  const registerHref = (e: Ensemble) => `/youth-ensembles?city=${e.slug}#interest`;
+  const registerHref = (e: Ensemble) => `/youth-ensembles?city=${e.slug}#register`;
   const dotClass = (e: Ensemble) => (e.status === 'active' ? 'bg-gold' : 'bg-teal');
 
   // Rebuilt only when the language changes, so the map keeps its view.

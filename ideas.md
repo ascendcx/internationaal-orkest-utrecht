@@ -85,3 +85,11 @@ Deep Teal `oklch(0.38 0.09 195)` — the IOU turquoise, ownable and consistent a
 - Link previews use one share image on every page (`images/iou-og-image.jpg`, set in `useSEO`).
 - Content blocks that need approval sit behind flags in `client/src/lib/siteFlags.ts` (`SHOW_SAFEGUARDING`, `SHOW_RECORDING_NOTICE`). Donation flags are in `client/src/lib/donationConfig.ts`. Zeffy is hidden by decision (`SHOW_ZEFFY = false`).
 - Pages added: Who We Are (`/about`, nav label changed), Locations (`/locations`, data in `client/src/lib/ensembles.ts`, leaflet map loaded only after "Show map"), FAQ (`/faq`). Meet the musicians data is in `client/src/lib/musicians.ts` and stays hidden while empty. Jen's welcome message is the constant in `client/src/lib/welcome.ts`.
+
+## Design rules
+- Use type and hairlines instead of boxed card grids for short lists.
+- Use boxes only where the content needs containing, such as forms, the donation details and success messages.
+- Show status as a dot and a word, not a pill or badge. Emerging is a teal dot, active is a gold dot.
+- One primary button per page. Other actions are plain underlined text links.
+- Prefer rows to grids for fewer than eight items.
+- Match the ruled section style already used on the School Concerts options: a thin rule above each item, the title in the heading font, a short paragraph beneath.

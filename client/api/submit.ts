@@ -22,10 +22,20 @@ type Res = {
   setHeader(name: string, value: string): void;
 };
 
-type FieldKind = 'text' | 'email' | 'long' | 'age' | { oneOf: readonly string[] };
+type FieldKind = 'text' | 'short' | 'email' | 'long' | 'age' | { oneOf: readonly string[] };
 type Spec = { required: Record<string, FieldKind>; optional: Record<string, FieldKind>; label: string };
 
 const CONTACT_INTERESTS = ['concert', 'concert-ensemble', 'parent', 'sponsor', 'workshops', 'other'] as const;
+const CITY_NAMES: Record<string, string> = {
+  utrecht: 'Utrecht',
+  leeuwarden: 'Leeuwarden',
+  rotterdam: 'Rotterdam',
+  arnhem: 'Arnhem',
+  almelo: 'Almelo',
+  enschede: 'Enschede',
+  roosendaal: 'Roosendaal',
+};
+const CITIES = [...Object.keys(CITY_NAMES), 'other'] as const;
 const YOUTH_INTERESTS = ['undecided', 'choir', 'strings', 'woodwinds', 'brass', 'percussion'] as const;
 
 const SPECS: Record<string, Spec> = {
@@ -42,7 +52,7 @@ const SPECS: Record<string, Spec> = {
   'youth-ensemble': {
     label: 'Youth ensemble interest',
     required: { parentName: 'text', childName: 'text', childAge: 'age', email: 'email' },
-    optional: { school: 'text', phone: 'text', interest: { oneOf: YOUTH_INTERESTS } },
+    optional: { school: 'text', phone: 'text', interest: { oneOf: YOUTH_INTERESTS }, city: { oneOf: CITIES }, cityOther: 'short' },
   },
   sponsor: {
     label: 'Sponsor enquiry',
@@ -65,6 +75,7 @@ const SPECS: Record<string, Spec> = {
 const COMMON_FIELDS = ['formType', 'lang', 'website', 'newsletter'];
 
 const MAX_TEXT = 200;
+const MAX_SHORT = 80;
 const MAX_LONG = 5000;
 const MAX_EMAIL = 254;
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[^\s@<>()[\]\\,;:"]+$/;
@@ -114,6 +125,7 @@ function checkValue(kind: FieldKind, raw: unknown): string | null {
   if (kind === 'email') return value.length <= MAX_EMAIL && EMAIL_RE.test(value) ? value : null;
   if (kind === 'age') return /^\d{1,2}$/.test(value) ? value : null;
   if (kind === 'long') return value.length <= MAX_LONG ? value : null;
+  if (kind === 'short') return value.length <= MAX_SHORT ? value : null;
   if (kind === 'text') return value.length <= MAX_TEXT ? value : null;
   return kind.oneOf.includes(value) ? value : null;
 }
@@ -136,6 +148,7 @@ const FIELD_LABELS: Record<string, string> = {
   childAge: 'Child age',
   company: 'Company',
   source: 'Signup location',
+  city: 'City',
 };
 
 // Readable English labels for the "I am interested in" values, used in the email body only.
@@ -176,8 +189,12 @@ function subjectFor(type: string, v: Record<string, string>): string {
 function bodyFor(spec: Spec, v: Record<string, string>, lang: string, optIn: boolean): string {
   const lines = [spec.label, ''];
   for (const key of [...Object.keys(spec.required), ...Object.keys(spec.optional)]) {
-    if (!v[key]) continue;
-    const text = key === 'interest' ? (INTEREST_LABELS[v[key]] ?? v[key]) : v[key];
+    if (!v[key] || key === 'cityOther') continue;
+    let text = key === 'interest' ? (INTEREST_LABELS[v[key]] ?? v[key]) : v[key];
+    if (key === 'city') {
+      const other = v.cityOther?.replace(/s+/g, ' ');
+      text = v.city === 'other' ? (other ? `${other} (another city)` : 'Another city') : (CITY_NAMES[v.city] ?? v.city);
+    }
     lines.push(`${FIELD_LABELS[key] ?? key}: ${text}`);
   }
   lines.push('', `Page language: ${lang.toUpperCase()}`, `Email updates: ${optIn ? 'yes' : 'no'}`);
@@ -250,6 +267,12 @@ export default async function handler(req: Req, res: Res): Promise<void> {
       return;
     }
     if (checked) values[key] = checked;
+  }
+
+  // A free-text city only makes sense with "Another city".
+  if (values.cityOther && values.city !== 'other') {
+    res.status(400).json({ error: 'Invalid request' });
+    return;
   }
 
   if (data.lang !== undefined && data.lang !== 'en' && data.lang !== 'nl') {

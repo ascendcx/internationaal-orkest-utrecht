@@ -85,6 +85,27 @@ describe('submit handler', () => {
     expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('Interest: A smaller chamber concert');
   });
 
+  it('includes a known city in the youth ensemble email', async () => {
+    const res = await post({ formType: 'youth-ensemble', ...VALID['youth-ensemble'], city: 'rotterdam' });
+    expect(res.code).toBe(200);
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('City: Rotterdam');
+  });
+
+  it('accepts another city with a text and includes it', async () => {
+    const res = await post({ formType: 'youth-ensemble', ...VALID['youth-ensemble'], city: 'other', cityOther: '  Zwolle ' });
+    expect(res.code).toBe(200);
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('City: Zwolle (another city)');
+  });
+
+  it('rejects an unknown city, an overlong cityOther and cityOther without another city', async () => {
+    const base = { formType: 'youth-ensemble', ...VALID['youth-ensemble'] };
+    for (const extra of [{ city: 'atlantis' }, { city: 'other', cityOther: 'x'.repeat(81) }, { city: 'utrecht', cityOther: 'Zwolle' }]) {
+      const res = await post({ ...base, ...extra });
+      expect(res.code).toBe(400);
+    }
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
   it('counts only a ticked box as email updates yes', async () => {
     await post({ formType: 'sponsor', ...VALID.sponsor, newsletter: false });
     expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('Email updates: no');

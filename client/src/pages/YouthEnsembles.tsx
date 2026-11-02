@@ -1,16 +1,23 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSEO } from '@/hooks/useSEO';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
+import { ENSEMBLES } from '@/lib/ensembles';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
 import { SHOW_SAFEGUARDING, SHOW_SISTEMA_NOTE, SAFEGUARDING_TEXT } from '@/lib/siteFlags';
 
+/** The ?city= value from a Locations link. An unknown value is ignored. */
+function cityFromUrl(): string {
+  const value = new URLSearchParams(window.location.search).get('city') ?? '';
+  return ENSEMBLES.some((e) => e.slug === value) ? value : '';
+}
+
 export default function YouthEnsembles() {
   const { t } = useLanguage();
-  const [form, setForm] = useState({ parentName: '', childName: '', childAge: '', school: '', email: '', phone: '', interest: '', newsletter: false });
+  const [form, setForm] = useState({ parentName: '', childName: '', childAge: '', school: '', email: '', phone: '', interest: '', city: cityFromUrl(), cityOther: '', newsletter: false });
   const { sending, failed, submitted, submit } = useFormSubmit('youth-ensemble');
   useSEO({
     title: 'Nederland in Harmonie | Free Youth Ensembles',
@@ -30,6 +37,19 @@ export default function YouthEnsembles() {
     heading.focus({ preventScroll: true });
     history.replaceState(null, '', '#register');
   };
+
+  // A Locations link (/youth-ensembles?city=rotterdam#register) lands on the form. The short delay lets ScrollToTop run first.
+  useEffect(() => {
+    if (window.location.hash !== '#register') return;
+    const timer = window.setTimeout(() => {
+      const heading = formHeadingRef.current;
+      if (!heading) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      heading.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      heading.focus({ preventScroll: true });
+    }, 100);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
 
@@ -287,6 +307,34 @@ export default function YouthEnsembles() {
                   <option value="percussion">{t('Percussion', 'Percussie')}</option>
                 </select>
               </div>
+              <div>
+                <label htmlFor="ye-city" className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('Which city is closest to you?', 'Welke stad ligt het dichtst bij u?')}</label>
+                <select
+                  id="ye-city"
+                  value={form.city}
+                  onChange={(e) => setForm({ ...form, city: e.target.value, cityOther: e.target.value === 'other' ? form.cityOther : '' })}
+                  className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
+                >
+                  <option value="">{t('Choose a city', 'Kies een stad')}</option>
+                  {ENSEMBLES.map((e) => (
+                    <option key={e.slug} value={e.slug}>{e.name}</option>
+                  ))}
+                  <option value="other">{t('Another city', 'Een andere stad')}</option>
+                </select>
+              </div>
+              {form.city === 'other' && (
+                <div>
+                  <label htmlFor="ye-cityOther" className="block text-sm font-medium text-[oklch(0.22_0.01_60)] mb-1">{t('Your city', 'Uw stad')}</label>
+                  <input
+                    id="ye-cityOther"
+                    type="text"
+                    maxLength={80}
+                    value={form.cityOther}
+                    onChange={(e) => setForm({ ...form, cityOther: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-lg border border-[oklch(0.88_0.015_195)] text-sm focus:border-[oklch(0.38_0.09_195)] transition-colors bg-[oklch(0.98_0.008_80)]"
+                  />
+                </div>
+              )}
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" checked={form.newsletter} onChange={(e) => setForm({ ...form, newsletter: e.target.checked })} className="mt-0.5 rounded" />
                 <span className="text-sm text-[oklch(0.52_0.015_60)]">{t('I would like email updates about IOU concerts and music programmes.', 'Ik ontvang graag per e-mail nieuws over IOU-concerten en muziekprogramma\'s.')}</span>

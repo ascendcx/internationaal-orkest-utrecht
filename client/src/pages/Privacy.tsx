@@ -55,7 +55,7 @@ export default function Privacy() {
             </div>
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('2. What Data We Collect', '2. Welke gegevens wij verzamelen')}</h2>
-              <p>{t('We collect personal data only when you voluntarily provide it through our contact forms, enrolment forms, or newsletter sign-up. This may include your name, email address, phone number, and the name of your school or organisation.', 'Wij verzamelen persoonsgegevens alleen wanneer u deze vrijwillig verstrekt via onze contactformulieren, inschrijvingsformulieren of nieuwsbriefaanmelding. Dit kan uw naam, e-mailadres, telefoonnummer en de naam van uw school of organisatie omvatten.')}</p>
+              <p>{t('We collect personal data only when you voluntarily provide it through our contact forms, enrolment forms, or newsletter sign-up. This may include your name, email address, phone number, and the name of your school or organisation. On the youth ensemble form it also includes the city closest to you.', 'Wij verzamelen persoonsgegevens alleen wanneer u deze vrijwillig verstrekt via onze contactformulieren, inschrijvingsformulieren of nieuwsbriefaanmelding. Dit kan uw naam, e-mailadres, telefoonnummer en de naam van uw school of organisatie omvatten. Bij het formulier voor de jeugdensembles hoort daar ook de stad bij die het dichtst bij u ligt.')}</p>
             </div>
             <div>
               <h2 className="font-display text-xl font-bold text-[oklch(0.22_0.01_60)] mb-3">{t('3. How We Use Your Data', '3. Hoe wij uw gegevens gebruiken')}</h2>
