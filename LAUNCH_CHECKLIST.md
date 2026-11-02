@@ -16,6 +16,7 @@ Work through this before the site goes live on the real domain.
 
 - [ ] `SHOW_SAFEGUARDING` (Youth Ensembles, "A safe place for children"): currently `false`. Needs Jen's approval of the wording before it is set to `true`.
 - [ ] `SHOW_RECORDING_NOTICE` (School Concerts): currently `false`. Needs Jen's wording and a consent process before it is set to `true`.
+- [ ] School Concerts: confirm with Jen that smaller group concerts are free. The page says "Concerts are free for every child" and does not claim the smaller-group option is free.
 
 ## Who We Are, musicians and locations
 

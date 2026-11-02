@@ -6,10 +6,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
-import { SHOW_SAFEGUARDING, SAFEGUARDING_TEXT } from '@/lib/siteFlags';
-
-// Sistema Europe note, shown with the confirmed wording.
-const SHOW_SISTEMA_NOTE = true;
+import { SHOW_SAFEGUARDING, SHOW_SISTEMA_NOTE, SAFEGUARDING_TEXT } from '@/lib/siteFlags';
 
 export default function YouthEnsembles() {
   const { t } = useLanguage();

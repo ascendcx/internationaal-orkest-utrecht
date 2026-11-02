@@ -138,6 +138,23 @@ const FIELD_LABELS: Record<string, string> = {
   source: 'Signup location',
 };
 
+// Readable English labels for the "I am interested in" values, used in the email body only.
+const INTEREST_LABELS: Record<string, string> = {
+  concert: 'A school concert',
+  'concert-ensemble': 'A school concert and local ensemble',
+  'chamber-concert': 'A smaller chamber concert',
+  parent: 'A free youth ensemble for my child (register interest)',
+  sponsor: 'Sponsoring or donating',
+  workshops: 'Conductor workshops',
+  other: 'Something else',
+  undecided: 'Not sure yet',
+  choir: 'Choir',
+  strings: 'Strings',
+  woodwinds: 'Woodwinds',
+  brass: 'Brass',
+  percussion: 'Percussion',
+};
+
 function subjectFor(type: string, v: Record<string, string>): string {
   const prefix = '[IOU website]';
   switch (type) {
@@ -159,7 +176,9 @@ function subjectFor(type: string, v: Record<string, string>): string {
 function bodyFor(spec: Spec, v: Record<string, string>, lang: string, optIn: boolean): string {
   const lines = [spec.label, ''];
   for (const key of [...Object.keys(spec.required), ...Object.keys(spec.optional)]) {
-    if (v[key]) lines.push(`${FIELD_LABELS[key] ?? key}: ${v[key]}`);
+    if (!v[key]) continue;
+    const text = key === 'interest' ? (INTEREST_LABELS[v[key]] ?? v[key]) : v[key];
+    lines.push(`${FIELD_LABELS[key] ?? key}: ${text}`);
   }
   lines.push('', `Page language: ${lang.toUpperCase()}`, `Email updates: ${optIn ? 'yes' : 'no'}`);
   return lines.join('\n');

@@ -82,7 +82,7 @@ describe('submit handler', () => {
   it('accepts the chamber concert option and includes it in the email body', async () => {
     const res = await post({ formType: 'school-concert', ...VALID['school-concert'], interest: 'chamber-concert' });
     expect(res.code).toBe(200);
-    expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('Interest: chamber-concert');
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('Interest: A smaller chamber concert');
   });
 
   it('counts only a ticked box as email updates yes', async () => {

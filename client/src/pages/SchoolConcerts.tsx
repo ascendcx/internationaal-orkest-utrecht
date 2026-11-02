@@ -160,7 +160,7 @@ export default function SchoolConcerts() {
               {t('Choose What Fits Your School', 'Kies wat bij uw school past')}
             </h2>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
-              {t('All options are free.', 'Alle opties zijn gratis.')}
+              {t('Concerts are free for every child.', 'Concerten zijn gratis voor elk kind.')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0">

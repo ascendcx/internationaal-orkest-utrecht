@@ -6,6 +6,9 @@ export const SHOW_SAFEGUARDING = false;
 /** Recording notice on the School Concerts page. Needs Jen's wording and a consent process. */
 export const SHOW_RECORDING_NOTICE = false;
 
+/** Sistema Europe note on the Youth Ensembles page, shown with the confirmed wording. */
+export const SHOW_SISTEMA_NOTE = true;
+
 /** Safeguarding wording, shared by Youth Ensembles and the FAQ. Needs Jen's approval before SHOW_SAFEGUARDING is set to true. */
 export const SAFEGUARDING_TEXT = {
   title: { en: 'A safe place for children', nl: 'Een veilige plek voor kinderen' },
