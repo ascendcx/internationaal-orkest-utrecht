@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
+import { ORG_LEGAL_NAME } from '@/lib/siteFlags';
 
 // Only add a sponsor here once the organisation has approved being listed.
 // While this array is empty, the "Thank you to our sponsors" section renders nothing.
@@ -188,6 +189,9 @@ export default function Sponsors() {
               'Tell us about your business and what you would like to support. We will contact you to discuss the sponsorship options. Sending an enquiry does not commit you to a sponsorship.',
               'Vertel ons over uw bedrijf en wat u wilt steunen. We nemen contact met u op om de sponsormogelijkheden te bespreken. Een aanvraag verplicht u tot niets.'
             )}
+          </p>
+          <p className="text-sm text-[oklch(0.52_0.015_60)] mb-3">
+            {t(`Sponsorship gifts go to ${ORG_LEGAL_NAME}, a registered foundation in Utrecht.`, `Sponsorbijdragen gaan naar ${ORG_LEGAL_NAME}, een geregistreerde stichting in Utrecht.`)}
           </p>
           <p className="text-sm text-[oklch(0.52_0.015_60)] mb-8">
             {t('Prefer to make a donation instead? ', 'Liever een donatie doen? ')}

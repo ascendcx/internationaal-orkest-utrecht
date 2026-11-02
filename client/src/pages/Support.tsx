@@ -3,6 +3,7 @@ import { useSEO } from '@/hooks/useSEO';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { mediaUrl } from '@/lib/media';
+import { ORG_LEGAL_NAME } from '@/lib/siteFlags';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
 import {
@@ -251,10 +252,13 @@ export default function Support() {
             ref={donateHeading}
             id="donate"
             tabIndex={-1}
-            className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-6 scroll-mt-28 rounded focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-[oklch(0.38_0.09_195)]"
+            className="font-display text-2xl font-bold text-[oklch(0.22_0.01_60)] mb-2 scroll-mt-28 rounded focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-[oklch(0.38_0.09_195)]"
           >
             {t('Make a donation', 'Doe een donatie')}
           </h2>
+          <p className="text-sm text-[oklch(0.52_0.015_60)] mb-6">
+            {ORG_LEGAL_NAME}. {t('A registered foundation in Utrecht.', 'Een geregistreerde stichting in Utrecht.')}
+          </p>
 
           <div className="space-y-6">
             {zeffyLive ? (

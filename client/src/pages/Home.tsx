@@ -10,6 +10,7 @@ import { ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
 import { mediaUrl } from '@/lib/media';
+import { ORG_LEGAL_NAME } from '@/lib/siteFlags';
 import { MusiciansTeaser } from '@/components/MeetTheMusicians';
 
 export default function Home() {
@@ -200,6 +201,9 @@ export default function Home() {
               {t('See how you can help', 'Zie hoe u kunt helpen')}
               <ArrowRight size={14} />
             </Link>
+            <p className="mt-4 text-sm text-[oklch(0.52_0.015_60)]">
+              {ORG_LEGAL_NAME}. {t('A registered foundation in Utrecht.', 'Een geregistreerde stichting in Utrecht.')}
+            </p>
           </div>
         </div>
       </section>

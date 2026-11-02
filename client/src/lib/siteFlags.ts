@@ -9,6 +9,9 @@ export const SHOW_RECORDING_NOTICE = false;
 /** Sistema Europe note on the Youth Ensembles page, shown with the confirmed wording. */
 export const SHOW_SISTEMA_NOTE = true;
 
+/** The foundation's official name, shown on Home, Support, Sponsors and in the Footer. Change it here only. Do not use it for the bank account holder (BANK_ACCOUNT_HOLDER) or the Mollie recipient: those must match the bank and Mollie records exactly. */
+export const ORG_LEGAL_NAME = 'Stichting Internationaal Orkest Orchestra';
+
 /**
  * Safeguarding wording, shared by Youth Ensembles, the FAQ and Who We Are ("A safe, welcoming place"). Needs Jen's
  * approval before SHOW_SAFEGUARDING is set to true. Edit the sentences here only: `intro` is the community sentence,

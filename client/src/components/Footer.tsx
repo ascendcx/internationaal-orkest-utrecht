@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Instagram, Facebook, Linkedin, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { mediaUrl } from '@/lib/media';
+import { ORG_LEGAL_NAME } from '@/lib/siteFlags';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
 
@@ -133,7 +134,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/70">
-          <p className="text-center sm:text-left">© {new Date().getFullYear()} Stichting Internationaal Orkest Utrecht. {t('All rights reserved.', 'Alle rechten voorbehouden.')}</p>
+          <p className="text-center sm:text-left">© {new Date().getFullYear()} {ORG_LEGAL_NAME}. {t('All rights reserved.', 'Alle rechten voorbehouden.')}</p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
             <Link href="/privacy#privacy-policy" className="hover:text-white transition-colors no-underline whitespace-nowrap">{t('Privacy Policy', 'Privacybeleid')}</Link>
             <Link href="/privacy#cookie-policy" className="hover:text-white transition-colors no-underline whitespace-nowrap">{t('Cookie Policy', 'Cookiebeleid')}</Link>
