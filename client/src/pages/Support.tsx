@@ -27,14 +27,15 @@ const DONATE_BUTTON =
 const PLACEHOLDER = ['Details will be added here.', 'De gegevens worden hier toegevoegd.'] as const;
 
 /** One labelled value with a small Copy button. Shows a plain placeholder line when the value is empty. */
-function DetailRow({ label, value, copied, onCopy }: { label: string; value: string; copied: boolean; onCopy: () => void }) {
+function DetailRow({ label, value, display, copied, onCopy }: { label: string; value: string; display?: string; copied: boolean; onCopy?: () => void }) {
   const { t } = useLanguage();
   return (
     <div className="py-3 border-t border-[oklch(0.88_0.015_195)] first:border-t-0">
       <dt className="text-xs uppercase tracking-wider text-[oklch(0.52_0.015_60)] mb-0.5">{label}</dt>
       {value !== '' ? (
         <dd className="flex items-center justify-between gap-3">
-          <span className="text-sm text-[oklch(0.22_0.01_60)] break-all">{value}</span>
+          <span className="text-sm text-[oklch(0.22_0.01_60)] break-all">{display ?? value}</span>
+          {onCopy && (
           <button
             type="button"
             onClick={onCopy}
@@ -42,6 +43,7 @@ function DetailRow({ label, value, copied, onCopy }: { label: string; value: str
           >
             {copied ? t('Copied', 'Gekopieerd') : t('Copy', 'Kopieer')}
           </button>
+          )}
         </dd>
       ) : (
         <dd className="text-sm text-[oklch(0.52_0.015_60)]">{t(...PLACEHOLDER)}</dd>
@@ -71,20 +73,22 @@ function BankTransferBlock() {
     }
   };
 
-  const rows: [string, string, string][] = [
-    ['holder', t('Account holder', 'Naam rekeninghouder'), BANK_ACCOUNT_HOLDER],
-    ['iban', 'IBAN', BANK_IBAN],
-    ['bic', 'BIC/SWIFT', BANK_BIC],
+  // The IBAN is shown in groups of four. Copy buttons copy the unformatted value. The BIC has no copy button.
+  const rows: { key: string; label: string; value: string; display?: string; copyable: boolean }[] = [
+    { key: 'holder', label: t('Account holder', 'Naam rekeninghouder'), value: BANK_ACCOUNT_HOLDER, copyable: true },
+    { key: 'iban', label: 'IBAN', value: BANK_IBAN, display: BANK_IBAN.replace(/(.{4})(?=.)/g, '$1 '), copyable: true },
+    { key: 'bic', label: 'BIC/SWIFT', value: BANK_BIC, copyable: false },
   ];
 
   return (
     <div className="border-t-2 border-[oklch(0.88_0.015_195)] pt-4">
       <h4 className="font-display text-base font-bold text-[oklch(0.22_0.01_60)] mb-2">{t('Bank transfer', 'Overschrijving')}</h4>
       <dl>
-        {rows.map(([key, label, value]) => (
-          <DetailRow key={key} label={label} value={value} copied={copiedKey === key} onCopy={() => copy(key, value)} />
+        {rows.map(({ key, label, value, display, copyable }) => (
+          <DetailRow key={key} label={label} value={value} display={display} copied={copiedKey === key} onCopy={copyable ? () => copy(key, value) : undefined} />
         ))}
       </dl>
+      <p className="text-sm text-[oklch(0.42_0.01_60)] mt-2">{t('Please transfer in euros.', 'Maak het bedrag graag over in euro\x27s.')}</p>
       <span className="sr-only" aria-live="polite">{announce}</span>
     </div>
   );

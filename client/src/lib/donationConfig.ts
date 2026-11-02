@@ -12,9 +12,10 @@ export const ZEFFY_RECIPIENT_NAME = '';
 export const SUPPORT_EMAIL = 'info@internationaalorkest.nl';
 
 /** Bank transfer details. Empty values show a placeholder line. Never enter example numbers. */
-export const BANK_ACCOUNT_HOLDER = '';
-export const BANK_IBAN = '';
-export const BANK_BIC = '';
+export const BANK_ACCOUNT_HOLDER = 'Stichting Internationaal Orkest Utrecht';
+/** Stored without spaces. The Support page shows it in groups of four and copies it as stored. */
+export const BANK_IBAN = 'NL66BUNQ2114422240';
+export const BANK_BIC = 'BUNQNL2A';
 
 /** WERO details. An empty image URL shows a placeholder line and no image. */
 export const WERO_QR_IMAGE_URL = '';

@@ -6,7 +6,7 @@ Work through this before the site goes live on the real domain.
 
 ## Donations (`client/src/lib/donationConfig.ts`)
 
-- [ ] Bank transfer: fill `BANK_ACCOUNT_HOLDER`, `BANK_IBAN` and `BANK_BIC`. Use the real values only, never examples. Otherwise set `SHOW_BANK_TRANSFER = false`.
+- [x] Bank transfer details are filled in (`BANK_ACCOUNT_HOLDER`, `BANK_IBAN`, `BANK_BIC`). Keep `SHOW_BANK_TRANSFER = true`.
 - [ ] WERO: add `WERO_QR_IMAGE_URL` and `WERO_PAYEE_NAME`. Otherwise set `SHOW_WERO = false`.
 - [x] Zeffy is hidden by decision (Jen confirmed it is not available to IOU). `SHOW_ZEFFY` is `false` and all Zeffy code and constants are kept. Set `SHOW_ZEFFY` back to `true` only if that changes, and then fill `ZEFFY_CAMPAIGN_URL` and `ZEFFY_RECIPIENT_NAME`.
 - [ ] Mollie: confirm the flow end to end with `MOLLIE_URL`, and confirm the Mollie page title and recipient (`MOLLIE_RECIPIENT`) read correctly.
