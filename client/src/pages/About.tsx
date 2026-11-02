@@ -7,6 +7,7 @@ import { useRef } from 'react';
 import { mediaUrl } from '@/lib/media';
 import { WELCOME_MESSAGE } from '@/lib/welcome';
 import { MeetTheMusicians } from '@/components/MeetTheMusicians';
+import { SAFEGUARDING_TEXT, SHOW_SAFEGUARDING } from '@/lib/siteFlags';
 
 const musicians = {
   'Violin': ['Anastasia Obsieger (Germany)', 'Dámian Cabedo (Spain)', 'Tina Draadjer (Netherlands)', 'Emese Jeszenöi (Hungary)', 'Magdalena Karas (Poland)', 'Tanja Kim (Uzbekistan/Korea)', 'Camille Rabot (France)', 'Julia Raggers (Netherlands)', 'Noa Staal (China)', 'Elisa van Aalst (Netherlands)', 'Myrthe van der Mullen (Netherlands)', 'Naomi van Hessen (Netherlands)', 'Hanna van Hoye (Belgium)', 'Fran Wilhelm (United States)'],
@@ -95,7 +96,7 @@ export default function About() {
     el.focus({ preventScroll: true });
   };
 
-  const values: { title: string; body: string; points?: string[] }[] = [
+  const values: { title: string; body: string; extra?: string; points?: string[] }[] = [
     {
       title: t('Music for inclusion and integration', 'Muziek voor inclusie en integratie'),
       body: t(
@@ -116,6 +117,8 @@ export default function About() {
         'Children make music best when they feel safe. Our groups are friendly, caring places where every child can belong.',
         'Kinderen maken het best muziek wanneer ze zich veilig voelen. Onze groepen zijn vriendelijke, zorgzame plekken waar elk kind erbij hoort.'
       ),
+      // Hidden until Jen approves the wording and confirms who the checks cover (see siteFlags.ts and LAUNCH_CHECKLIST.md).
+      extra: SHOW_SAFEGUARDING ? t(SAFEGUARDING_TEXT.checks.en, SAFEGUARDING_TEXT.checks.nl) : undefined,
     },
     {
       title: t('Learning that moves', 'Leren dat vooruitgaat'),
@@ -337,24 +340,22 @@ export default function About() {
               {t('What we stand for', 'Waar wij voor staan')}
             </h2>
           </div>
-          <ol className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16">
+          <ul className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16">
             {values.map((v, i) => (
-              <li key={i} className="grid grid-cols-[3rem_1fr] gap-x-5 py-7 border-t border-[oklch(0.88_0.015_195)] items-start">
-                <span aria-hidden="true" className="font-display text-3xl font-bold text-[var(--gold-on-light)] leading-none pt-1">{i + 1}</span>
-                <div>
-                  <h3 className="font-display font-bold text-xl text-[oklch(0.22_0.01_60)] mb-2">{v.title}</h3>
-                  <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-prose">{v.body}</p>
-                  {v.points && (
-                    <ul className="mt-3 space-y-1.5 list-disc pl-5 text-base text-[oklch(0.42_0.01_60)] leading-relaxed marker:text-[oklch(0.38_0.09_195)]">
-                      {v.points.map((point, j) => (
-                        <li key={j}>{point}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+              <li key={i} className={`py-7 border-t border-[oklch(0.88_0.015_195)]${v.points ? ' md:col-span-2' : ''}`}>
+                <h3 className="font-display font-bold text-xl text-[oklch(0.22_0.01_60)] mb-2">{v.title}</h3>
+                <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-prose">{v.body}</p>
+                {v.extra && <p className="text-base text-[oklch(0.42_0.01_60)] leading-relaxed max-w-prose mt-2">{v.extra}</p>}
+                {v.points && (
+                  <ul className="mt-4 list-disc pl-5 md:columns-2 md:gap-x-16 text-base text-[oklch(0.42_0.01_60)] leading-relaxed marker:text-[oklch(0.38_0.09_195)]">
+                    {v.points.map((point, j) => (
+                      <li key={j} className="mb-1.5 break-inside-avoid">{point}</li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
-          </ol>
+          </ul>
           <div className="border-t border-[oklch(0.88_0.015_195)]" />
         </div>
       </section>

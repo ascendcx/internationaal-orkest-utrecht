@@ -9,12 +9,26 @@ export const SHOW_RECORDING_NOTICE = false;
 /** Sistema Europe note on the Youth Ensembles page, shown with the confirmed wording. */
 export const SHOW_SISTEMA_NOTE = true;
 
-/** Safeguarding wording, shared by Youth Ensembles and the FAQ. Needs Jen's approval before SHOW_SAFEGUARDING is set to true. */
+/**
+ * Safeguarding wording, shared by Youth Ensembles, the FAQ and Who We Are ("A safe, welcoming place"). Needs Jen's
+ * approval before SHOW_SAFEGUARDING is set to true. Edit the sentences here only: `intro` is the community sentence,
+ * `checks` is the background check sentences, and `body` is the two together.
+ */
+const SAFEGUARDING_INTRO = {
+  en: 'A safe, child-friendly community.',
+  nl: 'Een veilige, kindvriendelijke gemeenschap.',
+} as const;
+const SAFEGUARDING_CHECKS = {
+  en: 'Every musician has a background check. Adults are always present.',
+  nl: 'Elke muzikant is gescreend. Er zijn altijd volwassenen aanwezig.',
+} as const;
 export const SAFEGUARDING_TEXT = {
   title: { en: 'A safe place for children', nl: 'Een veilige plek voor kinderen' },
+  intro: SAFEGUARDING_INTRO,
+  checks: SAFEGUARDING_CHECKS,
   body: {
-    en: 'A safe, child-friendly community. Every musician has a background check. Adults are always present.',
-    nl: 'Een veilige, kindvriendelijke gemeenschap. Elke muzikant is gescreend. Er zijn altijd volwassenen aanwezig.',
+    en: `${SAFEGUARDING_INTRO.en} ${SAFEGUARDING_CHECKS.en}`,
+    nl: `${SAFEGUARDING_INTRO.nl} ${SAFEGUARDING_CHECKS.nl}`,
   },
 } as const;
 
