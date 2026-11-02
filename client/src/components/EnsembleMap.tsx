@@ -1,6 +1,8 @@
 /*
- * Interactive map of the ensemble cities. This module imports leaflet and its CSS, so it must only be
- * loaded with a dynamic import after the visitor clicks "Show map". Tiles come from OpenStreetMap.
+ * Interactive map of the ensemble cities. This module imports leaflet and its CSS, so it is only
+ * loaded with a dynamic import, shortly before the map area scrolls into view. Tiles come from
+ * OpenStreetMap. Pins are Leaflet divIcons styled in index.css (.iou-pin), so no default marker
+ * image files are involved and nothing depends on bundler icon URLs.
  */
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
@@ -10,13 +12,15 @@ export type MapPin = {
   name: string;
   lat: number;
   lng: number;
-  badge: string;
-  text: string;
   active: boolean;
+  /** Accessible name and tooltip, for example "Utrecht: Emerging". */
+  label: string;
 };
 
 type Props = {
   pins: MapPin[];
+  selected: string;
+  onSelect: (name: string) => void;
   /** Accessible name of the map region. */
   label: string;
 };
@@ -24,45 +28,36 @@ type Props = {
 const ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 function pinIcon(active: boolean) {
-  const fill = active ? '#d4a017' : '#ffffff';
   return L.divIcon({
-    className: '',
-    html: `<span style="display:block;width:22px;height:22px;border-radius:50%;background:${fill};border:4px solid #1d6b72;box-shadow:0 1px 4px rgba(0,0,0,.4)"></span>`,
-    iconSize: [22, 22],
-    iconAnchor: [11, 11],
-    popupAnchor: [0, -12],
+    className: 'iou-pin' + (active ? ' iou-pin-active' : ''),
+    html: '<span class="iou-pin-dot"></span>',
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
   });
 }
 
-function popupContent(pin: MapPin): HTMLElement {
-  const root = document.createElement('div');
-  const title = document.createElement('strong');
-  title.textContent = pin.name;
-  const badge = document.createElement('p');
-  badge.style.cssText = 'margin:4px 0;font-weight:600';
-  badge.textContent = pin.badge;
-  const text = document.createElement('p');
-  text.style.margin = '0';
-  text.textContent = pin.text;
-  root.append(title, badge, text);
-  return root;
-}
-
-export default function EnsembleMap({ pins, label }: Props) {
+export default function EnsembleMap({ pins, selected, onSelect, label }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
   const layerRef = useRef<L.LayerGroup | null>(null);
+  const markersRef = useRef<Map<string, L.Marker>>(new Map());
+  const onSelectRef = useRef(onSelect);
+  onSelectRef.current = onSelect;
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
     const map = L.map(containerRef.current, { scrollWheelZoom: false });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: ATTRIBUTION }).addTo(map);
     mapRef.current = map;
+    // The container is laid out by the time this runs, but re-measure once so tiles fill the whole panel.
+    requestAnimationFrame(() => mapRef.current?.invalidateSize());
     layerRef.current = L.layerGroup().addTo(map);
+    const markers = markersRef.current;
     return () => {
       map.remove();
       mapRef.current = null;
       layerRef.current = null;
+      markers.clear();
     };
   }, []);
 
@@ -72,15 +67,34 @@ export default function EnsembleMap({ pins, label }: Props) {
     const layer = layerRef.current;
     if (!map || !layer) return;
     layer.clearLayers();
+    markersRef.current.clear();
     pins.forEach((pin) => {
-      L.marker([pin.lat, pin.lng], { icon: pinIcon(pin.active), title: `${pin.name}: ${pin.badge}`, keyboard: true })
-        .bindPopup(popupContent(pin))
-        .addTo(layer);
+      const marker = L.marker([pin.lat, pin.lng], { icon: pinIcon(pin.active), title: pin.label, alt: pin.label, keyboard: true }).addTo(layer);
+      const el = marker.getElement();
+      if (el) {
+        // Hover and keyboard focus select the city. Enter and tap arrive as a click, which Leaflet also raises for Enter.
+        const select = () => onSelectRef.current(pin.name);
+        el.addEventListener('mouseenter', select);
+        el.addEventListener('focus', select);
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+      }
+      marker.on('click', () => onSelectRef.current(pin.name));
+      markersRef.current.set(pin.name, marker);
     });
     if (pins.length > 0 && !map.getZoom()) {
       map.fitBounds(L.latLngBounds(pins.map((p) => [p.lat, p.lng] as [number, number])), { padding: [40, 40] });
     }
   }, [pins]);
 
-  return <div ref={containerRef} role="region" aria-label={label} className="h-[420px] w-full rounded-xl border border-[oklch(0.88_0.015_195)] z-0" />;
+  // Mark the selected pin (larger, soft gold ring) without rebuilding the markers.
+  useEffect(() => {
+    markersRef.current.forEach((marker, name) => {
+      const isSelected = name === selected;
+      marker.getElement()?.classList.toggle('iou-pin-selected', isSelected);
+      marker.setZIndexOffset(isSelected ? 1000 : 0);
+    });
+  }, [selected, pins]);
+
+  return <div ref={containerRef} role="region" aria-label={label} className="h-full w-full z-0" />;
 }

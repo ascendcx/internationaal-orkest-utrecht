@@ -316,4 +316,37 @@
       transition: none;
     }
   }
+
+  /* Map pins for the Locations page (see components/EnsembleMap.tsx). Emerging is teal, active is gold. */
+  .iou-pin {
+    background: transparent;
+    border: 0;
+  }
+  .iou-pin-dot {
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 3px;
+    border-radius: 9999px;
+    background: var(--teal);
+    border: 3px solid var(--card);
+    box-shadow: 0 1px 4px oklch(0.22 0.01 60 / 40%);
+    transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+  }
+  .iou-pin-active .iou-pin-dot {
+    background: var(--gold);
+  }
+  .iou-pin-selected .iou-pin-dot {
+    transform: scale(1.35);
+    box-shadow: 0 0 0 6px color-mix(in oklch, var(--gold) 40%, transparent), 0 1px 4px oklch(0.22 0.01 60 / 40%);
+  }
+  .iou-pin:focus-visible .iou-pin-dot {
+    outline: 2px solid var(--foreground);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .iou-pin-dot {
+      transition: none;
+    }
+  }
 }
