@@ -1,6 +1,12 @@
 // Before launch, work through LAUNCH_CHECKLIST.md at the repo root.
 /** Donation routes shown on the Support page. Edit here only. */
-export const MOLLIE_URL = 'https://payment-links.mollie.com/en/payment/nHXpkaYBF7uaFt2kIpYJR/details';
+const MOLLIE_PAYMENT_ID = 'nHXpkaYBF7uaFt2kIpYJR';
+
+/** The Mollie payment page in the site language. Anything other than 'nl' (missing or unexpected) gives the English page. */
+export function getMollieUrl(language?: string | null): string {
+  const locale = language === 'nl' ? 'nl' : 'en';
+  return `https://payment-links.mollie.com/${locale}/payment/${MOLLIE_PAYMENT_ID}/details`;
+}
 export const MOLLIE_RECIPIENT = 'Stichting Internationaal Orkest Utrecht';
 
 /** Zeffy is hidden by decision (Jen confirmed it is not available to IOU). Set to true only if that changes. With an empty campaign URL a visible block shows a plain placeholder line and no button. */

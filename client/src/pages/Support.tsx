@@ -6,7 +6,7 @@ import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import { Honeypot, FormError } from '@/components/FormParts';
 import {
-  MOLLIE_URL,
+  getMollieUrl,
   MOLLIE_RECIPIENT,
   SHOW_ZEFFY,
   ZEFFY_CAMPAIGN_URL,
@@ -119,7 +119,7 @@ function WeroBlock() {
 }
 
 export default function Support() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [email, setEmail] = useState('');
   const [newsletter, setNewsletter] = useState(false);
   const { sending, failed, submitted, submit } = useFormSubmit('newsletter');
@@ -145,7 +145,7 @@ export default function Support() {
       <p className="text-sm text-[oklch(0.52_0.015_60)] mb-4">
         {t(`Donations are made to ${MOLLIE_RECIPIENT}.`, `U doneert aan ${MOLLIE_RECIPIENT}.`)}
       </p>
-      <a href={MOLLIE_URL} target="_blank" rel="noopener noreferrer" className={DONATE_BUTTON}>
+      <a href={getMollieUrl(lang)} target="_blank" rel="noopener noreferrer" className={DONATE_BUTTON}>
         {t('Donate via Mollie', 'Doneer via Mollie')} <ExternalLink size={14} aria-hidden="true" />
       </a>
     </div>
