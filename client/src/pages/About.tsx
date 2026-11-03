@@ -130,8 +130,8 @@ export default function About() {
     {
       title: t('Music-making that is immersive and joyful', 'Muziek maken dat meeslepend en vreugdevol is'),
       body: t(
-        'High-quality teaching that is immersive, intense and joyful, with regular performances. As the ensembles grow, children also inspire each other.',
-        'Kwalitatief onderwijs dat meeslepend, intens en vreugdevol is, met regelmatige optredens. Naarmate de ensembles groeien, inspireren kinderen ook elkaar.'
+        'High-quality music-making that is immersive, intense and joyful, with regular performances. As the ensembles grow, children also inspire each other.',
+        'Muziek van hoge kwaliteit die meeslepend, intens en vreugdevol is, met regelmatige optredens. Naarmate de ensembles groeien, inspireren kinderen ook elkaar.'
       ),
     },
     {
