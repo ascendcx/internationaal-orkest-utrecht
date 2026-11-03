@@ -68,45 +68,47 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden max-md:flex max-md:flex-col max-md:justify-end max-md:min-h-[clamp(640px,calc(100svh-72px),760px)] max-md:bg-[oklch(0.22_0.05_195)]">
         <div className="absolute inset-0">
           <img
             src={mediaUrl('images/iou-hero.jpg')}
             alt={t('Orchestra performing for children', 'Een orkest speelt voor kinderen')}
-            className="w-full h-full object-cover object-[20%_center] lg:object-center"
+            className="w-full h-full object-cover object-[20%_center] lg:object-center max-md:h-[68%] max-md:object-[14%_40%] max-md:[mask-image:linear-gradient(to_bottom,black_62%,transparent_100%)]"
           />
           {/* Header scrim: keeps the logo, logo and nav readable over bright parts of the photo */}
           <div className="absolute inset-x-0 top-0 h-[calc(4rem+40px)] xl:h-[calc(5rem+40px)] bg-gradient-to-b from-[oklch(0.22_0.05_195)]/75 to-transparent" aria-hidden="true" />
           {/* Mobile: transparent top fading to dark teal bottom */}
-          <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
+          <div className="absolute inset-0 hidden md:block lg:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
+          {/* Phones: solid dark green at the bottom, fading out well below the faces */}
+          <div className="absolute inset-x-0 bottom-0 h-[68%] md:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)] from-0% via-[oklch(0.22_0.05_195)]/90 via-40% to-transparent to-100%" aria-hidden="true" />
           {/* Desktop: transparent left fading to dark teal right, reaching strong opacity early so it stays consistent behind the text block */}
           <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_0%,transparent_50%,oklch(0.22_0.05_195/93%)_68%,oklch(0.22_0.05_195/96%)_100%)]" />
         </div>
-        <div className="relative h-full min-h-screen flex items-end pb-24 lg:h-auto lg:min-h-0 lg:absolute lg:inset-0 lg:flex lg:items-end lg:pb-20 lg:pb-24">
-          <div className="container">
+        <div className="relative h-full min-h-screen flex items-end pb-24 max-md:h-auto max-md:min-h-0 max-md:pt-[104px] max-md:pb-7 lg:h-auto lg:min-h-0 lg:absolute lg:inset-0 lg:flex lg:items-end lg:pb-20 lg:pb-24">
+          <div className="container max-md:px-6">
             <div className="max-w-2xl lg:max-w-[30rem] xl:max-w-xl lg:ml-auto lg:mr-4 lg:mr-8">
               <span className="section-rule mb-2 lg:mb-4" />
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-4xl font-bold text-white leading-tight mb-1 lg:mb-2">
+              <h1 className="font-display text-4xl max-md:text-[2.125rem] max-md:leading-[1.1] sm:text-5xl lg:text-4xl font-bold text-white leading-tight mb-1 lg:mb-2">
                 {t(
                   'Children United Through Music',
                   'Kinderen Verenigd door Muziek'
                 )}
               </h1>
-              <p className="text-lg text-white/90 leading-relaxed mt-3 mb-6 max-w-xl text-balance">
+              <p className="text-lg max-md:text-[17px] text-white/90 leading-relaxed mt-3 mb-6 max-md:mb-5 max-w-xl text-balance">
                 {t(
                   'Free concerts in your school, and free local ensembles where children play, sing, and belong.',
                   'Gratis concerten op uw school en gratis lokale ensembles waar kinderen spelen, zingen en erbij horen.'
                 )}
               </p>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-                <Link href="/school-concerts?type=concert#booking" className="btn-gold w-full justify-center text-center">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 max-md:grid-cols-2 max-[339px]:grid-cols-1">
+                <Link href="/school-concerts?type=concert#booking" className="btn-gold w-full justify-center text-center max-md:min-h-[52px] max-md:px-3 max-md:text-[15px] max-md:leading-tight">
                   {t('Book a school concert', 'Boek een schoolconcert')}
                 </Link>
-                <Link href="/school-concerts?type=concert-ensemble#booking" className="btn-secondary w-full justify-center text-center border-2 border-white/50 text-white hover:bg-white/10">
+                <Link href="/school-concerts?type=concert-ensemble#booking" className="btn-secondary w-full justify-center text-center max-md:min-h-[52px] max-md:px-3 max-md:text-[15px] max-md:leading-tight border-2 border-white/50 text-white hover:bg-white/10">
                   {t('Add a free ensemble', 'Voeg een gratis ensemble toe')}
                 </Link>
               </div>
-              <Link href="/locations" className="mt-6 inline-flex items-center min-h-11 text-sm text-white underline underline-offset-4 hover:text-white/80">
+              <Link href="/locations" className="mt-6 max-md:mt-4 inline-flex items-center min-h-11 text-sm max-md:text-[15px] text-white underline underline-offset-4 hover:text-white/80">
                 {t('Parent? Find a free ensemble near you', 'Ouder? Zoek een gratis ensemble bij u in de buurt')}
               </Link>
             </div>

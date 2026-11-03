@@ -67,20 +67,20 @@ export default function Navigation() {
         <div className="container">
           <div className="flex items-center justify-between h-[72px] xl:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 no-underline">
+            <Link href="/" className="flex items-center gap-3 max-md:gap-2.5 no-underline">
               <img
                 src={mediaUrl('images/iou-logo.png')}
                 alt={t('IOU Logo', 'IOU-logo')}
                 className="h-9 w-9 object-contain"
               />
               <div className="flex flex-col leading-tight">
-                <span className={`font-display font-semibold text-base tracking-wide ${logoColor} transition-colors duration-300`}>
+                <span className={`font-display font-semibold text-base max-md:text-[15px] tracking-wide ${logoColor} transition-colors duration-300`}>
                   Internationaal Orkest
                 </span>
-                <span className={`font-display font-semibold text-base tracking-widest uppercase ${logoColor} transition-colors duration-300`}>
+                <span className={`font-display font-semibold text-base max-md:text-[15px] tracking-widest uppercase ${logoColor} transition-colors duration-300`}>
                   Utrecht
                 </span>
-                <span className={`font-normal text-sm tracking-wide ${logoColor} transition-colors duration-300`}>
+                <span className={`font-normal text-sm max-md:text-[13px] max-md:whitespace-nowrap tracking-wide ${logoColor} transition-colors duration-300`}>
                   {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
                 </span>
               </div>
