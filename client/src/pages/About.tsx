@@ -121,17 +121,17 @@ export default function About() {
       extra: SHOW_SAFEGUARDING ? t(SAFEGUARDING_TEXT.checks.en, SAFEGUARDING_TEXT.checks.nl) : undefined,
     },
     {
-      title: t('Learning that moves', 'Leren dat vooruitgaat'),
+      title: t('Growing through music', 'Groeien door muziek'),
       body: t(
-        'We build stimulating places to learn. Children who start young can progress swiftly towards excellence, playing energetic, intense and dynamic music, from classical to modern and traditional.',
-        'Wij bouwen stimulerende leeromgevingen. Kinderen die jong beginnen, kunnen snel groeien richting uitmuntendheid, met energieke, intense en dynamische muziek, van klassiek tot modern en traditioneel.'
+        'We build stimulating places to grow and make music. Children who start young can progress swiftly towards excellence, playing energetic, intense and dynamic music, from classical to modern and traditional.',
+        'Wij bouwen stimulerende plekken om te groeien en muziek te maken. Kinderen die jong beginnen, kunnen snel groeien richting uitmuntendheid, met energieke, intense en dynamische muziek, van klassiek tot modern en traditioneel.'
       ),
     },
     {
-      title: t('Teaching that is immersive and joyful', 'Onderwijs dat meeslepend en vreugdevol is'),
+      title: t('Music-making that is immersive and joyful', 'Muziek maken dat meeslepend en vreugdevol is'),
       body: t(
-        'High-quality teaching that is immersive, intense and joyful, with regular performances. As the ensembles grow, children also learn from each other.',
-        'Kwalitatief onderwijs dat meeslepend, intens en vreugdevol is, met regelmatige optredens. Naarmate de ensembles groeien, leren kinderen ook van elkaar.'
+        'High-quality teaching that is immersive, intense and joyful, with regular performances. As the ensembles grow, children also inspire each other.',
+        'Kwalitatief onderwijs dat meeslepend, intens en vreugdevol is, met regelmatige optredens. Naarmate de ensembles groeien, inspireren kinderen ook elkaar.'
       ),
     },
     {
@@ -248,8 +248,8 @@ export default function About() {
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed mb-4">
                 {t(
-                  'We work with participating schools to develop Nederland in Harmonie (The Netherlands in Harmony), free local youth ensembles where children can keep playing or singing together. The aim is a place to learn, make friends and feel they belong.',
-                  'Samen met deelnemende scholen werken we aan Nederland in Harmonie: gratis lokale jeugdensembles waar kinderen samen blijven spelen of zingen. Een plek om te leren, vrienden te maken en erbij te horen.'
+                  'We work with participating schools to develop Nederland in Harmonie (The Netherlands in Harmony), free local youth ensembles where children can keep playing or singing together. The aim is a place to make music, make friends and feel they belong.',
+                  'Samen met deelnemende scholen werken we aan Nederland in Harmonie: gratis lokale jeugdensembles waar kinderen samen blijven spelen of zingen. Een plek om muziek te maken, vriendschappen te sluiten en erbij te horen.'
                 )}
               </p>
               <p className="text-[oklch(0.22_0.01_60)] font-medium leading-relaxed mb-6">
