@@ -94,8 +94,8 @@ export default function Home() {
               </h1>
               <p className="text-lg text-white/90 leading-relaxed mt-3 mb-6 max-w-xl text-balance">
                 {t(
-                  'Free concerts in your school, and free local ensembles where children learn to play, sing, and belong.',
-                  'Gratis concerten op uw school en gratis lokale ensembles waar kinderen leren spelen, zingen en erbij horen.'
+                  'Free concerts in your school, and free local ensembles where children play, sing, and belong.',
+                  'Gratis concerten op uw school en gratis lokale ensembles waar kinderen spelen, zingen en erbij horen.'
                 )}
               </p>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
@@ -131,8 +131,8 @@ export default function Home() {
             <span className="section-rule" />
             <p className="font-display text-[1.375rem] sm:text-2xl lg:text-[1.875rem] leading-[1.4] text-[oklch(0.22_0.01_60)]">
               {t(
-                'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
-                'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
+                'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students play, sing, and belong.',
+                'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen spelen, zingen en erbij horen.'
               )}
             </p>
             <hr className="mt-12 border-0 border-t border-[oklch(0.88_0.015_195)]" />

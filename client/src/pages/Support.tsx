@@ -236,8 +236,8 @@ export default function Support() {
             </h2>
             <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
               {t(
-                'Donations help cover school concerts, teaching, instruments and the running of our youth ensemble programme, Nederland in Harmonie (The Netherlands in Harmony). Your support helps us give children a path from hearing music to making it together.',
-                'Donaties helpen om schoolconcerten, lessen, instrumenten en de organisatie van Nederland in Harmonie, ons programma met lokale jeugdensembles, te betalen. Met uw steun geven we kinderen de kans om niet alleen naar muziek te luisteren, maar ook samen muziek te maken.'
+                'Donations help cover school concerts, music sessions, instruments and the running of our youth ensemble programme, Nederland in Harmonie (The Netherlands in Harmony). Your support helps us give children a path from hearing music to making it together.',
+                'Donaties helpen om schoolconcerten, muzieksessies, instrumenten en de organisatie van Nederland in Harmonie, ons programma met lokale jeugdensembles, te betalen. Met uw steun geven we kinderen de kans om niet alleen naar muziek te luisteren, maar ook samen muziek te maken.'
               )}
             </p>
           </div>

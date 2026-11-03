@@ -68,7 +68,7 @@ export default function YouthEnsembles() {
             {t('Grow together through music', 'Groei samen door muziek')}
           </h1>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-4">
-            {t('Nederland in Harmonie (The Netherlands in Harmony) brings children together to play, sing and learn in free local music groups. No audition or previous experience is needed. Children make friends, share music and belong to something bigger than themselves.', 'Bij Nederland in Harmonie leren kinderen samen spelen en zingen in gratis lokale muziekgroepen. Een auditie of eerdere ervaring is niet nodig. Kinderen maken vrienden, delen muziek en horen bij iets groters dan zichzelf.')}
+            {t('Nederland in Harmonie (The Netherlands in Harmony) brings children together to play and sing in free local music groups. No audition or previous experience is needed. Children make friends, share music and belong to something bigger than themselves.', 'Bij Nederland in Harmonie spelen en zingen kinderen samen in gratis lokale muziekgroepen. Een auditie of eerdere ervaring is niet nodig. Kinderen maken vrienden, delen muziek en horen bij iets groters dan zichzelf.')}
           </p>
           <p className="text-white/85 text-lg max-w-xl leading-relaxed mb-8">
             {t('We are preparing our first ensembles. Register your interest to hear about the options for your child\'s school and area.', 'We bereiden de eerste ensembles voor. Meld uw belangstelling om te horen wat er mogelijk is voor de school en omgeving van uw kind.')}
@@ -95,7 +95,7 @@ export default function YouthEnsembles() {
                 {t('Free to take part', 'Gratis meedoen')}
               </h3>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed text-base">
-                {t('Free for every child. Made possible by donations, grants, and other funds. Lessons and use of instruments are free.', 'Gratis voor elk kind. Mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen. Lessen en het gebruik van instrumenten zijn gratis.')}
+                {t('Free for every child. Made possible by donations, grants, and other funds. Sessions and use of instruments are free.', 'Gratis voor elk kind. Mogelijk gemaakt door donaties, bijdragen van fondsen en andere middelen. Sessies en het gebruik van instrumenten zijn gratis.')}
               </p>
             </div>
             <div className="hidden lg:block bg-[oklch(0.88_0.015_195)]" />
@@ -198,7 +198,7 @@ export default function YouthEnsembles() {
             {[
               t('Children come together after school for inclusion and teamwork.', 'Kinderen komen na school samen voor inclusie en teamwork.'),
               t('We aim for regular sessions, with several hours of activity each week.', 'Wij streven naar regelmatige sessies, met meerdere uren activiteit per week.'),
-              t('Teaching is immersive and joyful. As the group grows, children learn from each other.', 'Het onderwijs is meeslepend en vreugdevol. Naarmate de groep groeit, leren kinderen van elkaar.'),
+              t('Sessions are immersive and joyful. As the group grows, children inspire each other.', 'De sessies zijn meeslepend en vreugdevol. Naarmate de groep groeit, inspireren kinderen elkaar.'),
               t('Children perform regularly.', 'Kinderen treden regelmatig op.'),
               t('Parents and caregivers meet other families.', 'Ouders en verzorgers ontmoeten andere gezinnen.'),
             ].map((point, i) => (

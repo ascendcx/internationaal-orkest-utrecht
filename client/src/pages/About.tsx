@@ -313,8 +313,8 @@ export default function About() {
               </p>
               <p className="text-[oklch(0.42_0.01_60)] leading-relaxed">
                 {t(
-                  'Jennifer founded Internationaal Orkest Utrecht because she believes every child should have the chance to make music. Through school concerts and local ensembles, she wants children to have a place to learn, play, sing and feel they belong.',
-                  'Jennifer richtte Internationaal Orkest Utrecht op omdat zij vindt dat elk kind de kans moet krijgen om muziek te maken. Met schoolconcerten en lokale ensembles wil zij kinderen een plek geven om te leren, te spelen, te zingen en erbij te horen.'
+                  'Jennifer founded Internationaal Orkest Utrecht because she believes every child should have the chance to make music. Through school concerts and local ensembles, she wants children to have a place to play, sing and feel they belong.',
+                  'Jennifer richtte Internationaal Orkest Utrecht op omdat zij vindt dat elk kind de kans moet krijgen om muziek te maken. Met schoolconcerten en lokale ensembles wil zij kinderen een plek geven om te spelen, te zingen en erbij te horen.'
                 )}
               </p>
               <blockquote className="pull-quote mt-8 mb-3">
