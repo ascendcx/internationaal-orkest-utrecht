@@ -98,23 +98,13 @@ export default function Home() {
                   'Gratis concerten op uw school en gratis lokale ensembles waar kinderen spelen, zingen en erbij horen.'
                 )}
               </p>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
-                <div>
-                  <Link href="/school-concerts?type=concert#booking" className="btn-gold w-full justify-center">
-                    {t('Book a school concert', 'Boek een schoolconcert')}
-                  </Link>
-                  <p className="mt-2 text-sm text-white/80 leading-snug">
-                    {t('Already have music lessons? Add a concert.', 'Heeft u al muziekonderwijs? Voeg een concert toe.')}
-                  </p>
-                </div>
-                <div>
-                  <Link href="/school-concerts?type=concert-ensemble#booking" className="btn-secondary w-full justify-center border-2 border-white/50 text-white hover:bg-white/10">
-                    {t('Start a free ensemble', 'Start een gratis ensemble')}
-                  </Link>
-                  <p className="mt-2 text-sm text-white/80 leading-snug">
-                    {t('Want free after-school music for your students?', 'Wilt u gratis naschoolse muziek voor uw leerlingen?')}
-                  </p>
-                </div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                <Link href="/school-concerts?type=concert#booking" className="btn-gold w-full justify-center text-center">
+                  {t('Book a school concert', 'Boek een schoolconcert')}
+                </Link>
+                <Link href="/school-concerts?type=concert-ensemble#booking" className="btn-secondary w-full justify-center text-center border-2 border-white/50 text-white hover:bg-white/10">
+                  {t('Add a free ensemble', 'Voeg een gratis ensemble toe')}
+                </Link>
               </div>
               <Link href="/locations" className="mt-6 inline-flex items-center min-h-11 text-sm text-white underline underline-offset-4 hover:text-white/80">
                 {t('Parent? Find a free ensemble near you', 'Ouder? Zoek een gratis ensemble bij u in de buurt')}
