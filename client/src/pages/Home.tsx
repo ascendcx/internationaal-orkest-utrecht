@@ -1,6 +1,6 @@
 /*
  * IOU Home Page — Refined Civic Warmth
- * Hero: full-bleed image, left-anchored text, dual CTA
+ * Hero: full-bleed image, two school paths; statement section below
  * Sections: Journey, Funding, Schools, Parents, Quote, Impact Stats, Support CTA
  */
 import { Link } from 'wouter';
@@ -75,7 +75,7 @@ export default function Home() {
             alt={t('Orchestra performing for children', 'Een orkest speelt voor kinderen')}
             className="w-full h-full object-cover object-[20%_center] lg:object-center"
           />
-          {/* Header scrim: keeps the logo, choir line and nav readable over bright parts of the photo */}
+          {/* Header scrim: keeps the logo, logo and nav readable over bright parts of the photo */}
           <div className="absolute inset-x-0 top-0 h-[calc(4rem+40px)] xl:h-[calc(5rem+40px)] bg-gradient-to-b from-[oklch(0.22_0.05_195)]/75 to-transparent" aria-hidden="true" />
           {/* Mobile: transparent top fading to dark teal bottom */}
           <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[oklch(0.22_0.05_195)]/90 from-0% via-[oklch(0.22_0.05_195)]/55 via-40% to-transparent to-70%" />
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="relative h-full min-h-screen flex items-end pb-24 lg:h-auto lg:min-h-0 lg:absolute lg:inset-0 lg:flex lg:items-end lg:pb-20 lg:pb-24">
           <div className="container">
-            <div className="max-w-2xl lg:max-w-[27rem] xl:max-w-xl lg:ml-auto lg:mr-4 lg:mr-8">
+            <div className="max-w-2xl lg:max-w-[30rem] xl:max-w-xl lg:ml-auto lg:mr-4 lg:mr-8">
               <span className="section-rule mb-2 lg:mb-4" />
               <h1 className="font-display text-4xl sm:text-5xl lg:text-4xl font-bold text-white leading-tight mb-1 lg:mb-2">
                 {t(
@@ -92,46 +92,50 @@ export default function Home() {
                   'Kinderen Verenigd door Muziek'
                 )}
               </h1>
-              <p className="text-sm font-light tracking-wide text-white/85 mb-3 lg:mb-6 first-letter:uppercase">
-                {t('in partnership with local choirs', 'in samenwerking met lokale koren')}
-              </p>
-              <p className="hidden lg:block text-lg text-white/90 leading-relaxed mb-8 max-w-lg xl:max-w-xl text-balance">
+              <p className="text-lg text-white/90 leading-relaxed mt-3 mb-6 max-w-xl text-balance">
                 {t(
-                  'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
-                  'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
+                  'Free concerts in your school, and free local ensembles where children learn to play, sing, and belong.',
+                  'Gratis concerten op uw school en gratis lokale ensembles waar kinderen leren spelen, zingen en erbij horen.'
                 )}
               </p>
-              <p className="lg:hidden text-lg text-white/85 leading-relaxed mb-4 max-w-xl">
-                {t(
-                  'It starts with a concert, grows with an ensemble, and then lasts a lifetime.',
-                  'Het begint met een concert, groeit met een ensemble en duurt daarna een leven lang.'
-                )}
-              </p>
-              <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-4">
-                <Link href="/school-concerts" className="btn-gold">
-                  {t('Bring Music to Your School', 'Breng muziek naar uw school')}
-                  <ArrowRight size={16} />
-                </Link>
-                <Link href="/contact?interest=parent" className="btn-secondary border-2 border-white/50 text-white hover:bg-white/10">
-                  {t('Register your interest', 'Meld uw belangstelling')}
-                </Link>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
+                <div>
+                  <Link href="/school-concerts?type=concert#booking" className="btn-gold w-full justify-center">
+                    {t('Book a school concert', 'Boek een schoolconcert')}
+                  </Link>
+                  <p className="mt-2 text-sm text-white/80 leading-snug">
+                    {t('Already have music lessons? Add a concert.', 'Heeft u al muziekonderwijs? Voeg een concert toe.')}
+                  </p>
+                </div>
+                <div>
+                  <Link href="/school-concerts?type=concert-ensemble#booking" className="btn-secondary w-full justify-center border-2 border-white/50 text-white hover:bg-white/10">
+                    {t('Start a free ensemble', 'Start een gratis ensemble')}
+                  </Link>
+                  <p className="mt-2 text-sm text-white/80 leading-snug">
+                    {t('Want free after-school music for your students?', 'Wilt u gratis naschoolse muziek voor uw leerlingen?')}
+                  </p>
+                </div>
               </div>
+              <Link href="/locations" className="mt-6 inline-flex items-center min-h-11 text-sm text-white underline underline-offset-4 hover:text-white/80">
+                {t('Parent? Find a free ensemble near you', 'Ouder? Zoek een gratis ensemble bij u in de buurt')}
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Full intro, mobile only (desktop shows it in the hero) */}
-      <section className="lg:hidden py-12 bg-[oklch(0.98_0.008_80)]">
+      {/* Statement */}
+      <section className="py-16 lg:py-20 bg-[oklch(0.98_0.008_80)]">
         <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <span className="section-rule mx-auto" />
-            <p className="text-lg text-[oklch(0.42_0.01_60)] leading-relaxed">
+          <div className="max-w-[780px] mx-auto">
+            <span className="section-rule" />
+            <p className="font-display text-[1.375rem] sm:text-2xl lg:text-[1.875rem] leading-[1.4] text-[oklch(0.22_0.01_60)]">
               {t(
                 'Every child in the Netherlands deserves a chance to make music, not just hear it. It starts with a concert in your school and continues with a free local ensemble, where your students learn to play, sing, and belong.',
                 'Elk kind in Nederland verdient de kans om muziek te maken, niet alleen te horen. Het begint met een concert op uw school en gaat verder met een gratis lokaal ensemble, waar uw leerlingen leren spelen, zingen en erbij horen.'
               )}
             </p>
+            <hr className="mt-12 border-0 border-t border-[oklch(0.88_0.015_195)]" />
           </div>
         </div>
       </section>

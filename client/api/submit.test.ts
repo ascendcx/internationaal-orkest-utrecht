@@ -85,6 +85,18 @@ describe('submit handler', () => {
     expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('Interest: A smaller chamber concert');
   });
 
+  it('accepts concert and ensemble and includes it in the email body', async () => {
+    const res = await post({ formType: 'school-concert', ...VALID['school-concert'], interest: 'concert-ensemble' });
+    expect(res.code).toBe(200);
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).text).toContain('Interest: A school concert and local ensemble');
+  });
+
+  it('rejects an unknown school concert interest with 400', async () => {
+    const res = await post({ formType: 'school-concert', ...VALID['school-concert'], interest: 'everything' });
+    expect(res.code).toBe(400);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
   it('includes a known city in the youth ensemble email', async () => {
     const res = await post({ formType: 'youth-ensemble', ...VALID['youth-ensemble'], city: 'rotterdam' });
     expect(res.code).toBe(200);

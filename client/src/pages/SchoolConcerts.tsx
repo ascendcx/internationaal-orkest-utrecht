@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSEO } from '@/hooks/useSEO';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { mediaUrl } from '@/lib/media';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
@@ -12,8 +12,10 @@ import { SHOW_RECORDING_NOTICE, RECORDING_TEXT } from '@/lib/siteFlags';
 // Set to false until music licensing for online use is confirmed.
 const SHOW_ORCHESTRA_VIDEO = true;
 
+/** The ?type= value from the Home buttons (the older ?interest= is still read). An unknown value is ignored. */
 function interestFromUrl() {
-  const value = new URLSearchParams(window.location.search).get('interest') ?? '';
+  const params = new URLSearchParams(window.location.search);
+  const value = params.get('type') ?? params.get('interest') ?? '';
   return value === 'concert' || value === 'concert-ensemble' || value === 'chamber-concert' ? value : '';
 }
 
@@ -43,6 +45,17 @@ export default function SchoolConcerts() {
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => submit(e, { ...form });
+
+  // A link such as /school-concerts?type=concert#booking lands on the form. The short delay lets ScrollToTop run first.
+  const formSectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (window.location.hash !== '#booking') return;
+    const timer = window.setTimeout(() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      formSectionRef.current?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    }, 100);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const steps = [
     { title: t('Hear live music', 'Live muziek beleven'), desc: t('Our orchestra, together with local choirs, performs for your students. Children experience live instrumental and vocal music.', 'Ons orkest treedt op voor uw leerlingen, samen met lokale koren. Kinderen beleven live instrumentale muziek en zang.') },
@@ -190,7 +203,7 @@ export default function SchoolConcerts() {
       </section>
 
       {/* Enquiry Form */}
-      <section id="booking" className="py-16 bg-[oklch(0.95_0.02_195)]">
+      <section id="booking" ref={formSectionRef} className="py-16 bg-[oklch(0.95_0.02_195)]">
         <div className="container max-w-2xl">
           <span className="section-rule" />
           <h2 className="font-display text-3xl font-bold text-[oklch(0.22_0.01_60)] mb-2">
