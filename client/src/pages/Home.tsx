@@ -198,7 +198,7 @@ export default function Home() {
               <ArrowRight size={14} />
             </Link>
             <p className="mt-4 text-sm text-[oklch(0.52_0.015_60)]">
-              {ORG_LEGAL_NAME}. {t('A registered foundation in Utrecht.', 'Een geregistreerde stichting in Utrecht.')}
+              {ORG_LEGAL_NAME}. {t('A registered non-profit foundation.', 'Een geregistreerde stichting zonder winstoogmerk.')}
             </p>
           </div>
         </div>

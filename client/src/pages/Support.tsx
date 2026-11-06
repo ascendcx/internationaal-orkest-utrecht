@@ -257,7 +257,7 @@ export default function Support() {
             {t('Make a donation', 'Doe een donatie')}
           </h2>
           <p className="text-sm text-[oklch(0.52_0.015_60)] mb-6">
-            {ORG_LEGAL_NAME}. {t('A registered foundation in Utrecht.', 'Een geregistreerde stichting in Utrecht.')}
+            {ORG_LEGAL_NAME}. {t('A registered non-profit foundation.', 'Een geregistreerde stichting zonder winstoogmerk.')}
           </p>
 
           <div className="space-y-6">

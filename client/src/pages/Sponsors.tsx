@@ -191,7 +191,7 @@ export default function Sponsors() {
             )}
           </p>
           <p className="text-sm text-[oklch(0.52_0.015_60)] mb-3">
-            {t(`Sponsorship gifts go to ${ORG_LEGAL_NAME}, a registered foundation in Utrecht.`, `Sponsorbijdragen gaan naar ${ORG_LEGAL_NAME}, een geregistreerde stichting in Utrecht.`)}
+            {t(`Sponsorship gifts go to ${ORG_LEGAL_NAME}, a registered non-profit foundation.`, `Sponsorbijdragen gaan naar ${ORG_LEGAL_NAME}, een geregistreerde stichting zonder winstoogmerk.`)}
           </p>
           <p className="text-sm text-[oklch(0.52_0.015_60)] mb-8">
             {t('Prefer to make a donation instead? ', 'Liever een donatie doen? ')}
